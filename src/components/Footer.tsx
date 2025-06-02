@@ -9,9 +9,7 @@ const Footer = () => {
             <h3 className="text-2xl font-bold text-orange-500 mb-4">
               Samatva Awareness Solution Foundation
             </h3>
-            <p className="text-gray-300 mb-4">
-              Credit Counseling and Financial Solutions. We would like to help you succeed financially and are here for you every step of the way.
-            </p>
+            <p className="text-gray-300 mb-4">Our mission is to empower individuals with expert financial guidance and essential resources to build, strengthen, and sustain a resilient credit profile—laying the foundation for lasting financial well-being and opportunity.</p>
             <div className="flex items-center space-x-4">
               <div className="flex items-center space-x-2">
                 <Mail size={16} className="text-orange-500" />
@@ -40,10 +38,15 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Our Services</h4>
             <ul className="space-y-2 text-gray-300">
-              <li>Free Credit Counseling</li>
-              <li>Settlement Account Support</li>
-              <li>Financial Consultation</li>
-              <li>Loan Application Guidance</li>
+              <li>
+            </li>
+              <li>
+            </li>
+              <li>+91 9606914500 
++91 9789511937 
+CIN: U70200TN2024PTC167249 No.25, Shanthi Apartments, Flat No 3, 1st Floor, Vyasar Street, T.Nagar, Chennai - 600017</li>
+              <li>
+            </li>
             </ul>
           </div>
         </div>
