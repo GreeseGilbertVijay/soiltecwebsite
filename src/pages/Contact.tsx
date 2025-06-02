@@ -1,11 +1,8 @@
-
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Mail, Phone, Clock, CheckCircle } from 'lucide-react';
-
 const Contact = () => {
-  return (
-    <div className="min-h-screen bg-gray-50">
+  return <div className="min-h-screen bg-gray-50">
       <Navbar />
       
       {/* Hero Section */}
@@ -47,7 +44,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900">Call Us</h3>
-                    <p className="text-gray-600">+91-XXXX-XXXXXX</p>
+                    <p className="text-gray-600">+91 9606914500 / 9789511937</p>
                     <p className="text-sm text-gray-500">Monday - Friday, 9 AM - 6 PM</p>
                   </div>
                 </div>
@@ -90,39 +87,32 @@ const Contact = () => {
               <h2 className="text-3xl font-bold text-gray-900 mb-8">Next Steps</h2>
               
               <div className="space-y-6">
-                {[
-                  {
-                    step: 1,
-                    title: "Free Consultation",
-                    description: "Schedule your no-cost credit counseling session",
-                    color: "bg-blue-600"
-                  },
-                  {
-                    step: 2,
-                    title: "Assessment",
-                    description: "We'll evaluate your current financial situation",
-                    color: "bg-green-600"
-                  },
-                  {
-                    step: 3,
-                    title: "Custom Plan",
-                    description: "Receive a personalized improvement strategy",
-                    color: "bg-purple-600"
-                  },
-                  {
-                    step: 4,
-                    title: "Implementation",
-                    description: "Begin your 6-12 month improvement journey",
-                    color: "bg-orange-600"
-                  },
-                  {
-                    step: 5,
-                    title: "Ongoing Support",
-                    description: "Continuous guidance until you achieve your goals",
-                    color: "bg-red-600"
-                  }
-                ].map((item, index) => (
-                  <div key={index} className="flex items-start space-x-4">
+                {[{
+                step: 1,
+                title: "Free Consultation",
+                description: "Schedule your no-cost credit counseling session",
+                color: "bg-blue-600"
+              }, {
+                step: 2,
+                title: "Assessment",
+                description: "We'll evaluate your current financial situation",
+                color: "bg-green-600"
+              }, {
+                step: 3,
+                title: "Custom Plan",
+                description: "Receive a personalized improvement strategy",
+                color: "bg-purple-600"
+              }, {
+                step: 4,
+                title: "Implementation",
+                description: "Begin your 6-12 month improvement journey",
+                color: "bg-orange-600"
+              }, {
+                step: 5,
+                title: "Ongoing Support",
+                description: "Continuous guidance until you achieve your goals",
+                color: "bg-red-600"
+              }].map((item, index) => <div key={index} className="flex items-start space-x-4">
                     <div className={`${item.color} text-white w-10 h-10 rounded-full flex items-center justify-center font-bold flex-shrink-0`}>
                       {item.step}
                     </div>
@@ -130,25 +120,17 @@ const Contact = () => {
                       <h3 className="text-lg font-semibold text-gray-900">{item.title}</h3>
                       <p className="text-gray-600">{item.description}</p>
                     </div>
-                  </div>
-                ))}
+                  </div>)}
               </div>
 
               {/* Trust Indicators */}
               <div className="mt-12 bg-gray-50 p-6 rounded-lg">
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">Why Choose Us?</h3>
                 <div className="space-y-3">
-                  {[
-                    "RBI-Registered Institution Partners",
-                    "Completely Free Service",
-                    "6-12 Month Proven Results",
-                    "Professional Credit Counselors"
-                  ].map((item, index) => (
-                    <div key={index} className="flex items-center space-x-3">
+                  {["RBI-Registered Institution Partners", "Completely Free Service", "6-12 Month Proven Results", "Professional Credit Counselors"].map((item, index) => <div key={index} className="flex items-center space-x-3">
                       <CheckCircle className="text-green-600" size={20} />
                       <span className="text-gray-700">{item}</span>
-                    </div>
-                  ))}
+                    </div>)}
                 </div>
               </div>
             </div>
@@ -166,16 +148,10 @@ const Contact = () => {
             Your journey to better financial health starts with a simple conversation
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a 
-              href="mailto:info@samatva.org" 
-              className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors transform hover:scale-105"
-            >
+            <a href="mailto:info@samatva.org" className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors transform hover:scale-105">
               Start Your Free Consultation
             </a>
-            <a 
-              href="tel:+91-XXXX-XXXXXX" 
-              className="border-2 border-white text-white hover:bg-white hover:text-blue-800 px-8 py-4 rounded-lg font-semibold text-lg transition-colors"
-            >
+            <a href="tel:+91-XXXX-XXXXXX" className="border-2 border-white text-white hover:bg-white hover:text-blue-800 px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
               Call Now
             </a>
           </div>
@@ -183,8 +159,6 @@ const Contact = () => {
       </section>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Contact;
