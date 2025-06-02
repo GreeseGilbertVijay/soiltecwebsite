@@ -65,7 +65,7 @@ const About = () => {
               </p>
             </div>
             <div className="flex justify-center lg:justify-end">
-              <img src="/lovable-uploads/79380e54-47a8-475a-8371-d541651d4d15.png" alt="Professional Consultation" className="w-full max-w-md rounded-xl shadow-lg" />
+              <img alt="Professional Consultation" className="w-full max-w-md rounded-xl shadow-lg" src="/lovable-uploads/d83dfa36-277f-402f-b45e-8e6b171122ea.png" />
             </div>
           </div>
 
