@@ -9,6 +9,7 @@ const Navbar = () => {
 
   const navItems = [
     { path: '/', label: 'Home' },
+    { path: '/credit-health', label: 'Credit Health' },
     { path: '/impact', label: 'Impact' },
     { path: '/services', label: 'Services' },
     { path: '/about', label: 'About' },
@@ -23,7 +24,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0">
-            <Link to="/" className="text-2xl font-bold text-blue-800">
+            <Link to="/" className="text-2xl font-bold text-slate-900">
               Samatva
             </Link>
           </div>
@@ -37,8 +38,8 @@ const Navbar = () => {
                   to={item.path}
                   className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
                     isActive(item.path)
-                      ? 'bg-blue-800 text-white'
-                      : 'text-gray-700 hover:bg-blue-100 hover:text-blue-800'
+                      ? 'bg-slate-900 text-white'
+                      : 'text-gray-700 hover:bg-slate-100 hover:text-slate-900'
                   }`}
                 >
                   {item.label}
@@ -51,7 +52,7 @@ const Navbar = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-800 hover:bg-blue-100"
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-slate-900 hover:bg-slate-100"
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -69,8 +70,8 @@ const Navbar = () => {
                   onClick={() => setIsMenuOpen(false)}
                   className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
                     isActive(item.path)
-                      ? 'bg-blue-800 text-white'
-                      : 'text-gray-700 hover:bg-blue-100 hover:text-blue-800'
+                      ? 'bg-slate-900 text-white'
+                      : 'text-gray-700 hover:bg-slate-100 hover:text-slate-900'
                   }`}
                 >
                   {item.label}
