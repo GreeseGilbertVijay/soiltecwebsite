@@ -1,12 +1,9 @@
-
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Target, Users, Shield, TrendingUp, Linkedin } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
-
 const About = () => {
-  return (
-    <div className="min-h-screen bg-gray-50">
+  return <div className="min-h-screen bg-gray-50">
       <Navbar />
       
       {/* Hero Section */}
@@ -37,11 +34,7 @@ const About = () => {
               </p>
             </div>
             <div className="lg:flex lg:justify-end">
-              <img 
-                src="/lovable-uploads/b8c2cd9e-fbde-4991-bb3b-882f9a1e5b18.png"
-                alt="Debt Counselling Session"
-                className="w-full max-w-lg rounded-2xl shadow-2xl"
-              />
+              <img alt="Debt Counselling Session" className="w-full max-w-lg rounded-2xl shadow-2xl" src="/lovable-uploads/ab1e075d-5cb7-4bb7-8eb3-58065d670483.png" />
             </div>
           </div>
         </div>
@@ -72,11 +65,7 @@ const About = () => {
               </p>
             </div>
             <div className="flex justify-center lg:justify-end">
-              <img 
-                src="/lovable-uploads/79380e54-47a8-475a-8371-d541651d4d15.png"
-                alt="Professional Consultation"
-                className="w-full max-w-md rounded-xl shadow-lg"
-              />
+              <img src="/lovable-uploads/79380e54-47a8-475a-8371-d541651d4d15.png" alt="Professional Consultation" className="w-full max-w-md rounded-xl shadow-lg" />
             </div>
           </div>
 
@@ -269,8 +258,6 @@ const About = () => {
       </section>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default About;
