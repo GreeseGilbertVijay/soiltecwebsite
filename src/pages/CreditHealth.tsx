@@ -1,4 +1,3 @@
-
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { TrendingUp, Clock, Target, CheckCircle, AlertTriangle, Shield, Award } from 'lucide-react';
@@ -20,7 +19,9 @@ const CreditHealth = () => {
       
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-700 text-white py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iNCIvPjwvZz48L2c+PC9zdmc+')] animate-pulse"></div>
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent animate-pulse"></div>
+        </div>
         <div className="max-w-6xl mx-auto text-center px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="inline-flex items-center bg-orange-500/20 backdrop-blur-sm rounded-full px-6 py-2 mb-6">
             <Shield className="w-5 h-5 mr-2 text-orange-400" />
@@ -51,43 +52,82 @@ const CreditHealth = () => {
           <div className="bg-gradient-to-br from-gray-50 to-white rounded-3xl p-12 mb-16 shadow-xl border border-gray-200">
             <div className="text-center">
               <div className="relative inline-block mb-8">
-                <svg width="500" height="300" viewBox="0 0 500 300" className="mx-auto drop-shadow-lg">
-                  {/* Background circle */}
-                  <path d="M 75 225 A 175 175 0 0 1 425 225" fill="none" stroke="#f3f4f6" strokeWidth="20" />
+                <svg width="400" height="250" viewBox="0 0 400 250" className="mx-auto drop-shadow-lg">
+                  {/* Background semi-circle */}
+                  <path 
+                    d="M 50 200 A 150 150 0 0 1 350 200" 
+                    fill="none" 
+                    stroke="#f3f4f6" 
+                    strokeWidth="20" 
+                    strokeLinecap="round"
+                  />
                   
-                  {/* Poor Section (300-550) */}
-                  <path d="M 75 225 A 175 175 0 0 1 155 95" fill="none" stroke="#dc2626" strokeWidth="20" strokeLinecap="round" />
+                  {/* Poor Section (300-550) - Red */}
+                  <path 
+                    d="M 50 200 A 150 150 0 0 1 125 75" 
+                    fill="none" 
+                    stroke="#dc2626" 
+                    strokeWidth="20" 
+                    strokeLinecap="round"
+                  />
                   
-                  {/* Average Section (550-680) */}
-                  <path d="M 155 95 A 175 175 0 0 1 250 50" fill="none" stroke="#ea580c" strokeWidth="20" strokeLinecap="round" />
+                  {/* Average Section (550-680) - Orange */}
+                  <path 
+                    d="M 125 75 A 150 150 0 0 1 200 50" 
+                    fill="none" 
+                    stroke="#ea580c" 
+                    strokeWidth="20" 
+                    strokeLinecap="round"
+                  />
                   
-                  {/* Good Section (680-730) */}
-                  <path d="M 250 50 A 175 175 0 0 1 345 95" fill="none" stroke="#65a30d" strokeWidth="20" strokeLinecap="round" />
+                  {/* Good Section (680-730) - Yellow */}
+                  <path 
+                    d="M 200 50 A 150 150 0 0 1 275 75" 
+                    fill="none" 
+                    stroke="#eab308" 
+                    strokeWidth="20" 
+                    strokeLinecap="round"
+                  />
                   
-                  {/* Very Good Section (730-780) */}
-                  <path d="M 345 95 A 175 175 0 0 1 425 225" fill="none" stroke="#16a34a" strokeWidth="20" strokeLinecap="round" />
+                  {/* Very Good Section (730-780) - Green */}
+                  <path 
+                    d="M 275 75 A 150 150 0 0 1 350 200" 
+                    fill="none" 
+                    stroke="#16a34a" 
+                    strokeWidth="20" 
+                    strokeLinecap="round"
+                  />
                   
                   {/* Score Labels */}
-                  <text x="115" y="170" className="text-sm font-bold fill-red-600">POOR</text>
-                  <text x="110" y="185" className="text-xs fill-red-500">300-550</text>
+                  <text x="90" y="150" textAnchor="middle" className="text-sm font-bold fill-red-600">POOR</text>
+                  <text x="90" y="165" textAnchor="middle" className="text-xs fill-red-500">300-550</text>
                   
-                  <text x="200" y="80" className="text-sm font-bold fill-orange-600">AVERAGE</text>
-                  <text x="205" y="95" className="text-xs fill-orange-500">550-680</text>
+                  <text x="160" y="90" textAnchor="middle" className="text-sm font-bold fill-orange-600">AVERAGE</text>
+                  <text x="160" y="105" textAnchor="middle" className="text-xs fill-orange-500">550-680</text>
                   
-                  <text x="280" y="80" className="text-sm font-bold fill-lime-600">GOOD</text>
-                  <text x="285" y="95" className="text-xs fill-lime-500">680-730</text>
+                  <text x="240" y="90" textAnchor="middle" className="text-sm font-bold fill-yellow-600">GOOD</text>
+                  <text x="240" y="105" textAnchor="middle" className="text-xs fill-yellow-500">680-730</text>
                   
-                  <text x="350" y="170" className="text-sm font-bold fill-green-600">VERY GOOD</text>
-                  <text x="365" y="185" className="text-xs fill-green-500">730-780</text>
+                  <text x="310" y="150" textAnchor="middle" className="text-sm font-bold fill-green-600">VERY GOOD</text>
+                  <text x="310" y="165" textAnchor="middle" className="text-xs fill-green-500">730-780</text>
                   
-                  {/* Needle pointing to AVERAGE section */}
-                  <line x1="250" y1="225" x2="200" y2="110" stroke="#1f2937" strokeWidth="6" strokeLinecap="round" className="drop-shadow-md" />
-                  <circle cx="250" cy="225" r="12" fill="#1f2937" className="drop-shadow-lg" />
-                  <circle cx="250" cy="225" r="6" fill="#ffffff" />
+                  {/* Needle pointing to 620 (Average section) */}
+                  <line 
+                    x1="200" 
+                    y1="200" 
+                    x2="160" 
+                    y2="110" 
+                    stroke="#1f2937" 
+                    strokeWidth="4" 
+                    strokeLinecap="round" 
+                    className="drop-shadow-md" 
+                  />
+                  <circle cx="200" cy="200" r="8" fill="#1f2937" className="drop-shadow-lg" />
+                  <circle cx="200" cy="200" r="4" fill="#ffffff" />
                   
                   {/* Current Score Display */}
-                  <text x="250" y="260" className="text-2xl font-bold fill-gray-900 text-anchor-middle">620</text>
-                  <text x="250" y="280" className="text-sm fill-gray-600 text-anchor-middle">Current Score</text>
+                  <text x="200" y="230" textAnchor="middle" className="text-3xl font-bold fill-gray-900">620</text>
+                  <text x="200" y="245" textAnchor="middle" className="text-sm fill-gray-600">Current Score</text>
                 </svg>
               </div>
               
@@ -113,23 +153,23 @@ const CreditHealth = () => {
                   </CardContent>
                 </Card>
 
-                <Card className="border-green-200 bg-green-50 hover:shadow-lg transition-all duration-300">
+                <Card className="border-yellow-200 bg-yellow-50 hover:shadow-lg transition-all duration-300">
                   <CardHeader className="pb-3">
-                    <CheckCircle className="w-8 h-8 text-green-600 mb-2" />
-                    <CardTitle className="text-lg text-green-800">Good (680-730)</CardTitle>
+                    <CheckCircle className="w-8 h-8 text-yellow-600 mb-2" />
+                    <CardTitle className="text-lg text-yellow-800">Good (680-730)</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-green-700 text-sm">Competitive rates</p>
+                    <p className="text-yellow-700 text-sm">Competitive rates</p>
                   </CardContent>
                 </Card>
 
-                <Card className="border-emerald-200 bg-emerald-50 hover:shadow-lg transition-all duration-300">
+                <Card className="border-green-200 bg-green-50 hover:shadow-lg transition-all duration-300">
                   <CardHeader className="pb-3">
-                    <Award className="w-8 h-8 text-emerald-600 mb-2" />
-                    <CardTitle className="text-lg text-emerald-800">Excellent (730+)</CardTitle>
+                    <Award className="w-8 h-8 text-green-600 mb-2" />
+                    <CardTitle className="text-lg text-green-800">Excellent (730+)</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-emerald-700 text-sm">Best rates & terms</p>
+                    <p className="text-green-700 text-sm">Best rates & terms</p>
                   </CardContent>
                 </Card>
               </div>
