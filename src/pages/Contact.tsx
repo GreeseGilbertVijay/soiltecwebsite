@@ -33,7 +33,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900">Email Us</h3>
-                    <p className="text-gray-600">info@samatva.org</p>
+                    <p className="text-gray-600">support@samatvaawareness.in</p>
                     <p className="text-sm text-gray-500">We'll respond within 24 hours</p>
                   </div>
                 </div>

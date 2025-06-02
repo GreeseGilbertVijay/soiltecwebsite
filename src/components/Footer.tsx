@@ -1,10 +1,7 @@
-
 import { Link } from 'react-router-dom';
 import { Mail, Phone } from 'lucide-react';
-
 const Footer = () => {
-  return (
-    <footer className="bg-gray-900 text-white">
+  return <footer className="bg-gray-900 text-white">
       <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
@@ -18,11 +15,11 @@ const Footer = () => {
             <div className="flex items-center space-x-4">
               <div className="flex items-center space-x-2">
                 <Mail size={16} className="text-orange-500" />
-                <span className="text-sm text-gray-300">info@samatva.org</span>
+                <span className="text-sm text-gray-300">support@samatvaawareness.in</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Phone size={16} className="text-orange-500" />
-                <span className="text-sm text-gray-300">+91-XXXX-XXXXXX</span>
+                <span className="text-sm text-gray-300">+91 9606914500 / 9789511937</span>
               </div>
             </div>
           </div>
@@ -64,8 +61,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
