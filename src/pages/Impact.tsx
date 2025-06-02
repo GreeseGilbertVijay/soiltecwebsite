@@ -1,9 +1,55 @@
 
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { TrendingUp, Clock, Target, CheckCircle, BarChart3, CreditCard, Shield, AlertCircle } from 'lucide-react';
+import { Calculator, Home, Car, User, TrendingDown, TrendingUp } from 'lucide-react';
+import { useState } from 'react';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
 
-const Impact = () => {
+const Services = () => {
+  const [activeTab, setActiveTab] = useState('home');
+  const [loanAmount, setLoanAmount] = useState(5000000);
+  const [loanTenure, setLoanTenure] = useState(20);
+
+  // Calculate EMI based on interest rates for different credit scores
+  const calculateEMI = (principal: number, rate: number, tenure: number) => {
+    const monthlyRate = rate / (12 * 100);
+    const numberOfPayments = tenure * 12;
+    const emi = (principal * monthlyRate * Math.pow(1 + monthlyRate, numberOfPayments)) / 
+                (Math.pow(1 + monthlyRate, numberOfPayments) - 1);
+    return Math.round(emi);
+  };
+
+  const creditScoreData = {
+    low: {
+      rate: 16,
+      emi: calculateEMI(loanAmount, 16, loanTenure),
+      totalRepayment: calculateEMI(loanAmount, 16, loanTenure) * loanTenure * 12,
+      totalInterest: (calculateEMI(loanAmount, 16, loanTenure) * loanTenure * 12) - loanAmount,
+      lender: 'Housing Finance Companies (HFC)',
+      insight: 'Limited options due to low score'
+    },
+    moderate: {
+      rate: 14,
+      emi: calculateEMI(loanAmount, 14, loanTenure),
+      totalRepayment: calculateEMI(loanAmount, 14, loanTenure) * loanTenure * 12,
+      totalInterest: (calculateEMI(loanAmount, 14, loanTenure) * loanTenure * 12) - loanAmount,
+      lender: 'Small Private / Finance Banks',
+      insight: 'Moderate option with better rate'
+    },
+    high: {
+      rate: 9,
+      emi: calculateEMI(loanAmount, 9, loanTenure),
+      totalRepayment: calculateEMI(loanAmount, 9, loanTenure) * loanTenure * 12,
+      totalInterest: (calculateEMI(loanAmount, 9, loanTenure) * loanTenure * 12) - loanAmount,
+      lender: 'Top Private Sector Banks',
+      insight: 'Best option with strong credit'
+    }
+  };
+
+  const moderateVsLowSavings = creditScoreData.low.totalInterest - creditScoreData.moderate.totalInterest;
+  const highVsLowSavings = creditScoreData.low.totalInterest - creditScoreData.high.totalInterest;
+
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
@@ -12,343 +58,307 @@ const Impact = () => {
       <section className="bg-gradient-to-br from-slate-50 to-white py-24">
         <div className="max-w-6xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h1 className="text-5xl md:text-6xl font-light text-slate-900 mb-8 tracking-tight">
-            Credit Worthiness
-            <span className="block font-medium text-orange-500">Indicator</span>
+            Interactive Loan
+            <span className="block font-medium text-orange-500">Comparison</span>
           </h1>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-            Understanding your credit score and why it's important to have a good credit score
+          <p className="text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
+            Compare loan options across different credit scores and see potential savings in real-time. 
+            Adjust loan amount and tenure to visualize the impact on EMIs and total repayment.
           </p>
         </div>
       </section>
 
-      {/* What is Credit Score Section */}
-      <section className="py-20 bg-white">
+      {/* Loan Type Tabs */}
+      <section className="py-12 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl font-light text-slate-900 mb-8 text-center">
-              What Is Credit Score?
-            </h2>
-            <p className="text-lg text-slate-600 leading-relaxed text-center mb-16">
-              Credit Score is your creditworthiness, which is basically how well you have managed your loans, 
-              credit cards, buy now pay later facilities, overdraft or other credit lines
-            </p>
+          <div className="flex justify-center mb-12">
+            <div className="bg-slate-100 rounded-2xl p-2 flex space-x-2">
+              <button
+                onClick={() => setActiveTab('home')}
+                className={`flex items-center space-x-2 px-6 py-3 rounded-xl font-medium transition-all ${
+                  activeTab === 'home' 
+                    ? 'bg-blue-500 text-white shadow-lg' 
+                    : 'text-slate-600 hover:text-slate-900'
+                }`}
+              >
+                <Home size={20} />
+                <span>Home Loan</span>
+              </button>
+              <button
+                onClick={() => setActiveTab('auto')}
+                className={`flex items-center space-x-2 px-6 py-3 rounded-xl font-medium transition-all ${
+                  activeTab === 'auto' 
+                    ? 'bg-blue-500 text-white shadow-lg' 
+                    : 'text-slate-600 hover:text-slate-900'
+                }`}
+              >
+                <Car size={20} />
+                <span>Auto Loan</span>
+              </button>
+              <button
+                onClick={() => setActiveTab('personal')}
+                className={`flex items-center space-x-2 px-6 py-3 rounded-xl font-medium transition-all ${
+                  activeTab === 'personal' 
+                    ? 'bg-blue-500 text-white shadow-lg' 
+                    : 'text-slate-600 hover:text-slate-900'
+                }`}
+              >
+                <User size={20} />
+                <span>Personal Loan</span>
+              </button>
+            </div>
           </div>
+        </div>
+      </section>
 
-          {/* Credit Score Gauge */}
-          <div className="flex justify-center mb-20">
-            <div className="relative">
-              <div className="w-80 h-80 relative">
-                {/* Gauge Background */}
-                <svg className="w-full h-full transform -rotate-90" viewBox="0 0 200 200">
-                  {/* Poor - Red */}
-                  <path
-                    d="M 30 170 A 85 85 0 0 1 85 15"
-                    fill="none"
-                    stroke="#ef4444"
-                    strokeWidth="20"
-                    className="opacity-80"
+      {/* Calculator Section */}
+      <section className="py-16 bg-slate-50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Card className="bg-white shadow-xl border-0">
+            <CardHeader className="bg-slate-50 border-b">
+              <CardTitle className="flex items-center space-x-3 text-2xl font-light">
+                <Calculator className="text-blue-500" size={28} />
+                <span>Interactive {activeTab === 'home' ? 'Home' : activeTab === 'auto' ? 'Auto' : 'Personal'} Loan Calculator</span>
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="p-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <div>
+                  <label className="block text-slate-700 font-medium mb-3">Loan Amount (in ₹)</label>
+                  <input
+                    type="number"
+                    value={loanAmount}
+                    onChange={(e) => setLoanAmount(Number(e.target.value))}
+                    className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent text-lg"
+                    min="100000"
+                    max="50000000"
                   />
-                  {/* Average - Orange */}
-                  <path
-                    d="M 85 15 A 85 85 0 0 1 140 30"
-                    fill="none"
-                    stroke="#f97316"
-                    strokeWidth="20"
-                    className="opacity-80"
-                  />
-                  {/* Good - Yellow Green */}
-                  <path
-                    d="M 140 30 A 85 85 0 0 1 170 85"
-                    fill="none"
-                    stroke="#84cc16"
-                    strokeWidth="20"
-                    className="opacity-80"
-                  />
-                  {/* Very Good - Green */}
-                  <path
-                    d="M 170 85 A 85 85 0 0 1 170 115"
-                    fill="none"
-                    stroke="#22c55e"
-                    strokeWidth="20"
-                    className="opacity-80"
-                  />
-                  {/* Excellent - Dark Green */}
-                  <path
-                    d="M 170 115 A 85 85 0 0 1 140 170"
-                    fill="none"
-                    stroke="#16a34a"
-                    strokeWidth="20"
-                    className="opacity-80"
-                  />
-                  
-                  {/* Needle */}
-                  <line
-                    x1="100"
-                    y1="100"
-                    x2="100"
-                    y2="40"
-                    stroke="#1f2937"
-                    strokeWidth="4"
-                    strokeLinecap="round"
-                    className="drop-shadow-lg"
-                  />
-                  <circle cx="100" cy="100" r="8" fill="#1f2937" />
-                </svg>
+                  <div className="flex justify-between text-sm text-slate-500 mt-2">
+                    <span>Min: ₹1L</span>
+                    <span>Max: ₹5Cr</span>
+                  </div>
+                </div>
                 
-                {/* Score Labels */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-slate-900 mb-2">680-730</div>
-                    <div className="text-lg text-slate-600">GOOD</div>
+                <div>
+                  <label className="block text-slate-700 font-medium mb-3">Loan Tenure (Years)</label>
+                  <input
+                    type="number"
+                    value={loanTenure}
+                    onChange={(e) => setLoanTenure(Number(e.target.value))}
+                    className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent text-lg"
+                    min="1"
+                    max="30"
+                  />
+                  <div className="flex justify-between text-sm text-slate-500 mt-2">
+                    <span>Min: 1 yr</span>
+                    <span>Max: 30 yrs</span>
                   </div>
                 </div>
               </div>
               
-              {/* Gauge Labels */}
-              <div className="absolute top-8 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-medium">
-                POOR <br />350
-              </div>
-              <div className="absolute top-4 left-20 bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-medium">
-                AVERAGE <br />630-680
-              </div>
-              <div className="absolute top-8 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-medium">
-                EXCELLENT <br />730+
-              </div>
-            </div>
-          </div>
+              <Button 
+                className="w-full bg-blue-500 hover:bg-blue-600 text-white py-4 text-lg rounded-xl"
+                onClick={() => {/* Calculate functionality already handled by state */}}
+              >
+                Calculate
+              </Button>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
-      {/* CIBIL Ratings Table */}
-      <section className="py-20 bg-slate-50">
+      {/* Visual Comparison */}
+      <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-3xl shadow-xl overflow-hidden">
-            <div className="bg-orange-500 text-white p-6">
-              <h3 className="text-2xl font-semibold">Credit Score Impact on Loan Approval</h3>
-            </div>
-            
-            <div className="overflow-x-auto">
-              <table className="w-full">
-                <thead className="bg-orange-500 text-white">
-                  <tr>
-                    <th className="px-6 py-4 text-left font-semibold">CIBIL Ratings</th>
-                    <th className="px-6 py-4 text-left font-semibold">Credit Score</th>
-                    <th className="px-6 py-4 text-left font-semibold">Chances of being approved for a Personal Loan</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-slate-100">
-                  <tr className="hover:bg-slate-50 transition-colors">
-                    <td className="px-6 py-4 text-slate-900 font-medium">Poor</td>
-                    <td className="px-6 py-4 text-slate-600">Less than 630</td>
-                    <td className="px-6 py-4 text-slate-600">You will not qualify for a personal loan</td>
-                  </tr>
-                  <tr className="hover:bg-slate-50 transition-colors">
-                    <td className="px-6 py-4 text-slate-900 font-medium">Average</td>
-                    <td className="px-6 py-4 text-slate-600">630 - 680</td>
-                    <td className="px-6 py-4 text-slate-600">Loan may be approved, but at a higher interest rate</td>
-                  </tr>
-                  <tr className="hover:bg-slate-50 transition-colors">
-                    <td className="px-6 py-4 text-slate-900 font-medium">Good</td>
-                    <td className="px-6 py-4 text-slate-600">680 - 730</td>
-                    <td className="px-6 py-4 text-slate-600">Loan is likely to be approved with a high interest rate</td>
-                  </tr>
-                  <tr className="hover:bg-slate-50 transition-colors">
-                    <td className="px-6 py-4 text-slate-900 font-medium">Very Good</td>
-                    <td className="px-6 py-4 text-slate-600">730 - 780</td>
-                    <td className="px-6 py-4 text-slate-600">Loan with a moderate interest rate, larger loan amount</td>
-                  </tr>
-                  <tr className="hover:bg-slate-50 transition-colors">
-                    <td className="px-6 py-4 text-slate-900 font-medium">Excellent</td>
-                    <td className="px-6 py-4 text-slate-600">780 Above</td>
-                    <td className="px-6 py-4 text-slate-600">Loan with a very low interest rate, faster approval, larger loan amount</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Lender Assessment */}
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h3 className="text-3xl font-light text-slate-900 mb-6">How Lenders Use Your Credit Score</h3>
-            <p className="text-lg text-slate-600 leading-relaxed">
-              Lenders seek your credit score to assess the risk factor in lending to you, which is basically as follows:
-            </p>
-          </div>
+          <h2 className="text-3xl font-light text-slate-900 mb-12 text-center">Visual Comparison</h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-slate-50 rounded-2xl p-8 text-center">
-              <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                <CheckCircle className="text-white" size={32} />
-              </div>
-              <h4 className="text-xl font-semibold text-slate-900 mb-3">Loan Eligibility</h4>
-              <p className="text-slate-600">Whether they should lend to you or not</p>
+          {/* Interest Rates */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <div className="text-center">
+              <h3 className="text-lg font-medium text-slate-700 mb-4">Low Credit Score</h3>
+              <div className="text-4xl font-bold text-red-500 mb-2">{creditScoreData.low.rate}%</div>
+              <p className="text-slate-600">Interest Rate</p>
             </div>
-            
-            <div className="bg-slate-50 rounded-2xl p-8 text-center">
-              <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                <BarChart3 className="text-white" size={32} />
-              </div>
-              <h4 className="text-xl font-semibold text-slate-900 mb-3">Loan Terms</h4>
-              <p className="text-slate-600">If they want to lend, at what interest rates and loan terms should they lend to you</p>
+            <div className="text-center">
+              <h3 className="text-lg font-medium text-slate-700 mb-4">Moderate Credit Score</h3>
+              <div className="text-4xl font-bold text-orange-500 mb-2">{creditScoreData.moderate.rate}%</div>
+              <p className="text-slate-600">Interest Rate</p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Credit Score Calculation */}
-      <section className="py-20 bg-slate-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h3 className="text-3xl font-light text-slate-900 mb-8 text-center">How is my CIBIL score calculated?</h3>
-          <p className="text-lg text-slate-600 mb-12 text-center leading-relaxed">
-            As mentioned earlier, the credit bureaus use data from your credit history to calculate and arrive at your credit score.
-          </p>
-          
-          <div className="bg-white rounded-2xl shadow-lg p-8 mb-12">
-            <h4 className="text-xl font-semibold text-slate-900 mb-6">Factors that affect your credit score:</h4>
-            <div className="space-y-4">
-              {[
-                'Multiple Loan Enquiry/Applications',
-                'Having Multiple Credit Cards and Multiple Loans',
-                'High Usage of Available Credit card limit',
-                'Delayed Payments (Paid within the Same Month)',
-                'Missed Payments (Skipped by not paying within the same month)',
-                'Settled Accounts',
-                'Written-off Accounts'
-              ].map((factor, index) => (
-                <div key={index} className="flex items-center space-x-3">
-                  <div className="w-6 h-6 bg-orange-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
-                    {index + 1}
-                  </div>
-                  <p className="text-slate-700">{factor}</p>
-                </div>
-              ))}
+            <div className="text-center">
+              <h3 className="text-lg font-medium text-slate-700 mb-4">High Credit Score</h3>
+              <div className="text-4xl font-bold text-green-500 mb-2">{creditScoreData.high.rate}%</div>
+              <p className="text-slate-600">Interest Rate</p>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* Maintaining Good Credit */}
-      <section className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h3 className="text-4xl font-light text-slate-900 mb-6">
-              How Can I maintain 750+ Credit Score?
+          {/* Monthly EMI */}
+          <div className="mb-12">
+            <h3 className="text-2xl font-light text-slate-900 mb-6">Monthly EMI</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="bg-red-500 text-white p-6 rounded-2xl text-center">
+                <div className="text-2xl font-bold mb-2">₹{creditScoreData.low.emi.toLocaleString()}</div>
+                <div className="text-red-100">Low Credit</div>
+              </div>
+              <div className="bg-orange-500 text-white p-6 rounded-2xl text-center">
+                <div className="text-2xl font-bold mb-2">₹{creditScoreData.moderate.emi.toLocaleString()}</div>
+                <div className="text-orange-100">Moderate Credit</div>
+              </div>
+              <div className="bg-green-500 text-white p-6 rounded-2xl text-center">
+                <div className="text-2xl font-bold mb-2">₹{creditScoreData.high.emi.toLocaleString()}</div>
+                <div className="text-green-100">High Credit</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Total Repayment */}
+          <div className="mb-12">
+            <h3 className="text-2xl font-light text-slate-900 mb-6">Total Repayment</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="bg-red-500 text-white p-6 rounded-2xl">
+                <div className="text-xl font-bold mb-2">₹{(creditScoreData.low.totalRepayment / 10000000).toFixed(2)} Cr</div>
+                <div className="text-sm text-red-100 mb-3">Principal: ₹{(loanAmount / 10000000).toFixed(2)} Cr</div>
+                <div className="text-red-100">Low Credit</div>
+              </div>
+              <div className="bg-orange-500 text-white p-6 rounded-2xl">
+                <div className="text-xl font-bold mb-2">₹{(creditScoreData.moderate.totalRepayment / 10000000).toFixed(2)} Cr</div>
+                <div className="text-sm text-orange-100 mb-3">Principal: ₹{(loanAmount / 10000000).toFixed(2)} Cr</div>
+                <div className="text-orange-100">Moderate Credit</div>
+              </div>
+              <div className="bg-green-500 text-white p-6 rounded-2xl">
+                <div className="text-xl font-bold mb-2">₹{(creditScoreData.high.totalRepayment / 10000000).toFixed(2)} Cr</div>
+                <div className="text-sm text-green-100 mb-3">Principal: ₹{(loanAmount / 10000000).toFixed(2)} Cr</div>
+                <div className="text-green-100">High Credit</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Total Interest Paid */}
+          <div className="mb-12">
+            <h3 className="text-2xl font-light text-slate-900 mb-6">Total Interest Paid</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="bg-red-500 text-white p-6 rounded-2xl text-center">
+                <div className="text-xl font-bold mb-2">₹{(creditScoreData.low.totalInterest / 10000000).toFixed(2)} Cr</div>
+                <div className="text-red-100">Low Credit</div>
+              </div>
+              <div className="bg-orange-500 text-white p-6 rounded-2xl text-center">
+                <div className="text-xl font-bold mb-2">₹{(creditScoreData.moderate.totalInterest / 100000).toFixed(2)} L</div>
+                <div className="text-orange-100">Moderate Credit</div>
+              </div>
+              <div className="bg-green-500 text-white p-6 rounded-2xl text-center">
+                <div className="text-xl font-bold mb-2">₹{(creditScoreData.high.totalInterest / 100000).toFixed(2)} L</div>
+                <div className="text-green-100">High Credit</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Potential Savings */}
+          <div className="bg-blue-50 rounded-3xl p-8">
+            <h3 className="text-2xl font-light text-blue-900 mb-8 flex items-center">
+              <TrendingUp className="mr-3" />
+              Potential Savings
             </h3>
-            <p className="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
-              Maintaining a good credit score can be done easily by doing the following:
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div className="space-y-8">
-              <div className="bg-gradient-to-r from-blue-50 to-blue-100 rounded-2xl p-6">
-                <h4 className="text-xl font-semibold text-slate-900 mb-3">
-                  1. Pay Your Bills on Time
-                </h4>
-                <p className="text-slate-700 leading-relaxed">
-                  Timely payments have the biggest impact on your credit score. Set reminders or enable auto-debit to ensure 
-                  your credit card and loan EMIs are paid without delay.
-                </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="bg-white rounded-2xl p-6 border border-blue-100">
+                <h4 className="text-lg font-medium text-slate-700 mb-3">Moderate vs Low Credit</h4>
+                <div className="text-3xl font-bold text-orange-500 mb-2">₹{(moderateVsLowSavings / 100000).toFixed(2)} L</div>
               </div>
-              
-              <div className="bg-gradient-to-r from-green-50 to-green-100 rounded-2xl p-6">
-                <h4 className="text-xl font-semibold text-slate-900 mb-3">
-                  2. Keep Credit Utilization Low
-                </h4>
-                <p className="text-slate-700 leading-relaxed">
-                  Aim to use no more than 30% of your total credit limit. Using too much credit or maxing out your cards can hurt your credit score.
-                </p>
-                <div className="mt-4 p-4 bg-white rounded-lg">
-                  <p className="text-sm text-slate-600">
-                    <strong>Example:</strong> If you have 2 credit cards with Rs.50,000 and Rs.40,000 limits (total Rs.90,000), 
-                    keep usage below Rs.27,000 (30%).
-                  </p>
-                </div>
-              </div>
-              
-              <div className="bg-gradient-to-r from-purple-50 to-purple-100 rounded-2xl p-6">
-                <h4 className="text-xl font-semibold text-slate-900 mb-3">
-                  3. Limit New Credit Applications
-                </h4>
-                <p className="text-slate-700 leading-relaxed">
-                  Restrict new credit applications within a short span. Multiple inquiries can negatively impact your score 
-                  and signal credit dependency to lenders.
-                </p>
-              </div>
-            </div>
-            
-            <div className="space-y-8">
-              <div className="bg-gradient-to-r from-orange-50 to-orange-100 rounded-2xl p-6">
-                <h4 className="text-xl font-semibold text-slate-900 mb-3">
-                  4. Avoid Multiple Loans/Credit Cards
-                </h4>
-                <p className="text-slate-700 leading-relaxed">
-                  Having several loans or credit cards increases your repayment burden and risk of missed payments. 
-                  Lenders may see it as credit dependency.
-                </p>
-              </div>
-              
-              <div className="bg-gradient-to-r from-teal-50 to-teal-100 rounded-2xl p-6">
-                <h4 className="text-xl font-semibold text-slate-900 mb-3">
-                  5. Monitor Your Credit Report Regularly
-                </h4>
-                <p className="text-slate-700 leading-relaxed">
-                  Check your credit report regularly to ensure banks/NBFC have updated your repayment history correctly. 
-                  Dispute any errors promptly.
-                </p>
-              </div>
-              
-              <div className="bg-gradient-to-r from-slate-50 to-slate-100 rounded-2xl p-6 border-2 border-orange-500">
-                <div className="flex items-center space-x-3 mb-3">
-                  <Shield className="text-orange-500" size={24} />
-                  <h4 className="text-xl font-semibold text-slate-900">
-                    Samatva Can Help
-                  </h4>
-                </div>
-                <p className="text-slate-700 leading-relaxed">
-                  Our free credit counseling service can guide you through each of these steps, helping you maintain 
-                  and improve your credit score effectively.
-                </p>
+              <div className="bg-white rounded-2xl p-6 border border-blue-100">
+                <h4 className="text-lg font-medium text-slate-700 mb-3">High vs Low Credit</h4>
+                <div className="text-3xl font-bold text-green-500 mb-2">₹{(highVsLowSavings / 100000).toFixed(2)} L</div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Timeline Section */}
-      <section className="py-20 bg-slate-900 text-white">
+      {/* Comparison Table */}
+      <section className="py-16 bg-slate-50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Card className="bg-white shadow-xl border-0">
+            <CardHeader className="bg-slate-50 border-b">
+              <CardTitle className="flex items-center space-x-3 text-2xl font-light">
+                <Home className="text-blue-500" />
+                <span>{activeTab === 'home' ? 'Home' : activeTab === 'auto' ? 'Auto' : 'Personal'} Loan Comparison</span>
+              </CardTitle>
+              <p className="text-slate-600 mt-2">Compare {activeTab} loan options for different credit score ranges</p>
+            </CardHeader>
+            <CardContent className="p-0">
+              <div className="overflow-x-auto">
+                <table className="w-full">
+                  <thead className="bg-slate-50">
+                    <tr>
+                      <th className="px-6 py-4 text-left font-medium text-slate-700">Criteria</th>
+                      <th className="px-6 py-4 text-left font-medium text-slate-700">Low CIBIL Score (&lt;700)</th>
+                      <th className="px-6 py-4 text-left font-medium text-slate-700">Moderate CIBIL Score</th>
+                      <th className="px-6 py-4 text-left font-medium text-slate-700">High CIBIL Score (&gt;700)</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-slate-100">
+                    <tr className="hover:bg-slate-50">
+                      <td className="px-6 py-4 font-medium text-slate-900">Eligible Lender</td>
+                      <td className="px-6 py-4 text-slate-600">{creditScoreData.low.lender}</td>
+                      <td className="px-6 py-4 text-slate-600">{creditScoreData.moderate.lender}</td>
+                      <td className="px-6 py-4 text-slate-600">{creditScoreData.high.lender}</td>
+                    </tr>
+                    <tr className="hover:bg-slate-50">
+                      <td className="px-6 py-4 font-medium text-slate-900">Interest Rate</td>
+                      <td className="px-6 py-4 text-red-500 font-semibold">{creditScoreData.low.rate}%</td>
+                      <td className="px-6 py-4 text-orange-500 font-semibold">{creditScoreData.moderate.rate}%</td>
+                      <td className="px-6 py-4 text-green-500 font-semibold">{creditScoreData.high.rate}%</td>
+                    </tr>
+                    <tr className="hover:bg-slate-50">
+                      <td className="px-6 py-4 font-medium text-slate-900">EMI (for {loanTenure} years)</td>
+                      <td className="px-6 py-4 text-slate-600">₹{creditScoreData.low.emi.toLocaleString()}</td>
+                      <td className="px-6 py-4 text-slate-600">₹{creditScoreData.moderate.emi.toLocaleString()}</td>
+                      <td className="px-6 py-4 text-slate-600">₹{creditScoreData.high.emi.toLocaleString()}</td>
+                    </tr>
+                    <tr className="hover:bg-slate-50">
+                      <td className="px-6 py-4 font-medium text-slate-900">Total Repayment</td>
+                      <td className="px-6 py-4 text-slate-600">₹{(creditScoreData.low.totalRepayment / 10000000).toFixed(2)} Cr</td>
+                      <td className="px-6 py-4 text-slate-600">₹{(creditScoreData.moderate.totalRepayment / 10000000).toFixed(2)} Cr</td>
+                      <td className="px-6 py-4 text-slate-600">₹{(creditScoreData.high.totalRepayment / 10000000).toFixed(2)} Cr</td>
+                    </tr>
+                    <tr className="hover:bg-slate-50">
+                      <td className="px-6 py-4 font-medium text-slate-900">Total Interest Paid</td>
+                      <td className="px-6 py-4 text-slate-600">₹{(creditScoreData.low.totalInterest / 10000000).toFixed(2)} Cr</td>
+                      <td className="px-6 py-4 text-slate-600">₹{(creditScoreData.moderate.totalInterest / 100000).toFixed(2)} L</td>
+                      <td className="px-6 py-4 text-slate-600">₹{(creditScoreData.high.totalInterest / 100000).toFixed(2)} L</td>
+                    </tr>
+                    <tr className="hover:bg-slate-50">
+                      <td className="px-6 py-4 font-medium text-slate-900">Potential Savings vs HFC</td>
+                      <td className="px-6 py-4 text-slate-400">—</td>
+                      <td className="px-6 py-4 text-orange-500 font-semibold">₹{(moderateVsLowSavings / 100000).toFixed(2)} L</td>
+                      <td className="px-6 py-4 text-green-500 font-semibold">₹{(highVsLowSavings / 100000).toFixed(2)} L</td>
+                    </tr>
+                    <tr className="hover:bg-slate-50">
+                      <td className="px-6 py-4 font-medium text-slate-900">Key Insight</td>
+                      <td className="px-6 py-4 text-slate-600">{creditScoreData.low.insight}</td>
+                      <td className="px-6 py-4 text-slate-600">{creditScoreData.moderate.insight}</td>
+                      <td className="px-6 py-4 text-slate-600">{creditScoreData.high.insight}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Disclaimer */}
+      <section className="py-12 bg-blue-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-light mb-6">Timeline for Improvement</h2>
-          </div>
-          
-          <div className="bg-slate-800 rounded-3xl p-8">
-            <div className="flex items-center mb-6">
-              <div className="bg-orange-500 w-16 h-16 rounded-full flex items-center justify-center mr-6">
-                <Clock className="text-white" size={32} />
+          <div className="bg-white rounded-2xl p-8 border border-blue-100">
+            <div className="flex items-start space-x-3">
+              <div className="w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center flex-shrink-0 mt-1">
+                <span className="text-white text-sm font-bold">!</span>
               </div>
               <div>
-                <h3 className="text-3xl font-light mb-2">6 to 12 Months</h3>
-                <p className="text-slate-300 text-lg">Duration to improve your credit score</p>
-              </div>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
-              <div className="border-l-4 border-orange-500 pl-6">
-                <h4 className="text-xl font-semibold mb-3">Method</h4>
-                <p className="text-slate-300 leading-relaxed">
-                  Based on the timely repayment of the new loan that you avail
-                </p>
-              </div>
-              
-              <div className="border-l-4 border-blue-500 pl-6">
-                <h4 className="text-xl font-semibold mb-3">Strategy</h4>
-                <p className="text-slate-300 leading-relaxed">
-                  Getting a loan with a poor credit score is difficult, so it's always a good idea to improve your credit score before applying
+                <h3 className="text-lg font-medium text-slate-900 mb-3">Disclaimer</h3>
+                <p className="text-slate-600 leading-relaxed">
+                  The above comparison is for illustrative purposes only. Actual loan eligibility, interest rates, EMIs, 
+                  and terms are determined by individual lenders based on the applicant's credit profile, income, 
+                  employer category, and other underwriting criteria. All loan disbursals are subject to the lender's 
+                  policies and applicable regulations as prescribed by the Reserve Bank of India (RBI).
                 </p>
               </div>
             </div>
@@ -361,4 +371,4 @@ const Impact = () => {
   );
 };
 
-export default Impact;
+export default Services;
