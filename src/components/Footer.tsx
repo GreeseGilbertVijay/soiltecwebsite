@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="col-span-1 md:col-span-2">
-            <h3 className="text-2xl font-bold text-blue-400 mb-4">
+            <h3 className="text-2xl font-bold text-orange-500 mb-4">
               Samatva Awareness Solution Foundation
             </h3>
             <p className="text-gray-300 mb-4">
@@ -17,11 +17,11 @@ const Footer = () => {
             </p>
             <div className="flex items-center space-x-4">
               <div className="flex items-center space-x-2">
-                <Mail size={16} className="text-blue-400" />
+                <Mail size={16} className="text-orange-500" />
                 <span className="text-sm text-gray-300">info@samatva.org</span>
               </div>
               <div className="flex items-center space-x-2">
-                <Phone size={16} className="text-blue-400" />
+                <Phone size={16} className="text-orange-500" />
                 <span className="text-sm text-gray-300">+91-XXXX-XXXXXX</span>
               </div>
             </div>
@@ -31,10 +31,10 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              <li><Link to="/impact" className="text-gray-300 hover:text-blue-400 transition-colors">Impact</Link></li>
-              <li><Link to="/services" className="text-gray-300 hover:text-blue-400 transition-colors">Services</Link></li>
-              <li><Link to="/about" className="text-gray-300 hover:text-blue-400 transition-colors">About Us</Link></li>
-              <li><Link to="/faq" className="text-gray-300 hover:text-blue-400 transition-colors">FAQ</Link></li>
+              <li><Link to="/impact" className="text-gray-300 hover:text-orange-500 transition-colors">Impact</Link></li>
+              <li><Link to="/services" className="text-gray-300 hover:text-orange-500 transition-colors">Services</Link></li>
+              <li><Link to="/about" className="text-gray-300 hover:text-orange-500 transition-colors">About Us</Link></li>
+              <li><Link to="/faq" className="text-gray-300 hover:text-orange-500 transition-colors">FAQ</Link></li>
             </ul>
           </div>
 
