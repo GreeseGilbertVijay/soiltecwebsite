@@ -30,21 +30,7 @@ const Index = () => {
               <p className="text-xl md:text-2xl mb-8 text-slate-300 max-w-xl leading-relaxed">
                 We would like to help you succeed financially and are here for you every step of the way.
               </p>
-              <div className="flex flex-col sm:flex-row gap-6">
-                <Link 
-                  to="/contact" 
-                  className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-full font-semibold transition-all transform hover:scale-105 flex items-center justify-center gap-2 text-lg"
-                >
-                  Start Your Free Consultation
-                  <ArrowRight size={20} />
-                </Link>
-                <Link 
-                  to="/services" 
-                  className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white px-8 py-4 rounded-full font-semibold transition-all flex items-center justify-center text-lg"
-                >
-                  Learn More About Our Services
-                </Link>
-              </div>
+              
             </div>
 
             {/* Right Content - Impact Card */}
@@ -84,6 +70,21 @@ const Index = () => {
               Concept Incubated by IITM Research Park
             </p>
           </div>
+          <div className="flex flex-col sm:flex-row gap-6">
+                <Link 
+                  to="/contact" 
+                  className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-full font-semibold transition-all transform hover:scale-105 flex items-center justify-center gap-2 text-lg"
+                >
+                  Start Your Free Consultation
+                  <ArrowRight size={20} />
+                </Link>
+                <Link 
+                  to="/services" 
+                  className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white px-8 py-4 rounded-full font-semibold transition-all flex items-center justify-center text-lg"
+                >
+                  Learn More About Our Services
+                </Link>
+              </div>
         </div>
       </section>
 
