@@ -1,7 +1,9 @@
+
 import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { TrendingUp, ArrowRight } from 'lucide-react';
+
 const Index = () => {
   return <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
       <Navbar />
@@ -58,24 +60,25 @@ const Index = () => {
         </div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center">
+          <div className="text-center mb-16">
             <h2 className="text-5xl md:text-7xl font-bold mb-6">
               <span className="text-white block mb-4">Resolve DEBT</span>
               <span className="text-orange-500 block mb-8">Rebuild CREDIT</span>
             </h2>
-            <p className="text-2xl md:text-3xl text-orange-400 font-medium">
+            <p className="text-2xl md:text-3xl text-orange-400 font-medium mb-12">
               Concept Incubated by IITM Research Park
             </p>
           </div>
-          <div className="flex flex-col sm:flex-row gap-6">
-                <Link to="/contact" className="bg-orange-500 hover:bg-orange-600 text-white rounded-full font-semibold transition-all transform hover:scale-105 flex items-center justify-center gap-2 text-lg px-[38px] mx-[60px] py-[16px]">
-                  Start Your Free Consultation
-                  <ArrowRight size={20} />
-                </Link>
-                <Link to="/services" className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white px-8 py-4 rounded-full font-semibold transition-all flex items-center justify-center text-lg">
-                  Learn More About Our Services
-                </Link>
-              </div>
+          
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center max-w-4xl mx-auto">
+            <Link to="/contact" className="bg-orange-500 hover:bg-orange-600 text-white rounded-full font-semibold transition-all transform hover:scale-105 flex items-center justify-center gap-2 text-lg px-8 py-4 min-w-[280px]">
+              Start Your Free Consultation
+              <ArrowRight size={20} />
+            </Link>
+            <Link to="/services" className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white rounded-full font-semibold transition-all flex items-center justify-center text-lg px-8 py-4 min-w-[280px]">
+              Learn More About Our Services
+            </Link>
+          </div>
         </div>
       </section>
 
