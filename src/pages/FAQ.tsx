@@ -1,53 +1,38 @@
-
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-
 const FAQ = () => {
-  const faqs = [
-    {
-      question: "How long does it take to improve my credit score?",
-      answer: "It takes 6 to 12 months to improve your credit score based on the timely repayment of new loans that you avail."
-    },
-    {
-      question: "Can a poor credit score be improved?",
-      answer: "Yes, the good news is that a poor credit score is not permanent. You can always improve it by taking appropriate steps."
-    },
-    {
-      question: "Do you charge for your services?",
-      answer: "No, Samatva does not charge any fees from customers for its credit counselling service, unlike other counselling companies."
-    },
-    {
-      question: "Who is eligible for your services?",
-      answer: "Our services are for salaried customers who are currently employed."
-    },
-    {
-      question: "Can you help with settled accounts?",
-      answer: "Yes, Samatva will help, provided you have no more than two settled accounts."
-    },
-    {
-      question: "How do you help with settled accounts?",
-      answer: "Samatva assists customers in securing funding from an RBI-registered financial institution to clear overdue amounts on settled accounts only, thus improving their credit profile."
-    },
-    {
-      question: "Should I improve my credit before applying for loans?",
-      answer: "Yes, getting a loan with a poor credit score is difficult. It's always a good idea to improve your credit score before applying for a new loan or credit card."
-    },
-    {
-      question: "What makes Samatva different from other credit counseling companies?",
-      answer: "Samatva offers completely free services with no hidden fees, works only with RBI-registered financial institutions, and provides personalized support specifically for employed professionals."
-    },
-    {
-      question: "How does the credit improvement process work?",
-      answer: "We start with a free consultation, assess your financial situation, create a customized improvement plan, and provide ongoing support throughout your 6-12 month journey to better credit health."
-    },
-    {
-      question: "What if I have more than two settled accounts?",
-      answer: "Currently, our settlement account support service is available only for customers with no more than two settled accounts. However, we can still provide general credit counseling guidance."
-    }
-  ];
-
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+  const faqs = [{
+    question: "How long does it take to improve my credit score?",
+    answer: "It takes 6 to 12 months to improve your credit score based on the timely repayment of new loans that you avail."
+  }, {
+    question: "Can a poor credit score be improved?",
+    answer: "Yes, the good news is that a poor credit score is not permanent. You can always improve it by taking appropriate steps."
+  }, {
+    question: "Do you charge for your services?",
+    answer: "No, Samatva does not charge any fees from customers for its credit counselling service, unlike other counselling companies."
+  }, {
+    question: "Who is eligible for your services?",
+    answer: "Our services are for salaried customers who are currently employed."
+  }, {
+    question: "Can you help with settled accounts?",
+    answer: "Yes, Samatva will help, provided you have no more than two settled accounts."
+  }, {
+    question: "How do you help with settled accounts?",
+    answer: "Samatva assists customers in securing funding from an RBI-registered financial institution to clear overdue amounts on settled accounts only, thus improving their credit profile."
+  }, {
+    question: "Should I improve my credit before applying for loans?",
+    answer: "Yes, getting a loan with a poor credit score is difficult. It's always a good idea to improve your credit score before applying for a new loan or credit card."
+  }, {
+    question: "What makes Samatva different from other credit counseling companies?",
+    answer: "Samatva offers completely free services with no hidden fees, works only with RBI-registered financial institutions, and provides personalized support specifically for employed professionals."
+  }, {
+    question: "How does the credit improvement process work?",
+    answer: "We start with a free consultation, assess your financial situation, create a customized improvement plan, and provide ongoing support throughout your 6-12 month journey to better credit health."
+  }, {
+    question: "What if I have more than two settled accounts?",
+    answer: "Currently, our settlement account support service is available only for customers with no more than two settled accounts. However, we can still provide general credit counseling guidance."
+  }];
+  return <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
       <Navbar />
       
       {/* Hero Section */}
@@ -66,12 +51,7 @@ const FAQ = () => {
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-8">
-            {faqs.map((faq, index) => (
-              <div key={index} className="bg-white rounded-lg shadow-md p-6 border border-gray-200">
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">{faq.question}</h3>
-                <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
-              </div>
-            ))}
+            {faqs.map((faq, index) => {})}
           </div>
         </div>
       </section>
@@ -280,8 +260,6 @@ const FAQ = () => {
       </section>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default FAQ;
