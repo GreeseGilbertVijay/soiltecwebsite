@@ -1,35 +1,44 @@
 
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { TrendingUp, ArrowRight } from 'lucide-react';
 
-
-        #chatbotIframe {
-            width: 100%;
-            border: none;
-            overflow: hidden;
-            height: 0;
-            transition: height 0.3s ease-in-out;
-        }
-
- @media (max-width: 768px) {
-            #chatbotIframe {
-                height: 250px;
-            }
-
-    <script>
-
-        window.addEventListener("message", (event) => {
-            if (event.data?.type === "AUDIO_RECORDER_CLICKED") {
-                console.log("🔹 Adjusting iframe height:", event.data.data);
-                document.getElementById("chatbotIframe").style.height = `${event.data.data}`;
-            }
-        });
-    </script>
 const Index = () => {
+  useEffect(() => {
+    const handleMessage = (event: MessageEvent) => {
+      if (event.data?.type === "AUDIO_RECORDER_CLICKED") {
+        console.log("🔹 Adjusting iframe height:", event.data.data);
+        const iframe = document.getElementById("chatbotIframe") as HTMLIFrameElement;
+        if (iframe) {
+          iframe.style.height = `${event.data.data}`;
+        }
+      }
+    };
+
+    window.addEventListener("message", handleMessage);
+    return () => window.removeEventListener("message", handleMessage);
+  }, []);
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+      <style>{`
+        #chatbotIframe {
+          width: 100%;
+          border: none;
+          overflow: hidden;
+          height: 0;
+          transition: height 0.3s ease-in-out;
+        }
+
+        @media (max-width: 768px) {
+          #chatbotIframe {
+            height: 250px;
+          }
+        }
+      `}</style>
+      
       <Navbar />
       
       {/* Hero Section */}
