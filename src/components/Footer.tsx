@@ -6,10 +6,6 @@ import { useLanguage } from '@/contexts/LanguageContext';
 const Footer = () => {
   const { t } = useLanguage();
 
-  // Safety check for company name to prevent undefined errors
-  const companyName = t('company.name') || 'Samatva Awareness';
-  const companyNameParts = companyName.split(' ');
-
   return (
     <footer className="bg-slate-900 text-white border-t border-slate-700">
       <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
@@ -17,18 +13,11 @@ const Footer = () => {
           {/* Company Info */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-3 mb-6">
-              <div className="text-2xl font-bold">
-                <span className="text-blue-400">SA</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-orange-500 font-bold text-lg leading-tight">
-                  {companyNameParts[0]?.toUpperCase() || 'SAMATVA'}
-                </span>
-                <span className="text-orange-500 font-bold text-lg leading-tight">
-                  {companyNameParts[1]?.toUpperCase() || 'AWARENESS'}
-                </span>
-                <span className="text-orange-300 text-xs font-medium">{t('company.tagline') || 'REBUILD CREDIT, REGAIN YOUR FUTURE'}</span>
-              </div>
+              <img 
+                src="/lovable-uploads/c24581a1-d607-4b4e-a879-875a8504cb45.png" 
+                alt="Samatva Awareness" 
+                className="h-16 w-auto"
+              />
             </div>
             <p className="text-slate-300 mb-6 leading-relaxed">
               {t('footer.mission') || 'Our mission is to empower individuals with expert financial guidance and essential resources to build, strengthen, and sustain a resilient credit profile—laying the foundation for lasting financial well-being and opportunity.'}

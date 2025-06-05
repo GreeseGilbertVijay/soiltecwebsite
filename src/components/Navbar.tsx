@@ -27,15 +27,12 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Link to="/" className="flex items-center space-x-3">
-              <div className="text-3xl font-bold">
-                <span className="text-blue-400">SA</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-orange-500 font-bold text-lg leading-tight">SAMATVA</span>
-                <span className="text-orange-500 font-bold text-lg leading-tight">AWARENESS</span>
-                <span className="text-orange-300 text-xs font-medium">{t('company.tagline')}</span>
-              </div>
+            <Link to="/" className="flex items-center">
+              <img 
+                src="/lovable-uploads/c24581a1-d607-4b4e-a879-875a8504cb45.png" 
+                alt="Samatva Awareness" 
+                className="h-12 w-auto"
+              />
             </Link>
           </div>
           
