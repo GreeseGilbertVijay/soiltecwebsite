@@ -5,7 +5,8 @@ import Footer from '@/components/Footer';
 import { TrendingUp, ArrowRight } from 'lucide-react';
 
 const Index = () => {
-  return <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
       <Navbar />
       
       {/* Hero Section */}
@@ -82,8 +83,6 @@ const Index = () => {
         </div>
       </section>
 
-     
-
       {/* Trust Builders */}
       <section className="py-20 bg-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -114,29 +113,30 @@ const Index = () => {
           </div>
         </div>
       </section>
-      {/* video & sabd */}
- <section class="pt-3 pb-3 text-center">
-        <div class="container pt-0 pb-0 pt-lg-5 pb-lg-5 video-wrapper" style="position: relative;">
-            <video id="myVideo" class="conactContent" width="100%" height="600px" poster="img/video-poster2.png">
-                <source src="img/samatvaawareness.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <button id="playBtn" aria-label="Play Video">
-                <img src="img/play-icon.png" alt="Play" />
-            </button>
+
+      {/* Video & SABD */}
+      <section className="pt-3 pb-3 text-center">
+        <div className="container pt-0 pb-0 pt-lg-5 pb-lg-5 video-wrapper" style={{position: 'relative'}}>
+          <video id="myVideo" className="conactContent" width="100%" height="600px" poster="img/video-poster2.png">
+            <source src="img/samatvaawareness.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <button id="playBtn" aria-label="Play Video">
+            <img src="img/play-icon.png" alt="Play" />
+          </button>
         </div>
-    </section>
+      </section>
 
-    <section class="pt-2 pb-2 3 pt-lg-5">
-        <iframe id="chatbotIframe"
-            src="https://shabd.tech/widget/chatpage?name=samatva&authKey=afd9a6b4-03fd-11f0-aabd-047c1692d8ad"
-            allow="microphone"
-            sandbox="allow-scripts allow-same-origin allow-modals allow-forms allow-popups allow-presentation allow-downloads allow-pointer-lock allow-top-navigation allow-top-navigation-by-user-activation"
-            style="width: 100%;border: none; overflow: hidden; transition: height 0.3s ease-in-out;">
-        </iframe>
-    </section>
+      <section className="pt-2 pb-2 3 pt-lg-5">
+        <iframe 
+          id="chatbotIframe"
+          src="https://shabd.tech/widget/chatpage?name=samatva&authKey=afd9a6b4-03fd-11f0-aabd-047c1692d8ad"
+          allow="microphone"
+          sandbox="allow-scripts allow-same-origin allow-modals allow-forms allow-popups allow-presentation allow-downloads allow-pointer-lock allow-top-navigation allow-top-navigation-by-user-activation"
+          style={{width: '100%', border: 'none', overflow: 'hidden', transition: 'height 0.3s ease-in-out'}}
+        />
+      </section>
 
-    
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-br from-orange-600 to-orange-500">
         <div className="max-w-5xl mx-auto text-center px-4 sm:px-6 lg:px-8">
@@ -154,6 +154,8 @@ const Index = () => {
       </section>
 
       <Footer />
-    </div>;
+    </div>
+  );
 };
+
 export default Index;
