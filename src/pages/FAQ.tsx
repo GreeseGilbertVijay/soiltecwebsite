@@ -1,3 +1,4 @@
+
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 const FAQ = () => {
@@ -51,7 +52,12 @@ const FAQ = () => {
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-8">
-            {faqs.map((faq, index) => {})}
+            {faqs.map((faq, index) => (
+              <div key={index} className="bg-white rounded-lg shadow-md p-6 border border-gray-200">
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">{faq.question}</h3>
+                <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
