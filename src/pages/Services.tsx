@@ -3,8 +3,11 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { HeartHandshake, Users, CheckCircle, UserCheck } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Services = () => {
+  const { t } = useLanguage();
+
   return (
     <div className="min-h-screen bg-gray-50">
       <Navbar />
@@ -13,10 +16,10 @@ const Services = () => {
       <section className="bg-gradient-to-br from-blue-900 to-blue-700 text-white py-16">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            Our Credit Counseling Services
+            {t('services.title')}
           </h1>
           <p className="text-xl text-blue-100">
-            Professional, free, and personalized financial solutions
+            {t('services.subtitle')}
           </p>
         </div>
       </section>
@@ -31,30 +34,30 @@ const Services = () => {
               <div className="bg-green-600 w-16 h-16 rounded-full flex items-center justify-center mb-6">
                 <HeartHandshake className="text-white" size={32} />
               </div>
-              <h3 className="text-2xl font-semibold mb-4 text-gray-900">Free Consultation</h3>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900">{t('services.freeConsultation.title')}</h3>
               
               <div className="space-y-4">
                 <div className="flex items-start space-x-3">
                   <CheckCircle className="text-green-600 mt-1" size={20} />
                   <div>
-                    <h4 className="font-semibold text-gray-900">No Hidden Fees</h4>
-                    <p className="text-gray-600 text-sm">Unlike other counselling companies, we provide completely free credit counseling</p>
+                    <h4 className="font-semibold text-gray-900">{t('services.freeConsultation.noFees')}</h4>
+                    <p className="text-gray-600 text-sm">{t('services.freeConsultation.noFeesDesc')}</p>
                   </div>
                 </div>
                 
                 <div className="flex items-start space-x-3">
                   <CheckCircle className="text-green-600 mt-1" size={20} />
                   <div>
-                    <h4 className="font-semibold text-gray-900">Professional Guidance</h4>
-                    <p className="text-gray-600 text-sm">Expert advice on improving your financial situation</p>
+                    <h4 className="font-semibold text-gray-900">{t('services.freeConsultation.guidance')}</h4>
+                    <p className="text-gray-600 text-sm">{t('services.freeConsultation.guidanceDesc')}</p>
                   </div>
                 </div>
                 
                 <div className="flex items-start space-x-3">
                   <CheckCircle className="text-green-600 mt-1" size={20} />
                   <div>
-                    <h4 className="font-semibold text-gray-900">Personalized Plans</h4>
-                    <p className="text-gray-600 text-sm">Customized strategies based on your specific needs</p>
+                    <h4 className="font-semibold text-gray-900">{t('services.freeConsultation.plans')}</h4>
+                    <p className="text-gray-600 text-sm">{t('services.freeConsultation.plansDesc')}</p>
                   </div>
                 </div>
               </div>
@@ -136,10 +139,10 @@ const Services = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              Our 5-Step Process
+              {t('services.process')}
             </h2>
             <p className="text-lg text-gray-600">
-              A structured approach to improving your financial health
+              {t('services.processDesc')}
             </p>
           </div>
           
@@ -169,7 +172,7 @@ const Services = () => {
       <section className="py-16 bg-gradient-to-r from-blue-800 to-blue-900 text-white">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Ready to Get Started?
+            {t('services.readyToStart')}
           </h2>
           <p className="text-xl mb-8 text-blue-100">
             Take the first step towards better financial health today
@@ -178,7 +181,7 @@ const Services = () => {
             to="/contact" 
             className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors transform hover:scale-105 inline-block"
           >
-            Schedule Your Free Consultation
+            {t('services.scheduleConsultation')}
           </Link>
         </div>
       </section>

@@ -1,18 +1,24 @@
+
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Mail, Phone, Clock, CheckCircle } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
+
 const Contact = () => {
-  return <div className="min-h-screen bg-gray-50">
+  const { t } = useLanguage();
+
+  return (
+    <div className="min-h-screen bg-gray-50">
       <Navbar />
       
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-blue-900 to-blue-700 text-white py-16">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            Get Started Today
+            {t('contact.title')}
           </h1>
           <p className="text-xl text-blue-100">
-            Ready to transform your financial future? We're here to help you every step of the way.
+            {t('contact.subtitle')}
           </p>
         </div>
       </section>
@@ -24,7 +30,7 @@ const Contact = () => {
             
             {/* Contact Details */}
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-8">Contact Information</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-8">{t('contact.contactInfo')}</h2>
               
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
@@ -32,9 +38,9 @@ const Contact = () => {
                     <Mail className="text-white" size={24} />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900">Email Us</h3>
+                    <h3 className="text-lg font-semibold text-gray-900">{t('contact.email')}</h3>
                     <p className="text-gray-600">support@samatvaawareness.in</p>
-                    <p className="text-sm text-gray-500">We'll respond within 24 hours</p>
+                    <p className="text-sm text-gray-500">{t('contact.emailDesc')}</p>
                   </div>
                 </div>
 
@@ -43,9 +49,9 @@ const Contact = () => {
                     <Phone className="text-white" size={24} />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900">Call Us</h3>
+                    <h3 className="text-lg font-semibold text-gray-900">{t('contact.call')}</h3>
                     <p className="text-gray-600">+91 9606914500 / 9789511937</p>
-                    <p className="text-sm text-gray-500">Monday - Friday, 9 AM - 6 PM</p>
+                    <p className="text-sm text-gray-500">{t('contact.callDesc')}</p>
                   </div>
                 </div>
 
@@ -54,7 +60,7 @@ const Contact = () => {
                     <Clock className="text-white" size={24} />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900">Business Hours</h3>
+                    <h3 className="text-lg font-semibold text-gray-900">{t('contact.hours')}</h3>
                     <p className="text-gray-600">Monday - Friday: 9:00 AM - 6:00 PM</p>
                     <p className="text-gray-600">Saturday: 10:00 AM - 4:00 PM</p>
                     <p className="text-gray-600">Sunday: Closed</p>
@@ -64,7 +70,7 @@ const Contact = () => {
 
               {/* Service Areas */}
               <div className="mt-12">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Service Areas</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">{t('contact.serviceAreas')}</h3>
                 <div className="grid grid-cols-2 gap-4">
                   <div className="bg-blue-50 p-4 rounded-lg">
                     <h4 className="font-semibold text-gray-900">Credit Score Improvement</h4>
@@ -84,35 +90,17 @@ const Contact = () => {
 
             {/* Next Steps */}
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-8">Next Steps</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-8">{t('contact.nextSteps')}</h2>
               
               <div className="space-y-6">
-                {[{
-                step: 1,
-                title: "Free Consultation",
-                description: "Schedule your no-cost credit counseling session",
-                color: "bg-blue-600"
-              }, {
-                step: 2,
-                title: "Assessment",
-                description: "We'll evaluate your current financial situation",
-                color: "bg-green-600"
-              }, {
-                step: 3,
-                title: "Custom Plan",
-                description: "Receive a personalized improvement strategy",
-                color: "bg-purple-600"
-              }, {
-                step: 4,
-                title: "Implementation",
-                description: "Begin your 6-12 month improvement journey",
-                color: "bg-orange-600"
-              }, {
-                step: 5,
-                title: "Ongoing Support",
-                description: "Continuous guidance until you achieve your goals",
-                color: "bg-red-600"
-              }].map((item, index) => <div key={index} className="flex items-start space-x-4">
+                {[
+                  { step: 1, title: "Free Consultation", description: "Schedule your no-cost credit counseling session", color: "bg-blue-600" },
+                  { step: 2, title: "Assessment", description: "We'll evaluate your current financial situation", color: "bg-green-600" },
+                  { step: 3, title: "Custom Plan", description: "Receive a personalized improvement strategy", color: "bg-purple-600" },
+                  { step: 4, title: "Implementation", description: "Begin your 6-12 month improvement journey", color: "bg-orange-600" },
+                  { step: 5, title: "Ongoing Support", description: "Continuous guidance until you achieve your goals", color: "bg-red-600" }
+                ].map((item, index) => (
+                  <div key={index} className="flex items-start space-x-4">
                     <div className={`${item.color} text-white w-10 h-10 rounded-full flex items-center justify-center font-bold flex-shrink-0`}>
                       {item.step}
                     </div>
@@ -120,17 +108,20 @@ const Contact = () => {
                       <h3 className="text-lg font-semibold text-gray-900">{item.title}</h3>
                       <p className="text-gray-600">{item.description}</p>
                     </div>
-                  </div>)}
+                  </div>
+                ))}
               </div>
 
               {/* Trust Indicators */}
               <div className="mt-12 bg-gray-50 p-6 rounded-lg">
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">Why Choose Us?</h3>
                 <div className="space-y-3">
-                  {["RBI-Registered Institution Partners", "Completely Free Service", "6-12 Month Proven Results", "Professional Credit Counselors"].map((item, index) => <div key={index} className="flex items-center space-x-3">
+                  {["RBI-Registered Institution Partners", "Completely Free Service", "6-12 Month Proven Results", "Professional Credit Counselors"].map((item, index) => (
+                    <div key={index} className="flex items-center space-x-3">
                       <CheckCircle className="text-green-600" size={20} />
                       <span className="text-gray-700">{item}</span>
-                    </div>)}
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
@@ -142,23 +133,25 @@ const Contact = () => {
       <section className="py-16 bg-gradient-to-r from-blue-800 to-blue-900 text-white">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Take the First Step Today
+            {t('contact.takeFirstStep')}
           </h2>
           <p className="text-xl mb-8 text-blue-100">
             Your journey to better financial health starts with a simple conversation
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="mailto:info@samatva.org" className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors transform hover:scale-105">
-              Start Your Free Consultation
+              {t('contact.startConsultation')}
             </a>
             <a href="tel:+91-XXXX-XXXXXX" className="border-2 border-white text-white hover:bg-white hover:text-blue-800 px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
-              Call Now
+              {t('contact.callNow')}
             </a>
           </div>
         </div>
       </section>
 
       <Footer />
-    </div>;
+    </div>
+  );
 };
+
 export default Contact;

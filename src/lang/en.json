@@ -8,6 +8,30 @@
     "faq": "FAQs",
     "contact": "Contact Us"
   },
+  "home": {
+    "hero": {
+      "title": "Rebuild Your Credit, Reclaim Your Future",
+      "subtitle": "Expert guidance to improve your credit score and unlock better financial opportunities",
+      "cta": "Get Free Consultation",
+      "learnMore": "Learn More"
+    },
+    "features": {
+      "title": "Why Choose Samatva Awareness?",
+      "subtitle": "Professional credit counseling services designed to transform your financial future",
+      "free": {
+        "title": "Completely Free Service",
+        "description": "Unlike other counseling companies, we provide 100% free credit counseling services"
+      },
+      "professional": {
+        "title": "Expert Guidance",
+        "description": "Our team of experienced credit counselors will guide you through every step"
+      },
+      "results": {
+        "title": "Proven Results",
+        "description": "6-12 month improvement timeline with our structured approach"
+      }
+    }
+  },
   "faq": {
     "title": "Frequently Asked Questions",
     "subtitle": "Find answers to common questions about our services",
@@ -26,7 +50,70 @@
       }
     ]
   },
+  "contact": {
+    "title": "Get Started Today",
+    "subtitle": "Ready to transform your financial future? We're here to help you every step of the way.",
+    "contactInfo": "Contact Information",
+    "email": "Email Us",
+    "emailDesc": "We'll respond within 24 hours",
+    "call": "Call Us",
+    "callDesc": "Monday - Friday, 9 AM - 6 PM",
+    "hours": "Business Hours",
+    "serviceAreas": "Service Areas",
+    "nextSteps": "Next Steps",
+    "takeFirstStep": "Take the First Step Today",
+    "startConsultation": "Start Your Free Consultation",
+    "callNow": "Call Now"
+  },
+  "services": {
+    "title": "Our Credit Counseling Services",
+    "subtitle": "Professional, free, and personalized financial solutions",
+    "freeConsultation": {
+      "title": "Free Consultation",
+      "noFees": "No Hidden Fees",
+      "noFeesDesc": "Unlike other counselling companies, we provide completely free credit counseling",
+      "guidance": "Professional Guidance",
+      "guidanceDesc": "Expert advice on improving your financial situation",
+      "plans": "Personalized Plans",
+      "plansDesc": "Customized strategies based on your specific needs"
+    },
+    "process": "Our 5-Step Process",
+    "processDesc": "A structured approach to improving your financial health",
+    "readyToStart": "Ready to Get Started?",
+    "scheduleConsultation": "Schedule Your Free Consultation"
+  },
+  "about": {
+    "title": "About Samatva Awareness",
+    "subtitle": "Empowering financial futures through expert credit counseling",
+    "mission": "Our Mission",
+    "missionDesc": "To empower individuals with expert financial guidance and essential resources to build, strengthen, and sustain a resilient credit profile—laying the foundation for lasting financial well-being and opportunity."
+  },
+  "creditHealth": {
+    "title": "Understanding Credit Health",
+    "subtitle": "Learn how to build and maintain a strong credit profile",
+    "importance": "Why Credit Health Matters",
+    "improvementSteps": "Steps to Improve Your Credit"
+  },
+  "impact": {
+    "title": "Our Impact",
+    "subtitle": "Real results for real people",
+    "stats": {
+      "customers": "Customers Helped",
+      "improvement": "Average Score Improvement",
+      "success": "Success Rate"
+    }
+  },
   "company": {
-    "tagline": "REBUILD CREDIT, REGAIN YOUR FUTURE"
+    "tagline": "REBUILD CREDIT, REGAIN YOUR FUTURE",
+    "name": "Samatva Awareness"
+  },
+  "footer": {
+    "quickLinks": "Quick Links",
+    "contactInfo": "Contact Info",
+    "address": "Address",
+    "phone": "Phone Numbers",
+    "mission": "Our mission is to empower individuals with expert financial guidance and essential resources to build, strengthen, and sustain a resilient credit profile—laying the foundation for lasting financial well-being and opportunity.",
+    "copyright": "© 2024 Samatva Awareness Solution Foundation. All rights reserved.",
+    "rbiNote": "RBI-Registered Financial Institution Partners | Completely Free Service"
   }
 }
