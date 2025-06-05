@@ -1,12 +1,9 @@
-
 import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { TrendingUp, ArrowRight } from 'lucide-react';
-
 const Index = () => {
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+  return <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
       <Navbar />
       
       {/* Hero Section */}
@@ -70,18 +67,12 @@ const Index = () => {
               Concept Incubated by IITM Research Park
             </p>
           </div>
-          <div className="flex flex-col sm:flex-row gap-6 align:center">
-                <Link 
-                  to="/contact" 
-                  className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-full font-semibold transition-all transform hover:scale-105 flex items-center justify-center gap-2 text-lg"
-                >
+          <div className="flex flex-col sm:flex-row gap-6">
+                <Link to="/contact" className="bg-orange-500 hover:bg-orange-600 text-white rounded-full font-semibold transition-all transform hover:scale-105 flex items-center justify-center gap-2 text-lg px-[38px] mx-[60px] py-[16px]">
                   Start Your Free Consultation
                   <ArrowRight size={20} />
                 </Link>
-                <Link 
-                  to="/services" 
-                  className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white px-8 py-4 rounded-full font-semibold transition-all flex items-center justify-center text-lg"
-                >
+                <Link to="/services" className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white px-8 py-4 rounded-full font-semibold transition-all flex items-center justify-center text-lg">
                   Learn More About Our Services
                 </Link>
               </div>
@@ -190,10 +181,7 @@ const Index = () => {
           <p className="text-xl mb-10 text-orange-100 max-w-3xl mx-auto">
             Start your journey to better credit health today with our free consultation
           </p>
-          <Link 
-            to="/contact" 
-            className="bg-white text-orange-600 hover:bg-orange-50 px-10 py-5 rounded-full font-bold text-xl transition-all transform hover:scale-105 inline-flex items-center gap-3 shadow-2xl"
-          >
+          <Link to="/contact" className="bg-white text-orange-600 hover:bg-orange-50 px-10 py-5 rounded-full font-bold text-xl transition-all transform hover:scale-105 inline-flex items-center gap-3 shadow-2xl">
             Get Professional Help Now
             <ArrowRight size={24} />
           </Link>
@@ -201,8 +189,6 @@ const Index = () => {
       </section>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
