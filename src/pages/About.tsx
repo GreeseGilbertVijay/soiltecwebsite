@@ -1,12 +1,9 @@
-
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Target, Users, Shield, TrendingUp, Linkedin } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
-
 const About = () => {
-  return (
-    <div className="min-h-screen bg-gray-50">
+  return <div className="min-h-screen bg-gray-50">
       <Navbar />
       
       {/* Hero Section */}
@@ -56,15 +53,18 @@ const About = () => {
             <p className="text-lg text-orange-600 font-semibold mt-6">
               This concept has been incubated by IIT Madras Research Park.
             </p>
-            <p className="text-lg text-gray-700 mb-6">
-              Our advisory board includes three retired senior bankers, as well as one of the <span className="font-semibold text-gray-900">original co-founders of this concept in the USA</span>.
-            </p>
-            <p className="text-lg text-gray-700">
-              We are also privileged to have a retired senior employee who served with the regulator for <span className="font-semibold text-gray-900">25+years</span>, on our advisory board.
-            </p>
+             <p className="text-lg text-gray-700 mb-6">
+                Our advisory board includes three retired senior bankers, as well as one of the <span className="font-semibold text-gray-900">original co-founders of this concept in the USA</span>.
+              </p>
+              <p className="text-lg text-gray-700">
+                We are also privileged to have a retired senior employee who served with the regulator for <span className="font-semibold text-gray-900">25+years</span>, on our advisory board.
+              </p>
+            
           </div>
-        </div>
-      </section>
+
+ 
+
+         
 
       {/* Management Team Section */}
       <section className="py-20 bg-gray-50">
@@ -222,8 +222,6 @@ const About = () => {
       </section>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default About;
