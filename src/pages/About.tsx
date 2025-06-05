@@ -53,6 +53,9 @@ const About = () => {
             <p className="text-lg text-orange-600 font-semibold mt-6">
               This concept has been incubated by IIT Madras Research Park.
             </p>
+              <p className="text-xl text-gray-700 max-w-5xl mx-auto leading-relaxed">
+            Our advisory board includes three retired senior bankers, as well as one of the <span className="font-semibold text-gray-900">original co-founders of this concept in the USA</span>.
+            </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
