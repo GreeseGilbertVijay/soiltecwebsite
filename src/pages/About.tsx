@@ -65,35 +65,7 @@ const About = () => {
  
 
           {/* Life Challenges Section */}
-          <div className="bg-gradient-to-r from-orange-50 to-yellow-50 rounded-3xl p-12 mb-16">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <h3 className="text-4xl font-bold text-gray-900 mb-6">
-                  <span className="text-orange-500">Life</span> can get tough, and sometimes,
-                </h3>
-                <h3 className="text-4xl font-bold text-gray-900 mb-6">
-                  paying back loans on time can be <span className="text-orange-500">hard</span>.
-                </h3>
-                <p className="text-lg text-gray-700 leading-relaxed">
-                  People sometimes lose their jobs or have some personal emergencies and unable to pay the loan EMI's on time. This will impact the credit score. A lower credit score makes it difficult to take a loan again in the future.
-                </p>
-              </div>
-              <div className="flex justify-center">
-                <div className="bg-white rounded-2xl shadow-xl p-8 max-w-sm">
-                  <div className="text-center">
-                    <div className="bg-orange-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <Shield className="text-orange-600" size={40} />
-                    </div>
-                    <h4 className="text-2xl font-bold text-gray-900 mb-2">DEBT</h4>
-                    <h4 className="text-2xl font-bold text-gray-900">COUNSELLING</h4>
-                    <div className="mt-4 text-orange-500">
-                      <TrendingUp size={32} className="mx-auto" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          
         </div>
       </section>
 
