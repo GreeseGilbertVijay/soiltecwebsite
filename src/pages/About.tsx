@@ -62,10 +62,98 @@ const About = () => {
             
           </div>
 
- 
+  {/* Core Value Propositions */}
+      <section className="py-20 bg-slate-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Why Choose <span className="text-orange-500">Samatva?</span>
+            </h2>
+            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+              We offer unique advantages that set us apart from other credit counseling companies
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="text-center p-8 rounded-2xl bg-gradient-to-br from-slate-800 to-slate-700 hover:from-slate-700 hover:to-slate-600 transition-all group hover:scale-105 border border-slate-600">
+              <div className="bg-green-600 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-green-500 transition-colors">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold mb-4 text-white">Free Credit Counseling</h3>
+              <p className="text-slate-300 leading-relaxed">
+                Samatva does not charge any fees from customers for its credit counselling service
+              </p>
+            </div>
+
+            <div className="text-center p-8 rounded-2xl bg-gradient-to-br from-slate-800 to-slate-700 hover:from-slate-700 hover:to-slate-600 transition-all group hover:scale-105 border border-slate-600">
+              <div className="bg-blue-600 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-500 transition-colors">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold mb-4 text-white">RBI-Registered Partners</h3>
+              <p className="text-slate-300 leading-relaxed">
+                Samatva assists customers in securing funding from RBI-registered institutions
+              </p>
+            </div>
+
+            <div className="text-center p-8 rounded-2xl bg-gradient-to-br from-slate-800 to-slate-700 hover:from-slate-700 hover:to-slate-600 transition-all group hover:scale-105 border border-slate-600">
+              <div className="bg-purple-600 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-purple-500 transition-colors">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold mb-4 text-white">Specialized Support</h3>
+              <p className="text-slate-300 leading-relaxed">
+                Services designed for salaried customers who are currently employed
+              </p>
+            </div>
+
+            <div className="text-center p-8 rounded-2xl bg-gradient-to-br from-slate-800 to-slate-700 hover:from-slate-700 hover:to-slate-600 transition-all group hover:scale-105 border border-slate-600">
+              <div className="bg-orange-600 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-orange-500 transition-colors">
+                <TrendingUp className="text-white" size={32} />
+              </div>
+              <h3 className="text-2xl font-bold mb-4 text-white">Settlement Account Support</h3>
+              <p className="text-slate-300 leading-relaxed">
+                Samatva will help, provided you have no more than two settled accounts
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
           {/* Life Challenges Section */}
-          
+          <div className="bg-gradient-to-r from-orange-50 to-yellow-50 rounded-3xl p-12 mb-16">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <h3 className="text-4xl font-bold text-gray-900 mb-6">
+                  <span className="text-orange-500">Life</span> can get tough, and sometimes,
+                </h3>
+                <h3 className="text-4xl font-bold text-gray-900 mb-6">
+                  paying back loans on time can be <span className="text-orange-500">hard</span>.
+                </h3>
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  People sometimes lose their jobs or have some personal emergencies and unable to pay the loan EMI's on time. This will impact the credit score. A lower credit score makes it difficult to take a loan again in the future.
+                </p>
+              </div>
+              <div className="flex justify-center">
+                <div className="bg-white rounded-2xl shadow-xl p-8 max-w-sm">
+                  <div className="text-center">
+                    <div className="bg-orange-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <Shield className="text-orange-600" size={40} />
+                    </div>
+                    <h4 className="text-2xl font-bold text-gray-900 mb-2">DEBT</h4>
+                    <h4 className="text-2xl font-bold text-gray-900">COUNSELLING</h4>
+                    <div className="mt-4 text-orange-500">
+                      <TrendingUp size={32} className="mx-auto" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
