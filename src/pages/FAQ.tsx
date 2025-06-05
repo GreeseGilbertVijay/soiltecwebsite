@@ -1,8 +1,23 @@
 
+import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
+const FAQ = () => {
+  const faqs = [
+    {
+      question: "What is a Credit Score?",
+      answer: "A credit score is a 3-digit number that rates your creditworthiness. This rating varies from 300 to 900. You can maintain a high credit score by honouring your EMI on time."
+    },
+    {
+      question: "Who issues the Credit Score?",
+      answer: "The credit score and credit report are calculated and provided by four credit bureaus in India, namely Equifax, CIBIL, CRIF, and Experian."
+    }
+  ];
 
+  return (
+    <div className="min-h-screen bg-white">
+      <Navbar />
       
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-blue-900 to-blue-700 text-white py-16">
