@@ -3,18 +3,9 @@ import Footer from '@/components/Footer';
 import { TrendingUp, Clock, Target, CheckCircle, AlertTriangle, Shield, Award } from 'lucide-react';
 import { Progress } from "@/components/ui/progress";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
-
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 const CreditHealth = () => {
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+  return <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
       <Navbar />
       
       {/* Hero Section */}
@@ -54,49 +45,19 @@ const CreditHealth = () => {
               <div className="relative inline-block mb-8">
                 <svg width="400" height="250" viewBox="0 0 400 250" className="mx-auto drop-shadow-lg">
                   {/* Background semi-circle */}
-                  <path 
-                    d="M 50 200 A 150 150 0 0 1 350 200" 
-                    fill="none" 
-                    stroke="#f3f4f6" 
-                    strokeWidth="20" 
-                    strokeLinecap="round"
-                  />
+                  <path d="M 50 200 A 150 150 0 0 1 350 200" fill="none" stroke="#f3f4f6" strokeWidth="20" strokeLinecap="round" />
                   
                   {/* Poor Section (300-550) - Red */}
-                  <path 
-                    d="M 50 200 A 150 150 0 0 1 125 75" 
-                    fill="none" 
-                    stroke="#dc2626" 
-                    strokeWidth="20" 
-                    strokeLinecap="round"
-                  />
+                  <path d="M 50 200 A 150 150 0 0 1 125 75" fill="none" stroke="#dc2626" strokeWidth="20" strokeLinecap="round" />
                   
                   {/* Average Section (550-680) - Orange */}
-                  <path 
-                    d="M 125 75 A 150 150 0 0 1 200 50" 
-                    fill="none" 
-                    stroke="#ea580c" 
-                    strokeWidth="20" 
-                    strokeLinecap="round"
-                  />
+                  <path d="M 125 75 A 150 150 0 0 1 200 50" fill="none" stroke="#ea580c" strokeWidth="20" strokeLinecap="round" />
                   
                   {/* Good Section (680-730) - Yellow */}
-                  <path 
-                    d="M 200 50 A 150 150 0 0 1 275 75" 
-                    fill="none" 
-                    stroke="#eab308" 
-                    strokeWidth="20" 
-                    strokeLinecap="round"
-                  />
+                  <path d="M 200 50 A 150 150 0 0 1 275 75" fill="none" stroke="#eab308" strokeWidth="20" strokeLinecap="round" />
                   
                   {/* Very Good Section (730-780) - Green */}
-                  <path 
-                    d="M 275 75 A 150 150 0 0 1 350 200" 
-                    fill="none" 
-                    stroke="#16a34a" 
-                    strokeWidth="20" 
-                    strokeLinecap="round"
-                  />
+                  <path d="M 275 75 A 150 150 0 0 1 350 200" fill="none" stroke="#16a34a" strokeWidth="20" strokeLinecap="round" />
                   
                   {/* Score Labels */}
                   <text x="90" y="150" textAnchor="middle" className="text-sm font-bold fill-red-600">POOR</text>
@@ -112,16 +73,7 @@ const CreditHealth = () => {
                   <text x="310" y="165" textAnchor="middle" className="text-xs fill-green-500">730-780</text>
                   
                   {/* Needle pointing to 620 (Average section) */}
-                  <line 
-                    x1="200" 
-                    y1="200" 
-                    x2="160" 
-                    y2="110" 
-                    stroke="#1f2937" 
-                    strokeWidth="4" 
-                    strokeLinecap="round" 
-                    className="drop-shadow-md" 
-                  />
+                  <line x1="200" y1="200" x2="160" y2="110" stroke="#1f2937" strokeWidth="4" strokeLinecap="round" className="drop-shadow-md" />
                   <circle cx="200" cy="200" r="8" fill="#1f2937" className="drop-shadow-lg" />
                   <circle cx="200" cy="200" r="4" fill="#ffffff" />
                   
@@ -236,14 +188,32 @@ const CreditHealth = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              { title: "Payment History", percentage: 35, color: "red", description: "Most important factor - always pay on time" },
-              { title: "Credit Utilization", percentage: 30, color: "orange", description: "Keep usage below 30% of credit limit" },
-              { title: "Credit History Length", percentage: 15, color: "yellow", description: "Longer credit history is better" },
-              { title: "Credit Mix", percentage: 10, color: "green", description: "Mix of credit types (cards, loans)" },
-              { title: "New Credit", percentage: 10, color: "blue", description: "Limit new credit applications" }
-            ].map((factor, index) => (
-              <Card key={index} className="hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br from-white to-gray-50">
+            {[{
+            title: "Payment History",
+            percentage: 35,
+            color: "red",
+            description: "Most important factor - always pay on time"
+          }, {
+            title: "Credit Utilization",
+            percentage: 30,
+            color: "orange",
+            description: "Keep usage below 30% of credit limit"
+          }, {
+            title: "Credit History Length",
+            percentage: 15,
+            color: "yellow",
+            description: "Longer credit history is better"
+          }, {
+            title: "Credit Mix",
+            percentage: 10,
+            color: "green",
+            description: "Mix of credit types (cards, loans)"
+          }, {
+            title: "New Credit",
+            percentage: 10,
+            color: "blue",
+            description: "Limit new credit applications"
+          }].map((factor, index) => <Card key={index} className="hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br from-white to-gray-50">
                 <CardHeader>
                   <CardTitle className="text-xl font-bold text-gray-900">{factor.title}</CardTitle>
                   <CardDescription className="text-gray-600">{factor.description}</CardDescription>
@@ -257,66 +227,14 @@ const CreditHealth = () => {
                     <Progress value={factor.percentage} className="h-3" />
                   </div>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
 
       {/* Improvement Tips */}
       <section className="py-20 bg-gradient-to-br from-gray-100 to-gray-50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">How to Achieve 750+ Credit Score</h2>
-            <p className="text-xl text-gray-600">Follow these proven strategies to build excellent credit</p>
-          </div>
-          
-          <div className="space-y-8">
-            {[
-              {
-                icon: Clock,
-                title: "Pay Bills on Time",
-                description: "Set up automatic payments to ensure you never miss a due date. Payment history is the most important factor.",
-                tip: "Use calendar reminders or auto-debit for all credit payments"
-              },
-              {
-                icon: Target,
-                title: "Keep Credit Utilization Low",
-                description: "Use no more than 30% of your available credit limit across all cards. Lower is even better.",
-                tip: "If your total limit is ₹90,000, keep usage below ₹27,000"
-              },
-              {
-                icon: Shield,
-                title: "Limit New Credit Applications",
-                description: "Multiple credit inquiries in short periods can hurt your score. Apply for credit only when necessary.",
-                tip: "Space out credit applications by at least 6 months"
-              },
-              {
-                icon: CheckCircle,
-                title: "Monitor Your Credit Report",
-                description: "Check your credit report regularly for errors and ensure all information is accurate and up-to-date.",
-                tip: "Get your free credit report annually from authorized agencies"
-              }
-            ].map((item, index) => (
-              <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-all duration-300">
-                <CardContent className="p-8">
-                  <div className="flex items-start space-x-6">
-                    <div className="bg-orange-100 p-4 rounded-full">
-                      <item.icon className="w-8 h-8 text-orange-600" />
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-2xl font-bold text-gray-900 mb-3">{item.title}</h3>
-                      <p className="text-gray-700 text-lg mb-4">{item.description}</p>
-                      <div className="bg-orange-50 p-4 rounded-lg border-l-4 border-orange-500">
-                        <p className="text-orange-800 font-medium">💡 Pro Tip: {item.tip}</p>
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
+        
       </section>
 
       {/* Timeline Section */}
@@ -365,8 +283,6 @@ const CreditHealth = () => {
       </section>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default CreditHealth;
