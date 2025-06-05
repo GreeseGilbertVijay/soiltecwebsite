@@ -1,4 +1,3 @@
-
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Target, Users, Shield, TrendingUp, Linkedin } from 'lucide-react';
@@ -67,11 +66,7 @@ const About = () => {
           <div className="bg-gradient-to-r from-orange-50 to-yellow-50 rounded-3xl p-12 mb-16">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="flex justify-center">
-                <img 
-                  alt="Credit Counselling Session" 
-                  className="w-full max-w-lg rounded-2xl shadow-xl" 
-                  src="/lovable-uploads/f781b383-7921-4545-8d4c-57e83ae95dd9.png" 
-                />
+                <img alt="Credit Counselling Session" className="w-full max-w-lg rounded-2xl shadow-xl" src="/lovable-uploads/9dd940b1-1ee3-42df-afda-f23fd6651851.png" />
               </div>
               <div>
                 <h3 className="text-4xl font-bold text-gray-900 mb-6">
