@@ -4,6 +4,29 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { TrendingUp, ArrowRight } from 'lucide-react';
 
+
+        #chatbotIframe {
+            width: 100%;
+            border: none;
+            overflow: hidden;
+            height: 0;
+            transition: height 0.3s ease-in-out;
+        }
+
+ @media (max-width: 768px) {
+            #chatbotIframe {
+                height: 250px;
+            }
+
+    <script>
+
+        window.addEventListener("message", (event) => {
+            if (event.data?.type === "AUDIO_RECORDER_CLICKED") {
+                console.log("🔹 Adjusting iframe height:", event.data.data);
+                document.getElementById("chatbotIframe").style.height = `${event.data.data}`;
+            }
+        });
+    </script>
 const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
