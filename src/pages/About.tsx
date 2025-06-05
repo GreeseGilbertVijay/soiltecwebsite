@@ -2,10 +2,8 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Target, Users, Shield, TrendingUp, Linkedin, Check } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
-
 const About = () => {
-  return (
-    <div className="min-h-screen bg-gray-50">
+  return <div className="min-h-screen bg-gray-50">
       <Navbar />
       
       {/* Hero Section */}
@@ -156,11 +154,7 @@ const About = () => {
       {/* Why Choose Samatva Section */}
       <section className="py-20 bg-slate-900">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <img 
-            src="/lovable-uploads/56de1c4b-2707-4427-bfef-3c24754ef78f.png" 
-            alt="Why Choose Samatva - Our Unique Advantages" 
-            className="w-full h-auto rounded-2xl shadow-2xl"
-          />
+          <img src="/lovable-uploads/56de1c4b-2707-4427-bfef-3c24754ef78f.png" alt="Why Choose Samatva - Our Unique Advantages" className="w-full h-auto rounded-2xl shadow-2xl" />
         </div>
       </section>
 
@@ -170,14 +164,7 @@ const About = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <div className="mb-8">
-                <div className="flex items-center space-x-4 mb-4">
-                  <div className="text-4xl font-bold text-orange-500">SA</div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-orange-500">SAMATVA</h3>
-                    <h3 className="text-2xl font-bold text-orange-500">AWARENESS</h3>
-                    <p className="text-sm text-orange-300">REBUILD CREDIT, REGAIN YOUR FUTURE</p>
-                  </div>
-                </div>
+                
               </div>
               <p className="text-lg text-gray-300 leading-relaxed">
                 Our mission is to empower individuals with expert financial guidance and essential resources to build, strengthen, and sustain a resilient credit profile—laying the foundation for lasting financial well-being and opportunity.
@@ -211,8 +198,6 @@ const About = () => {
       </section>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default About;
