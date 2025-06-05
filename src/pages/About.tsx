@@ -94,7 +94,14 @@ const About = () => {
           </div>
         </div>
       </section>
+   {/* Why Choose Samatva Section */}
+      <section className="py-20 bg-slate-900">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <img src="/lovable-uploads/56de1c4b-2707-4427-bfef-3c24754ef78f.png" alt="Why Choose Samatva - Our Unique Advantages" className="w-full h-auto rounded-2xl shadow-2xl" />
+        </div>
+      </section>
 
+    
       {/* Management Team Section */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -151,13 +158,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* Why Choose Samatva Section */}
-      <section className="py-20 bg-slate-900">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <img src="/lovable-uploads/56de1c4b-2707-4427-bfef-3c24754ef78f.png" alt="Why Choose Samatva - Our Unique Advantages" className="w-full h-auto rounded-2xl shadow-2xl" />
-        </div>
-      </section>
-
+   
       {/* Enhanced Mission Section */}
       <section className="py-20 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
