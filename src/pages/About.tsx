@@ -64,9 +64,7 @@ const About = () => {
                 We are also privileged to have a retired senior employee who served with the regulator for <span className="font-semibold text-gray-900">25+years</span>, on our advisory board.
               </p>
             </div>
-            <div className="flex justify-center lg:justify-end">
-              <img alt="Professional Consultation" className="w-full max-w-md rounded-xl shadow-lg" src="/lovable-uploads/31c206af-320a-45ed-addb-10ddd8dcc135.png" />
-            </div>
+            
           </div>
 
           {/* Life Challenges Section */}
