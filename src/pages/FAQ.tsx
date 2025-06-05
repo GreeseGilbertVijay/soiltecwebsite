@@ -1,7 +1,5 @@
-
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-
 const FAQ = () => {
   const faqs = [{
     question: "How long does it take to improve my credit score?",
@@ -34,9 +32,7 @@ const FAQ = () => {
     question: "What if I have more than two settled accounts?",
     answer: "Currently, our settlement account support service is available only for customers with no more than two settled accounts. However, we can still provide general credit counseling guidance."
   }];
-
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+  return <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
       <Navbar />
       
       {/* Hero Section */}
@@ -55,12 +51,7 @@ const FAQ = () => {
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-8">
-            {faqs.map((faq, index) => (
-              <div key={index} className="bg-white rounded-lg shadow-md p-6 border border-gray-200">
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">{faq.question}</h3>
-                <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
-              </div>
-            ))}
+            {faqs.map((faq, index) => {})}
           </div>
         </div>
       </section>
@@ -269,8 +260,6 @@ const FAQ = () => {
       </section>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default FAQ;
