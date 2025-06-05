@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -70,10 +69,10 @@ const FAQ = () => {
         </div>
       </section>
 
-<section class="text-center pt-3 pb-3 pt-lg-5 pb-lg-5 creditMain">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
+      <section className="text-center pt-3 pb-3 pt-lg-5 pb-lg-5 creditMain">
+        <div className="container">
+            <div className="row">
+                <div className="col-12">
                     <h3>1. What is a Credit Score?</h3>
                     <p>A credit score is a 3-digit number that rates your creditworthiness. This rating varies from 300 to 900. You can maintain a high credit score by honouring your EMI on time.</p>
                     
@@ -119,7 +118,7 @@ const FAQ = () => {
                     
                 
                     <h3>12. How can I check my CIBIL™ score online?</h3>
-                    <p>One can check their credit score from any of the credit bureaus’ websites. The CIBIL score is easily accessible on the CIBIL website.</p>
+                    <p>One can check their credit score from any of the credit bureaus' websites. The CIBIL score is easily accessible on the CIBIL website.</p>
                     
                 
                     <h3>13. Can I improve a poor credit score?</h3>
@@ -127,7 +126,7 @@ const FAQ = () => {
                     
                 
                     <h3>14. Can I get a loan or credit card with a poor credit score?</h3>
-                    <p>Getting a loan with a poor credit score is difficult. So, it’s always a good idea to improve your credit score before applying for a new loan or credit card.</p>
+                    <p>Getting a loan with a poor credit score is difficult. So, it's always a good idea to improve your credit score before applying for a new loan or credit card.</p>
                     
                 
                     <h3>15. How long does it take to improve my credit score?</h3>
@@ -178,16 +177,16 @@ const FAQ = () => {
                     <p>Samatva does not charge any fees from customers for its credit counselling service, unlike other counselling companies.</p>
                     
                 
-                    <h3>27. Who can benefit from Samatva’s services?</h3>
+                    <h3>27. Who can benefit from Samatva's services?</h3>
                     <p>Any salaried customer currently employed who has settled personal loan or credit cards with not more than two accounts, but still has outstanding dues can benefit from our services.</p>
                     
                 
-                    <h3>28. How can I get started with Samatva’s services?</h3>
+                    <h3>28. How can I get started with Samatva's services?</h3>
                     <p>Once you give your consent to proceed, our experts will assess your CIBIL report and offer the best solutions to clear the unsettled amounts.</p>
                     
                 
                     <h3>29. Where is Samatva located?</h3>
-                    <p>Samatva’s registered office is in Chennai.</p>
+                    <p>Samatva's registered office is in Chennai.</p>
                     
                 
                     <h3>30. Why should I share my CIBIL Details?</h3>
@@ -214,8 +213,6 @@ const FAQ = () => {
                     <p>Thallam and Venkat, Ex-Bankers, have started this concept in India to help delinquent (settled) customers come out of their credit score issues.</p>
                     
                 </div>
-                
-                
             </div>
         </div>
     </section>
