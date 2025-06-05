@@ -150,7 +150,7 @@ const Index = () => {
       <section className="pt-3 pb-3 text-center">
         <div className="container pt-0 pb-0 pt-lg-5 pb-lg-5 video-wrapper" style={{position: 'relative'}}>
           <video id="myVideo" className="conactContent" width="100%" height="600px" poster="img/video-poster2.png">
-            <source src="img/samatvaawareness.mp4" type="video/mp4" />
+            <source src="https://www.youtube.com/shorts/T3alOcIJ5eg" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
           <button id="playBtn" aria-label="Play Video">
