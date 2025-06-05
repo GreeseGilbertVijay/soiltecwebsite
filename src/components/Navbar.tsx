@@ -37,13 +37,16 @@ const Navbar = () => {
   useEffect(() => {
     // Load Google Translate script
     const addGoogleTranslateScript = () => {
-      if (!window.google || !window.google.translate) {
+      if (!document.getElementById('google-translate-script')) {
         const script = document.createElement('script');
+        script.id = 'google-translate-script';
         script.type = 'text/javascript';
         script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
         document.head.appendChild(script);
-        
-        window.googleTranslateElementInit = () => {
+      }
+      
+      window.googleTranslateElementInit = () => {
+        if (!document.querySelector('.goog-te-combo')) {
           new window.google.translate.TranslateElement(
             {
               pageLanguage: 'en',
@@ -53,34 +56,33 @@ const Navbar = () => {
             },
             'google_translate_element'
           );
-        };
-      }
+        }
+      };
     };
 
-    addGoogleTranslateScript();
+    const timer = setTimeout(() => {
+      addGoogleTranslateScript();
+    }, 500);
+
+    return () => clearTimeout(timer);
   }, []);
 
   const handleLanguageChange = (language: typeof languages[0]) => {
     setCurrentLanguage(language.name);
     
-    // Trigger Google Translate
-    const selectElement = document.querySelector('#google_translate_element select') as HTMLSelectElement;
-    if (selectElement) {
-      selectElement.value = language.googleCode;
-      selectElement.dispatchEvent(new Event('change'));
-    } else {
-      // If Google Translate isn't ready, try to set the language manually
-      setTimeout(() => {
-        const iframe = document.querySelector('iframe.goog-te-menu-frame') as HTMLIFrameElement;
-        if (iframe) {
-          const doc = iframe.contentDocument || iframe.contentWindow?.document;
-          const langLink = doc?.querySelector(`a[data-value="${language.googleCode}"]`) as HTMLAnchorElement;
-          if (langLink) {
-            langLink.click();
-          }
-        }
-      }, 1000);
-    }
+    // Wait for Google Translate to be ready
+    const checkAndTranslate = () => {
+      const selectElement = document.querySelector('.goog-te-combo') as HTMLSelectElement;
+      if (selectElement) {
+        selectElement.value = language.googleCode;
+        selectElement.dispatchEvent(new Event('change'));
+      } else {
+        // If not ready, try again after a short delay
+        setTimeout(checkAndTranslate, 500);
+      }
+    };
+    
+    checkAndTranslate();
   };
 
   return (
@@ -91,27 +93,6 @@ const Navbar = () => {
       <nav className="bg-slate-900/95 backdrop-blur-sm border-b border-slate-700 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
-            {/* Language Selector */}
-            <div className="flex items-center space-x-4">
-              <DropdownMenu>
-                <DropdownMenuTrigger className="flex items-center space-x-2 px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-orange-400 transition-colors">
-                  <Languages size={18} />
-                  <span className="text-sm font-medium">{currentLanguage}</span>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent className="bg-slate-800 border-slate-700 text-slate-200">
-                  {languages.map((language) => (
-                    <DropdownMenuItem
-                      key={language.code}
-                      onClick={() => handleLanguageChange(language)}
-                      className="hover:bg-slate-700 hover:text-orange-400 cursor-pointer"
-                    >
-                      {language.name}
-                    </DropdownMenuItem>
-                  ))}
-                </DropdownMenuContent>
-              </DropdownMenu>
-            </div>
-
             {/* Logo */}
             <div className="flex-shrink-0">
               <Link to="/" className="flex items-center space-x-3">
@@ -145,14 +126,35 @@ const Navbar = () => {
               </div>
             </div>
 
-            {/* Mobile menu button */}
-            <div className="md:hidden">
-              <button
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="inline-flex items-center justify-center p-2 rounded-md text-slate-300 hover:text-orange-400 hover:bg-slate-800 transition-colors"
-              >
-                {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-              </button>
+            {/* Language Selector - Top Right */}
+            <div className="flex items-center space-x-4">
+              <DropdownMenu>
+                <DropdownMenuTrigger className="flex items-center space-x-2 px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-orange-400 transition-colors">
+                  <Languages size={18} />
+                  <span className="text-sm font-medium hidden sm:inline">{currentLanguage}</span>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="bg-slate-800 border-slate-700 text-slate-200">
+                  {languages.map((language) => (
+                    <DropdownMenuItem
+                      key={language.code}
+                      onClick={() => handleLanguageChange(language)}
+                      className="hover:bg-slate-700 hover:text-orange-400 cursor-pointer"
+                    >
+                      {language.name}
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
+
+              {/* Mobile menu button */}
+              <div className="md:hidden">
+                <button
+                  onClick={() => setIsMenuOpen(!isMenuOpen)}
+                  className="inline-flex items-center justify-center p-2 rounded-md text-slate-300 hover:text-orange-400 hover:bg-slate-800 transition-colors"
+                >
+                  {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+                </button>
+              </div>
             </div>
           </div>
 
@@ -161,7 +163,7 @@ const Navbar = () => {
             <div className="md:hidden">
               <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-slate-800 border-t border-slate-700 rounded-b-lg">
                 {/* Mobile Language Selector */}
-                <div className="px-4 py-2">
+                <div className="px-4 py-2 border-b border-slate-700 mb-2">
                   <DropdownMenu>
                     <DropdownMenuTrigger className="flex items-center space-x-2 px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-700 hover:text-orange-400 transition-colors w-full">
                       <Languages size={18} />
