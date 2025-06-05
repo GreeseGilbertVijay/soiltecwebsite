@@ -23,7 +23,7 @@ interface LanguageContextType {
   currentLanguage: Language;
   translations: any;
   changeLanguage: (language: Language) => void;
-  t: (key: string) => string;
+  t: (key: string) => any;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
@@ -60,7 +60,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     loadTranslations(language);
   };
 
-  const t = (key: string): string => {
+  const t = (key: string): any => {
     const keys = key.split('.');
     let value = translations;
     
@@ -73,7 +73,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       }
     }
     
-    return typeof value === 'string' ? value : key;
+    return value;
   };
 
   useEffect(() => {

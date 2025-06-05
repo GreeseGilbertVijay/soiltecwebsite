@@ -6,6 +6,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 
 const FAQ = () => {
   const { t } = useLanguage();
+  const questions = t('faq.questions');
 
   return (
     <div className="min-h-screen bg-white">
@@ -27,7 +28,7 @@ const FAQ = () => {
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-8">
-            {t('faq.questions') && Array.isArray(t('faq.questions')) && t('faq.questions').map((faq: any, index: number) => (
+            {Array.isArray(questions) && questions.map((faq: any, index: number) => (
               <div key={index} className="bg-white rounded-lg shadow-md p-6 border border-gray-200">
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">{faq.question}</h3>
                 <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
