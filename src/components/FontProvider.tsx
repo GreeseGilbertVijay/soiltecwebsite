@@ -6,6 +6,9 @@ const FontProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => 
   const { currentLanguage } = useLanguage();
 
   useEffect(() => {
+    // Only proceed if currentLanguage is available
+    if (!currentLanguage) return;
+
     // Load Google Fonts for Indian languages
     const fontLinks = {
       ta: 'https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@300;400;500;600;700&display=swap',
