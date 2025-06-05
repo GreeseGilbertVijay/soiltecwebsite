@@ -70,7 +70,7 @@ const Index = () => {
               Concept Incubated by IITM Research Park
             </p>
           </div>
-          <div className="flex flex-col sm:flex-row gap-6">
+          <div className="flex flex-col sm:flex-row gap-6 align:center">
                 <Link 
                   to="/contact" 
                   className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-full font-semibold transition-all transform hover:scale-105 flex items-center justify-center gap-2 text-lg"
