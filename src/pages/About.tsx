@@ -1,12 +1,9 @@
-
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Target, Users, Shield, TrendingUp, Linkedin } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
-
 const About = () => {
-  return (
-    <div className="min-h-screen bg-gray-50">
+  return <div className="min-h-screen bg-gray-50">
       <Navbar />
       
       {/* Hero Section */}
@@ -56,12 +53,46 @@ const About = () => {
             <p className="text-lg text-orange-600 font-semibold mt-6">
               This concept has been incubated by IIT Madras Research Park.
             </p>
-            <p className="text-lg text-gray-700 mb-6">
-              Our advisory board includes three retired senior bankers, as well as one of the <span className="font-semibold text-gray-900">original co-founders of this concept in the USA</span>.
-            </p>
-            <p className="text-lg text-gray-700">
-              We are also privileged to have a retired senior employee who served with the regulator for <span className="font-semibold text-gray-900">25+years</span>, on our advisory board.
-            </p>
+             <p className="text-lg text-gray-700 mb-6">
+                Our advisory board includes three retired senior bankers, as well as one of the <span className="font-semibold text-gray-900">original co-founders of this concept in the USA</span>.
+              </p>
+              <p className="text-lg text-gray-700">
+                We are also privileged to have a retired senior employee who served with the regulator for <span className="font-semibold text-gray-900">25+years</span>, on our advisory board.
+              </p>
+            
+          </div>
+
+ 
+
+          {/* Life Challenges Section */}
+          <div className="bg-gradient-to-r from-orange-50 to-yellow-50 rounded-3xl p-12 mb-16">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <h3 className="text-4xl font-bold text-gray-900 mb-6">
+                  <span className="text-orange-500">Life</span> can get tough, and sometimes,
+                </h3>
+                <h3 className="text-4xl font-bold text-gray-900 mb-6">
+                  paying back loans on time can be <span className="text-orange-500">hard</span>.
+                </h3>
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  People sometimes lose their jobs or have some personal emergencies and unable to pay the loan EMI's on time. This will impact the credit score. A lower credit score makes it difficult to take a loan again in the future.
+                </p>
+              </div>
+              <div className="flex justify-center">
+                <div className="bg-white rounded-2xl shadow-xl p-8 max-w-sm">
+                  <div className="text-center">
+                    <div className="bg-orange-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <Shield className="text-orange-600" size={40} />
+                    </div>
+                    <h4 className="text-2xl font-bold text-gray-900 mb-2">DEBT</h4>
+                    <h4 className="text-2xl font-bold text-gray-900">COUNSELLING</h4>
+                    <div className="mt-4 text-orange-500">
+                      <TrendingUp size={32} className="mx-auto" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -122,58 +153,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* Our Approach Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold text-gray-900 mb-6">
-              Our <span className="text-orange-500">Approach</span>
-            </h2>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center p-8 bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
-              <div className="bg-blue-600 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Users className="text-white" size={40} />
-              </div>
-              <h3 className="text-xl font-bold mb-4 text-gray-900">Professional Expertise</h3>
-              <p className="text-gray-600">
-                Experienced credit counselors and financial advisors
-              </p>
-            </div>
-
-            <div className="text-center p-8 bg-gradient-to-br from-green-50 to-green-100 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
-              <div className="bg-green-600 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Shield className="text-white" size={40} />
-              </div>
-              <h3 className="text-xl font-bold mb-4 text-gray-900">Ethical Practices</h3>
-              <p className="text-gray-600">
-                Transparent, fee-free counseling services
-              </p>
-            </div>
-
-            <div className="text-center p-8 bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
-              <div className="bg-purple-600 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Target className="text-white" size={40} />
-              </div>
-              <h3 className="text-xl font-bold mb-4 text-gray-900">Legitimate Partnerships</h3>
-              <p className="text-gray-600">
-                Work only with RBI-registered financial institutions
-              </p>
-            </div>
-
-            <div className="text-center p-8 bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
-              <div className="bg-orange-600 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
-                <TrendingUp className="text-white" size={40} />
-              </div>
-              <h3 className="text-xl font-bold mb-4 text-gray-900">Proven Results</h3>
-              <p className="text-gray-600">
-                6-12 month structured improvement programs
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+    
 
       {/* Enhanced Mission Section */}
       <section className="py-20 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
@@ -222,8 +202,6 @@ const About = () => {
       </section>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default About;
