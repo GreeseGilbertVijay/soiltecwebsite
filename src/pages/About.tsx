@@ -62,67 +62,7 @@ const About = () => {
             
           </div>
 
-  {/* Core Value Propositions */}
-      <section className="py-20 bg-slate-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Why Choose <span className="text-orange-500">Samatva?</span>
-            </h2>
-            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              We offer unique advantages that set us apart from other credit counseling companies
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center p-8 rounded-2xl bg-gradient-to-br from-slate-800 to-slate-700 hover:from-slate-700 hover:to-slate-600 transition-all group hover:scale-105 border border-slate-600">
-              <div className="bg-green-600 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-green-500 transition-colors">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-              </div>
-              <h3 className="text-2xl font-bold mb-4 text-white">Free Credit Counseling</h3>
-              <p className="text-slate-300 leading-relaxed">
-                Samatva does not charge any fees from customers for its credit counselling service
-              </p>
-            </div>
-
-            <div className="text-center p-8 rounded-2xl bg-gradient-to-br from-slate-800 to-slate-700 hover:from-slate-700 hover:to-slate-600 transition-all group hover:scale-105 border border-slate-600">
-              <div className="bg-blue-600 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-500 transition-colors">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                </svg>
-              </div>
-              <h3 className="text-2xl font-bold mb-4 text-white">RBI-Registered Partners</h3>
-              <p className="text-slate-300 leading-relaxed">
-                Samatva assists customers in securing funding from RBI-registered institutions
-              </p>
-            </div>
-
-            <div className="text-center p-8 rounded-2xl bg-gradient-to-br from-slate-800 to-slate-700 hover:from-slate-700 hover:to-slate-600 transition-all group hover:scale-105 border border-slate-600">
-              <div className="bg-purple-600 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-purple-500 transition-colors">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z" />
-                </svg>
-              </div>
-              <h3 className="text-2xl font-bold mb-4 text-white">Specialized Support</h3>
-              <p className="text-slate-300 leading-relaxed">
-                Services designed for salaried customers who are currently employed
-              </p>
-            </div>
-
-            <div className="text-center p-8 rounded-2xl bg-gradient-to-br from-slate-800 to-slate-700 hover:from-slate-700 hover:to-slate-600 transition-all group hover:scale-105 border border-slate-600">
-              <div className="bg-orange-600 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-orange-500 transition-colors">
-                <TrendingUp className="text-white" size={32} />
-              </div>
-              <h3 className="text-2xl font-bold mb-4 text-white">Settlement Account Support</h3>
-              <p className="text-slate-300 leading-relaxed">
-                Samatva will help, provided you have no more than two settled accounts
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+ 
 
           {/* Life Challenges Section */}
           <div className="bg-gradient-to-r from-orange-50 to-yellow-50 rounded-3xl p-12 mb-16">
@@ -156,7 +96,51 @@ const About = () => {
           </div>
         </div>
       </section>
-
+<section class="infoContent pt-3 pb-3 pb-lg-5">
+        <div class="container pt-0 pb-0 pt-lg-5 pb-lg-5">
+            <div class="row d-flex align-item-center justify-content-between pb-3 pb-lg-5">
+                <div class="col-12 col-lg-5 text-center text-lg-start d-flex justify-content-center flex-column">
+                    <h3 class="mb-3"><span>Life</span> can get tough, and sometimes, paying back loans on time can be
+                        <span>hard.</span>
+                    </h3>
+                    <p class="mb-3 mb-lg-0 fs-6 text-md-justify">People sometimes lose their jobs or have some personal
+                        emergencies and unable to pay
+                        the loan EMI’s on time. This will impact the credit score. A lower credit score makes it
+                        difficult to take a
+                        loan again in the future.</p>
+                </div>
+                <div
+                    class="col-12 col-lg-5 text-center mb-3 mb-lg-0 text-lg-end d-flex justify-content-center flex-column">
+                    <img src="img/info-1.png?v=1.1" alt="Credit Score" class="img-fluid rounded-6 overflow-hidden" />
+                </div>
+            </div>
+            <div class="row d-flex align-item-center justify-content-between pt-3 pt-lg-5">
+                <div
+                    class="col-12 col-lg-5 text-center mb-3 mb-lg-0 text-lg-start d-flex justify-content-center flex-column ">
+                    <img src="img/info-2.png?v=1.1" alt="Credit Score"
+                        class="img-fluid h-100 w-100 obj-cover rounded-6 overflow-hidden" />
+                </div>
+                <div class="col-12 col-lg-6 text-center text-lg-end d-flex flex-column justify-content-center">
+                    <h3 class="mb-3">Our Process to Help You Rebuild Your <span>Credit Profile</span></h3>
+                    <p class="mb-3 mb-lg-0 fs-6 text-md-justify">
+                        Our telecaller will reach out to you and explain the benefits of maintaining a good CIBIL score.
+                        We will analyse your credit report after receiving your approval.<br><br>
+                        Based on the analysis, we will identify unsettled dues. If you have previously marked any loans
+                        as "SETTLED" due to unforeseen circumstances, we will assist you in addressing those unsettled
+                        amounts.<br><br>
+                        We do this by referring you to an RBI-regulated financial institution that may provide you with
+                        a loan. This loan will be directly remitted to the respective lender to clear your outstanding
+                        dues.<br><br>
+                        If this new loan is repaid on time within the agreed tenure, your credit history will begin to
+                        reflect positive repayment behaviour—leading to an improvement in your CIBIL score. A better
+                        score can make you eligible for future loans from top banks at more favourable interest
+                        rates.<br><br>
+                        Please refer to the comparison <a href="impact.html">“IMPACT”</a> Page Link.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
       {/* Management Team Section */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
