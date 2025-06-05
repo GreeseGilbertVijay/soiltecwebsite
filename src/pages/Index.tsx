@@ -146,16 +146,24 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Video & SABD */}
-      <section className="pt-3 pb-3 text-center">
-        <div className="container pt-0 pb-0 pt-lg-5 pb-lg-5 video-wrapper" style={{position: 'relative'}}>
-          <video id="myVideo" className="conactContent" width="100%" height="600px" poster="img/video-poster2.png">
-            <source src="https://www.youtube.com/shorts/T3alOcIJ5eg" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-          <button id="playBtn" aria-label="Play Video">
-            <img src="img/play-icon.png" alt="Play" />
-          </button>
+      {/* Video Section */}
+      <section className="py-20 bg-slate-900 text-center">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-12">
+            Learn About Our <span className="text-orange-500">Mission</span>
+          </h2>
+          <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-black">
+            <iframe
+              width="100%"
+              height="600"
+              src="https://www.youtube.com/embed/T3alOcIJ5eg"
+              title="Samatva Credit Solutions"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              className="w-full h-[300px] md:h-[400px] lg:h-[600px]"
+            />
+          </div>
         </div>
       </section>
 
