@@ -33,7 +33,7 @@ const FAQ = () => {
     answer: "Currently, our settlement account support service is available only for customers with no more than two settled accounts. However, we can still provide general credit counseling guidance."
   }];
   return <div className="min-h-screen bg-gray-50">
-      <Navbar />
+      
       
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-blue-900 to-blue-700 text-white py-16">
