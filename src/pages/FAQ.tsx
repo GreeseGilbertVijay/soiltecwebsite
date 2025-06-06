@@ -5,8 +5,21 @@ import Footer from '@/components/Footer';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const FAQ = () => {
-  const { t } = useLanguage();
+  const { t, translations } = useLanguage();
   const questions = t('faq.questions');
+
+  // Don't render content until translations are loaded
+  if (!translations || Object.keys(translations).length === 0) {
+    return (
+      <div className="min-h-screen bg-white">
+        <Navbar />
+        <div className="flex items-center justify-center min-h-[60vh]">
+          <div className="text-lg text-gray-600">Loading...</div>
+        </div>
+        <Footer />
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-white">
@@ -30,7 +43,9 @@ const FAQ = () => {
           <div className="space-y-8">
             {Array.isArray(questions) && questions.map((faq: any, index: number) => (
               <div key={index} className="bg-white rounded-lg shadow-md p-6 border border-gray-200">
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">{faq.question}</h3>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                  {index + 1}. {faq.question}
+                </h3>
                 <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
               </div>
             ))}
