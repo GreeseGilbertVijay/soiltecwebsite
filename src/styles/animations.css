@@ -1,6 +1,518 @@
 
 /* Enhanced custom animations for the dynamic background */
 
+/* Gradient shifting animations */
+@keyframes gradient-shift {
+  0% {
+    background: linear-gradient(45deg, #0f172a, #1e293b, #7c3aed, #0f172a);
+    background-size: 400% 400%;
+    background-position: 0% 50%;
+  }
+  25% {
+    background: linear-gradient(45deg, #1e293b, #7c3aed, #f97316, #1e293b);
+    background-size: 400% 400%;
+    background-position: 100% 50%;
+  }
+  50% {
+    background: linear-gradient(45deg, #7c3aed, #f97316, #3b82f6, #7c3aed);
+    background-size: 400% 400%;
+    background-position: 100% 100%;
+  }
+  75% {
+    background: linear-gradient(45deg, #f97316, #3b82f6, #0f172a, #f97316);
+    background-size: 400% 400%;
+    background-position: 0% 100%;
+  }
+  100% {
+    background: linear-gradient(45deg, #0f172a, #1e293b, #7c3aed, #0f172a);
+    background-size: 400% 400%;
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes gradient-shift-delayed {
+  0% {
+    background: linear-gradient(135deg, #1e293b, #3b82f6, #f97316, #1e293b);
+    background-size: 400% 400%;
+    background-position: 0% 50%;
+  }
+  33% {
+    background: linear-gradient(135deg, #3b82f6, #f97316, #7c3aed, #3b82f6);
+    background-size: 400% 400%;
+    background-position: 100% 0%;
+  }
+  66% {
+    background: linear-gradient(135deg, #f97316, #7c3aed, #1e293b, #f97316);
+    background-size: 400% 400%;
+    background-position: 100% 100%;
+  }
+  100% {
+    background: linear-gradient(135deg, #1e293b, #3b82f6, #f97316, #1e293b);
+    background-size: 400% 400%;
+    background-position: 0% 50%;
+  }
+}
+
+/* Diagonal floating animations */
+@keyframes diagonal-float-slow {
+  0%, 100% {
+    transform: translate(0px, 0px) rotate(0deg) scale(1);
+  }
+  25% {
+    transform: translate(30px, -20px) rotate(90deg) scale(1.05);
+  }
+  50% {
+    transform: translate(60px, -40px) rotate(180deg) scale(1);
+  }
+  75% {
+    transform: translate(30px, -20px) rotate(270deg) scale(0.95);
+  }
+}
+
+@keyframes diagonal-float-medium {
+  0%, 100% {
+    transform: translate(0px, 0px) rotate(0deg) scale(1);
+  }
+  33% {
+    transform: translate(-25px, 35px) rotate(-120deg) scale(1.1);
+  }
+  66% {
+    transform: translate(-50px, 70px) rotate(-240deg) scale(0.9);
+  }
+}
+
+@keyframes diagonal-float-fast {
+  0%, 100% {
+    transform: translate(0px, 0px) rotate(0deg) scale(1);
+  }
+  20% {
+    transform: translate(40px, -30px) rotate(72deg) scale(1.15);
+  }
+  40% {
+    transform: translate(20px, -60px) rotate(144deg) scale(0.85);
+  }
+  60% {
+    transform: translate(-20px, -30px) rotate(216deg) scale(1.05);
+  }
+  80% {
+    transform: translate(-40px, 0px) rotate(288deg) scale(0.95);
+  }
+}
+
+@keyframes diagonal-float-reverse {
+  0%, 100% {
+    transform: translate(0px, 0px) rotate(360deg) scale(1);
+  }
+  25% {
+    transform: translate(-30px, 20px) rotate(270deg) scale(1.05);
+  }
+  50% {
+    transform: translate(-60px, 40px) rotate(180deg) scale(1);
+  }
+  75% {
+    transform: translate(-30px, 20px) rotate(90deg) scale(0.95);
+  }
+}
+
+/* Geometric shape animations */
+@keyframes geometric-float {
+  0%, 100% {
+    transform: translate(0px, 0px) rotate(45deg) scale(1);
+  }
+  25% {
+    transform: translate(15px, -25px) rotate(135deg) scale(1.2);
+  }
+  50% {
+    transform: translate(30px, -15px) rotate(225deg) scale(0.8);
+  }
+  75% {
+    transform: translate(15px, -5px) rotate(315deg) scale(1.1);
+  }
+}
+
+@keyframes geometric-float-reverse {
+  0%, 100% {
+    transform: translate(0px, 0px) rotate(12deg) scale(1);
+  }
+  33% {
+    transform: translate(-20px, 15px) rotate(-60deg) scale(1.3);
+  }
+  66% {
+    transform: translate(-10px, 30px) rotate(-120deg) scale(0.7);
+  }
+}
+
+@keyframes geometric-float-slow {
+  0%, 100% {
+    transform: translate(0px, 0px) rotate(45deg) scale(1);
+  }
+  50% {
+    transform: translate(25px, -35px) rotate(225deg) scale(1.4);
+  }
+}
+
+/* Hexagon animations */
+@keyframes hexagon-float {
+  0%, 100% {
+    transform: translate(0px, 0px) rotate(0deg) scale(1);
+  }
+  16% {
+    transform: translate(8px, -12px) rotate(60deg) scale(1.1);
+  }
+  33% {
+    transform: translate(16px, -8px) rotate(120deg) scale(0.9);
+  }
+  50% {
+    transform: translate(12px, 8px) rotate(180deg) scale(1.2);
+  }
+  66% {
+    transform: translate(-4px, 16px) rotate(240deg) scale(0.8);
+  }
+  83% {
+    transform: translate(-8px, 4px) rotate(300deg) scale(1.05);
+  }
+}
+
+@keyframes hexagon-float-reverse {
+  0%, 100% {
+    transform: translate(0px, 0px) rotate(360deg) scale(1);
+  }
+  50% {
+    transform: translate(-15px, 20px) rotate(180deg) scale(1.3);
+  }
+}
+
+/* Particle diagonal movement */
+@keyframes particle-diagonal-0 {
+  0% {
+    transform: translate(0px, 0px) scale(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(200px, -150px) scale(0) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes particle-diagonal-1 {
+  0% {
+    transform: translate(0px, 0px) scale(0) rotate(0deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.8;
+    transform: scale(1.2);
+  }
+  85% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate(-180px, 120px) scale(0) rotate(-270deg);
+    opacity: 0;
+  }
+}
+
+@keyframes particle-diagonal-2 {
+  0% {
+    transform: translate(0px, 0px) scale(0) rotate(0deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+    transform: scale(0.8);
+  }
+  80% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: translate(150px, 180px) scale(0) rotate(180deg);
+    opacity: 0;
+  }
+}
+
+@keyframes particle-diagonal-3 {
+  0% {
+    transform: translate(0px, 0px) scale(0) rotate(0deg);
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.7;
+    transform: scale(1.5);
+  }
+  75% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translate(-120px, -200px) scale(0) rotate(-180deg);
+    opacity: 0;
+  }
+}
+
+/* Bubble floating animation */
+@keyframes bubble-float {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px) scale(1) rotate(0deg);
+    opacity: 0.3;
+  }
+  25% {
+    transform: translateY(-40px) translateX(20px) scale(1.2) rotate(90deg);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(-80px) translateX(-10px) scale(0.8) rotate(180deg);
+    opacity: 1;
+  }
+  75% {
+    transform: translateY(-60px) translateX(30px) scale(1.1) rotate(270deg);
+    opacity: 0.5;
+  }
+}
+
+/* Zoom cycle animation */
+@keyframes zoom-cycle {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.05) rotate(1deg);
+  }
+}
+
+/* Twinkling animation */
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(0.8);
+  }
+  25% {
+    opacity: 0.8;
+    transform: scale(1.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.5);
+  }
+  75% {
+    opacity: 0.6;
+    transform: scale(1.1);
+  }
+}
+
+/* Grid shift animation */
+@keyframes grid-shift {
+  0%, 100% {
+    background-position: 0px 0px, 0px 0px;
+  }
+  50% {
+    background-position: 50px 50px, 50px 50px;
+  }
+}
+
+/* SVG path drawing */
+@keyframes path-draw {
+  0% {
+    stroke-dasharray: 0 2000;
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    stroke-dasharray: 2000 0;
+    opacity: 0.4;
+  }
+}
+
+@keyframes path-draw-delayed {
+  0%, 20% {
+    stroke-dasharray: 0 1800;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.8;
+  }
+  100% {
+    stroke-dasharray: 1800 0;
+    opacity: 0.3;
+  }
+}
+
+/* Pulse gentle animation */
+@keyframes pulse-gentle {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.9;
+  }
+}
+
+/* Ray sweep animation */
+@keyframes ray-sweep {
+  0% {
+    transform: translateX(-100%) rotate(var(--rotation, 0deg));
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateX(100vw) rotate(var(--rotation, 0deg));
+    opacity: 0;
+  }
+}
+
+/* Animation classes */
+.animate-gradient-shift {
+  animation: gradient-shift 10s ease-in-out infinite;
+}
+
+.animate-gradient-shift-delayed {
+  animation: gradient-shift-delayed 12s ease-in-out infinite 3s;
+}
+
+.animate-diagonal-float-slow {
+  animation: diagonal-float-slow 30s ease-in-out infinite;
+}
+
+.animate-diagonal-float-medium {
+  animation: diagonal-float-medium 22s ease-in-out infinite;
+}
+
+.animate-diagonal-float-fast {
+  animation: diagonal-float-fast 18s ease-in-out infinite;
+}
+
+.animate-diagonal-float-reverse {
+  animation: diagonal-float-reverse 25s ease-in-out infinite;
+}
+
+.animate-geometric-float {
+  animation: geometric-float 20s ease-in-out infinite;
+}
+
+.animate-geometric-float-reverse {
+  animation: geometric-float-reverse 24s ease-in-out infinite;
+}
+
+.animate-geometric-float-slow {
+  animation: geometric-float-slow 35s ease-in-out infinite;
+}
+
+.animate-hexagon-float {
+  animation: hexagon-float 16s ease-in-out infinite;
+}
+
+.animate-hexagon-float-reverse {
+  animation: hexagon-float-reverse 28s ease-in-out infinite;
+}
+
+.animate-particle-diagonal-0 {
+  animation: particle-diagonal-0 20s linear infinite;
+}
+
+.animate-particle-diagonal-1 {
+  animation: particle-diagonal-1 25s linear infinite;
+}
+
+.animate-particle-diagonal-2 {
+  animation: particle-diagonal-2 22s linear infinite;
+}
+
+.animate-particle-diagonal-3 {
+  animation: particle-diagonal-3 28s linear infinite;
+}
+
+.animate-bubble-float {
+  animation: bubble-float 30s ease-in-out infinite;
+}
+
+.animate-zoom-cycle {
+  animation: zoom-cycle 15s ease-in-out infinite;
+}
+
+.animate-twinkle {
+  animation: twinkle 6s ease-in-out infinite;
+}
+
+.animate-grid-shift {
+  animation: grid-shift 20s linear infinite;
+}
+
+.animate-path-draw {
+  animation: path-draw 15s ease-in-out infinite;
+}
+
+.animate-path-draw-delayed {
+  animation: path-draw-delayed 18s ease-in-out infinite 4s;
+}
+
+.animate-pulse-gentle {
+  animation: pulse-gentle 4s ease-in-out infinite;
+}
+
+.animate-ray-sweep {
+  animation: ray-sweep 25s linear infinite;
+}
+
+/* Enhanced utility classes */
+.bg-gradient-dynamic {
+  background: linear-gradient(45deg, #0f172a, #1e293b, #7c3aed, #0f172a);
+  background-size: 400% 400%;
+}
+
+.bg-gradient-radial {
+  background: radial-gradient(circle, var(--tw-gradient-stops));
+}
+
+/* Performance optimizations */
+.animate-diagonal-float-slow,
+.animate-diagonal-float-medium,
+.animate-diagonal-float-fast,
+.animate-diagonal-float-reverse,
+.animate-geometric-float,
+.animate-geometric-float-reverse,
+.animate-geometric-float-slow,
+.animate-hexagon-float,
+.animate-hexagon-float-reverse,
+.animate-bubble-float,
+.animate-zoom-cycle,
+.animate-ray-sweep {
+  will-change: transform;
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.animate-gradient-shift,
+.animate-gradient-shift-delayed {
+  will-change: background-position;
+}
+
+.animate-twinkle,
+.animate-pulse-gentle {
+  will-change: opacity, transform;
+}
+
+/* ... keep existing code (all previous animations like gradient, float-slow, float-medium, etc.) the same ... */
+
 @keyframes gradient {
   0%, 100% {
     background-position: 0% 50%;
@@ -220,7 +732,7 @@
   }
 }
 
-/* Animation classes */
+/* Animation classes for existing animations */
 .animate-gradient {
   background-size: 400% 400%;
   animation: gradient 20s ease-in-out infinite;
@@ -285,10 +797,6 @@
 }
 
 /* Enhanced utility classes */
-.bg-gradient-radial {
-  background: radial-gradient(circle, var(--tw-gradient-stops));
-}
-
 .bg-gradient-conic {
   background: conic-gradient(var(--tw-gradient-stops));
 }
