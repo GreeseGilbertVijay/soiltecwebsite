@@ -47,6 +47,138 @@
       {
         "question": "Who issues the Credit Score?",
         "answer": "The credit score and credit report are calculated and provided by four credit bureaus in India, namely Equifax, CIBIL, CRIF, and Experian."
+      },
+      {
+        "question": "How is the credit score calculated?",
+        "answer": "Payment history – On-time and consistent repayment provides a positive score."
+      },
+      {
+        "question": "What is considered a good credit score?",
+        "answer": "Having a credit score of 700+ is considered the best."
+      },
+      {
+        "question": "Why should I maintain a good credit score?",
+        "answer": "A good credit score is essential for securing a loan at the best rates and a higher credit card limit."
+      },
+      {
+        "question": "What causes a poor or bad credit score?",
+        "answer": "Not paying EMI on time and credit card dues every month will cause bad credit score."
+      },
+      {
+        "question": "How often can I check my credit score?",
+        "answer": "You can check your credit score as many times as you want, and it will not affect your score."
+      },
+      {
+        "question": "Which is the most accurate credit report?",
+        "answer": "Credit scores from all four credit bureaus are accurate. While there may be slight variations in the score due to different algorithms, all four scores are equally valid and accepted by lenders."
+      },
+      {
+        "question": "Are credit scores from all the bureaus the same?",
+        "answer": "No. Your credit score is likely to vary depending on the bureau. The credit scores generated are not the same, as each bureau has its scoring method."
+      },
+      {
+        "question": "Where can I check my credit score?",
+        "answer": "There are 4 different credit bureaus in India that record your credit score. According to RBI regulations, you are entitled to one free credit report per year from any of the credit bureaus."
+      },
+      {
+        "question": "How can I get my free credit report?",
+        "answer": "You can also pay the fee to receive detailed and accurate credit reports delivered directly to your inbox, 12 times a year by all the 4 credit bureaus."
+      },
+      {
+        "question": "How can I check my CIBIL™ score online?",
+        "answer": "One can check their credit score from any of the credit bureaus' websites. The CIBIL score is easily accessible on the CIBIL website."
+      },
+      {
+        "question": "Can I improve a poor credit score?",
+        "answer": "The good news is that a poor credit score is not permanent; you can always improve it by taking appropriate steps. Although it may take some time, it is worth improving your score before applying for a new loan."
+      },
+      {
+        "question": "Can I get a loan or credit card with a poor credit score?",
+        "answer": "Getting a loan with a poor credit score is difficult. So, it's always a good idea to improve your credit score before applying for a new loan or credit card."
+      },
+      {
+        "question": "How long does it take to improve my credit score?",
+        "answer": "It takes 6 to 12 months to improve your credit score based on the timely repayment of the new loan that you avail."
+      },
+      {
+        "question": "I have already settled my personal loan and credit card. Why is my CIBIL score still low?",
+        "answer": "Even if you have settled your loan or credit card, any unpaid or unsettled portion may still be reflected in your CIBIL report as an overdue amount."
+      },
+      {
+        "question": "What is Samatva?",
+        "answer": "Samatva is a credit counselling services company registered in Chennai. We specialize in helping individuals improve their CIBIL scores by providing solutions to resolve the unsettled amounts reflected in their credit reports."
+      },
+      {
+        "question": "How does Samatva help improve my CIBIL score?",
+        "answer": "Samatva provides solutions to clear unsettled amounts on personal loans and credit cards that appear in your CIBIL report. By securing a loan from an RBI-registered financial Institution to pay the unsettled amount on the existing loan."
+      },
+      {
+        "question": "Will Samatva help me if my CIBIL score is below 700?",
+        "answer": "Yes, Samatva will help, provided you have no more than two settled accounts."
+      },
+      {
+        "question": "What is the maximum amount of financial support available to improve a credit score?",
+        "answer": "Samatva will help by facilitating through an RBI registered financial institution. The amount provided by them is up to 2 Lakhs maximum, we will connect them with you."
+      },
+      {
+        "question": "What is the Rate of Interest for the loan provided?",
+        "answer": "The Loan is provided by an RBI-registered financial institution; we will connect them with you."
+      },
+      {
+        "question": "What is the tenure of the loan that I will get?",
+        "answer": "The Loan is provided by an RBI-registered financial institution. The tenure provided by them is minimum 6 months and a maximum of 24 months. We will connect them with you."
+      },
+      {
+        "question": "Can Samatva help me secure funding to clear my settled overdue accounts?",
+        "answer": "Yes, Samatva assists customers in securing funding from an RBI-registered financial institution to clear overdue amounts on settled accounts only, thus improving their credit profile."
+      },
+      {
+        "question": "Will I get a loan to pay the outstanding unsettled amount?",
+        "answer": "It is for salaried customers who are currently employed."
+      },
+      {
+        "question": "I am self-employed, will I get a loan to pay the outstanding unsettled amount?",
+        "answer": "It is only for salaried customers currently employed."
+      },
+      {
+        "question": "Does Samatva charge any fees for its services?",
+        "answer": "Samatva does not charge any fees from customers for its credit counselling service, unlike other counselling companies."
+      },
+      {
+        "question": "Who can benefit from Samatva's services?",
+        "answer": "Any salaried customer currently employed who has settled personal loan or credit cards with not more than two accounts, but still has outstanding dues can benefit from our services."
+      },
+      {
+        "question": "How can I get started with Samatva's services?",
+        "answer": "Once you give your consent to proceed, our experts will assess your CIBIL report and offer the best solutions to clear the unsettled amounts."
+      },
+      {
+        "question": "Where is Samatva located?",
+        "answer": "Samatva's registered office is in Chennai."
+      },
+      {
+        "question": "Why should I share my CIBIL Details?",
+        "answer": "A credit report is essential to understand your outstanding amount with financial institutions."
+      },
+      {
+        "question": "How did you get my number?",
+        "answer": "This call is on a random basis."
+      },
+      {
+        "question": "Are you calling from the bank?",
+        "answer": "We are a credit counseling company and not a bank, we help customers by hand holding to come out of credit score issues."
+      },
+      {
+        "question": "Why should I give my consent to pull my CIBIL Report?",
+        "answer": "Credit reports are secured, hence we require your consent to understand your current creditworthiness."
+      },
+      {
+        "question": "Who is the Promoter?",
+        "answer": "Two Ex-Bankers with more than 25 years of experience each have started this new concept in India."
+      },
+      {
+        "question": "Why should I trust Samatva?",
+        "answer": "Thallam and Venkat, Ex-Bankers, have started this concept in India to help delinquent (settled) customers come out of their credit score issues."
       }
     ]
   },
