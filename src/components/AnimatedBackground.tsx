@@ -27,7 +27,7 @@ const AnimatedBackground = () => {
 
   return (
     <div className="absolute inset-0 overflow-hidden bg-black">
-      {/* Layer 1: Dark gradient background with subtle color shifts */}
+      {/* Layer 1: Animated gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-black via-slate-900 to-black animate-gradient-shift"></div>
       
       {/* Layer 2: Secondary gradient with parallax */}
@@ -38,25 +38,19 @@ const AnimatedBackground = () => {
         }}
       ></div>
       
-      {/* Layer 3: Floating geometric shapes with dark borders */}
+      {/* Layer 3: Floating geometric shapes */}
       <div className="absolute inset-0">
-        {/* Large floating circles */}
         <div className="absolute top-20 left-20 w-80 h-80 rounded-full border border-slate-700/30 animate-diagonal-float-slow"></div>
         <div className="absolute top-60 right-32 w-64 h-64 rounded-full border border-slate-600/40 animate-diagonal-float-medium"></div>
         <div className="absolute bottom-40 left-1/3 w-96 h-96 rounded-full border border-slate-700/25 animate-diagonal-float-fast"></div>
         <div className="absolute top-1/2 right-1/4 w-48 h-48 rounded-full border border-slate-600/35 animate-diagonal-float-reverse"></div>
         
-        {/* Geometric shapes */}
         <div className="absolute top-1/4 left-1/2 w-32 h-32 border border-slate-600/30 rotate-45 animate-geometric-float"></div>
         <div className="absolute bottom-1/3 right-1/3 w-24 h-24 border border-slate-700/25 animate-geometric-float-reverse transform rotate-12"></div>
         <div className="absolute top-3/4 left-1/6 w-28 h-28 border border-slate-600/28 animate-geometric-float-slow transform rotate-45"></div>
-        
-        {/* Hexagons */}
-        <div className="absolute top-1/6 right-1/6 w-20 h-20 border border-slate-700/22 animate-hexagon-float" style={{clipPath: 'polygon(30% 0%, 70% 0%, 100% 50%, 70% 100%, 30% 100%, 0% 50%)'}}></div>
-        <div className="absolute bottom-1/6 left-2/3 w-16 h-16 border border-slate-600/25 animate-hexagon-float-reverse" style={{clipPath: 'polygon(30% 0%, 70% 0%, 100% 50%, 70% 100%, 30% 100%, 0% 50%)'}}></div>
       </div>
       
-      {/* Layer 4: Floating particles with diagonal movement - dark theme */}
+      {/* Layer 4: Moving particles */}
       <div className="absolute inset-0">
         {Array.from({ length: 30 }).map((_, i) => (
           <div
@@ -72,7 +66,7 @@ const AnimatedBackground = () => {
         ))}
       </div>
       
-      {/* Layer 5: Twinkling stars with zoom effect - darker */}
+      {/* Layer 5: Twinkling stars */}
       <div className="absolute inset-0 animate-zoom-cycle">
         {Array.from({ length: 50 }).map((_, i) => (
           <div
@@ -88,7 +82,7 @@ const AnimatedBackground = () => {
         ))}
       </div>
       
-      {/* Layer 6: Floating bubbles - subtle dark theme */}
+      {/* Layer 6: Floating bubbles */}
       <div className="absolute inset-0">
         {Array.from({ length: 20 }).map((_, i) => (
           <div
@@ -106,7 +100,7 @@ const AnimatedBackground = () => {
         ))}
       </div>
       
-      {/* Layer 7: Subtle grid with parallax - very dark */}
+      {/* Layer 7: Subtle grid with parallax */}
       <div 
         className="absolute inset-0 opacity-[0.02] animate-grid-shift"
         style={{
@@ -119,7 +113,7 @@ const AnimatedBackground = () => {
         }}
       />
       
-      {/* Layer 8: Animated SVG paths - dark theme */}
+      {/* Layer 8: Animated SVG paths */}
       <svg className="absolute inset-0 w-full h-full opacity-20" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <linearGradient id="pathGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -150,27 +144,27 @@ const AnimatedBackground = () => {
         />
       </svg>
       
-      {/* Layer 9: Mouse-following interactive elements - very subtle */}
+      {/* Layer 9: Mouse-following interactive elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div 
-          className="absolute w-20 h-20 bg-gradient-radial from-slate-600/4 via-slate-700/2 to-transparent rounded-full transition-all duration-1000 ease-out animate-pulse-gentle"
+          className="absolute w-8 h-8 bg-gradient-radial from-slate-600/15 via-slate-700/8 to-transparent rounded-full transition-all duration-1000 ease-out animate-pulse-gentle"
           style={{
-            left: `${mousePosition.x - 5}%`,
-            top: `${mousePosition.y - 5}%`,
+            left: `${mousePosition.x}%`,
+            top: `${mousePosition.y}%`,
             transform: 'translate(-50%, -50%)',
           }}
         />
         <div 
-          className="absolute w-12 h-12 bg-gradient-radial from-slate-700/3 via-slate-600/1 to-transparent rounded-full transition-all duration-1500 ease-out"
+          className="absolute w-4 h-4 bg-gradient-radial from-slate-700/10 via-slate-600/5 to-transparent rounded-full transition-all duration-1500 ease-out"
           style={{
-            left: `${mousePosition.x - 3}%`,
-            top: `${mousePosition.y - 3}%`,
+            left: `${mousePosition.x}%`,
+            top: `${mousePosition.y}%`,
             transform: 'translate(-50%, -50%)',
           }}
         />
       </div>
       
-      {/* Layer 10: Moving light rays - very subtle dark theme */}
+      {/* Layer 10: Moving light rays */}
       <div className="absolute inset-0">
         {Array.from({ length: 8 }).map((_, i) => (
           <div
