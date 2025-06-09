@@ -1,16 +1,15 @@
-
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Target, Users, Shield, TrendingUp, Linkedin, Check } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { useLanguage } from '@/contexts/LanguageContext';
-
 const About = () => {
-  const { t } = useLanguage();
+  const {
+    t
+  } = useLanguage();
 
   // Get advantages with fallback to empty array
   const advantages = Array.isArray(t('about.whyChoose.advantages')) ? t('about.whyChoose.advantages') : [];
-
   return <div className="min-h-screen bg-gray-50">
       <Navbar />
       
@@ -108,7 +107,7 @@ const About = () => {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-5xl font-bold text-white mb-6">
-              {t('about.whyChoose.title')} <span className="text-orange-500">Samatva?</span>
+              {t('about.whyChoose.title')} 
             </h2>
             <p className="text-xl text-gray-300 max-w-4xl mx-auto">
               {t('about.whyChoose.subtitle')}
@@ -116,29 +115,20 @@ const About = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {advantages.map((advantage: any, index: number) => (
-              <div key={index} className="bg-gray-800 rounded-xl p-8 text-center hover:bg-gray-700 transition-all duration-300">
+            {advantages.map((advantage: any, index: number) => <div key={index} className="bg-gray-800 rounded-xl p-8 text-center hover:bg-gray-700 transition-all duration-300">
                 <div className="mb-6">
-                  {index === 0 && (
-                    <div className="w-16 h-16 mx-auto bg-green-500 rounded-lg flex items-center justify-center">
+                  {index === 0 && <div className="w-16 h-16 mx-auto bg-green-500 rounded-lg flex items-center justify-center">
                       <Check className="text-white" size={32} />
-                    </div>
-                  )}
-                  {index === 1 && (
-                    <div className="w-16 h-16 mx-auto bg-blue-500 rounded-lg flex items-center justify-center">
+                    </div>}
+                  {index === 1 && <div className="w-16 h-16 mx-auto bg-blue-500 rounded-lg flex items-center justify-center">
                       <Shield className="text-white" size={32} />
-                    </div>
-                  )}
-                  {index === 2 && (
-                    <div className="w-16 h-16 mx-auto bg-purple-500 rounded-lg flex items-center justify-center">
+                    </div>}
+                  {index === 2 && <div className="w-16 h-16 mx-auto bg-purple-500 rounded-lg flex items-center justify-center">
                       <Users className="text-white" size={32} />
-                    </div>
-                  )}
-                  {index === 3 && (
-                    <div className="w-16 h-16 mx-auto bg-orange-500 rounded-lg flex items-center justify-center">
+                    </div>}
+                  {index === 3 && <div className="w-16 h-16 mx-auto bg-orange-500 rounded-lg flex items-center justify-center">
                       <TrendingUp className="text-white" size={32} />
-                    </div>
-                  )}
+                    </div>}
                 </div>
                 <h3 className="text-xl font-bold text-white mb-4">
                   {advantage.title}
@@ -146,8 +136,7 @@ const About = () => {
                 <p className="text-gray-300 leading-relaxed">
                   {advantage.description}
                 </p>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
