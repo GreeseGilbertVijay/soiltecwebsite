@@ -2,7 +2,7 @@
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { TrendingUp, Clock, Target, CheckCircle, Home, Car, CreditCard, Calculator } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -14,9 +14,21 @@ const Impact = () => {
   const [loanTenure, setLoanTenure] = useState(20);
   const [activeLoanType, setActiveLoanType] = useState('home');
 
+  // Update defaults when loan type changes
+  useEffect(() => {
+    if (activeLoanType === 'home') {
+      setLoanAmount(5000000);
+      setLoanTenure(20);
+    } else if (activeLoanType === 'auto' || activeLoanType === 'personal') {
+      setLoanAmount(1500000);
+      setLoanTenure(60);
+    }
+  }, [activeLoanType]);
+
   const calculateEMI = (principal: number, rate: number, tenure: number) => {
     const monthlyRate = rate / (12 * 100);
-    const totalMonths = tenure * 12;
+    // For home loans, tenure is in years, for auto/personal loans it's in months
+    const totalMonths = activeLoanType === 'home' ? tenure * 12 : tenure;
     const emi = (principal * monthlyRate * Math.pow(1 + monthlyRate, totalMonths)) / 
                 (Math.pow(1 + monthlyRate, totalMonths) - 1);
     return Math.round(emi);
@@ -32,9 +44,11 @@ const Impact = () => {
   const moderateEMI = calculateEMI(loanAmount, loanData.moderate.rate, loanTenure);
   const highEMI = calculateEMI(loanAmount, loanData.high.rate, loanTenure);
 
-  const lowTotal = lowEMI * loanTenure * 12;
-  const moderateTotal = moderateEMI * loanTenure * 12;
-  const highTotal = highEMI * loanTenure * 12;
+  // Calculate total months for interest calculation
+  const totalMonths = activeLoanType === 'home' ? loanTenure * 12 : loanTenure;
+  const lowTotal = lowEMI * totalMonths;
+  const moderateTotal = moderateEMI * totalMonths;
+  const highTotal = highEMI * totalMonths;
 
   const lowInterest = lowTotal - loanAmount;
   const moderateInterest = moderateTotal - loanAmount;
@@ -52,6 +66,22 @@ const Impact = () => {
       return `₹${amount.toLocaleString()}`;
     }
   };
+
+  const getTenureLabel = () => {
+    if (activeLoanType === 'home') {
+      return 'Loan Tenure (Years)';
+    }
+    return 'Loan Tenure (Months)';
+  };
+
+  const getTenureMinMax = () => {
+    if (activeLoanType === 'home') {
+      return { min: '1 yr', max: '30 yrs' };
+    }
+    return { min: '12 mo', max: '84 mo' };
+  };
+
+  const tenureMinMax = getTenureMinMax();
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50">
@@ -113,7 +143,7 @@ const Impact = () => {
             <CardHeader className="bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-t-lg">
               <CardTitle className="flex items-center gap-3 text-2xl">
                 <Calculator size={28} />
-                 {activeLoanType.charAt(0).toUpperCase() + activeLoanType.slice(1)} Loan Calculator
+                Interactive {activeLoanType.charAt(0).toUpperCase() + activeLoanType.slice(1)} Loan Calculator
               </CardTitle>
             </CardHeader>
             <CardContent className="p-8">
@@ -136,7 +166,7 @@ const Impact = () => {
                 </div>
                 <div className="space-y-4">
                   <Label htmlFor="loanTenure" className="text-lg font-semibold text-gray-700">
-                    Loan Tenure (Years)
+                    {getTenureLabel()}
                   </Label>
                   <Input
                     id="loanTenure"
@@ -146,8 +176,8 @@ const Impact = () => {
                     className="text-xl h-14 border-2 border-blue-200 focus:border-blue-500"
                   />
                   <div className="flex justify-between text-sm text-gray-500">
-                    <span>Min: 1 yr</span>
-                    <span>Max: 30 yrs</span>
+                    <span>Min: {tenureMinMax.min}</span>
+                    <span>Max: {tenureMinMax.max}</span>
                   </div>
                 </div>
               </div>
@@ -210,7 +240,6 @@ const Impact = () => {
             </div>
           </div>
 
-          {/* Total Repayment */}
           <div className="mb-12">
             <h3 className="text-2xl font-bold mb-6 text-gray-900">Total Repayment</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -238,7 +267,6 @@ const Impact = () => {
             </div>
           </div>
 
-          {/* Total Interest Paid */}
           <div className="mb-12">
             <h3 className="text-2xl font-bold mb-6 text-gray-900">Total Interest Paid</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -263,7 +291,6 @@ const Impact = () => {
             </div>
           </div>
 
-          {/* Potential Savings */}
           <Card className="mb-12 bg-gradient-to-br from-blue-600 to-purple-600 text-white shadow-2xl">
             <CardHeader>
               <CardTitle className="text-3xl text-center">💰 Potential Savings</CardTitle>
@@ -360,7 +387,6 @@ const Impact = () => {
             </div>
           </Card>
 
-          {/* Disclaimer */}
           <Card className="mt-8 bg-gradient-to-r from-blue-50 to-purple-50 border-blue-200">
             <CardContent className="p-6">
               <div className="flex items-start gap-3">
@@ -379,7 +405,6 @@ const Impact = () => {
         </div>
       </section>
 
-      {/* Good News Section */}
       <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -425,7 +450,6 @@ const Impact = () => {
         </div>
       </section>
 
-      {/* Timeline Section */}
       <section className="py-20 bg-gradient-to-br from-gray-100 to-blue-100">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
