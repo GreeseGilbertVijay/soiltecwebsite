@@ -8,6 +8,9 @@ import { useLanguage } from '@/contexts/LanguageContext';
 const About = () => {
   const { t } = useLanguage();
 
+  // Get advantages with fallback to empty array
+  const advantages = Array.isArray(t('about.whyChoose.advantages')) ? t('about.whyChoose.advantages') : [];
+
   return <div className="min-h-screen bg-gray-50">
       <Navbar />
       
@@ -113,7 +116,7 @@ const About = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {t('about.whyChoose.advantages').map((advantage: any, index: number) => (
+            {advantages.map((advantage: any, index: number) => (
               <div key={index} className="bg-gray-800 rounded-xl p-8 text-center hover:bg-gray-700 transition-all duration-300">
                 <div className="mb-6">
                   {index === 0 && (
