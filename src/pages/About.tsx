@@ -3,6 +3,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Target, Users, Shield, TrendingUp, Linkedin, Check } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const About = () => {
@@ -157,9 +158,12 @@ const About = () => {
             <Card className="bg-white border-2 border-orange-200 hover:border-orange-400 transition-all duration-300 hover:shadow-xl">
               <CardContent className="p-8">
                 <div className="flex items-start space-x-6">
-                  <div className="w-24 h-24 bg-gray-300 rounded-full flex-shrink-0 overflow-hidden">
-                    <div className="w-full h-full bg-gradient-to-br from-gray-400 to-gray-600"></div>
-                  </div>
+                  <Avatar className="w-24 h-24 flex-shrink-0">
+                    <AvatarImage src="" alt={t('about.management.thallam.name')} />
+                    <AvatarFallback className="bg-gradient-to-br from-gray-400 to-gray-600 text-white text-xl font-bold">
+                      TS
+                    </AvatarFallback>
+                  </Avatar>
                   <div className="flex-1">
                     <div className="flex items-center justify-between mb-3">
                       <h3 className="text-2xl font-bold text-orange-500">{t('about.management.thallam.name')}</h3>
@@ -178,9 +182,12 @@ const About = () => {
             <Card className="bg-white border-2 border-orange-200 hover:border-orange-400 transition-all duration-300 hover:shadow-xl">
               <CardContent className="p-8">
                 <div className="flex items-start space-x-6">
-                  <div className="w-24 h-24 bg-gray-300 rounded-full flex-shrink-0 overflow-hidden">
-                    <div className="w-full h-full bg-gradient-to-br from-gray-400 to-gray-600"></div>
-                  </div>
+                  <Avatar className="w-24 h-24 flex-shrink-0">
+                    <AvatarImage src="" alt={t('about.management.venkat.name')} />
+                    <AvatarFallback className="bg-gradient-to-br from-gray-400 to-gray-600 text-white text-xl font-bold">
+                      VT
+                    </AvatarFallback>
+                  </Avatar>
                   <div className="flex-1">
                     <div className="flex items-center justify-between mb-3">
                       <h3 className="text-2xl font-bold text-orange-500">{t('about.management.venkat.name')}</h3>
