@@ -159,7 +159,7 @@ const About = () => {
               <CardContent className="p-8">
                 <div className="flex items-start space-x-6">
                   <Avatar className="w-24 h-24 flex-shrink-0">
-                    <AvatarImage src="" alt={t('about.management.thallam.name')} />
+                    <AvatarImage src="/lovable-uploads/ab813c16-4fd4-44c0-9aeb-9bb826c497fe.png" alt={t('about.management.thallam.name')} />
                     <AvatarFallback className="bg-gradient-to-br from-gray-400 to-gray-600 text-white text-xl font-bold">
                       TS
                     </AvatarFallback>
@@ -183,7 +183,7 @@ const About = () => {
               <CardContent className="p-8">
                 <div className="flex items-start space-x-6">
                   <Avatar className="w-24 h-24 flex-shrink-0">
-                    <AvatarImage src="" alt={t('about.management.venkat.name')} />
+                    <AvatarImage src="/lovable-uploads/0ae1de65-54ad-4d58-a130-a5e80efa8ba7.png" alt={t('about.management.venkat.name')} />
                     <AvatarFallback className="bg-gradient-to-br from-gray-400 to-gray-600 text-white text-xl font-bold">
                       VT
                     </AvatarFallback>
