@@ -3,6 +3,7 @@
   "nav": {
     "home": "Home",
     "about": "About Us",
+    "services": "Services",
     "creditHealth": "Credit Health",
     "impact": "Impact",
     "faq": "FAQs",
@@ -10,26 +11,36 @@
   },
   "home": {
     "hero": {
-      "title": "Rebuild Your Credit, Reclaim Your Future",
-      "subtitle": "Expert guidance to improve your credit score and unlock better financial opportunities",
-      "cta": "Get Free Consultation",
-      "learnMore": "Learn More"
-    },
-    "features": {
-      "title": "Why Choose Samatva Awareness?",
-      "subtitle": "Professional credit counseling services designed to transform your financial future",
-      "free": {
-        "title": "Completely Free Service",
-        "description": "Unlike other counseling companies, we provide 100% free credit counseling services"
-      },
-      "professional": {
-        "title": "Expert Guidance",
-        "description": "Our team of experienced credit counselors will guide you through every step"
-      },
-      "results": {
-        "title": "Proven Results",
-        "description": "6-12 month improvement timeline with our structured approach"
+      "title": "Rebuild Credit, Regain Your Future",
+      "subtitle": "We would like to help you succeed financially and are here for you every step of the way.",
+      "cta": "Start Your Free Consultation",
+      "learnMore": "Learn More About Our Services",
+      "impact": {
+        "title": "Impact",
+        "description": "To understand the impact of your Good or Bad Credit Score"
       }
+    },
+    "concept": {
+      "title1": "Resolve DEBT",
+      "title2": "Rebuild CREDIT",
+      "subtitle": "Concept Incubated by IITM Research Park"
+    },
+    "trustBuilders": {
+      "title": "Proven Results You Can Trust",
+      "timeline": "6-12 Months",
+      "timelineDesc": "Average time to improve your credit score",
+      "freeService": "100% Free Service",
+      "freeServiceDesc": "No hidden fees or charges",
+      "rbiRegistered": "RBI Registered",
+      "rbiRegisteredDesc": "All our financial institution partners"
+    },
+    "videoSection": {
+      "title": "Learn About Our Mission"
+    },
+    "cta": {
+      "title": "Ready to Transform Your Financial Future?",
+      "subtitle": "Start your journey to better credit health today with our free consultation",
+      "button": "Get Professional Help Now"
     }
   },
   "faq": {
@@ -209,14 +220,78 @@
       "plans": "Personalized Plans",
       "plansDesc": "Customized strategies based on your specific needs"
     },
+    "settlementSupport": {
+      "title": "Settlement Account Support",
+      "eligibility": "Eligibility",
+      "eligibilityDesc": "Available for customers with no more than two settled accounts",
+      "funding": "Funding Assistance",
+      "fundingDesc": "Help securing funding from RBI-registered financial institutions",
+      "improvement": "Profile Improvement",
+      "improvementDesc": "Clear overdue amounts on settled accounts to improve credit profile"
+    },
+    "targetAudience": {
+      "title": "Target Audience",
+      "employment": "Employment Requirement",
+      "employmentDesc": "Services for salaried customers who are currently employed",
+      "income": "Active Income",
+      "incomeDesc": "Must have current employment status",
+      "commitment": "Commitment to Improvement",
+      "commitmentDesc": "Willingness to follow structured improvement plans"
+    },
     "process": "Our 5-Step Process",
     "processDesc": "A structured approach to improving your financial health",
+    "processSteps": [
+      {
+        "title": "Free Consultation",
+        "description": "Schedule your no-cost credit counseling session"
+      },
+      {
+        "title": "Assessment",
+        "description": "We'll evaluate your current financial situation"
+      },
+      {
+        "title": "Custom Plan",
+        "description": "Receive a personalized improvement strategy"
+      },
+      {
+        "title": "Implementation",
+        "description": "Begin your 6-12 month improvement journey"
+      },
+      {
+        "title": "Ongoing Support",
+        "description": "Continuous guidance until you achieve your goals"
+      }
+    ],
     "readyToStart": "Ready to Get Started?",
+    "readyDesc": "Take the first step towards better financial health today",
     "scheduleConsultation": "Schedule Your Free Consultation"
   },
   "about": {
     "title": "About Samatva Awareness",
     "subtitle": "Empowering financial futures through expert credit counseling",
+    "hero": {
+      "title": "ABOUT US",
+      "subtitle1": "Providing trusted, No-Cost Financial",
+      "subtitle2": "Counselling to Resolve Debt/Rebuild Credit,",
+      "subtitle3": "& enhance Financial Awareness within",
+      "subtitle4": "Regulatory Compliance.",
+      "description": "Our counsellors are professionally trained and certified by the Indian Institute of Banking and Finance (IIBF)"
+    },
+    "leadership": {
+      "title": "At Samatva Awareness Solutions,",
+      "description1": "We, former bank senior executives—Thallam Sreekumar (Former Head of Business at ICICI Bank) and T.M. Venkatramanan (Former Head of Credit at South Indian Bank)—have launched a new program aimed at helping individuals maintain a healthy credit score, thereby unlocking financial opportunities and addressing unprecedented financial challenges.",
+      "description2": "This concept has been incubated by IIT Madras Research Park.",
+      "description3": "Our advisory board includes three retired senior bankers, as well as one of the original co-founders of this concept in the USA.",
+      "description4": "We are also privileged to have a retired senior employee who served with the regulator for 25+years, on our advisory board."
+    },
+    "process": {
+      "title": "Our Process to Help You Rebuild Your Credit Profile",
+      "step1": "Our telecaller will reach out to you and explain the benefits of maintaining a good CIBIL score. We will analyse your credit report after receiving your approval.",
+      "step2": "Based on the analysis, we will identify unsettled dues. If you have previously marked any loans as \"SETTLED\" due to unforeseen circumstances, we will assist you in addressing those unsettled amounts.",
+      "step3": "We do this by referring you to an RBI-regulated financial institution that may provide you with a loan. This loan will be directly remitted to the respective lender to clear your outstanding dues.",
+      "step4": "If this new loan is repaid on time within the agreed tenure, your credit history will begin to reflect positive repayment behaviour—leading to an improvement in your CIBIL score. A better score can make you eligible for future loans from top banks at more favourable interest rates.",
+      "step5": "Please refer to the comparison \"IMPACT\" Page Link."
+    },
     "mission": "Our Mission",
     "missionDesc": "To empower individuals with expert financial guidance and essential resources to build, strengthen, and sustain a resilient credit profile—laying the foundation for lasting financial well-being and opportunity.",
     "whyChoose": {
@@ -240,21 +315,79 @@
           "description": "Samatva will help, provided you have no more than two settled accounts"
         }
       ]
+    },
+    "management": {
+      "title": "Our Management",
+      "subtitle": "The Pillars Of Our Foundational Strength",
+      "thallam": {
+        "name": "Thallam Sreekumar",
+        "position": "Managing Director",
+        "description": "With over 25 years of experience in financial services, Mr. Thallam Sreekumar has held senior leadership roles, including National Head of Personal Loans and Business Head of Premium Credit Cards at ICICI. His expertise spans across personal loans, credit cards, and retail assets, making him adept at leading large profit centers with ease."
+      },
+      "venkat": {
+        "name": "Venkatramanan TM",
+        "position": "Executive Director",
+        "description": "Mr. Venkatramanan is a seasoned financial expert with 25 years of experience. He has served in key roles such as Regional and Zonal Credit Manager at ICICI Bank and National Credit Head at DBS. His expertise lies in credit/financial evaluation, credit policy development, and credit scoring models across major banking institutions."
+      }
+    },
+    "contact": {
+      "title": "CONTACT US",
+      "address": "No.25, Shanthi Apartments, Flat No 3, 1st Floor, Vyasar Street, T.Nagar, Chennai - 600017"
     }
   },
   "creditHealth": {
-    "title": "Understanding Credit Health",
-    "subtitle": "Learn how to build and maintain a strong credit profile",
-    "importance": "Why Credit Health Matters",
-    "improvementSteps": "Steps to Improve Your Credit"
-  },
-  "impact": {
-    "title": "Our Impact",
-    "subtitle": "Real results for real people",
-    "stats": {
-      "customers": "Customers Helped",
-      "improvement": "Average Score Improvement",
-      "success": "Success Rate"
+    "title": "Master Your Credit Score",
+    "subtitle": "Understanding your credit score is the first step towards financial freedom. Learn how to build, maintain, and leverage a powerful credit profile.",
+    "whatIs": {
+      "title": "What Is a Credit Score?",
+      "description": "Your credit score is a three-digit number that represents your creditworthiness - essentially how well you manage credit cards, loans, and other financial obligations."
+    },
+    "ratings": {
+      "title": "CIBIL Score Impact",
+      "subtitle": "How your score affects loan approval and interest rates",
+      "poor": "Poor",
+      "average": "Average", 
+      "good": "Good",
+      "veryGood": "Very Good",
+      "excellent": "Excellent",
+      "poorRange": "Less than 630",
+      "averageRange": "630 - 680",
+      "goodRange": "680 - 730", 
+      "veryGoodRange": "730 - 780",
+      "excellentRange": "780+",
+      "poorDesc": "❌ Loan rejection likely",
+      "averageDesc": "⚠️ Higher interest rates",
+      "goodDesc": "✅ Likely approval, moderate rates",
+      "veryGoodDesc": "🎯 Better rates, larger amounts",
+      "excellentDesc": "🏆 Best rates, fast approval"
+    },
+    "factors": {
+      "title": "What Affects Your Credit Score?",
+      "subtitle": "Understanding these key factors can help you improve your credit score effectively",
+      "paymentHistory": "Payment History",
+      "paymentHistoryDesc": "Most important factor - always pay on time",
+      "creditUtilization": "Credit Utilization", 
+      "creditUtilizationDesc": "Keep usage below 30% of credit limit",
+      "creditLength": "Credit History Length",
+      "creditLengthDesc": "Longer credit history is better",
+      "creditMix": "Credit Mix",
+      "creditMixDesc": "Mix of credit types (cards, loans)",
+      "newCredit": "New Credit",
+      "newCreditDesc": "Limit new credit applications"
+    },
+    "timeline": {
+      "title": "Credit Improvement Timeline",
+      "subtitle": "Patience and consistency are key to building excellent credit",
+      "duration": "6-12 Months",
+      "description": "Typical timeframe to see significant improvement",
+      "quickWins": "Quick Wins (1-3 months)",
+      "quickWin1": "• Pay down high balances",
+      "quickWin2": "• Dispute credit report errors", 
+      "quickWin3": "• Set up automatic payments",
+      "longTerm": "Long-term Gains (6-12 months)",
+      "longTerm1": "• Consistent payment history",
+      "longTerm2": "• Lower credit utilization",
+      "longTerm3": "• Avoid new credit applications"
     }
   },
   "company": {

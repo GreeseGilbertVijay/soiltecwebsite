@@ -68,30 +68,30 @@ const Services = () => {
               <div className="bg-blue-600 w-16 h-16 rounded-full flex items-center justify-center mb-6">
                 <Users className="text-white" size={32} />
               </div>
-              <h3 className="text-2xl font-semibold mb-4 text-gray-900">Settlement Account Support</h3>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900">{t('services.settlementSupport.title')}</h3>
               
               <div className="space-y-4">
                 <div className="flex items-start space-x-3">
                   <CheckCircle className="text-blue-600 mt-1" size={20} />
                   <div>
-                    <h4 className="font-semibold text-gray-900">Eligibility</h4>
-                    <p className="text-gray-600 text-sm">Available for customers with no more than two settled accounts</p>
+                    <h4 className="font-semibold text-gray-900">{t('services.settlementSupport.eligibility')}</h4>
+                    <p className="text-gray-600 text-sm">{t('services.settlementSupport.eligibilityDesc')}</p>
                   </div>
                 </div>
                 
                 <div className="flex items-start space-x-3">
                   <CheckCircle className="text-blue-600 mt-1" size={20} />
                   <div>
-                    <h4 className="font-semibold text-gray-900">Funding Assistance</h4>
-                    <p className="text-gray-600 text-sm">Help securing funding from RBI-registered financial institutions</p>
+                    <h4 className="font-semibold text-gray-900">{t('services.settlementSupport.funding')}</h4>
+                    <p className="text-gray-600 text-sm">{t('services.settlementSupport.fundingDesc')}</p>
                   </div>
                 </div>
                 
                 <div className="flex items-start space-x-3">
                   <CheckCircle className="text-blue-600 mt-1" size={20} />
                   <div>
-                    <h4 className="font-semibold text-gray-900">Profile Improvement</h4>
-                    <p className="text-gray-600 text-sm">Clear overdue amounts on settled accounts to improve credit profile</p>
+                    <h4 className="font-semibold text-gray-900">{t('services.settlementSupport.improvement')}</h4>
+                    <p className="text-gray-600 text-sm">{t('services.settlementSupport.improvementDesc')}</p>
                   </div>
                 </div>
               </div>
@@ -102,30 +102,30 @@ const Services = () => {
               <div className="bg-purple-600 w-16 h-16 rounded-full flex items-center justify-center mb-6">
                 <UserCheck className="text-white" size={32} />
               </div>
-              <h3 className="text-2xl font-semibold mb-4 text-gray-900">Target Audience</h3>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900">{t('services.targetAudience.title')}</h3>
               
               <div className="space-y-4">
                 <div className="flex items-start space-x-3">
                   <CheckCircle className="text-purple-600 mt-1" size={20} />
                   <div>
-                    <h4 className="font-semibold text-gray-900">Employment Requirement</h4>
-                    <p className="text-gray-600 text-sm">Services for salaried customers who are currently employed</p>
+                    <h4 className="font-semibold text-gray-900">{t('services.targetAudience.employment')}</h4>
+                    <p className="text-gray-600 text-sm">{t('services.targetAudience.employmentDesc')}</p>
                   </div>
                 </div>
                 
                 <div className="flex items-start space-x-3">
                   <CheckCircle className="text-purple-600 mt-1" size={20} />
                   <div>
-                    <h4 className="font-semibold text-gray-900">Active Income</h4>
-                    <p className="text-gray-600 text-sm">Must have current employment status</p>
+                    <h4 className="font-semibold text-gray-900">{t('services.targetAudience.income')}</h4>
+                    <p className="text-gray-600 text-sm">{t('services.targetAudience.incomeDesc')}</p>
                   </div>
                 </div>
                 
                 <div className="flex items-start space-x-3">
                   <CheckCircle className="text-purple-600 mt-1" size={20} />
                   <div>
-                    <h4 className="font-semibold text-gray-900">Commitment to Improvement</h4>
-                    <p className="text-gray-600 text-sm">Willingness to follow structured improvement plans</p>
+                    <h4 className="font-semibold text-gray-900">{t('services.targetAudience.commitment')}</h4>
+                    <p className="text-gray-600 text-sm">{t('services.targetAudience.commitmentDesc')}</p>
                   </div>
                 </div>
               </div>
@@ -147,16 +147,10 @@ const Services = () => {
           </div>
           
           <div className="space-y-8">
-            {[
-              { step: 1, title: "Free Consultation", description: "Schedule your no-cost credit counseling session" },
-              { step: 2, title: "Assessment", description: "We'll evaluate your current financial situation" },
-              { step: 3, title: "Custom Plan", description: "Receive a personalized improvement strategy" },
-              { step: 4, title: "Implementation", description: "Begin your 6-12 month improvement journey" },
-              { step: 5, title: "Ongoing Support", description: "Continuous guidance until you achieve your goals" }
-            ].map((item, index) => (
+            {t('services.processSteps').map((item: any, index: number) => (
               <div key={index} className="flex items-start space-x-4 bg-white p-6 rounded-lg shadow-lg">
                 <div className="bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">
-                  {item.step}
+                  {index + 1}
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">{item.title}</h3>
@@ -175,7 +169,7 @@ const Services = () => {
             {t('services.readyToStart')}
           </h2>
           <p className="text-xl mb-8 text-blue-100">
-            Take the first step towards better financial health today
+            {t('services.readyDesc')}
           </p>
           <Link 
             to="/contact" 

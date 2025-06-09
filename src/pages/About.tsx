@@ -1,16 +1,18 @@
+
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Target, Users, Shield, TrendingUp, Linkedin, Check } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { useLanguage } from '@/contexts/LanguageContext';
+
 const About = () => {
-  const {
-    t
-  } = useLanguage();
+  const { t } = useLanguage();
 
   // Get advantages with fallback to empty array
   const advantages = Array.isArray(t('about.whyChoose.advantages')) ? t('about.whyChoose.advantages') : [];
-  return <div className="min-h-screen bg-gray-50">
+
+  return (
+    <div className="min-h-screen bg-gray-50">
       <Navbar />
       
       {/* Hero Section */}
@@ -20,24 +22,24 @@ const About = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h1 className="text-6xl md:text-7xl font-bold mb-8 leading-tight">
-                ABOUT US
+                {t('about.hero.title')}
               </h1>
               <div className="space-y-4">
                 <h2 className="text-3xl md:text-4xl font-bold">
-                  Providing trusted, <span className="text-yellow-300">No-Cost</span> Financial
+                  {t('about.hero.subtitle1')} <span className="text-yellow-300">No-Cost</span> Financial
                 </h2>
                 <h2 className="text-3xl md:text-4xl font-bold">
-                  Counselling to <span className="text-yellow-300">Resolve Debt/Rebuild Credit</span>,
+                  {t('about.hero.subtitle2')} <span className="text-yellow-300">Resolve Debt/Rebuild Credit</span>,
                 </h2>
                 <h2 className="text-2xl md:text-3xl font-semibold text-gray-100">
-                  & enhance Financial Awareness within
+                  {t('about.hero.subtitle3')}
                 </h2>
                 <h2 className="text-2xl md:text-3xl font-semibold text-gray-100">
-                  Regulatory Compliance.
+                  {t('about.hero.subtitle4')}
                 </h2>
               </div>
               <p className="text-xl text-orange-100 mt-8 leading-relaxed">
-                Our counsellors are professionally trained and certified by the Indian Institute of Banking and Finance (IIBF)
+                {t('about.hero.description')}
               </p>
             </div>
             <div className="lg:flex lg:justify-end">
@@ -52,21 +54,20 @@ const About = () => {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-5xl font-bold text-gray-900 mb-6">
-              At <span className="text-orange-500">Samatva Awareness Solutions</span>,
+              {t('about.leadership.title')}
             </h2>
             <p className="text-xl text-gray-700 max-w-5xl mx-auto leading-relaxed">
-              We, former bank senior executives—Thallam Sreekumar (Former Head of Business at ICICI Bank) and T.M. Venkatramanan (Former Head of Credit at South Indian Bank)—have launched a new program aimed at helping individuals maintain a healthy credit score, thereby unlocking financial opportunities and addressing unprecedented financial challenges.
+              {t('about.leadership.description1')}
             </p>
             <p className="text-lg text-orange-600 font-semibold mt-6">
-              This concept has been incubated by IIT Madras Research Park.
+              {t('about.leadership.description2')}
             </p>
-             <p className="text-lg text-gray-700 mb-6">
-                Our advisory board includes three retired senior bankers, as well as one of the <span className="font-semibold text-gray-900">original co-founders of this concept in the USA</span>.
-              </p>
-              <p className="text-lg text-gray-700">
-                We are also privileged to have a retired senior employee who served with the regulator for <span className="font-semibold text-gray-900">25+years</span>, on our advisory board.
-              </p>
-            
+            <p className="text-lg text-gray-700 mb-6">
+              {t('about.leadership.description3')}
+            </p>
+            <p className="text-lg text-gray-700">
+              {t('about.leadership.description4')}
+            </p>
           </div>
 
           {/* Our Process Section */}
@@ -77,24 +78,14 @@ const About = () => {
               </div>
               <div>
                 <h3 className="text-4xl font-bold text-gray-900 mb-6">
-                  Our Process to Help You Rebuild Your <span className="text-orange-500">Credit Profile</span>
+                  {t('about.process.title')}
                 </h3>
                 <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
-                  <p>
-                    Our telecaller will reach out to you and explain the benefits of maintaining a good CIBIL score. We will analyse your credit report after receiving your approval.
-                  </p>
-                  <p>
-                    Based on the analysis, we will identify unsettled dues. If you have previously marked any loans as "SETTLED" due to unforeseen circumstances, we will assist you in addressing those unsettled amounts.
-                  </p>
-                  <p>
-                    We do this by referring you to an RBI-regulated financial institution that may provide you with a loan. This loan will be directly remitted to the respective lender to clear your outstanding dues.
-                  </p>
-                  <p>
-                    If this new loan is repaid on time within the agreed tenure, your credit history will begin to reflect positive repayment behaviour—leading to an improvement in your CIBIL score. A better score can make you eligible for future loans from top banks at more favourable interest rates.
-                  </p>
-                  <p className="text-blue-600 font-semibold">
-                    Please refer to the comparison "IMPACT" Page Link.
-                  </p>
+                  <p>{t('about.process.step1')}</p>
+                  <p>{t('about.process.step2')}</p>
+                  <p>{t('about.process.step3')}</p>
+                  <p>{t('about.process.step4')}</p>
+                  <p className="text-blue-600 font-semibold">{t('about.process.step5')}</p>
                 </div>
               </div>
             </div>
@@ -115,20 +106,29 @@ const About = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {advantages.map((advantage: any, index: number) => <div key={index} className="bg-gray-800 rounded-xl p-8 text-center hover:bg-gray-700 transition-all duration-300">
+            {advantages.map((advantage: any, index: number) => (
+              <div key={index} className="bg-gray-800 rounded-xl p-8 text-center hover:bg-gray-700 transition-all duration-300">
                 <div className="mb-6">
-                  {index === 0 && <div className="w-16 h-16 mx-auto bg-green-500 rounded-lg flex items-center justify-center">
+                  {index === 0 && (
+                    <div className="w-16 h-16 mx-auto bg-green-500 rounded-lg flex items-center justify-center">
                       <Check className="text-white" size={32} />
-                    </div>}
-                  {index === 1 && <div className="w-16 h-16 mx-auto bg-blue-500 rounded-lg flex items-center justify-center">
+                    </div>
+                  )}
+                  {index === 1 && (
+                    <div className="w-16 h-16 mx-auto bg-blue-500 rounded-lg flex items-center justify-center">
                       <Shield className="text-white" size={32} />
-                    </div>}
-                  {index === 2 && <div className="w-16 h-16 mx-auto bg-purple-500 rounded-lg flex items-center justify-center">
+                    </div>
+                  )}
+                  {index === 2 && (
+                    <div className="w-16 h-16 mx-auto bg-purple-500 rounded-lg flex items-center justify-center">
                       <Users className="text-white" size={32} />
-                    </div>}
-                  {index === 3 && <div className="w-16 h-16 mx-auto bg-orange-500 rounded-lg flex items-center justify-center">
+                    </div>
+                  )}
+                  {index === 3 && (
+                    <div className="w-16 h-16 mx-auto bg-orange-500 rounded-lg flex items-center justify-center">
                       <TrendingUp className="text-white" size={32} />
-                    </div>}
+                    </div>
+                  )}
                 </div>
                 <h3 className="text-xl font-bold text-white mb-4">
                   {advantage.title}
@@ -136,7 +136,8 @@ const About = () => {
                 <p className="text-gray-300 leading-relaxed">
                   {advantage.description}
                 </p>
-              </div>)}
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -146,9 +147,9 @@ const About = () => {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-5xl font-bold text-gray-900 mb-4">
-              Our <span className="text-orange-500">Management</span>
+              {t('about.management.title')}
             </h2>
-            <p className="text-2xl text-gray-600">The Pillars Of Our Foundational Strength</p>
+            <p className="text-2xl text-gray-600">{t('about.management.subtitle')}</p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -161,12 +162,12 @@ const About = () => {
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center justify-between mb-3">
-                      <h3 className="text-2xl font-bold text-orange-500">Thallam Sreekumar</h3>
+                      <h3 className="text-2xl font-bold text-orange-500">{t('about.management.thallam.name')}</h3>
                       <Linkedin className="text-blue-600 cursor-pointer hover:text-blue-800" size={24} />
                     </div>
-                    <p className="text-lg font-semibold text-gray-700 mb-4">Managing Director</p>
+                    <p className="text-lg font-semibold text-gray-700 mb-4">{t('about.management.thallam.position')}</p>
                     <p className="text-gray-600 leading-relaxed">
-                      With over 25 years of experience in financial services, Mr. Thallam Sreekumar has held senior leadership roles, including National Head of Personal Loans and Business Head of Premium Credit Cards at ICICI. His expertise spans across personal loans, credit cards, and retail assets, making him adept at leading large profit centers with ease.
+                      {t('about.management.thallam.description')}
                     </p>
                   </div>
                 </div>
@@ -182,12 +183,12 @@ const About = () => {
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center justify-between mb-3">
-                      <h3 className="text-2xl font-bold text-orange-500">Venkatramanan TM</h3>
+                      <h3 className="text-2xl font-bold text-orange-500">{t('about.management.venkat.name')}</h3>
                       <Linkedin className="text-blue-600 cursor-pointer hover:text-blue-800" size={24} />
                     </div>
-                    <p className="text-lg font-semibold text-gray-700 mb-4">Executive Director</p>
+                    <p className="text-lg font-semibold text-gray-700 mb-4">{t('about.management.venkat.position')}</p>
                     <p className="text-gray-600 leading-relaxed">
-                      Mr. Venkatramanan is a seasoned financial expert with 25 years of experience. He has served in key roles such as Regional and Zonal Credit Manager at ICICI Bank and National Credit Head at DBS. His expertise lies in credit/financial evaluation, credit policy development, and credit scoring models across major banking institutions.
+                      {t('about.management.venkat.description')}
                     </p>
                   </div>
                 </div>
@@ -197,22 +198,18 @@ const About = () => {
         </div>
       </section>
 
-   
       {/* Enhanced Mission Section */}
       <section className="py-20 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <div className="mb-8">
-                
-              </div>
               <p className="text-lg text-gray-300 leading-relaxed">
                 {t('about.missionDesc')}
               </p>
             </div>
             
             <div className="bg-white text-gray-900 rounded-2xl p-8 shadow-2xl">
-              <h4 className="text-2xl font-bold text-orange-500 mb-6">CONTACT US</h4>
+              <h4 className="text-2xl font-bold text-orange-500 mb-6">{t('about.contact.title')}</h4>
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
@@ -228,7 +225,7 @@ const About = () => {
                 </div>
                 <div className="mt-6 p-4 bg-gray-50 rounded-lg">
                   <p className="text-sm leading-relaxed">
-                    No.25, Shanthi Apartments, Flat No 3, 1st Floor, Vyasar Street, T.Nagar, Chennai - 600017
+                    {t('about.contact.address')}
                   </p>
                 </div>
               </div>
@@ -238,6 +235,8 @@ const About = () => {
       </section>
 
       <Footer />
-    </div>;
+    </div>
+  );
 };
+
 export default About;

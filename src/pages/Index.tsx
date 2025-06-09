@@ -4,8 +4,11 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import AnimatedBackground from '@/components/AnimatedBackground';
 import { TrendingUp, ArrowRight } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Index = () => {
+  const { t } = useLanguage();
+
   useEffect(() => {
     const handleMessage = (event: MessageEvent) => {
       if (event.data?.type === "AUDIO_RECORDER_CLICKED") {
@@ -50,12 +53,11 @@ const Index = () => {
             {/* Left Content */}
             <div className="text-left animate-fade-in">
               <h1 className="text-6xl md:text-8xl font-bold mb-8 leading-tight">
-                <span className="text-white block mb-4 animate-slide-in-right">Rebuild Credit,</span>
-                <span className="text-orange-500 block mb-4 animate-slide-in-right" style={{animationDelay: '0.2s'}}>Regain Your</span>
-                <span className="text-orange-500 block animate-slide-in-right" style={{animationDelay: '0.4s'}}>Future</span>
+                <span className="text-white block mb-4 animate-slide-in-right">{t('home.hero.title').split(',')[0]},</span>
+                <span className="text-orange-500 block mb-4 animate-slide-in-right" style={{animationDelay: '0.2s'}}>{t('home.hero.title').split(' ').slice(-2).join(' ')}</span>
               </h1>
               <p className="text-xl md:text-2xl mb-8 text-slate-300 max-w-xl leading-relaxed animate-fade-in" style={{animationDelay: '0.6s'}}>
-                We would like to help you succeed financially and are here for you every step of the way.
+                {t('home.hero.subtitle')}
               </p>
             </div>
 
@@ -67,10 +69,10 @@ const Index = () => {
                     <div className="bg-white/20 p-4 rounded-2xl animate-pulse-glow">
                       <TrendingUp className="text-white" size={40} />
                     </div>
-                    <h3 className="text-3xl font-bold text-white">Impact</h3>
+                    <h3 className="text-3xl font-bold text-white">{t('home.hero.impact.title')}</h3>
                   </div>
                   <p className="text-white/95 text-xl leading-relaxed">
-                    To understand the impact of your Good or Bad Credit Score
+                    {t('home.hero.impact.description')}
                   </p>
                 </Link>
               </div>
@@ -104,21 +106,21 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
-              <span className="text-white block mb-4">Resolve DEBT</span>
-              <span className="text-orange-500 block mb-8">Rebuild CREDIT</span>
+              <span className="text-white block mb-4">{t('home.concept.title1')}</span>
+              <span className="text-orange-500 block mb-8">{t('home.concept.title2')}</span>
             </h2>
             <p className="text-2xl md:text-3xl text-orange-400 font-medium mb-12 animate-fade-in" style={{animationDelay: '0.3s'}}>
-              Concept Incubated by IITM Research Park
+              {t('home.concept.subtitle')}
             </p>
           </div>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center max-w-4xl mx-auto animate-fade-in" style={{animationDelay: '0.6s'}}>
             <Link to="/contact" className="bg-orange-500 hover:bg-orange-600 text-white rounded-full font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-orange-500/25 flex items-center justify-center gap-2 text-lg px-8 py-4 min-w-[280px]">
-              Start Your Free Consultation
+              {t('home.hero.cta')}
               <ArrowRight size={20} />
             </Link>
             <Link to="/services" className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white rounded-full font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-orange-500/25 flex items-center justify-center text-lg px-8 py-4 min-w-[280px]">
-              Learn More About Our Services
+              {t('home.hero.learnMore')}
             </Link>
           </div>
         </div>
@@ -143,27 +145,27 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Proven Results You Can <span className="text-orange-500">Trust</span>
+              {t('home.trustBuilders.title')}
             </h2>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center p-10 bg-gradient-to-br from-slate-700 to-slate-600 rounded-3xl hover:from-slate-600 hover:to-slate-500 transition-all hover:scale-105 border border-slate-500">
-              <div className="text-6xl font-bold text-orange-500 mb-4">6-12</div>
-              <div className="text-2xl font-bold text-white mb-4">Months</div>
-              <p className="text-slate-300 text-lg">Average time to improve your credit score</p>
+              <div className="text-6xl font-bold text-orange-500 mb-4">{t('home.trustBuilders.timeline').split(' ')[0]}</div>
+              <div className="text-2xl font-bold text-white mb-4">{t('home.trustBuilders.timeline').split(' ')[1]}</div>
+              <p className="text-slate-300 text-lg">{t('home.trustBuilders.timelineDesc')}</p>
             </div>
             
             <div className="text-center p-10 bg-gradient-to-br from-slate-700 to-slate-600 rounded-3xl hover:from-slate-600 hover:to-slate-500 transition-all hover:scale-105 border border-slate-500">
-              <div className="text-6xl font-bold text-green-500 mb-4">100%</div>
-              <div className="text-2xl font-bold text-white mb-4">Free Service</div>
-              <p className="text-slate-300 text-lg">No hidden fees or charges</p>
+              <div className="text-6xl font-bold text-green-500 mb-4">{t('home.trustBuilders.freeService').split(' ')[0]}</div>
+              <div className="text-2xl font-bold text-white mb-4">{t('home.trustBuilders.freeService').split(' ').slice(1).join(' ')}</div>
+              <p className="text-slate-300 text-lg">{t('home.trustBuilders.freeServiceDesc')}</p>
             </div>
             
             <div className="text-center p-10 bg-gradient-to-br from-slate-700 to-slate-600 rounded-3xl hover:from-slate-600 hover:to-slate-500 transition-all hover:scale-105 border border-slate-500">
-              <div className="text-6xl font-bold text-orange-500 mb-4">RBI</div>
-              <div className="text-2xl font-bold text-white mb-4">Registered</div>
-              <p className="text-slate-300 text-lg">All our financial institution partners</p>
+              <div className="text-6xl font-bold text-orange-500 mb-4">{t('home.trustBuilders.rbiRegistered')}</div>
+              <div className="text-2xl font-bold text-white mb-4">{t('home.trustBuilders.rbiRegistered')}</div>
+              <p className="text-slate-300 text-lg">{t('home.trustBuilders.rbiRegisteredDesc')}</p>
             </div>
           </div>
         </div>
@@ -173,7 +175,7 @@ const Index = () => {
       <section className="py-20 bg-slate-900 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-12">
-            Learn About Our <span className="text-orange-500">Mission</span>
+            {t('home.videoSection.title')}
           </h2>
           <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-black">
             <iframe
@@ -204,13 +206,13 @@ const Index = () => {
       <section className="py-20 bg-gradient-to-br from-orange-600 to-orange-500">
         <div className="max-w-5xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-            Ready to Transform Your Financial Future?
+            {t('home.cta.title')}
           </h2>
           <p className="text-xl mb-10 text-orange-100 max-w-3xl mx-auto">
-            Start your journey to better credit health today with our free consultation
+            {t('home.cta.subtitle')}
           </p>
           <Link to="/contact" className="bg-white text-orange-600 hover:bg-orange-50 px-10 py-5 rounded-full font-bold text-xl transition-all transform hover:scale-105 inline-flex items-center gap-3 shadow-2xl">
-            Get Professional Help Now
+            {t('home.cta.button')}
             <ArrowRight size={24} />
           </Link>
         </div>
