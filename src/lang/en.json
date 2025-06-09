@@ -218,7 +218,29 @@
     "title": "About Samatva Awareness",
     "subtitle": "Empowering financial futures through expert credit counseling",
     "mission": "Our Mission",
-    "missionDesc": "To empower individuals with expert financial guidance and essential resources to build, strengthen, and sustain a resilient credit profile—laying the foundation for lasting financial well-being and opportunity."
+    "missionDesc": "To empower individuals with expert financial guidance and essential resources to build, strengthen, and sustain a resilient credit profile—laying the foundation for lasting financial well-being and opportunity.",
+    "whyChoose": {
+      "title": "Why Choose Samatva?",
+      "subtitle": "We offer unique advantages that set us apart from other credit counseling companies",
+      "advantages": [
+        {
+          "title": "Free Credit Counseling",
+          "description": "Samatva does not charge any fees from customers for its credit counselling service"
+        },
+        {
+          "title": "RBI-Registered Partners",
+          "description": "Samatva assists customers in securing funding from RBI-registered institutions"
+        },
+        {
+          "title": "Specialized Support",
+          "description": "Services designed for salaried customers who are currently employed"
+        },
+        {
+          "title": "Settlement Account Support",
+          "description": "Samatva will help, provided you have no more than two settled accounts"
+        }
+      ]
+    }
   },
   "creditHealth": {
     "title": "Understanding Credit Health",
