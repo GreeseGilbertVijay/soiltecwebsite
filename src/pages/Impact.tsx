@@ -113,7 +113,7 @@ const Impact = () => {
             <CardHeader className="bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-t-lg">
               <CardTitle className="flex items-center gap-3 text-2xl">
                 <Calculator size={28} />
-                Interactive {activeLoanType.charAt(0).toUpperCase() + activeLoanType.slice(1)} Loan Calculator
+                 {activeLoanType.charAt(0).toUpperCase() + activeLoanType.slice(1)} Loan Calculator
               </CardTitle>
             </CardHeader>
             <CardContent className="p-8">
