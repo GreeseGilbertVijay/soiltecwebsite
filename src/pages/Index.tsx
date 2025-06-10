@@ -164,7 +164,7 @@ const Index = () => {
             </div>
             
             <div className="text-center p-10 bg-gradient-to-br from-slate-700 to-slate-600 rounded-3xl hover:from-slate-600 hover:to-slate-500 transition-all hover:scale-105 border border-slate-500 animate-scale-in stagger-3">
-              <div className="text-6xl font-bold text-orange-500 mb-4">{t('home.trustBuilders.rbiRegistered')}</div>
+              <div className="text-6xl font-bold text-orange-500 mb-4">{t('home.trustBuilders.rbiNBFC')}</div>
               <div className="text-2xl font-bold text-white mb-4">{t('home.trustBuilders.rbiRegistered')}</div>
               <p className="text-slate-300 text-lg">{t('home.trustBuilders.rbiRegisteredDesc')}</p>
             </div>
