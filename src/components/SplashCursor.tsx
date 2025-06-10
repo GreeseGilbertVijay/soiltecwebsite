@@ -20,19 +20,19 @@ interface SplashCursorProps {
 
 function SplashCursor({
   SIM_RESOLUTION = 128,
-  DYE_RESOLUTION = 1440,
+  DYE_RESOLUTION = 1024,
   CAPTURE_RESOLUTION = 512,
-  DENSITY_DISSIPATION = 3.5,
-  VELOCITY_DISSIPATION = 2,
-  PRESSURE = 0.1,
+  DENSITY_DISSIPATION = 1,
+  VELOCITY_DISSIPATION = 0.2,
+  PRESSURE = 0.8,
   PRESSURE_ITERATIONS = 20,
-  CURL = 3,
-  SPLAT_RADIUS = 0.2,
+  CURL = 30,
+  SPLAT_RADIUS = 0.25,
   SPLAT_FORCE = 6000,
   SHADING = true,
   COLOR_UPDATE_SPEED = 10,
-  BACK_COLOR = { r: 0.5, g: 0, b: 0 },
-  TRANSPARENT = true
+  BACK_COLOR = { r: 0, g: 0, b: 0 },
+  TRANSPARENT = false
 }: SplashCursorProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -75,7 +75,7 @@ function SplashCursor({
 
     const { gl, ext } = getWebGLContext(canvas);
     if (!ext.supportLinearFiltering) {
-      config.DYE_RESOLUTION = 256;
+      config.DYE_RESOLUTION = 512;
       config.SHADING = false;
     }
 
@@ -960,8 +960,8 @@ function SplashCursor({
       color.r *= 10.0;
       color.g *= 10.0;
       color.b *= 10.0;
-      let dx = 10 * (Math.random() - 0.5);
-      let dy = 30 * (Math.random() - 0.5);
+      let dx = 1000 * (Math.random() - 0.5);
+      let dy = 1000 * (Math.random() - 0.5);
       splat(pointer.texcoordX, pointer.texcoordY, dx, dy, color);
     }
 
@@ -1163,20 +1163,20 @@ function SplashCursor({
       }
     };
 
-    window.addEventListener('mousedown', handleMouseDown);
-    document.body.addEventListener('mousemove', handleMouseMove);
-    window.addEventListener('touchstart', handleTouchStart);
-    window.addEventListener('touchmove', handleTouchMove, false);
-    window.addEventListener('touchend', handleTouchEnd);
+    canvas.addEventListener('mousedown', handleMouseDown);
+    canvas.addEventListener('mousemove', handleMouseMove);
+    canvas.addEventListener('touchstart', handleTouchStart);
+    canvas.addEventListener('touchmove', handleTouchMove, { passive: false });
+    canvas.addEventListener('touchend', handleTouchEnd);
 
     updateFrame();
 
     return () => {
-      window.removeEventListener('mousedown', handleMouseDown);
-      document.body.removeEventListener('mousemove', handleMouseMove);
-      window.removeEventListener('touchstart', handleTouchStart);
-      window.removeEventListener('touchmove', handleTouchMove);
-      window.removeEventListener('touchend', handleTouchEnd);
+      canvas.removeEventListener('mousedown', handleMouseDown);
+      canvas.removeEventListener('mousemove', handleMouseMove);
+      canvas.removeEventListener('touchstart', handleTouchStart);
+      canvas.removeEventListener('touchmove', handleTouchMove);
+      canvas.removeEventListener('touchend', handleTouchEnd);
     };
   }, [
     SIM_RESOLUTION,
@@ -1214,6 +1214,7 @@ function SplashCursor({
           width: '100vw',
           height: '100vh',
           display: 'block',
+          pointerEvents: 'auto',
         }}
       />
     </div>
