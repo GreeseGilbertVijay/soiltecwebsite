@@ -27,10 +27,10 @@ const About = () => {
               </h1>
               <div className="space-y-4">
                 <h2 className="text-3xl md:text-4xl font-bold animate-fade-in stagger-1">
-                  Providing trusted, <span className="text-yellow-300">No-Cost</span> Financial
+                  Providing trusted, <span className="text-yellow-300">No-Cost</span> 
                 </h2>
                 <h2 className="text-3xl md:text-4xl font-bold animate-fade-in stagger-2">
-                  Counselling to <span className="text-yellow-300">Resolve Debt/Rebuild Credit</span>,
+                  Financial Counselling to <span className="text-yellow-300">Resolve Debt/Rebuild Credit</span>,
                 </h2>
                 <h2 className="text-2xl md:text-3xl font-semibold text-gray-100 animate-fade-in stagger-3">
                   & enhance Financial Awareness within
