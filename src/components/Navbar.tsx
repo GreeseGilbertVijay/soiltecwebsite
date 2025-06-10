@@ -26,7 +26,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 flex items-center">
             <Link to="/" className="flex items-center">
               <img 
                 src="/lovable-uploads/c24581a1-d607-4b4e-a879-875a8504cb45.png" 
@@ -36,9 +36,9 @@ const Navbar = () => {
             </Link>
           </div>
           
-          {/* Desktop Navigation */}
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-6">
+          {/* Desktop Navigation - Centered */}
+          <div className="hidden md:flex md:items-center md:justify-center md:flex-1">
+            <div className="flex items-baseline space-x-6">
               {navItems.map((item) => (
                 <Link
                   key={item.path}

@@ -21,29 +21,29 @@ const About = () => {
         <div className="absolute inset-0 bg-black bg-opacity-10"></div>
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h1 className="text-6xl md:text-7xl font-bold mb-8 leading-tight">
+            <div className="animate-fade-in">
+              <h1 className="text-6xl md:text-7xl font-bold mb-8 leading-tight animate-slide-in-right">
                 {t('about.hero.title')}
               </h1>
               <div className="space-y-4">
-                <h2 className="text-3xl md:text-4xl font-bold">
-                  {t('about.hero.subtitle1')} <span className="text-yellow-300">No-Cost</span> Financial
+                <h2 className="text-3xl md:text-4xl font-bold animate-fade-in stagger-1">
+                  Providing trusted, <span className="text-yellow-300">No-Cost</span> Financial
                 </h2>
-                <h2 className="text-3xl md:text-4xl font-bold">
-                  {t('about.hero.subtitle2')} <span className="text-yellow-300">Resolve Debt/Rebuild Credit</span>,
+                <h2 className="text-3xl md:text-4xl font-bold animate-fade-in stagger-2">
+                  Counselling to <span className="text-yellow-300">Resolve Debt/Rebuild Credit</span>,
                 </h2>
-                <h2 className="text-2xl md:text-3xl font-semibold text-gray-100">
-                  {t('about.hero.subtitle3')}
+                <h2 className="text-2xl md:text-3xl font-semibold text-gray-100 animate-fade-in stagger-3">
+                  & enhance Financial Awareness within
                 </h2>
-                <h2 className="text-2xl md:text-3xl font-semibold text-gray-100">
-                  {t('about.hero.subtitle4')}
+                <h2 className="text-2xl md:text-3xl font-semibold text-gray-100 animate-fade-in stagger-4">
+                  Regulatory Compliance.
                 </h2>
               </div>
-              <p className="text-xl text-orange-100 mt-8 leading-relaxed">
+              <p className="text-xl text-orange-100 mt-8 leading-relaxed animate-fade-in stagger-5">
                 {t('about.hero.description')}
               </p>
             </div>
-            <div className="lg:flex lg:justify-end">
+            <div className="lg:flex lg:justify-end animate-scale-in">
               <img alt="Debt Counselling Session" className="w-full max-w-lg rounded-2xl shadow-2xl" src="/lovable-uploads/ab1e075d-5cb7-4bb7-8eb3-58065d670483.png" />
             </div>
           </div>
@@ -53,7 +53,7 @@ const About = () => {
       {/* Leadership Section */}
       <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 animate-fade-in">
             <h2 className="text-5xl font-bold text-gray-900 mb-6">
               {t('about.leadership.title')}
             </h2>
@@ -72,21 +72,21 @@ const About = () => {
           </div>
 
           {/* Our Process Section */}
-          <div className="bg-gradient-to-r from-orange-50 to-yellow-50 rounded-3xl p-12 mb-16">
+          <div className="bg-gradient-to-r from-orange-50 to-yellow-50 rounded-3xl p-12 mb-16 animate-scale-in">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div className="flex justify-center">
+              <div className="flex justify-center animate-slide-in-right">
                 <img alt="Credit Counselling Session" className="w-full max-w-lg rounded-2xl shadow-xl" src="/lovable-uploads/9dd940b1-1ee3-42df-afda-f23fd6651851.png" />
               </div>
-              <div>
+              <div className="animate-fade-in">
                 <h3 className="text-4xl font-bold text-gray-900 mb-6">
                   {t('about.process.title')}
                 </h3>
                 <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
-                  <p>{t('about.process.step1')}</p>
-                  <p>{t('about.process.step2')}</p>
-                  <p>{t('about.process.step3')}</p>
-                  <p>{t('about.process.step4')}</p>
-                  <p className="text-blue-600 font-semibold">{t('about.process.step5')}</p>
+                  <p className="animate-fade-in stagger-1">{t('about.process.step1')}</p>
+                  <p className="animate-fade-in stagger-2">{t('about.process.step2')}</p>
+                  <p className="animate-fade-in stagger-3">{t('about.process.step3')}</p>
+                  <p className="animate-fade-in stagger-4">{t('about.process.step4')}</p>
+                  <p className="text-blue-600 font-semibold animate-fade-in stagger-5">{t('about.process.step5')}</p>
                 </div>
               </div>
             </div>
@@ -97,7 +97,7 @@ const About = () => {
       {/* Why Choose Samatva Section */}
       <section className="py-20 bg-slate-900">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 animate-fade-in">
             <h2 className="text-5xl font-bold text-white mb-6">
               {t('about.whyChoose.title')} 
             </h2>
@@ -108,7 +108,7 @@ const About = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {advantages.map((advantage: any, index: number) => (
-              <div key={index} className="bg-gray-800 rounded-xl p-8 text-center hover:bg-gray-700 transition-all duration-300">
+              <div key={index} className="bg-gray-800 rounded-xl p-8 text-center hover:bg-gray-700 transition-all duration-300 animate-scale-in" style={{animationDelay: `${index * 0.1}s`}}>
                 <div className="mb-6">
                   {index === 0 && (
                     <div className="w-16 h-16 mx-auto bg-green-500 rounded-lg flex items-center justify-center">
@@ -146,7 +146,7 @@ const About = () => {
       {/* Management Team Section */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 animate-fade-in">
             <h2 className="text-5xl font-bold text-gray-900 mb-4">
               {t('about.management.title')}
             </h2>
@@ -155,7 +155,7 @@ const About = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Thallam Sreekumar Card */}
-            <Card className="bg-white border-2 border-orange-200 hover:border-orange-400 transition-all duration-300 hover:shadow-xl">
+            <Card className="bg-white border-2 border-orange-200 hover:border-orange-400 transition-all duration-300 hover:shadow-xl animate-scale-in">
               <CardContent className="p-8">
                 <div className="flex items-start space-x-6">
                   <Avatar className="w-24 h-24 flex-shrink-0">
@@ -179,7 +179,7 @@ const About = () => {
             </Card>
 
             {/* Venkatramanan TM Card */}
-            <Card className="bg-white border-2 border-orange-200 hover:border-orange-400 transition-all duration-300 hover:shadow-xl">
+            <Card className="bg-white border-2 border-orange-200 hover:border-orange-400 transition-all duration-300 hover:shadow-xl animate-scale-in stagger-1">
               <CardContent className="p-8">
                 <div className="flex items-start space-x-6">
                   <Avatar className="w-24 h-24 flex-shrink-0">
@@ -209,13 +209,13 @@ const About = () => {
       <section className="py-20 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
+            <div className="animate-fade-in">
               <p className="text-lg text-gray-300 leading-relaxed">
                 {t('about.missionDesc')}
               </p>
             </div>
             
-            <div className="bg-white text-gray-900 rounded-2xl p-8 shadow-2xl">
+            <div className="bg-white text-gray-900 rounded-2xl p-8 shadow-2xl animate-scale-in">
               <h4 className="text-2xl font-bold text-orange-500 mb-6">{t('about.contact.title')}</h4>
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
