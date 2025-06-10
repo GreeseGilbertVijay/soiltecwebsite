@@ -27,8 +27,8 @@ function SplashCursor({
   PRESSURE = 0.8,
   PRESSURE_ITERATIONS = 20,
   CURL = 30,
-  SPLAT_RADIUS = 0.25,
-  SPLAT_FORCE = 6000,
+  SPLAT_RADIUS = 0.225, // Reduced by 10% from 0.25
+  SPLAT_FORCE = 4800, // Reduced by 20% from 6000
   SHADING = true,
   COLOR_UPDATE_SPEED = 10,
   BACK_COLOR = { r: 0, g: 0, b: 0 },
@@ -172,7 +172,7 @@ function SplashCursor({
     class Material {
       vertexShader: WebGLShader;
       fragmentShaderSource: string;
-      programs: any[] = [];
+      programs: any = {};
       activeProgram: any = null;
       uniforms: any = {};
 
@@ -960,8 +960,8 @@ function SplashCursor({
       color.r *= 10.0;
       color.g *= 10.0;
       color.b *= 10.0;
-      let dx = 1000 * (Math.random() - 0.5);
-      let dy = 1000 * (Math.random() - 0.5);
+      let dx = 800 * (Math.random() - 0.5); // Reduced by 20% from 1000
+      let dy = 800 * (Math.random() - 0.5); // Reduced by 20% from 1000
       splat(pointer.texcoordX, pointer.texcoordY, dx, dy, color);
     }
 
