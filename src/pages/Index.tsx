@@ -1,3 +1,4 @@
+
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
@@ -53,8 +54,8 @@ const Index = () => {
             {/* Left Content */}
             <div className="text-left animate-fade-in">
               <h1 className="text-6xl md:text-8xl font-bold mb-8 leading-tight">
-                <span className="text-white block mb-4 animate-slide-in-right">{t('home.hero.title').split(',')[0]},</span>
-                <span className="text-orange-500 block mb-4 animate-slide-in-right" style={{animationDelay: '0.2s'}}>{t('home.hero.title').split(' ').slice(-2).join(' ')}</span>
+                <span className="text-white block mb-4 animate-slide-in-right">Rebuild Credit,</span>
+                <span className="text-orange-500 block mb-4 animate-slide-in-right" style={{animationDelay: '0.2s'}}>Regain Your Future</span>
               </h1>
               <p className="text-xl md:text-2xl mb-8 text-slate-300 max-w-xl leading-relaxed animate-fade-in" style={{animationDelay: '0.6s'}}>
                 {t('home.hero.subtitle')}
@@ -144,25 +145,25 @@ const Index = () => {
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 animate-fade-in">
               {t('home.trustBuilders.title')}
             </h2>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center p-10 bg-gradient-to-br from-slate-700 to-slate-600 rounded-3xl hover:from-slate-600 hover:to-slate-500 transition-all hover:scale-105 border border-slate-500">
+            <div className="text-center p-10 bg-gradient-to-br from-slate-700 to-slate-600 rounded-3xl hover:from-slate-600 hover:to-slate-500 transition-all hover:scale-105 border border-slate-500 animate-scale-in stagger-1">
               <div className="text-6xl font-bold text-orange-500 mb-4">{t('home.trustBuilders.timeline').split(' ')[0]}</div>
               <div className="text-2xl font-bold text-white mb-4">{t('home.trustBuilders.timeline').split(' ')[1]}</div>
               <p className="text-slate-300 text-lg">{t('home.trustBuilders.timelineDesc')}</p>
             </div>
             
-            <div className="text-center p-10 bg-gradient-to-br from-slate-700 to-slate-600 rounded-3xl hover:from-slate-600 hover:to-slate-500 transition-all hover:scale-105 border border-slate-500">
+            <div className="text-center p-10 bg-gradient-to-br from-slate-700 to-slate-600 rounded-3xl hover:from-slate-600 hover:to-slate-500 transition-all hover:scale-105 border border-slate-500 animate-scale-in stagger-2">
               <div className="text-6xl font-bold text-green-500 mb-4">{t('home.trustBuilders.freeService').split(' ')[0]}</div>
               <div className="text-2xl font-bold text-white mb-4">{t('home.trustBuilders.freeService').split(' ').slice(1).join(' ')}</div>
               <p className="text-slate-300 text-lg">{t('home.trustBuilders.freeServiceDesc')}</p>
             </div>
             
-            <div className="text-center p-10 bg-gradient-to-br from-slate-700 to-slate-600 rounded-3xl hover:from-slate-600 hover:to-slate-500 transition-all hover:scale-105 border border-slate-500">
+            <div className="text-center p-10 bg-gradient-to-br from-slate-700 to-slate-600 rounded-3xl hover:from-slate-600 hover:to-slate-500 transition-all hover:scale-105 border border-slate-500 animate-scale-in stagger-3">
               <div className="text-6xl font-bold text-orange-500 mb-4">{t('home.trustBuilders.rbiRegistered')}</div>
               <div className="text-2xl font-bold text-white mb-4">{t('home.trustBuilders.rbiRegistered')}</div>
               <p className="text-slate-300 text-lg">{t('home.trustBuilders.rbiRegisteredDesc')}</p>
@@ -174,10 +175,10 @@ const Index = () => {
       {/* Video Section */}
       <section className="py-20 bg-slate-900 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-12">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-12 animate-fade-in">
             {t('home.videoSection.title')}
           </h2>
-          <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-black">
+          <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-black animate-scale-in">
             <iframe
               width="100%"
               height="600"
@@ -205,13 +206,13 @@ const Index = () => {
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-br from-orange-600 to-orange-500">
         <div className="max-w-5xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white animate-fade-in">
             {t('home.cta.title')}
           </h2>
-          <p className="text-xl mb-10 text-orange-100 max-w-3xl mx-auto">
+          <p className="text-xl mb-10 text-orange-100 max-w-3xl mx-auto animate-fade-in" style={{animationDelay: '0.2s'}}>
             {t('home.cta.subtitle')}
           </p>
-          <Link to="/contact" className="bg-white text-orange-600 hover:bg-orange-50 px-10 py-5 rounded-full font-bold text-xl transition-all transform hover:scale-105 inline-flex items-center gap-3 shadow-2xl">
+          <Link to="/contact" className="bg-white text-orange-600 hover:bg-orange-50 px-10 py-5 rounded-full font-bold text-xl transition-all transform hover:scale-105 inline-flex items-center gap-3 shadow-2xl animate-scale-in" style={{animationDelay: '0.4s'}}>
             {t('home.cta.button')}
             <ArrowRight size={24} />
           </Link>
