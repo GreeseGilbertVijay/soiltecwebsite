@@ -250,7 +250,7 @@ const Index = () => {
                     <div className="bg-white/20 p-1 rounded-xl animate-pulse-glow">
                       <TrendingUp className="text-white" size={20} />
                     </div>
-                    <h3 className="font-bold text-white">{t('home.hero.impact.title')}</h3>
+                    <h3 className="font-bold text-white pl-4">{t('home.hero.impact.title')}</h3>
                   </div>
                   <p className="text-white/95 leading-relaxed">
                     {t('home.hero.impact.description')}
