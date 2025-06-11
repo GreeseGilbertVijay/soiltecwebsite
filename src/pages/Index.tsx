@@ -335,7 +335,7 @@ const Index = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
 
-          <div className="flex flex-col p-1 justify-center items-center h-full text-center bg-gradient-to-br from-slate-700 to-slate-600 rounded-3xl hover:from-slate-600 hover:to-slate-500 transition-all hover:scale-105 border border-slate-500 animate-scale-in stagger-1">
+          <div className="flex flex-col  pt-10 pb-10 justify-center items-center h-full text-center bg-gradient-to-br from-slate-700 to-slate-600 rounded-3xl hover:from-slate-600 hover:to-slate-500 transition-all hover:scale-105 border border-slate-500 animate-scale-in stagger-1">
             <div className="text-4xl md:text-6xl font-bold text-orange-500 mb-2 md:mb-4">
               {t('home.trustBuilders.timeline').split(' ')[0]}
             </div>
@@ -348,7 +348,7 @@ const Index = () => {
           </div>
             
            
-           <div className="flex flex-col p-1 justify-center items-center pt-12 pb-12 text-center bg-gradient-to-br from-slate-700 to-slate-600 rounded-3xl hover:from-slate-600 hover:to-slate-500 transition-all hover:scale-105 border border-slate-500 animate-scale-in stagger-2">
+           <div className="flex flex-col pt-10 pb-10 justify-center items-center text-center bg-gradient-to-br from-slate-700 to-slate-600 rounded-3xl hover:from-slate-600 hover:to-slate-500 transition-all hover:scale-105 border border-slate-500 animate-scale-in stagger-2">
              <div className="text-4xl md:text-6xl font-bold text-green-500 mb-2 md:mb-4">
                {t('home.trustBuilders.freeService').split(' ')[0]}
              </div>
@@ -360,7 +360,7 @@ const Index = () => {
              </p>
            </div>
             
-            <div className="flex flex-col p-1 justify-center items-center h-full text-center bg-gradient-to-br from-slate-700 to-slate-600 rounded-3xl hover:from-slate-600 hover:to-slate-500 transition-all hover:scale-105 border border-slate-500 animate-scale-in stagger-3">
+            <div className="flex flex-col pt-10 pb-10 justify-center items-center h-full text-center bg-gradient-to-br from-slate-700 to-slate-600 rounded-3xl hover:from-slate-600 hover:to-slate-500 transition-all hover:scale-105 border border-slate-500 animate-scale-in stagger-3">
              <div className="md:text-5xl font-bold text-orange-500 mb-2 md:mb-4">
                <h4>{t('home.trustBuilders.rbiNBFC')}</h4>
              </div>
@@ -394,7 +394,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="pt-2 pb-2 3 pt-lg-5">
+      <section className="pt-4 pb-10 3 pt-lg-5">
         <iframe 
           id="chatbotIframe"
           src="https://shabd.tech/widget/chatpage?name=samatva&authKey=afd9a6b4-03fd-11f0-aabd-047c1692d8ad"

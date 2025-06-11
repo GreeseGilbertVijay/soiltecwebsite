@@ -30,7 +30,7 @@ const Footer = () => {
             <ul className="space-y-2">
               <li><Link to="/credit-health" className="text-slate-300 hover:text-orange-400 transition-colors">{t('nav.creditHealth') || 'Credit Health'}</Link></li>
               <li><Link to="/impact" className="text-slate-300 hover:text-orange-400 transition-colors">{t('nav.impact') || 'Impact'}</Link></li>
-              <li><Link to="/services" className="text-slate-300 hover:text-orange-400 transition-colors">Services</Link></li>
+              <li><Link to="/services" className="text-slate-300 hover:text-orange-400 transition-colors">{t('nav.services') || 'Services'}</Link></li>
               <li><Link to="/about" className="text-slate-300 hover:text-orange-400 transition-colors">{t('nav.about') || 'About'}</Link></li>
               <li><Link to="/faq" className="text-slate-300 hover:text-orange-400 transition-colors">{t('nav.faq') || 'FAQ'}</Link></li>
             </ul>
