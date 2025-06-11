@@ -1,14 +1,12 @@
-
 import { Link } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import AnimatedBackground from '@/components/AnimatedBackground';
 import { TrendingUp, ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const Index = () => {
-  const { t } = useLanguage();
+  const { t, currentLanguage } = useLanguage();
 
   useEffect(() => {
     const handleMessage = (event: MessageEvent) => {
@@ -26,8 +24,14 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen relative">
+    <div className="min-h-screen relative font-raleway" lang={currentLanguage}>
       <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&display=swap');
+
+        .font-raleway {
+          font-family: 'Raleway', sans-serif;
+        }
+
         #chatbotIframe {
           width: 100%;
           border: none;
@@ -36,28 +40,204 @@ const Index = () => {
           transition: height 0.3s ease-in-out;
         }
 
-        @media (max-width: 768px) {
+        /* Add cursor animation */
+        .animate-slide-in-right::after {
+          content: '|';
+          animation: blink 1s step-end infinite;
+        }
+
+        @keyframes blink {
+          from, to { opacity: 1; }
+          50% { opacity: 0; }
+        }
+
+        /* Responsive breakpoints */
+        @media (max-width: 1920px) {
+          .container {
+            max-width: 1920px;
+            height: 50vh;
+          }
+          h1 {
+            font-size: 64px;
+          }
+          h2 {
+            font-size: 48px;
+          }
+          h3 {
+            font-size: 36px;
+          }
+          h4{
+            font-size:44px;
+          }
+          h5{
+          font-size:24px;
+          }
+          p {
+            font-size: 18px;
+          }
+          /* Non-English font sizes */
+          [lang]:not([lang="en"]) h1 {
+            font-size: 56px;
+          }
+          [lang]:not([lang="en"]) h2 {
+            font-size: 36px;
+          }
+          [lang]:not([lang="en"]) h3 {
+            font-size: 28px;
+          }
+            [lang]:not([lang="en"]) h5 {
+            font-size: 24px;
+          }
+          [lang]:not([lang="en"]) p {
+            font-size: 18px;
+          }
+        }
+
+        @media (max-width: 1440px) {
+          .container {
+            max-width: 1440px;
+            height: 80vh;
+            padding:5%;
+          }
+          h1 {
+            font-size: 64px;
+            line-height:1em;
+          }
+          h2 {
+            font-size: 48px;
+          }
+          h3 {
+            font-size: 28px;
+          }
+          h4{
+            font-size: 40px;
+          }
+          h5{
+             font-size: 24px;
+          }
+          p {
+            font-size: 18px;
+          }
+          /* Non-English font sizes */
+          [lang]:not([lang="en"]) h1 {
+            font-size: 36px;
+          }
+          [lang]:not([lang="en"]) h2 {
+            font-size: 28px;
+          }
+          [lang]:not([lang="en"]) h3 {
+            font-size: 24px;
+          }
+            [lang]:not([lang="en"]) h5 {
+            font-size: 20px;
+          }
+          [lang]:not([lang="en"]) p {
+            font-size: 18px;
+          }
+        }
+
+        @media (max-width: 780px) {
           #chatbotIframe {
             height: 250px;
+          }
+          h1 {
+            font-size: 36px;
+          }
+          h2 {
+            font-size: 28px;
+          }
+          h3 {
+            font-size: 24px;
+          }
+          h4{
+            font-size: 28px;
+          }
+             h5{
+            font-size: 18px;
+          }
+          p {
+            font-size: 16px;
+          }
+      
+          /* Non-English font sizes */
+          [lang]:not([lang="en"]) h1 {
+            font-size: 28px;
+          }
+          [lang]:not([lang="en"]) h2 {
+            font-size: 24px;
+          }
+          [lang]:not([lang="en"]) h3 {
+            font-size: 20px;
+          }
+          [lang]:not([lang="en"]) h5 {
+            font-size: 16px;
+          }
+          [lang]:not([lang="en"]) p {
+            font-size: 16px;
+          }
+          .container {
+            max-width: 720px;
+          }
+        }
+
+        @media (max-width: 480px) {
+          h1 {
+            font-size: 32px;
+          }
+          h2 {
+            font-size: 28px;
+          }
+          h3 {
+            font-size: 24px;
+          }
+          h4 {
+            font-size: 28px;
+          }
+          h5 {
+            font-size: 20px;
+          }
+          p {
+            font-size: 16px;
+         
+          /* Non-English font sizes */
+          [lang]:not([lang="en"]) h1 {
+            font-size: 36px;
+          }
+          [lang]:not([lang="en"]) h2 {
+            font-size: 20px;
+          }
+          [lang]:not([lang="en"]) h3 {
+            font-size: 18px;
+          }
+            [lang]:not([lang="en"]) h5 {
+            font-size: 16px;
+          }
+          [lang]:not([lang="en"]) p {
+            font-size: 14px;
+          }
+          .container {
+            max-width: 100%;
+            padding-left: 1rem;
+            padding-right: 1rem;
           }
         }
       `}</style>
       
       <Navbar />
       
-      {/* Hero Section with Animated Background */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <AnimatedBackground />
-        
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden container">
+        <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Left Content */}
             <div className="text-left animate-fade-in">
-              <h1 className="text-6xl md:text-8xl font-bold mb-8 leading-tight">
-                <span className="text-white block mb-4 animate-slide-in-right">Rebuild Credit,</span>
-                <span className="text-orange-500 block mb-4 animate-slide-in-right" style={{animationDelay: '0.2s'}}>Regain Your Future</span>
+              <h1 className="font-bold mb-2">
+                {t('home.hero.title1')}
               </h1>
-              <p className="text-xl md:text-2xl mb-8 text-slate-300 max-w-xl leading-relaxed animate-fade-in" style={{animationDelay: '0.6s'}}>
+              <h1 className="text-orange-500 font-bold mb-8">
+                {t('home.hero.title2')}
+              </h1>
+              <p className="mb-8 text-slate-300 max-w-xl leading-relaxed animate-fade-in" style={{animationDelay: '0.6s'}}>
                 {t('home.hero.subtitle')}
               </p>
             </div>
@@ -66,13 +246,13 @@ const Index = () => {
             <div className="flex justify-center lg:justify-end animate-scale-in" style={{animationDelay: '0.8s'}}>
               <div className="bg-gradient-to-br from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 transition-all duration-500 rounded-3xl p-10 max-w-md cursor-pointer transform hover:scale-105 hover:rotate-1 shadow-2xl hover:shadow-orange-500/25">
                 <Link to="/impact" className="block">
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="bg-white/20 p-4 rounded-2xl animate-pulse-glow">
-                      <TrendingUp className="text-white" size={40} />
+                  <div className="flex items-center gap-2 mb-4">
+                    <div className="bg-white/20 p-1 rounded-xl animate-pulse-glow">
+                      <TrendingUp className="text-white" size={20} />
                     </div>
-                    <h3 className="text-3xl font-bold text-white">{t('home.hero.impact.title')}</h3>
+                    <h3 className="font-bold text-white">{t('home.hero.impact.title')}</h3>
                   </div>
-                  <p className="text-white/95 text-xl leading-relaxed">
+                  <p className="text-white/95 leading-relaxed">
                     {t('home.hero.impact.description')}
                   </p>
                 </Link>
@@ -83,7 +263,7 @@ const Index = () => {
       </section>
 
       {/* Concept Section with Enhanced Background */}
-      <section className="py-20 relative overflow-hidden">
+      <section className=" p-8 relative overflow-hidden">
         {/* Enhanced animated background for this section */}
         <div className="absolute inset-0 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800 animate-gradient"></div>
         <div className="absolute inset-0 opacity-5">
@@ -104,24 +284,27 @@ const Index = () => {
           ))}
         </div>
         
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-7xl mx-auto sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
-              <span className="text-white block mb-4">{t('home.concept.title1')}</span>
+            <h2 className="font-bold animate-fade-in">
+              <span className="text-white block">{t('home.concept.title1')}</span>
+            </h2>
+            <h2 className="font-bold mb-6 animate-fade-in">
               <span className="text-orange-500 block mb-8">{t('home.concept.title2')}</span>
             </h2>
-            <p className="text-2xl md:text-3xl text-orange-400 font-medium mb-12 animate-fade-in" style={{animationDelay: '0.3s'}}>
+            <p className="text-orange-400 font-medium mb-12 animate-fade-in" style={{animationDelay: '0.3s'}}>
               {t('home.concept.subtitle')}
             </p>
           </div>
           
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center max-w-4xl mx-auto animate-fade-in" style={{animationDelay: '0.6s'}}>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center max-w-8xl mx-auto animate-fade-in" style={{animationDelay: '0.6s'}}>
             <Link to="/contact" className="bg-orange-500 hover:bg-orange-600 text-white rounded-full font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-orange-500/25 flex items-center justify-center gap-2 text-lg px-8 py-4 min-w-[280px]">
               {t('home.hero.cta')}
               <ArrowRight size={20} />
             </Link>
             <Link to="/services" className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white rounded-full font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-orange-500/25 flex items-center justify-center text-lg px-8 py-4 min-w-[280px]">
               {t('home.hero.learnMore')}
+              <ArrowRight size={20} />
             </Link>
           </div>
         </div>
@@ -145,29 +328,48 @@ const Index = () => {
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 animate-fade-in">
+            <h2 className="font-bold text-white mb-6 animate-fade-in">
               {t('home.trustBuilders.title')}
             </h2>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center p-10 bg-gradient-to-br from-slate-700 to-slate-600 rounded-3xl hover:from-slate-600 hover:to-slate-500 transition-all hover:scale-105 border border-slate-500 animate-scale-in stagger-1">
-              <div className="text-6xl font-bold text-orange-500 mb-4">{t('home.trustBuilders.timeline').split(' ')[0]}</div>
-              <div className="text-2xl font-bold text-white mb-4">{t('home.trustBuilders.timeline').split(' ')[1]}</div>
-              <p className="text-slate-300 text-lg">{t('home.trustBuilders.timelineDesc')}</p>
+
+          <div className="flex flex-col p-1 justify-center items-center h-full text-center bg-gradient-to-br from-slate-700 to-slate-600 rounded-3xl hover:from-slate-600 hover:to-slate-500 transition-all hover:scale-105 border border-slate-500 animate-scale-in stagger-1">
+            <div className="text-4xl md:text-6xl font-bold text-orange-500 mb-2 md:mb-4">
+              {t('home.trustBuilders.timeline').split(' ')[0]}
             </div>
+            <div className="text-xl md:text-2xl font-bold text-white mb-2 md:mb-4">
+              {t('home.trustBuilders.timeline').split(' ')[1]}
+            </div>
+            <p className="text-slate-300 text-base md:text-lg">
+              {t('home.trustBuilders.timelineDesc')}
+            </p>
+          </div>
             
-            <div className="text-center p-10 bg-gradient-to-br from-slate-700 to-slate-600 rounded-3xl hover:from-slate-600 hover:to-slate-500 transition-all hover:scale-105 border border-slate-500 animate-scale-in stagger-2">
-              <div className="text-6xl font-bold text-green-500 mb-4">{t('home.trustBuilders.freeService').split(' ')[0]}</div>
-              <div className="text-2xl font-bold text-white mb-4">{t('home.trustBuilders.freeService').split(' ').slice(1).join(' ')}</div>
-              <p className="text-slate-300 text-lg">{t('home.trustBuilders.freeServiceDesc')}</p>
-            </div>
+           
+           <div className="flex flex-col p-1 justify-center items-center pt-12 pb-12 text-center bg-gradient-to-br from-slate-700 to-slate-600 rounded-3xl hover:from-slate-600 hover:to-slate-500 transition-all hover:scale-105 border border-slate-500 animate-scale-in stagger-2">
+             <div className="text-4xl md:text-6xl font-bold text-green-500 mb-2 md:mb-4">
+               {t('home.trustBuilders.freeService').split(' ')[0]}
+             </div>
+             <div className="text-xl md:text-2xl font-bold text-white mb-2 md:mb-4">
+               {t('home.trustBuilders.freeService').split(' ').slice(1).join(' ')}
+             </div>
+             <p className="text-slate-300 text-base md:text-lg">
+               {t('home.trustBuilders.freeServiceDesc')}
+             </p>
+           </div>
             
-            <div className="text-center p-10 bg-gradient-to-br from-slate-700 to-slate-600 rounded-3xl hover:from-slate-600 hover:to-slate-500 transition-all hover:scale-105 border border-slate-500 animate-scale-in stagger-3">
-              <div className="text-6xl font-bold text-orange-500 mb-4">{t('home.trustBuilders.rbiNBFC')}</div>
-              <div className="text-2xl font-bold text-white mb-4">{t('home.trustBuilders.rbiRegistered')}</div>
-              <p className="text-slate-300 text-lg">{t('home.trustBuilders.rbiRegisteredDesc')}</p>
-            </div>
+            <div className="flex flex-col p-1 justify-center items-center h-full text-center bg-gradient-to-br from-slate-700 to-slate-600 rounded-3xl hover:from-slate-600 hover:to-slate-500 transition-all hover:scale-105 border border-slate-500 animate-scale-in stagger-3">
+             <div className="md:text-5xl font-bold text-orange-500 mb-2 md:mb-4">
+               <h4>{t('home.trustBuilders.rbiNBFC')}</h4>
+             </div>
+             <div className="md:text-2xl font-bold text-white mb-2 md:mb-4">
+               <h5>{t('home.trustBuilders.rbiRegistered')}</h5>
+             </div>
+             <p className="text-slate-300 text-base md:text-lg">{t('home.trustBuilders.rbiRegisteredDesc')}</p>
+           </div>
+
           </div>
         </div>
       </section>
@@ -175,20 +377,19 @@ const Index = () => {
       {/* Video Section */}
       <section className="py-20 bg-slate-900 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-12 animate-fade-in">
+          <h2 className="font-bold text-white mb-12 animate-fade-in">
             {t('home.videoSection.title')}
           </h2>
           <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-black animate-scale-in">
-            <iframe
-              width="100%"
-              height="600"
-              src="https://www.youtube.com/embed/T3alOcIJ5eg"
-              title="Samatva Credit Solutions"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-              className="w-full h-[300px] md:h-[400px] lg:h-[600px]"
-            />
+          <iframe
+            width="100%"
+            height="500vh"
+            src="https://www.youtube.com/embed/T3alOcIJ5eg?controls=0"
+            title="Samatva Credit Solutions"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          />
+
           </div>
         </div>
       </section>
@@ -206,16 +407,229 @@ const Index = () => {
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-br from-orange-600 to-orange-500">
         <div className="max-w-5xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white animate-fade-in">
+          <h2 className="font-bold mb-6 text-white animate-fade-in">
             {t('home.cta.title')}
           </h2>
-          <p className="text-xl mb-10 text-orange-100 max-w-3xl mx-auto animate-fade-in" style={{animationDelay: '0.2s'}}>
+          <p className="mb-10 text-orange-100 max-w-3xl mx-auto animate-fade-in" style={{animationDelay: '0.2s'}}>
             {t('home.cta.subtitle')}
           </p>
-          <Link to="/contact" className="bg-white text-orange-600 hover:bg-orange-50 px-10 py-5 rounded-full font-bold text-xl transition-all transform hover:scale-105 inline-flex items-center gap-3 shadow-2xl animate-scale-in" style={{animationDelay: '0.4s'}}>
+          <Link to="/contact" className="bg-white text-orange-600 hover:bg-orange-50 px-10 py-5 rounded-full font-bold transition-all transform hover:scale-105 inline-flex items-center gap-3 shadow-2xl animate-scale-in" style={{animationDelay: '0.4s'}}>
             {t('home.cta.button')}
             <ArrowRight size={24} />
           </Link>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20 bg-slate-900">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-bold text-white mb-12 text-center animate-fade-in">{t('faq.title')}</h2>
+          
+          <div className="space-y-4">
+            {/* FAQ Item 1 */}
+            <div className="bg-slate-800 rounded-lg overflow-hidden">
+              <button
+                className="w-full px-6 py-4 text-left flex justify-between items-center text-white hover:bg-slate-700 transition-colors"
+                onClick={() => {
+                  const content = document.getElementById('faq1-content');
+                  const arrow = document.getElementById('faq1-arrow');
+                  if (content && arrow) {
+                    content.classList.toggle('hidden');
+                    arrow.classList.toggle('rotate-180');
+                  }
+                }}
+              >
+                <span className="font-semibold">{t('home.faq.q1')}</span>
+                <svg
+                  id="faq1-arrow"
+                  className="w-5 h-5 transform transition-transform"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div id="faq1-content" className="hidden px-6 py-4 text-slate-300">
+                {t('home.faq.a1')}
+              </div>
+            </div>
+
+            {/* FAQ Item 2 */}
+            <div className="bg-slate-800 rounded-lg overflow-hidden">
+              <button
+                className="w-full px-6 py-4 text-left flex justify-between items-center text-white hover:bg-slate-700 transition-colors"
+                onClick={() => {
+                  const content = document.getElementById('faq2-content');
+                  const arrow = document.getElementById('faq2-arrow');
+                  if (content && arrow) {
+                    content.classList.toggle('hidden');
+                    arrow.classList.toggle('rotate-180');
+                  }
+                }}
+              >
+                <span className="font-semibold">{t('home.faq.q2')}</span>
+                <svg
+                  id="faq2-arrow"
+                  className="w-5 h-5 transform transition-transform"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div id="faq2-content" className="hidden px-6 py-4 text-slate-300">
+                {t('home.faq.a2')}
+              </div>
+            </div>
+
+            {/* FAQ Item 3 */}
+            <div className="bg-slate-800 rounded-lg overflow-hidden">
+              <button
+                className="w-full px-6 py-4 text-left flex justify-between items-center text-white hover:bg-slate-700 transition-colors"
+                onClick={() => {
+                  const content = document.getElementById('faq3-content');
+                  const arrow = document.getElementById('faq3-arrow');
+                  if (content && arrow) {
+                    content.classList.toggle('hidden');
+                    arrow.classList.toggle('rotate-180');
+                  }
+                }}
+              >
+                <span className="font-semibold">{t('home.faq.q3')}</span>
+                <svg
+                  id="faq3-arrow"
+                  className="w-5 h-5 transform transition-transform"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div id="faq3-content" className="hidden px-6 py-4 text-slate-300">
+                {t('home.faq.a3')}
+              </div>
+            </div>
+
+            {/* FAQ Item 4 */}
+            <div className="bg-slate-800 rounded-lg overflow-hidden">
+              <button
+                className="w-full px-6 py-4 text-left flex justify-between items-center text-white hover:bg-slate-700 transition-colors"
+                onClick={() => {
+                  const content = document.getElementById('faq4-content');
+                  const arrow = document.getElementById('faq4-arrow');
+                  if (content && arrow) {
+                    content.classList.toggle('hidden');
+                    arrow.classList.toggle('rotate-180');
+                  }
+                }}
+              >
+                <span className="font-semibold">{t('home.faq.q4')}</span>
+                <svg
+                  id="faq4-arrow"
+                  className="w-5 h-5 transform transition-transform"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div id="faq4-content" className="hidden px-6 py-4 text-slate-300">
+                {t('home.faq.a4')}
+              </div>
+            </div>
+
+            {/* FAQ Item 5 */}
+            <div className="bg-slate-800 rounded-lg overflow-hidden">
+              <button
+                className="w-full px-6 py-4 text-left flex justify-between items-center text-white hover:bg-slate-700 transition-colors"
+                onClick={() => {
+                  const content = document.getElementById('faq5-content');
+                  const arrow = document.getElementById('faq5-arrow');
+                  if (content && arrow) {
+                    content.classList.toggle('hidden');
+                    arrow.classList.toggle('rotate-180');
+                  }
+                }}
+              >
+                <span className="font-semibold">{t('home.faq.q5')}</span>
+                <svg
+                  id="faq5-arrow"
+                  className="w-5 h-5 transform transition-transform"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div id="faq5-content" className="hidden px-6 py-4 text-slate-300">
+                {t('home.faq.a5')}
+              </div>
+            </div>
+
+            {/* FAQ Item 6 */}
+            <div className="bg-slate-800 rounded-lg overflow-hidden">
+              <button
+                className="w-full px-6 py-4 text-left flex justify-between items-center text-white hover:bg-slate-700 transition-colors"
+                onClick={() => {
+                  const content = document.getElementById('faq6-content');
+                  const arrow = document.getElementById('faq6-arrow');
+                  if (content && arrow) {
+                    content.classList.toggle('hidden');
+                    arrow.classList.toggle('rotate-180');
+                  }
+                }}
+              >
+                <span className="font-semibold">{t('home.faq.q6')}</span>
+                <svg
+                  id="faq6-arrow"
+                  className="w-5 h-5 transform transition-transform"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div id="faq6-content" className="hidden px-6 py-4 text-slate-300">
+                {t('home.faq.a6')}
+              </div>
+            </div>
+
+            {/* FAQ Item 7 */}
+            <div className="bg-slate-800 rounded-lg overflow-hidden">
+              <button
+                className="w-full px-6 py-4 text-left flex justify-between items-center text-white hover:bg-slate-700 transition-colors"
+                onClick={() => {
+                  const content = document.getElementById('faq7-content');
+                  const arrow = document.getElementById('faq7-arrow');
+                  if (content && arrow) {
+                    content.classList.toggle('hidden');
+                    arrow.classList.toggle('rotate-180');
+                  }
+                }}
+              >
+                <span className="font-semibold">{t('home.faq.q7')}</span>
+                <svg
+                  id="faq7-arrow"
+                  className="w-5 h-5 transform transition-transform"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div id="faq7-content" className="hidden px-6 py-4 text-slate-300">
+                {t('home.faq.a7')}
+              </div>
+            </div>
+            
+          </div>
         </div>
       </section>
 

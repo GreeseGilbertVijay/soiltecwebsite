@@ -1,7 +1,6 @@
-
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
-export type Language = 'en' | 'ta' | 'te' | 'hi' | 'ml' | 'kn';
+export type Language = 'en' | 'ta' | 'te' | 'hi' | 'kn';
 
 export interface LanguageInfo {
   code: Language;
@@ -15,7 +14,6 @@ export const languages: LanguageInfo[] = [
   { code: 'ta', name: 'Tamil', nativeName: 'தமிழ்' },
   { code: 'te', name: 'Telugu', nativeName: 'తెలుగు' },
   { code: 'hi', name: 'Hindi', nativeName: 'हिन्दी' },
-  { code: 'ml', name: 'Malayalam', nativeName: 'മലയാളം' },
   { code: 'kn', name: 'Kannada', nativeName: 'ಕನ್ನಡ' },
 ];
 

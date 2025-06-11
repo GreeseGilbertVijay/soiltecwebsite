@@ -1,56 +1,44 @@
-
 import React, { useEffect, useState } from 'react';
 
 const AnimatedBackground = () => {
-  const [mousePosition, setMousePosition] = useState({ x: 50, y: 50 });
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({
-        x: (e.clientX / window.innerWidth) * 100,
-        y: (e.clientY / window.innerHeight) * 100,
-      });
-    };
-
     const handleScroll = () => {
       setScrollY(window.scrollY);
     };
 
-    window.addEventListener('mousemove', handleMouseMove);
     window.addEventListener('scroll', handleScroll);
     return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
   return (
-    <div className="absolute inset-0 overflow-hidden bg-black">
-      {/* Layer 1: Animated gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black via-slate-900 to-black animate-gradient-shift"></div>
+    <div className="fixed inset-0 -z-10 overflow-hidden">
+      {/* Layer 1: Base gradient */}
+      <div className="absolute inset-0 bg-gradient-dynamic animate-gradient-shift" />
       
-      {/* Layer 2: Secondary gradient with parallax */}
-      <div 
-        className="absolute inset-0 bg-gradient-to-br from-slate-900/30 via-slate-800/20 to-slate-900/25 animate-gradient-shift-delayed"
-        style={{
-          transform: `translateY(${scrollY * 0.2}px)`,
-        }}
-      ></div>
+      {/* Layer 2: Secondary gradient */}
+      <div className="absolute inset-0 bg-gradient-dynamic animate-gradient-shift-delayed" />
       
       {/* Layer 3: Floating geometric shapes */}
       <div className="absolute inset-0">
-        <div className="absolute top-20 left-20 w-80 h-80 rounded-full border border-slate-700/30 animate-diagonal-float-slow"></div>
-        <div className="absolute top-60 right-32 w-64 h-64 rounded-full border border-slate-600/40 animate-diagonal-float-medium"></div>
-        <div className="absolute bottom-40 left-1/3 w-96 h-96 rounded-full border border-slate-700/25 animate-diagonal-float-fast"></div>
-        <div className="absolute top-1/2 right-1/4 w-48 h-48 rounded-full border border-slate-600/35 animate-diagonal-float-reverse"></div>
-        
-        <div className="absolute top-1/4 left-1/2 w-32 h-32 border border-slate-600/30 rotate-45 animate-geometric-float"></div>
-        <div className="absolute bottom-1/3 right-1/3 w-24 h-24 border border-slate-700/25 animate-geometric-float-reverse transform rotate-12"></div>
-        <div className="absolute top-3/4 left-1/6 w-28 h-28 border border-slate-600/28 animate-geometric-float-slow transform rotate-45"></div>
+        {Array.from({ length: 5 }).map((_, i) => (
+          <div
+            key={`shape-${i}`}
+            className={`absolute w-32 h-32 bg-gradient-to-br from-slate-700/10 to-slate-600/5 backdrop-blur-sm rounded-lg animate-geometric-float`}
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 10}s`,
+              animationDuration: `${20 + Math.random() * 10}s`,
+            }}
+          />
+        ))}
       </div>
       
-      {/* Layer 4: Moving particles */}
+      {/* Layer 4: Diagonal particles */}
       <div className="absolute inset-0">
         {Array.from({ length: 30 }).map((_, i) => (
           <div
@@ -101,7 +89,7 @@ const AnimatedBackground = () => {
       </div>
       
       {/* Layer 7: Subtle grid with parallax */}
-      <div 
+      <div
         className="absolute inset-0 opacity-[0.02] animate-grid-shift"
         style={{
           transform: `translateY(${scrollY * 0.1}px)`,
@@ -143,26 +131,6 @@ const AnimatedBackground = () => {
           className="animate-path-draw-delayed"
         />
       </svg>
-      
-      {/* Layer 9: Mouse-following interactive elements */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div 
-          className="absolute w-8 h-8 bg-gradient-radial from-slate-600/15 via-slate-700/8 to-transparent rounded-full transition-all duration-1000 ease-out animate-pulse-gentle"
-          style={{
-            left: `${mousePosition.x}%`,
-            top: `${mousePosition.y}%`,
-            transform: 'translate(-50%, -50%)',
-          }}
-        />
-        <div 
-          className="absolute w-4 h-4 bg-gradient-radial from-slate-700/10 via-slate-600/5 to-transparent rounded-full transition-all duration-1500 ease-out"
-          style={{
-            left: `${mousePosition.x}%`,
-            top: `${mousePosition.y}%`,
-            transform: 'translate(-50%, -50%)',
-          }}
-        />
-      </div>
       
       {/* Layer 10: Moving light rays */}
       <div className="absolute inset-0">

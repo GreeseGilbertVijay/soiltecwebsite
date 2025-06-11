@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -27,7 +26,7 @@ const FAQ = () => {
       
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-blue-900 to-blue-700 text-white py-16">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+        <div className="w-[95%] mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
             {t('faq.title')}
           </h1>
@@ -39,7 +38,7 @@ const FAQ = () => {
 
       {/* FAQ Section */}
       <section className="py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-[95%] mx-auto">
           <div className="space-y-8">
             {Array.isArray(questions) && questions.map((faq: any, index: number) => (
               <div key={index} className="bg-white rounded-lg shadow-md p-6 border border-gray-200">

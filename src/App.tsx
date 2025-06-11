@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -6,7 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import FontProvider from "@/components/FontProvider";
-import SplashCursor from "@/components/SplashCursor";
+import AnimatedBackground from "@/components/AnimatedBackground";
 import Index from "./pages/Index";
 import CreditHealth from "./pages/CreditHealth";
 import Impact from "./pages/Impact";
@@ -25,7 +24,7 @@ const App = () => (
         <TooltipProvider>
           <Toaster />
           <Sonner />
-          <SplashCursor />
+          <AnimatedBackground />
           <BrowserRouter>
             <Routes>
               <Route path="/" element={<Index />} />

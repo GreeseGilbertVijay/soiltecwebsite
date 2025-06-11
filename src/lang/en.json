@@ -1,4 +1,3 @@
-
 {
   "nav": {
     "home": "Home",
@@ -11,7 +10,8 @@
   },
   "home": {
     "hero": {
-      "title": "Rebuild Credit, Regain Your Future",
+      "title1": "Rebuild Credit",
+      "title2": "Regain Your Future",
       "subtitle": "We would like to help you succeed financially and are here for you every step of the way.",
       "cta": "Start Your Free Consultation",
       "learnMore": "Learn More About Our Services",
@@ -42,6 +42,23 @@
       "title": "Ready to Transform Your Financial Future?",
       "subtitle": "Start your journey to better credit health today with our free consultation",
       "button": "Get Professional Help Now"
+    },
+    "faq": {
+      "title": "Top 7 FAQs",
+      "q1": "How can I improve my poor credit score?",
+      "a1": "The good news is that a poor credit score is not permanent; you can always improve it by taking appropriate steps. Although it may take some time, it is worth improving your score before applying for a new loan.",
+      "q2": "How long does it take to improve my credit score?",
+      "a2": "It takes 6 to 12 months to improve your credit score based on the timely repayment of the new loan that you avail.",
+      "q3": "Can I get a loan or credit card with a poor credit score?",
+      "a3": "Getting a loan with a poor credit score is difficult. So, it's always a good idea to improve your credit score before applying for a new loan or credit card.",
+      "q4": "Will Samatva help me if my CIBIL score is below 700?",
+      "a4": "Yes, Samatva will help, provided you have no more than two settled accounts.",
+      "q5": "Can Samatva help me secure funding to clear my settled overdue accounts?",
+      "a5": "Yes, Samatva assists customers in securing funding from an RBI-registered financial institution to clear overdue amounts on settled accounts only, thus improving their credit profile.",
+      "q6": "Does Samatva charge any fees for its services?",
+      "a6": "Samatva does not charge any fees from customers for its credit counselling service, unlike other counselling companies.",
+      "q7": "Will I get a loan to pay the outstanding unsettled amount?",
+      "a7": "It is for salaried customers who are currently employed."
     }
   },
   "faq": {
@@ -401,7 +418,7 @@
     "address": "Address",
     "phone": "Phone Numbers",
     "mission": "Our mission is to empower individuals with expert financial guidance and essential resources to build, strengthen, and sustain a resilient credit profile—laying the foundation for lasting financial well-being and opportunity.",
-    "copyright": "© 2024 Samatva Awareness Solution Foundation. All rights reserved.",
+    "copyright": "© 2025 Samatva Awareness Solution Foundation. All rights reserved.",
     "rbiNote": "RBI-Registered Financial Institution Partners | Completely Free Service"
   }
 }

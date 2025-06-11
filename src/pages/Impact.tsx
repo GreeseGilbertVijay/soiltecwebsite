@@ -1,4 +1,3 @@
-
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { TrendingUp, Clock, Target, CheckCircle, Home, Car, CreditCard, Calculator } from 'lucide-react';
@@ -88,17 +87,12 @@ const Impact = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-purple-900 text-white py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-black opacity-20"></div>
-        <div className="absolute inset-0">
-          <div className="absolute top-10 left-10 w-72 h-72 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
-          <div className="absolute top-40 right-10 w-72 h-72 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse delay-1000"></div>
-        </div>
-        <div className="max-w-6xl mx-auto text-center px-4 sm:px-6 lg:px-8 relative z-10">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
+      <section className="bg-gradient-to-br from-blue-900 to-blue-700 text-white py-16">
+        <div className="w-[95%] mx-auto text-center">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">
             Interactive Loan Comparison
           </h1>
-          <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-blue-100">
             Compare loan options across different credit scores and see potential savings in real-time. 
             Adjust loan amount and tenure to visualize the impact on EMIs and total repayment.
           </p>
