@@ -226,7 +226,7 @@ const Index = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden container bg-gradient-to-br from-blue-900 via-slate-800 to-slate-900">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden container">
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Left Content */}

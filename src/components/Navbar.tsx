@@ -7,7 +7,7 @@ import LanguageSwitcher from '@/components/LanguageSwitcher';
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
-  const { t } = useLanguage();
+  const { t, currentLanguage } = useLanguage();
 
   const navItems = [
     { path: '/', label: t('nav.home') },
@@ -19,6 +19,7 @@ const Navbar = () => {
   ];
 
   const isActive = (path: string) => location.pathname === path;
+  const fontSize = currentLanguage === 'en' ? '16px' : '14px';
 
   return (
     <nav className="bg-slate-900/95 backdrop-blur-sm border-b border-slate-700 sticky top-0 z-50">
@@ -28,7 +29,7 @@ const Navbar = () => {
           <div className="flex-shrink-0 flex items-center">
             <Link to="/" className="flex items-center">
               <img 
-                src="/lovable-uploads/c24581a1-d607-4b4e-a879-875a8504cb45.png" 
+                src="/lovable-uploads/samatvalogo.png" 
                 alt="Samatva Awareness" 
                 className="h-12 w-auto"
               />
@@ -37,12 +38,13 @@ const Navbar = () => {
           
           {/* Desktop Navigation - Centered */}
           <div className="hidden lg:flex lg:items-center lg:justify-center lg:flex-1">
-            <div className="flex items-baseline space-x-6">
+            <div className="flex items-baseline space-x-1">
               {navItems.map((item) => (
                 <Link
                   key={item.path}
                   to={item.path}
-                  className={`px-4 py-2 rounded-lg text-base font-medium transition-all duration-200 ${
+                  style={{ fontSize }}
+                  className={`px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
                     isActive(item.path)
                       ? 'bg-orange-500 text-white shadow-lg'
                       : 'text-slate-300 hover:bg-slate-800 hover:text-orange-400'
@@ -84,7 +86,8 @@ const Navbar = () => {
                   key={item.path}
                   to={item.path}
                   onClick={() => setIsMenuOpen(false)}
-                  className={`block px-4 py-3 rounded-lg text-base font-medium transition-all ${
+                  style={{ fontSize }}
+                  className={`block px-4 py-3 rounded-lg font-medium transition-all ${
                     isActive(item.path)
                       ? 'bg-orange-500 text-white'
                       : 'text-slate-300 hover:bg-slate-700 hover:text-orange-400'

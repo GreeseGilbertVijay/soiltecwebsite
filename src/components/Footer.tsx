@@ -42,8 +42,7 @@ const Footer = () => {
             <div className="space-y-3 text-slate-300">
               <div className="text-sm leading-relaxed">
                 <p className="font-medium text-white mb-2">{t('footer.phone') || 'Phone Numbers'}:</p>
-                <p><a href="tel:+919606914500" className="hover:text-orange-400 transition-colors">+91 9606914500</a></p>
-                <p><a href="tel:+919789511937" className="hover:text-orange-400 transition-colors">+91 9789511937</a></p>
+                <p><a href="tel:+916382097967" className="hover:text-orange-400 transition-colors">+91 63820 97967</a></p>
                 <p> <a href="mailto:support@samatvaawareness.in" className="hover:text-orange-400 transition-colors">support@samatvaawareness.in</a></p>
               </div>
               <div className="text-sm">

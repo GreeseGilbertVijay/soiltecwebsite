@@ -6,95 +6,263 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const About = () => {
-  const { t } = useLanguage();
+  const { t, currentLanguage } = useLanguage();
 
   // Get advantages with fallback to empty array
   const advantages = Array.isArray(t('about.whyChoose.advantages')) ? t('about.whyChoose.advantages') : [];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 font-raleway" lang={currentLanguage}>
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&display=swap');
+
+        .font-raleway {
+          font-family: 'Raleway', sans-serif;
+        }
+
+        @media (max-width: 1920px) {
+          h1 { font-size: 64px; }
+          h2 { font-size: 48px; }
+          h3 { font-size: 36px; }
+          h4 { font-size: 44px; }
+          h5 { font-size: 24px; }
+          p { font-size: 18px; }
+          [lang]:not([lang="en"]) h1 { font-size: 44px; }
+          [lang]:not([lang="en"]) h2 { font-size: 36px; }
+          [lang]:not([lang="en"]) h3 { font-size: 28px; }
+          [lang]:not([lang="en"]) h5 { font-size: 24px; }
+          [lang]:not([lang="en"]) p { font-size: 18px; }
+        }
+
+        @media (max-width: 1440px) {
+          h1 { font-size: 64px; line-height: 1em; }
+          h2 { font-size: 48px; }
+          h3 { font-size: 32px; }
+          h4 { font-size: 28px; }
+          h5 { font-size: 20px; }
+          p { font-size: 18px; }
+          [lang]:not([lang="en"]) h1 { font-size: 36px; }
+          [lang]:not([lang="en"]) h2 { font-size: 28px; }
+          [lang]:not([lang="en"]) h3 { font-size: 24px; }
+          [lang]:not([lang="en"]) h4 { font-size: 22px; }
+          [lang]:not([lang="en"]) h5 { font-size: 20px; }
+          [lang]:not([lang="en"]) p { font-size: 16px; }
+        }
+
+        @media (max-width: 780px) {
+          h1 { font-size: 36px; }
+          h2 { font-size: 28px; }
+          h3 { font-size: 24px; }
+          h4 { font-size: 28px; }
+          h5 { font-size: 18px; }
+          p { font-size: 16px; }
+          [lang]:not([lang="en"]) h1 { font-size: 36px; }
+          [lang]:not([lang="en"]) h2 { font-size: 24px; }
+          [lang]:not([lang="en"]) h3 { font-size: 20px; }
+          [lang]:not([lang="en"]) h5 { font-size: 16px; }
+          [lang]:not([lang="en"]) p { font-size: 16px; }
+        }
+
+        @media (max-width: 480px) {
+          h1 { font-size: 36px; }
+          h2 { font-size: 28px; }
+          h3 { font-size: 24px; }
+          h4 { font-size: 20px; }
+          h5 { font-size: 20px; }
+          p { font-size: 16px; }
+          [lang]:not([lang="en"]) h1 { font-size: 36px; }
+          [lang]:not([lang="en"]) h2 { font-size: 20px; }
+          [lang]:not([lang="en"]) h3 { font-size: 18px; }
+          [lang]:not([lang="en"]) h4 { font-size: 20px; }
+          [lang]:not([lang="en"]) h5 { font-size: 16px; }
+          [lang]:not([lang="en"]) p { font-size: 14px; }
+        }
+      `}</style>
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-orange-600 via-orange-500 to-yellow-500 text-white py-20 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-slate-800 via-slate-800 to-blue-500 text-white py-20 overflow-hidden">
         <div className="absolute inset-0 bg-black bg-opacity-10"></div>
-        <div className="w-[95%] mx-auto relative z-10">
-          <div className="text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              {t('about.title')}
-            </h1>
-            <p className="text-xl md:text-2xl text-orange-100 max-w-3xl mx-auto">
-              {t('about.subtitle')}
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="animate-fade-in">
+              <h1 className="font-bold mb-8 leading-tight animate-slide-in-right">
+                {t('about.hero.title')}
+              </h1>
+              <div className="space-y-4">
+                <h4 className="font-bold text-orange-400 animate-fade-in stagger-1">
+                {t('about.hero.subtitle1')} 
+                </h4>
+              </div>
+              <p className="text-xl text-orange-100 mt-8 leading-relaxed animate-fade-in stagger-5">
+                {t('about.hero.description')}
+              </p>
+            </div>
+            <div className="lg:flex lg:justify-end animate-scale-in">
+              <img alt="Debt Counselling Session" className="w-full max-w-lg rounded-2xl shadow-2xl" src="/lovable-uploads/ab1e075d-5cb7-4bb7-8eb3-58065d670483.png" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Leadership Section */}
+      <section className="py-20 bg-white">
+        <div className="mx-auto p-8">
+          <div className="text-center mb-16 animate-fade-in">
+            <h2 className=" font-bold text-gray-900 mb-6">
+              {t('about.leadership.title')}
+            </h2>
+            <p className="text-xl text-gray-700 max-w-5xl mx-auto leading-relaxed">
+              {t('about.leadership.description1')}
+            </p>
+            <p className="text-lg text-orange-600 font-semibold mt-6">
+              {t('about.leadership.description2')}
+            </p>
+            <p className="text-lg text-gray-700 mb-6">
+              {t('about.leadership.description3')}
+            </p>
+            <p className="text-lg text-gray-700">
+              {t('about.leadership.description4')}
             </p>
           </div>
+
+          {/* Our Process Section */}
+          <div className="bg-gradient-to-r from-orange-50 to-yellow-50 rounded-3xl p-4 mb-16 animate-scale-in">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="flex justify-center animate-slide-in-right">
+                <img alt="Credit Counselling Session" className="w-full max-w-lg rounded-2xl shadow-xl" src="/lovable-uploads/9dd940b1-1ee3-42df-afda-f23fd6651851.png" />
+              </div>
+              <div className="animate-fade-in">
+                <h3 className="font-bold text-gray-900 mb-6">
+                  {t('about.process.title')}
+                </h3>
+                <div className="space-y-6 text-gray-700 leading-relaxed">
+                  <p className="animate-fade-in stagger-1">{t('about.process.step1')}</p>
+                  <p className="animate-fade-in stagger-2">{t('about.process.step2')}</p>
+                  <p className="animate-fade-in stagger-3">{t('about.process.step3')}</p>
+                  <p className="animate-fade-in stagger-4">{t('about.process.step4')}</p>
+                  <p className="text-blue-600 font-semibold animate-fade-in stagger-5">{t('about.process.step5')}</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
-
-      {/* Why Choose Us Section */}
-      <section className="py-20 bg-white">
-        <div className="w-[95%] mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">{t('about.whyChoose.title')}</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">{t('about.whyChoose.subtitle')}</p>
+   
+      {/* Why Choose Samatva Section */}
+      <section className="py-20 bg-slate-900">
+        <div className="mx-auto p-8">
+          <div className="text-center mb-16 animate-fade-in">
+            <h2 className="font-bold text-white mb-6">
+              {t('about.whyChoose.title')} 
+            </h2>
+            <p className="text-gray-300 mx-auto">
+              {t('about.whyChoose.subtitle')}
+            </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {advantages.map((advantage: any, index: number) => (
-              <Card key={index} className="bg-white hover:shadow-xl transition-shadow duration-300">
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="bg-orange-100 p-3 rounded-lg">
-                      {index === 0 && <Target className="w-6 h-6 text-orange-500" />}
-                      {index === 1 && <Users className="w-6 h-6 text-orange-500" />}
-                      {index === 2 && <Shield className="w-6 h-6 text-orange-500" />}
-                      {index === 3 && <TrendingUp className="w-6 h-6 text-orange-500" />}
+              <div key={index} className="bg-gray-800 rounded-xl p-8 text-center hover:bg-gray-700 transition-all duration-300 animate-scale-in" style={{animationDelay: `${index * 0.1}s`}}>
+                <div className="mb-6">
+                  {index === 0 && (
+                    <div className="w-16 h-16 mx-auto bg-green-500 rounded-lg flex items-center justify-center">
+                      <Check className="text-white" size={32} />
                     </div>
-                    <h3 className="text-xl font-semibold text-gray-900">{advantage.title}</h3>
-                  </div>
-                  <p className="text-gray-600">{advantage.description}</p>
-                </CardContent>
-              </Card>
+                  )}
+                  {index === 1 && (
+                    <div className="w-16 h-16 mx-auto bg-blue-500 rounded-lg flex items-center justify-center">
+                      <Shield className="text-white" size={32} />
+                    </div>
+                  )}
+                  {index === 2 && (
+                    <div className="w-16 h-16 mx-auto bg-purple-500 rounded-lg flex items-center justify-center">
+                      <Users className="text-white" size={32} />
+                    </div>
+                  )}
+                  {index === 3 && (
+                    <div className="w-16 h-16 mx-auto bg-orange-500 rounded-lg flex items-center justify-center">
+                      <TrendingUp className="text-white" size={32} />
+                    </div>
+                  )}
+                </div>
+                <h5 className="font-bold text-white mb-4">
+                  {advantage.title}
+                </h5>
+                <p className="text-gray-300 leading-relaxed">
+                  {advantage.description}
+                </p>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Team Section */}
+      {/* Management Team Section */}
       <section className="py-20 bg-gray-50">
-        <div className="w-[95%] mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">{t('about.team.title')}</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">{t('about.team.subtitle')}</p>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16 animate-fade-in">
+            <h2 className="font-bold text-gray-900 mb-4">
+              {t('about.management.title')}
+            </h2>
+            <p className="text-2xl text-gray-600">{t('about.management.subtitle')}</p>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {Array.isArray(t('about.team.members')) && t('about.team.members').map((member: any, index: number) => (
-              <Card key={index} className="bg-white hover:shadow-xl transition-shadow duration-300">
-                <CardContent className="p-6">
-                  <div className="flex flex-col items-center text-center">
-                    <Avatar className="w-24 h-24 mb-4">
-                      <AvatarImage src={member.image} alt={member.name} />
-                      <AvatarFallback>{member.name.split(' ').map((n: string) => n[0]).join('')}</AvatarFallback>
-                    </Avatar>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">{member.name}</h3>
-                    <p className="text-orange-500 font-medium mb-4">{member.role}</p>
-                    <p className="text-gray-600 mb-4">{member.description}</p>
-                    <div className="flex gap-4">
-                      <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-orange-500 transition-colors">
-                        <Linkedin className="w-5 h-5" />
-                      </a>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {/* Thallam Sreekumar Card */}
+            <Card className="bg-white border-2 border-orange-200 hover:border-orange-400 transition-all duration-300 hover:shadow-xl animate-scale-in">
+              <CardContent className="p-8">
+                <div className="flex flex-col md:flex-row items-center md:items-start space-y-4 md:space-y-0 md:space-x-6">
+                  <Avatar className="w-24 h-24 flex-shrink-0">
+                    <AvatarImage src="/lovable-uploads/ab813c16-4fd4-44c0-9aeb-9bb826c497fe.png" alt={t('about.management.thallam.name')} />
+                    <AvatarFallback className="bg-gradient-to-br from-gray-400 to-gray-600 text-white text-xl font-bold">
+                      TS
+                    </AvatarFallback>
+                  </Avatar>
+                  <div className="flex-1 text-center md:text-left">
+                    <div className="flex flex-col md:flex-row items-center md:items-start md:justify-between mb-3">
+                      <h3 className="text-2xl font-bold text-orange-500">{t('about.management.thallam.name')}</h3>
+                      <Linkedin className="text-blue-600 cursor-pointer hover:text-blue-800 mt-2 md:mt-0" size={24} />
                     </div>
+                    <p className="text-lg font-semibold text-gray-700 mb-4">{t('about.management.thallam.position')}</p>
+                    <p className="text-gray-600 leading-relaxed">
+                      {t('about.management.thallam.description')}
+                    </p>
                   </div>
-                </CardContent>
-              </Card>
-            ))}
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Venkatramanan TM Card */}
+            <Card className="bg-white border-2 border-orange-200 hover:border-orange-400 transition-all duration-300 hover:shadow-xl animate-scale-in stagger-1">
+              <CardContent className="p-8">
+                <div className="flex flex-col md:flex-row items-center md:items-start space-y-4 md:space-y-0 md:space-x-6">
+                  <Avatar className="w-24 h-24 flex-shrink-0">
+                    <AvatarImage src="/lovable-uploads/0ae1de65-54ad-4d58-a130-a5e80efa8ba7.png" alt={t('about.management.venkat.name')} />
+                    <AvatarFallback className="bg-gradient-to-br from-gray-400 to-gray-600 text-white text-xl font-bold">
+                      VT
+                    </AvatarFallback>
+                  </Avatar>
+                  <div className="flex-1 text-center md:text-left">
+                    <div className="flex flex-col md:flex-row items-center md:items-start md:justify-between mb-3">
+                      <h3 className="text-2xl font-bold text-orange-500">{t('about.management.venkat.name')}</h3>
+                      <Linkedin className="text-blue-600 cursor-pointer hover:text-blue-800 mt-2 md:mt-0" size={24} />
+                    </div>
+                    <p className="text-lg font-semibold text-gray-700 mb-4">{t('about.management.venkat.position')}</p>
+                    <p className="text-gray-600 leading-relaxed">
+                      {t('about.management.venkat.description')}
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
 
-      {/* Mission Section */}
+      {/* Enhanced Mission Section */}
       <section className="py-20 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
-        <div className="w-[95%] mx-auto">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="animate-fade-in">
               <p className="text-lg text-gray-300 leading-relaxed">

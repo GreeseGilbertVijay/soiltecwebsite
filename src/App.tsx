@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import FontProvider from "@/components/FontProvider";
 import AnimatedBackground from "@/components/AnimatedBackground";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import Index from "./pages/Index";
 import CreditHealth from "./pages/CreditHealth";
 import Impact from "./pages/Impact";
@@ -25,6 +26,7 @@ const App = () => (
           <Toaster />
           <Sonner />
           <AnimatedBackground />
+          <WhatsAppButton />
           <BrowserRouter>
             <Routes>
               <Route path="/" element={<Index />} />

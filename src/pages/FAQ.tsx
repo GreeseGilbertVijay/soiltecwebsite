@@ -5,8 +5,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 
 const FAQ = () => {
   const { t, translations } = useLanguage();
-  const questions = t('faq.questions');
-
+  const questions = t('faqPage.questions');
   // Don't render content until translations are loaded
   if (!translations || Object.keys(translations).length === 0) {
     return (
@@ -21,31 +20,99 @@ const FAQ = () => {
   }
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gray-50 font-raleway">
+       <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&display=swap');
+
+        .font-raleway {
+          font-family: 'Raleway', sans-serif;
+        }
+
+        @media (max-width: 1920px) {
+          h1 { font-size: 56px; }
+          h2 { font-size: 48px; }
+          p { font-size: 18px; }
+          [lang]:not([lang="en"]) h1 { font-size: 44px; }
+          [lang]:not([lang="en"]) h2 { font-size: 36px; }
+          [lang]:not([lang="en"]) p { font-size: 18px; }
+        }
+
+        @media (max-width: 1440px) {
+          h1 { font-size: 48px; line-height: 1em; }
+          h2 { font-size: 40px; }
+          p { font-size: 18px; }
+          [lang]:not([lang="en"]) h1 { font-size: 36px; }
+          [lang]:not([lang="en"]) h2 { font-size: 28px; }
+          [lang]:not([lang="en"]) p { font-size: 16px; }
+        }
+
+        @media (max-width: 780px) {
+          h1 { font-size: 36px; }
+          h2 { font-size: 28px; }
+          p { font-size: 16px; }
+          [lang]:not([lang="en"]) h1 { font-size: 36px; }
+          [lang]:not([lang="en"]) h2 { font-size: 24px; }
+          [lang]:not([lang="en"]) p { font-size: 16px; }
+        }
+
+        @media (max-width: 480px) {
+          h1 { font-size: 24px; }
+          h2 { font-size: 22px; }
+          p { font-size: 16px; }
+          [lang]:not([lang="en"]) h1 { font-size: 24px; }
+          [lang]:not([lang="en"]) h2 { font-size: 20px; }
+          [lang]:not([lang="en"]) p { font-size: 14px; }
+        }
+      `}</style>
       <Navbar />
       
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-900 to-blue-700 text-white py-16">
+      <section className="relative bg-gradient-to-br from-slate-800 via-slate-800 to-blue-500 text-white py-20 overflow-hidden">
         <div className="w-[95%] mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            {t('faq.title')}
+          <h1 className="font-bold mb-6">
+            {t('faqPage.title')}
           </h1>
-          <p className="text-xl text-blue-100">
-            {t('faq.subtitle')}
+          <p className="text-blue-100">
+            {t('faqPage.subtitle')}
           </p>
         </div>
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 bg-white">
-        <div className="w-[95%] mx-auto">
-          <div className="space-y-8">
+      <section className="py-20 bg-slate-900">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="space-y-4">
             {Array.isArray(questions) && questions.map((faq: any, index: number) => (
-              <div key={index} className="bg-white rounded-lg shadow-md p-6 border border-gray-200">
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                  {index + 1}. {faq.question}
-                </h3>
-                <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
+              <div key={index} className="bg-slate-800 rounded-lg overflow-hidden">
+                <button
+                  className="w-full px-6 py-4 text-left flex justify-between items-center text-white hover:bg-slate-700 transition-colors"
+                  onClick={() => {
+                    const content = document.getElementById(`faq-${index}-content`);
+                    const arrow = document.getElementById(`faq-${index}-arrow`);
+                    if (content && arrow) {
+                      content.classList.toggle('hidden');
+                      arrow.classList.toggle('rotate-180');
+                    }
+                  }}
+                >
+                  <span className="font-semibold">
+                    <span className="text-blue-400 mr-2">Q{index + 1}.</span>
+                    {faq.question}
+                  </span>
+                  <svg
+                    id={`faq-${index}-arrow`}
+                    className="w-5 h-5 transform transition-transform"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div id={`faq-${index}-content`} className="hidden px-6 py-4 text-slate-300">
+                  <span className="text-blue-400 mr-2">A{index + 1}.</span>
+                  {faq.answer}
+                </div>
               </div>
             ))}
           </div>
@@ -55,18 +122,18 @@ const FAQ = () => {
       {/* Contact CTA */}
       <section className="py-16 bg-gray-100">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            {t('faq.stillHaveQuestions')}
+          <h2 className="font-bold text-gray-900 mb-4">
+            {t('faqPage.stillHaveQuestions')}
           </h2>
-          <p className="text-lg text-gray-600 mb-8">
-            {t('faq.getInTouch')}
+          <p className="text-gray-600 mb-8">
+            {t('faqPage.getInTouch')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="/contact" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors transform hover:scale-105">
-              {t('faq.contactUs')}
+              {t('faqPage.contactUs')}
             </a>
             <a href="/services" className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-3 rounded-lg font-semibold transition-colors">
-              {t('faq.learnServices')}
+              {t('faqPage.learnServices')}
             </a>
           </div>
         </div>

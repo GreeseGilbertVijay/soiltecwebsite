@@ -29,9 +29,9 @@
       "title": "Proven Results You Can Trust",
       "timeline": "6-12 Months",
       "timelineDesc": "Average time to improve your credit score",
-      "freeService": "100% Free Service",
+      "freeService": "No Cost Service",
       "freeServiceDesc": "No hidden fees or charges",
-      "rbiNBFC": "RBI- NBFC",  
+      "rbiNBFC": "NBFC",  
       "rbiRegistered": "RBI Registered",
       "rbiRegisteredDesc": "All our financial institution partners"
     },
@@ -45,6 +45,7 @@
     },
     "faq": {
       "title": "Top 7 FAQs",
+      "description":"Find answers to common questions about our services",
       "q1": "How can I improve my poor credit score?",
       "a1": "The good news is that a poor credit score is not permanent; you can always improve it by taking appropriate steps. Although it may take some time, it is worth improving your score before applying for a new loan.",
       "q2": "How long does it take to improve my credit score?",
@@ -61,7 +62,7 @@
       "a7": "It is for salaried customers who are currently employed."
     }
   },
-  "faq": {
+  "faqPage": {
     "title": "Frequently Asked Questions",
     "subtitle": "Find answers to common questions about our services",
     "stillHaveQuestions": "Still Have Questions?",
@@ -289,10 +290,7 @@
     "subtitle": "Empowering financial futures through expert credit counseling",
     "hero": {
       "title": "ABOUT US",
-      "subtitle1": "Providing trusted, No-Cost Financial",
-      "subtitle2": "Counselling to Resolve Debt/Rebuild Credit,",
-      "subtitle3": "& enhance Financial Awareness within",
-      "subtitle4": "Regulatory Compliance.",
+      "subtitle1": "Providing trusted, No-Cost Financial Counselling to Resolve Debt/Rebuild Credit, & enhance Financial Awareness within Regulatory Compliance.",
       "description": "Our counsellors are professionally trained and certified by the Indian Institute of Banking and Finance (IIBF)"
     },
     "leadership": {
