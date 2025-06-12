@@ -27,9 +27,14 @@ const Index = () => {
     <div className="min-h-screen relative font-raleway" lang={currentLanguage}>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
         .font-raleway {
           font-family: 'Raleway', sans-serif;
+        }
+
+        .font-roboto {
+          font-family: 'Roboto', sans-serif;
         }
 
         #chatbotIframe {
@@ -58,7 +63,7 @@ const Index = () => {
             height: 50vh;
           }
           h1 {
-            font-size: 64px;
+            font-size: 56px;
           }
           h2 {
             font-size: 48px;
@@ -182,16 +187,16 @@ const Index = () => {
 
         @media (max-width: 480px) {
           h1 {
-            font-size: 32px;
+            font-size: 28px;
           }
           h2 {
-            font-size: 28px;
+            font-size: 26px;
           }
           h3 {
             font-size: 24px;
           }
           h4 {
-            font-size: 28px;
+            font-size: 22px;
           }
           h5 {
             font-size: 20px;
@@ -297,21 +302,21 @@ const Index = () => {
             </p>
           </div>
           
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center max-w-8xl mx-auto animate-fade-in" style={{animationDelay: '0.6s'}}>
-            <Link to="/contact" className="bg-orange-500 hover:bg-orange-600 text-white rounded-full font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-orange-500/25 flex items-center justify-center gap-2 text-lg px-8 py-4 min-w-[280px]">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center max-w-8xl mx-auto animate-fade-in" style={{animationDelay: '0.6s'}}>
+            <Link to="/contact" className="w-full sm:w-auto bg-orange-500 hover:bg-orange-600 text-white rounded-full font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-orange-500/25 flex items-center justify-center gap-2 text-xs sm:text-lg px-4 sm:px-8 py-3 sm:py-4 min-w-[200px] sm:min-w-[280px]">
               {t('home.hero.cta')}
-              <ArrowRight size={20} />
+              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
             </Link>
-            <Link to="/services" className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white rounded-full font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-orange-500/25 flex items-center justify-center text-lg px-8 py-4 min-w-[280px]">
+            <Link to="/services" className="w-full sm:w-auto border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white rounded-full font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-orange-500/25 flex items-center justify-center text-xs sm:text-lg px-4 sm:px-8 py-3 sm:py-4 min-w-[200px] sm:min-w-[280px]">
               {t('home.hero.learnMore')}
-              <ArrowRight size={20} />
+              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
             </Link>
           </div>
         </div>
       </section>
 
       {/* Trust Builders with subtle animations */}
-      <section className="py-20 bg-slate-800 relative overflow-hidden">
+      <section className="p-8 bg-slate-800 relative overflow-hidden">
         <div className="absolute inset-0">
           {Array.from({ length: 8 }).map((_, i) => (
             <div
@@ -336,10 +341,10 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
 
           <div className="flex flex-col  pt-10 pb-10 justify-center items-center h-full text-center bg-gradient-to-br from-slate-700 to-slate-600 rounded-3xl hover:from-slate-600 hover:to-slate-500 transition-all hover:scale-105 border border-slate-500 animate-scale-in stagger-1">
-            <div className="text-4xl md:text-6xl font-bold text-orange-500 mb-2 md:mb-4">
+            <div className="text-4xl md:text-6xl font-bold text-orange-500 mb-2 md:mb-4 font-roboto">
               {t('home.trustBuilders.timeline').split(' ')[0]}
             </div>
-            <div className="text-xl md:text-2xl font-bold text-white mb-2 md:mb-4">
+            <div className="md:text-2xl font-bold text-white mb-2 md:mb-4 font-roboto">
               {t('home.trustBuilders.timeline').split(' ')[1]}
             </div>
             <p className="text-slate-300 text-base md:text-lg pl-8 pr-8">
@@ -375,7 +380,7 @@ const Index = () => {
       </section>
 
       {/* Video Section */}
-      <section className="py-20 bg-slate-900 text-center">
+      <section className="p-8 bg-slate-900 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-bold text-white mb-12 animate-fade-in">
             {t('home.videoSection.title')}
@@ -394,7 +399,8 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="pt-4 pb-10 3 pt-lg-5">
+      {/* ChatBot Section */}
+      <section className="pt-4 pb-12 3 pt-lg-5 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900">
         <iframe 
           id="chatbotIframe"
           src="https://shabd.tech/widget/chatpage?name=samatva&authKey=afd9a6b4-03fd-11f0-aabd-047c1692d8ad"
@@ -405,7 +411,7 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br bg-slate-800">
+      <section className="p-8 bg-gradient-to-br bg-slate-800">
         <div className="max-w-5xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="font-bold mb-6 text-white animate-fade-in">
             {t('home.cta.title')}
@@ -413,15 +419,15 @@ const Index = () => {
           <p className="mb-10 text-orange-100 max-w-3xl mx-auto animate-fade-in" style={{animationDelay: '0.2s'}}>
             {t('home.cta.subtitle')}
           </p>
-          <Link to="/contact" className="bg-white text-orange-600 hover:bg-orange-50 px-10 py-5 rounded-full font-bold transition-all transform hover:scale-105 inline-flex items-center gap-3 shadow-2xl animate-scale-in" style={{animationDelay: '0.4s'}}>
+          <Link to="/contact" className="w-full sm:w-auto bg-white text-orange-600 hover:bg-orange-50 px-6 sm:px-10 py-3 sm:py-5 rounded-full font-bold transition-all transform hover:scale-105 inline-flex items-center justify-center gap-3 shadow-2xl animate-scale-in text-xs sm:text-lg" style={{animationDelay: '0.4s'}}>
             {t('home.cta.button')}
-            <ArrowRight size={24} />
+            <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6" />
           </Link>
         </div>
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-slate-900">
+      <section className="p-8 bg-slate-900">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-bold text-white mb-12 text-center animate-fade-in">{t('faq.title')}</h2>
           

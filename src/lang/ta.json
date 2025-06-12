@@ -354,12 +354,60 @@
         "address": "No.25, Shanthi Apartments, Flat No 3, 1st Floor, Vyasar Street, T.Nagar, Chennai - 600017"
       }    
   },
-
   "creditHealth": {
-    "title": "கடன் ஆரோக்கியத்தைப் புரிந்துகொள்ளுதல்",
-    "subtitle": "வலுவான கடன் சுயவிவரத்தை எவ்வாறு உருவாக்குவது மற்றும் பராமரிப்பது என்பதை அறியுங்கள்",
-    "importance": "கடன் ஆரோக்கியம் ஏன் முக்கியம்",
-    "improvementSteps": "உங்கள் கடனை மேம்படுத்துவதற்கான படிகள்"
+    "title": "Master Your Credit Score",
+    "subtitle": "Understanding your credit score is the first step towards financial freedom. Learn how to build, maintain, and leverage a powerful credit profile.",
+    "whatIs": {
+      "title": "What Is a Credit Score?",
+      "description": "Your credit score is a three-digit number that represents your creditworthiness - essentially how well you manage credit cards, loans, and other financial obligations."
+    },
+    "ratings": {
+      "title": "CIBIL Score Impact",
+      "subtitle": "How your score affects loan approval and interest rates",
+      "poor": "Poor",
+      "average": "Average", 
+      "good": "Good",
+      "veryGood": "Very Good",
+      "excellent": "Excellent",
+      "poorRange": "Less than 630",
+      "averageRange": "630 - 680",
+      "goodRange": "680 - 730", 
+      "veryGoodRange": "730 - 780",
+      "excellentRange": "780+",
+      "poorDesc": "❌ Loan rejection likely",
+      "averageDesc": "⚠️ Higher interest rates",
+      "goodDesc": "✅ Likely approval, moderate rates",
+      "veryGoodDesc": "🎯 Better rates, larger amounts",
+      "excellentDesc": "🏆 Best rates, fast approval"
+    },
+    "factors": {
+      "title": "What Affects Your Credit Score?",
+      "subtitle": "Understanding these key factors can help you improve your credit score effectively",
+      "paymentHistory": "Payment History",
+      "paymentHistoryDesc": "Most important factor - always pay on time",
+      "creditUtilization": "Credit Utilization", 
+      "creditUtilizationDesc": "Keep usage below 30% of credit limit",
+      "creditLength": "Credit History Length",
+      "creditLengthDesc": "Longer credit history is better",
+      "creditMix": "Credit Mix",
+      "creditMixDesc": "Mix of credit types (cards, loans)",
+      "newCredit": "New Credit",
+      "newCreditDesc": "Limit new credit applications"
+    },
+    "timeline": {
+      "title": "Credit Improvement Timeline",
+      "subtitle": "Patience and consistency are key to building excellent credit",
+      "duration": "6-12 Months",
+      "description": "Typical timeframe to see significant improvement",
+      "quickWins": "Quick Wins (1-3 months)",
+      "quickWin1": "• Pay down high balances",
+      "quickWin2": "• Dispute credit report errors", 
+      "quickWin3": "• Set up automatic payments",
+      "longTerm": "Long-term Gains (6-12 months)",
+      "longTerm1": "• Consistent payment history",
+      "longTerm2": "• Lower credit utilization",
+      "longTerm3": "• Avoid new credit applications"
+    }
   },
   "company": {
     "tagline": "கடனை மீண்டும் உருவாக்குங்கள், உங்கள் எதிர்காலத்தை மீண்டும் பெறுங்கள்",

@@ -1,4 +1,3 @@
-
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Mail, Phone, Clock, CheckCircle } from 'lucide-react';
@@ -8,13 +7,79 @@ const Contact = () => {
   const { t } = useLanguage();
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 font-raleway">
+       <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&display=swap');
+
+        .font-raleway {
+          font-family: 'Raleway', sans-serif;
+        }
+
+        @media (max-width: 1920px) {
+          h1 { font-size: 56px; }
+          h2 { font-size: 48px; }
+          h3 { font-size: 36px; }
+          h4 { font-size: 28px; }
+          h5 { font-size: 24px; }
+          p { font-size: 18px; }
+          [lang]:not([lang="en"]) h1 { font-size: 44px; }
+          [lang]:not([lang="en"]) h2 { font-size: 36px; }
+          [lang]:not([lang="en"]) h3 { font-size: 28px; }
+          [lang]:not([lang="en"]) h3 { font-size: 24px; }
+          [lang]:not([lang="en"]) h5 { font-size: 22px; }
+          [lang]:not([lang="en"]) p { font-size: 18px; }
+        }
+
+        @media (max-width: 1440px) {
+          h1 { font-size: 48px; line-height: 1em; }
+          h2 { font-size: 40px; }
+          h3 { font-size: 32px; }
+          h4 { font-size: 24px; }
+          h5 { font-size: 20px; }
+          p { font-size: 18px; }
+          [lang]:not([lang="en"]) h1 { font-size: 36px; }
+          [lang]:not([lang="en"]) h2 { font-size: 28px; }
+          [lang]:not([lang="en"]) h3 { font-size: 24px; }
+          [lang]:not([lang="en"]) h4 { font-size: 22px; }
+          [lang]:not([lang="en"]) h5 { font-size: 20px; }
+          [lang]:not([lang="en"]) p { font-size: 16px; }
+        }
+
+        @media (max-width: 780px) {
+          h1 { font-size: 36px; }
+          h2 { font-size: 28px; }
+          h3 { font-size: 24px; }
+          h4 { font-size: 28px; }
+          h5 { font-size: 18px; }
+          p { font-size: 16px; }
+          [lang]:not([lang="en"]) h1 { font-size: 36px; }
+          [lang]:not([lang="en"]) h2 { font-size: 24px; }
+          [lang]:not([lang="en"]) h3 { font-size: 20px; }
+          [lang]:not([lang="en"]) h5 { font-size: 16px; }
+          [lang]:not([lang="en"]) p { font-size: 16px; }
+        }
+
+        @media (max-width: 480px) {
+          h1 { font-size: 36px; }
+          h2 { font-size: 28px; }
+          h3 { font-size: 24px; }
+          h4 { font-size: 20px; }
+          h5 { font-size: 20px; }
+          p { font-size: 16px; }
+          [lang]:not([lang="en"]) h1 { font-size: 36px; }
+          [lang]:not([lang="en"]) h2 { font-size: 20px; }
+          [lang]:not([lang="en"]) h3 { font-size: 18px; }
+          [lang]:not([lang="en"]) h4 { font-size: 20px; }
+          [lang]:not([lang="en"]) h5 { font-size: 16px; }
+          [lang]:not([lang="en"]) p { font-size: 14px; }
+        }
+      `}</style>
       <Navbar />
       
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-900 to-blue-700 text-white py-16">
+      <section className="relative bg-gradient-to-br from-slate-800 via-slate-800 to-blue-500 text-white py-20 overflow-hidden">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
+          <h1 className="font-bold mb-6">
             {t('contact.title')}
           </h1>
           <p className="text-xl text-blue-100">
@@ -30,7 +95,7 @@ const Contact = () => {
             
             {/* Contact Details */}
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-8">{t('contact.contactInfo')}</h2>
+              <h3 className=" font-bold text-gray-900 mb-8">{t('contact.contactInfo')}</h3>
               
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
@@ -38,9 +103,9 @@ const Contact = () => {
                     <Mail className="text-white" size={24} />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900">{t('contact.email')}</h3>
+                    <h4 className=" font-semibold text-gray-900">{t('contact.email')}</h4>
                     <p className="text-gray-600">support@samatvaawareness.in</p>
-                    <p className="text-sm text-gray-500">{t('contact.emailDesc')}</p>
+                    <p className=" text-gray-500">{t('contact.emailDesc')}</p>
                   </div>
                 </div>
 
@@ -49,9 +114,9 @@ const Contact = () => {
                     <Phone className="text-white" size={24} />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900">{t('contact.call')}</h3>
-                    <p className="text-gray-600">+91 9606914500 / 9789511937</p>
-                    <p className="text-sm text-gray-500">{t('contact.callDesc')}</p>
+                    <h4 className=" font-semibold text-gray-900">{t('contact.call')}</h4>
+                    <p className="text-gray-600">+91 63820 97967</p>
+                    <p className=" text-gray-500">{t('contact.callDesc')}</p>
                   </div>
                 </div>
 
@@ -60,7 +125,7 @@ const Contact = () => {
                     <Clock className="text-white" size={24} />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900">{t('contact.hours')}</h3>
+                    <h4 className=" font-semibold text-gray-900">{t('contact.hours')}</h4>
                     <p className="text-gray-600">Monday - Friday: 9:00 AM - 6:00 PM</p>
                     <p className="text-gray-600">Saturday: 10:00 AM - 4:00 PM</p>
                     <p className="text-gray-600">Sunday: Closed</p>
@@ -70,19 +135,19 @@ const Contact = () => {
 
               {/* Service Areas */}
               <div className="mt-12">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">{t('contact.serviceAreas')}</h3>
+                <h3 className="font-bold text-gray-900 mb-6">{t('contact.serviceAreas')}</h3>
                 <div className="grid grid-cols-2 gap-4">
-                  <div className="bg-blue-50 p-4 rounded-lg">
-                    <h4 className="font-semibold text-gray-900">Credit Score Improvement</h4>
+                  <div className="bg-blue-200 p-4 rounded-lg">
+                    <h5 className="font-semibold text-gray-900">Credit Score Improvement</h5>
                   </div>
-                  <div className="bg-green-50 p-4 rounded-lg">
-                    <h4 className="font-semibold text-gray-900">Debt Settlement Support</h4>
+                  <div className="bg-green-200 p-4 rounded-lg">
+                    <h5 className="font-semibold text-gray-900">Debt Settlement Support</h5>
                   </div>
-                  <div className="bg-purple-50 p-4 rounded-lg">
-                    <h4 className="font-semibold text-gray-900">Financial Counseling</h4>
+                  <div className="bg-purple-200 p-4 rounded-lg">
+                    <h5 className="font-semibold text-gray-900">Financial Counseling</h5>
                   </div>
-                  <div className="bg-orange-50 p-4 rounded-lg">
-                    <h4 className="font-semibold text-gray-900">Loan Application Guidance</h4>
+                  <div className="bg-orange-200 p-4 rounded-lg">
+                    <h5 className="font-semibold text-gray-900">Loan Application Guidance</h5>
                   </div>
                 </div>
               </div>
@@ -90,7 +155,7 @@ const Contact = () => {
 
             {/* Next Steps */}
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-8">{t('contact.nextSteps')}</h2>
+              <h3 className=" font-bold text-gray-900 mb-8">{t('contact.nextSteps')}</h3>
               
               <div className="space-y-6">
                 {[
@@ -105,7 +170,7 @@ const Contact = () => {
                       {item.step}
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-gray-900">{item.title}</h3>
+                      <h4 className="font-semibold text-gray-900">{item.title}</h4>
                       <p className="text-gray-600">{item.description}</p>
                     </div>
                   </div>
@@ -132,17 +197,17 @@ const Contact = () => {
       {/* CTA Section */}
       <section className="py-16 bg-gradient-to-r from-blue-800 to-blue-900 text-white">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="font-bold mb-4">
             {t('contact.takeFirstStep')}
           </h2>
           <p className="text-xl mb-8 text-blue-100">
             Your journey to better financial health starts with a simple conversation
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="mailto:info@samatva.org" className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors transform hover:scale-105">
+            <a href="mailto:support@samatvaawareness.in" className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg font-semibold  transition-colors transform hover:scale-105">
               {t('contact.startConsultation')}
             </a>
-            <a href="tel:+91-XXXX-XXXXXX" className="border-2 border-white text-white hover:bg-white hover:text-blue-800 px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
+            <a href="tel:+919606914500" className="border-2 border-white text-white hover:bg-white hover:text-blue-800 px-8 py-4 rounded-lg font-semibold  transition-colors">
               {t('contact.callNow')}
             </a>
           </div>

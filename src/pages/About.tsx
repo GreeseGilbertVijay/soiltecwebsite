@@ -21,8 +21,8 @@ const About = () => {
         }
 
         @media (max-width: 1920px) {
-          h1 { font-size: 64px; }
-          h2 { font-size: 36px; }
+          h1 { font-size: 56px; }
+          h2 { font-size: 48px; }
           h3 { font-size: 36px; }
           h4 { font-size: 28px; }
           h5 { font-size: 24px; }
@@ -36,8 +36,8 @@ const About = () => {
         }
 
         @media (max-width: 1440px) {
-          h1 { font-size: 64px; line-height: 1em; }
-          h2 { font-size: 48px; }
+          h1 { font-size: 48px; line-height: 1em; }
+          h2 { font-size: 40px; }
           h3 { font-size: 32px; }
           h4 { font-size: 28px; }
           h5 { font-size: 20px; }
@@ -107,7 +107,7 @@ const About = () => {
       </section>
 
       {/* Leadership Section */}
-      <section className="py-20 bg-white">
+      <section className="py-8 bg-white">
         <div className="mx-auto p-8">
           <div className="text-center mb-16 animate-fade-in">
             <h2 className=" font-bold text-gray-900 mb-6">
@@ -223,7 +223,9 @@ const About = () => {
                   <div className="flex-1 text-center md:text-left">
                     <div className="flex flex-col md:flex-row items-center md:items-start md:justify-between mb-3">
                       <h3 className="text-2xl font-bold text-orange-500">{t('about.management.thallam.name')}</h3>
-                      <Linkedin className="text-blue-600 cursor-pointer hover:text-blue-800 mt-2 md:mt-0" size={24} />
+                      <a href="https://www.linkedin.com/in/thallam-sreekumar-6421a6a/" target="_blank" rel="noopener noreferrer">
+                        <Linkedin className="text-blue-600 cursor-pointer hover:text-blue-800 mt-2 md:mt-0" size={24} />
+                      </a>
                     </div>
                     <p className="text-lg font-semibold text-gray-700 mb-4">{t('about.management.thallam.position')}</p>
                     <p className="text-gray-600 leading-relaxed">
@@ -247,7 +249,9 @@ const About = () => {
                   <div className="flex-1 text-center md:text-left">
                     <div className="flex flex-col md:flex-row items-center md:items-start md:justify-between mb-3">
                       <h3 className="text-2xl font-bold text-orange-500">{t('about.management.venkat.name')}</h3>
-                      <Linkedin className="text-blue-600 cursor-pointer hover:text-blue-800 mt-2 md:mt-0" size={24} />
+                      <a href="https://www.linkedin.com/in/venkatramanan-murthy-1434687/" target="_blank" rel="noopener noreferrer">
+                        <Linkedin className="text-blue-600 cursor-pointer hover:text-blue-800 mt-2 md:mt-0" size={24} />
+                      </a>
                     </div>
                     <p className="text-lg font-semibold text-gray-700 mb-4">{t('about.management.venkat.position')}</p>
                     <p className="text-gray-600 leading-relaxed">
@@ -276,11 +280,11 @@ const About = () => {
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
-                  <span className="text-lg font-semibold">+91 9606914500 / 9789511937</span>
+                  <a href="tel:+91916382097967" className="text-lg hover:text-orange-500 transition-colors">+91 916382 097967</a>
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
-                  <span className="text-lg">support@samatvaawareness.in</span>
+                  <a href="mailto:support@samatvaawareness.in" className="text-lg hover:text-orange-500 transition-colors">support@samatvaawareness.in</a>
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
