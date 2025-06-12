@@ -22,15 +22,16 @@ const About = () => {
 
         @media (max-width: 1920px) {
           h1 { font-size: 64px; }
-          h2 { font-size: 48px; }
+          h2 { font-size: 36px; }
           h3 { font-size: 36px; }
-          h4 { font-size: 44px; }
+          h4 { font-size: 28px; }
           h5 { font-size: 24px; }
           p { font-size: 18px; }
           [lang]:not([lang="en"]) h1 { font-size: 44px; }
           [lang]:not([lang="en"]) h2 { font-size: 36px; }
           [lang]:not([lang="en"]) h3 { font-size: 28px; }
-          [lang]:not([lang="en"]) h5 { font-size: 24px; }
+          [lang]:not([lang="en"]) h3 { font-size: 24px; }
+          [lang]:not([lang="en"]) h5 { font-size: 22px; }
           [lang]:not([lang="en"]) p { font-size: 18px; }
         }
 
@@ -90,11 +91,11 @@ const About = () => {
                 {t('about.hero.title')}
               </h1>
               <div className="space-y-4">
-                <h4 className="font-bold text-orange-400 animate-fade-in stagger-1">
+                <h5 className="font-bold text-orange-400">
                 {t('about.hero.subtitle1')} 
-                </h4>
+                </h5>
               </div>
-              <p className="text-xl text-orange-100 mt-8 leading-relaxed animate-fade-in stagger-5">
+              <p className="text-orange-100 mt-8 leading-relaxed animate-fade-in stagger-5">
                 {t('about.hero.description')}
               </p>
             </div>
@@ -112,16 +113,16 @@ const About = () => {
             <h2 className=" font-bold text-gray-900 mb-6">
               {t('about.leadership.title')}
             </h2>
-            <p className="text-xl text-gray-700 max-w-5xl mx-auto leading-relaxed">
+            <p className="text-gray-700 max-w-5xl mx-auto leading-relaxed">
               {t('about.leadership.description1')}
             </p>
-            <p className="text-lg text-orange-600 font-semibold mt-6">
+            <p className="text-orange-600 font-semibold mt-6">
               {t('about.leadership.description2')}
             </p>
-            <p className="text-lg text-gray-700 mb-6">
+            <p className="text-gray-700 mb-6">
               {t('about.leadership.description3')}
             </p>
-            <p className="text-lg text-gray-700">
+            <p className="text-gray-700">
               {t('about.leadership.description4')}
             </p>
           </div>
