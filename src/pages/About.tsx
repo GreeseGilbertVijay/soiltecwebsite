@@ -6,7 +6,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const About = () => {
-  const { t, currentLanguage } = useLanguage();
+  const { t,currentLanguage } = useLanguage();
 
   // Get advantages with fallback to empty array
   const advantages = Array.isArray(t('about.whyChoose.advantages')) ? t('about.whyChoose.advantages') : [];
