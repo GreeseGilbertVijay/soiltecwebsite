@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { Link } from 'react-router-dom';
 
 const FAQ = () => {
   const { t, translations } = useLanguage();
@@ -129,12 +130,12 @@ const FAQ = () => {
             {t('faqPage.getInTouch')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/Contact" className="border-2 border-orange-600 text-white bg-orange-500 hover:text-white px-8 py-4 rounded-lg font-semibold  transition-colors">
+            <Link to="/contact" className="border-2 border-orange-600 text-white bg-orange-500 hover:text-white px-8 py-4 rounded-lg font-semibold  transition-colors">
             {t('faqPage.contactUs')}
-            </a>
-            <a href="/Services" className="border-2 border-orange-600 text-orange-600 hover:bg-blue-800 hover:text-orange-500 px-8 py-4 rounded-lg font-semibold  transition-colors">
+            </Link>
+            <Link to="/services" className="border-2 border-orange-600 text-orange-600 hover:bg-blue-800 hover:text-orange-500 px-8 py-4 rounded-lg font-semibold  transition-colors">
             {t('faqPage.learnServices')}
-            </a>
+            </Link>
           </div>
         </div>
       </section>

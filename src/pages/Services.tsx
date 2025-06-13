@@ -1,7 +1,8 @@
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { Users,Link, CheckCircle, HeartHandshake, UserCheck } from 'lucide-react';
+import { Users,CheckCircle, HeartHandshake, UserCheck } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { Link } from 'react-router-dom';
 
 const About = () => {
   const { t, currentLanguage } = useLanguage();
@@ -242,9 +243,9 @@ const About = () => {
         {t('services.readyDesc')}
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <a href="/Contact" className="w-full sm:w-auto border-2 border-orange-600 text-orange-600 hover:bg-blue-800 hover:text-orange-500 px-8 py-4 rounded-lg font-semibold transition-colors">
+          <Link to="/Contact" className="w-full sm:w-auto border-2 border-orange-600 text-orange-600 hover:bg-blue-800 hover:text-orange-500 px-8 py-4 rounded-lg font-semibold transition-colors">
             {t('services.scheduleConsultation')}
-          </a>
+          </Link>
         </div>
       </div>
    </section>
