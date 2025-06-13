@@ -94,68 +94,79 @@ const Impact = () => {
         @media (max-width: 1920px) {
           .container {
             max-width: 1920px;
-            height: 50vh;
+            margin: 0 auto;
+            padding: 0 2rem;
           }
           h1 { font-size: 56px; }
           h2 { font-size: 48px; }
           h3 { font-size: 36px; }
           h4 { font-size: 28px; }
+           h6 { font-size: 20px; }
           p { font-size: 18px; }
           [lang]:not([lang="en"]) h1 { font-size: 44px; }
           [lang]:not([lang="en"]) h2 { font-size: 36px; }
           [lang]:not([lang="en"]) h3 { font-size: 28px; }
           [lang]:not([lang="en"]) h4 { font-size: 24px; }
+          [lang]:not([lang="en"]) h6 { font-size: 20px; }
           [lang]:not([lang="en"]) p { font-size: 18px; }
         }
 
         @media (max-width: 1440px) {
           .container {
             max-width: 1440px;
-            height: 80vh;
-            padding: 5%;
+            margin: 0 auto;
+            padding: 0 2rem;
           }
           h1 { font-size: 48px; line-height: 1em; }
           h2 { font-size: 40px; }
           h3 { font-size: 32px; }
           h4 { font-size: 28px; }
+          h6 { font-size: 16px; }
           p { font-size: 18px; }
           [lang]:not([lang="en"]) h1 { font-size: 36px; }
           [lang]:not([lang="en"]) h2 { font-size: 28px; }
           [lang]:not([lang="en"]) h3 { font-size: 24px; }
           [lang]:not([lang="en"]) h4 { font-size: 22px; }
+          [lang]:not([lang="en"]) h6 { font-size: 18px; }
           [lang]:not([lang="en"]) p { font-size: 16px; }
         }
 
         @media (max-width: 780px) {
           .container {
-            max-width: 720px;
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
           }
           h1 { font-size: 36px; }
           h2 { font-size: 28px; }
           h3 { font-size: 24px; }
           h4 { font-size: 28px; }
+          h6 { font-size: 16px; }
           p { font-size: 16px; }
           [lang]:not([lang="en"]) h1 { font-size: 36px; }
           [lang]:not([lang="en"]) h2 { font-size: 24px; }
           [lang]:not([lang="en"]) h3 { font-size: 20px; }
+          [lang]:not([lang="en"]) h6 { font-size: 16px; }
           [lang]:not([lang="en"]) p { font-size: 16px; }
         }
 
         @media (max-width: 480px) {
           .container {
-            max-width: 100%;
-            padding-left: 1rem;
-            padding-right: 1rem;
+            max-width: 480px;
+            margin: 0 auto;
+            padding: 0 1rem;
           }
           h1 { font-size: 36px; }
           h2 { font-size: 28px; }
           h3 { font-size: 24px; }
           h4 { font-size: 20px; }
+          h6 { font-size: 16px; }
           p { font-size: 16px; }
           [lang]:not([lang="en"]) h1 { font-size: 36px; }
           [lang]:not([lang="en"]) h2 { font-size: 20px; }
           [lang]:not([lang="en"]) h3 { font-size: 18px; }
           [lang]:not([lang="en"]) h4 { font-size: 20px; }
+          [lang]:not([lang="en"]) h6 { font-size: 16px; }
           [lang]:not([lang="en"]) p { font-size: 14px; }
         }
       `}</style>
@@ -163,7 +174,7 @@ const Impact = () => {
       
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-slate-800 via-slate-800 to-blue-500 text-white py-20 overflow-hidden">
-        <div className="w-[95%] mx-auto text-center">
+        <div className="container text-center">
           <h1 className=" font-bold mb-6">
             Interactive Loan Comparison
           </h1>
@@ -177,7 +188,7 @@ const Impact = () => {
       {/* Loan Calculator Section */}
       <section className="py-20 bg-white relative">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-purple-50 opacity-50"></div>
-        <div className=" mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="container relative z-10">
           <div className="text-center mb-16">
             <h2 className="font-bold text-gray-900 mb-6">
               Interactive Loan Calculator
@@ -193,15 +204,15 @@ const Impact = () => {
               <TabsList className="grid w-full max-w-md mx-auto grid-cols-3 h-14 bg-white border-2 border-blue-100">
                 <TabsTrigger value="home" className="flex items-center gap-2 text-lg font-semibold data-[state=active]:bg-blue-600 data-[state=active]:text-white">
                   <Home size={20} />
-                  Home Loan
+                  <h6>Home Loan</h6>
                 </TabsTrigger>
                 <TabsTrigger value="auto" className="flex items-center gap-2 text-lg font-semibold data-[state=active]:bg-blue-600 data-[state=active]:text-white">
                   <Car size={20} />
-                  Auto Loan
+                  <h6>Auto Loan</h6>
                 </TabsTrigger>
                 <TabsTrigger value="personal" className="flex items-center gap-2 text-lg font-semibold data-[state=active]:bg-blue-600 data-[state=active]:text-white">
                   <CreditCard size={20} />
-                  Personal Loan
+                   <h6>Personal Loan</h6>
                 </TabsTrigger>
               </TabsList>
             </Tabs>
@@ -377,7 +388,7 @@ const Impact = () => {
 
       {/* Home Loan Comparison Table */}
       <section className="py-20 bg-gradient-to-br from-gray-100 to-blue-100">
-        <div className="mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container">
           <div className="text-center mb-16">
             <div className="flex flex-col items-center justify-center gap-3 mb-6">
               <Home className="text-blue-600" size={40} />
@@ -468,7 +479,7 @@ const Impact = () => {
       </section>
 
       <section className="py-20 bg-slate-900">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container">
           <div className="text-center mb-16">
             <h2 className="font-bold text-orange-600 mb-6">
               The Good News About Credit Scores
@@ -513,7 +524,7 @@ const Impact = () => {
       </section>
 
       <section className="py-20 bg-gradient-to-br from-gray-100 to-blue-100">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container">
           <div className="text-center mb-16">
             <h2 className="font-bold text-gray-900 mb-6">
               Timeline for Improvement
@@ -524,10 +535,10 @@ const Impact = () => {
           </div>
           
           <Card className="shadow-2xl border-0 bg-gradient-to-br from-white to-blue-50">
-            <CardContent className="p-12">
+            <CardContent className="p-8">
               <div className="flex items-center mb-8">
-                <div className="bg-gradient-to-r from-blue-500 to-purple-600 w-16 h-16 rounded-full flex items-center justify-center mr-6 shadow-lg">
-                  <Clock className="text-white" size={32} />
+                <div className="bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mr-6 shadow-lg">
+                  <Clock className="text-white" size={48} />
                 </div>
                 <div>
                   <h3 className=" font-bold text-gray-900 mb-2">6 to 12 Months</h3>
@@ -537,14 +548,14 @@ const Impact = () => {
               
               <div className="space-y-8">
                 <Card className="border-l-4 border-l-blue-600 bg-gradient-to-br from-slate-800 via-slate-800 to-blue-500 p-6">
-                  <h4 className="font-bold text-orange-700 mb-3">Method</h4>
+                  <h4 className="font-bold text-orange-600 mb-3">Method</h4>
                   <p className="text-white leading-relaxed">
                     Based on the timely repayment of new loans that you avail. Consistent payment history is the most important factor in credit score improvement.
                   </p>
                 </Card>
                 
                 <Card className="border-l-4 border-l-blue-600 bg-gradient-to-br from-slate-800 via-slate-800 to-blue-500 p-6">
-                  <h4 className="font-bold text-orange-700 mb-3">Strategy</h4>
+                  <h4 className="font-bold text-orange-600 mb-3">Strategy</h4>
                   <p className="text-white leading-relaxed">
                     Getting a loan with a poor credit score is difficult, so it's always a good idea to improve your credit score before applying. This strategic approach can save you significant money in the long run.
                   </p>

@@ -36,7 +36,7 @@ const CreditHealth = () => {
           h2 { font-size: 40px; }
           h3 { font-size: 32px; }
           h4 { font-size: 28px; }
-          p { font-size: 18px; }
+          p { font-size: 16px; }
           [lang]:not([lang="en"]) h1 { font-size: 36px; }
           [lang]:not([lang="en"]) h2 { font-size: 28px; }
           [lang]:not([lang="en"]) h3 { font-size: 24px; }
@@ -81,7 +81,7 @@ const CreditHealth = () => {
             <Shield className="w-5 h-5 mr-2 text-orange-400" />
             <span className="text-orange-300 font-medium">Credit Worthiness Indicator</span>
           </div>
-          <h1 className="font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+          <h1 className="font-bold mb-8 leading-tight animate-slide-in-right">
           Master Your Credit Score
           </h1>
           <p className=" text-slate-300 max-w-3xl mx-auto leading-relaxed">
@@ -91,7 +91,7 @@ const CreditHealth = () => {
       </section>
 
       {/* What is Credit Score Section */}
-      <section className="py-12 md:py-20 bg-white relative">
+      <section className="py-12  bg-white relative">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8 md:mb-16">
             <h2 className="font-bold text-gray-900 mb-4 md:mb-6 text-2xl md:text-4xl">
@@ -202,7 +202,7 @@ const CreditHealth = () => {
       </section>
 
       {/* CIBIL Ratings Table */}
-      <section className="p-12 bg-slate-900 text-center">
+      <section className="pt-12 pb-12 bg-slate-900 text-center">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-orange-700 mb-4">{t('creditHealth.ratings.title')}</h2>
@@ -213,9 +213,9 @@ const CreditHealth = () => {
             <Table>
               <TableHeader>
                 <TableRow className="bg-gradient-to-r from-orange-500 to-orange-600">
-                  <TableHead className="text-white font-bold text-lg py-6">Credit Rating</TableHead>
-                  <TableHead className="text-white font-bold text-lg">Score Range</TableHead>
-                  <TableHead className="text-white font-bold text-lg">Loan Approval Chances</TableHead>
+                  <TableHead className="text-white font-bold text-lg py-6 text-center">Credit Rating</TableHead>
+                  <TableHead className="text-white font-bold text-lg text-center">Score Range</TableHead>
+                  <TableHead className="text-white font-bold text-lg text-center">Loan Approval Chances</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>

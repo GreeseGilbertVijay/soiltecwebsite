@@ -79,7 +79,7 @@ const FAQ = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-slate-900">
+      <section className="pt-16 pb-12 pl-2 pr-2 bg-slate-900">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-4">
             {Array.isArray(questions) && questions.map((faq: any, index: number) => (
@@ -120,20 +120,20 @@ const FAQ = () => {
       </section>
 
       {/* Contact CTA */}
-      <section className="py-16 bg-gray-100">
+      <section className="pt-16 pb-12 bg-gradient-to-br from-blue-400 via-slate-900 to-blue-500">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="font-bold text-gray-900 mb-4">
+          <h2 className="font-bold text-white mb-4">
             {t('faqPage.stillHaveQuestions')}
           </h2>
-          <p className="text-gray-600 mb-8">
+          <p className="text-white mb-8">
             {t('faqPage.getInTouch')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/contact" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors transform hover:scale-105">
-              {t('faqPage.contactUs')}
+            <a href="/contact" className="border-2 border-orange-600 text-white bg-orange-500 hover:text-white px-8 py-4 rounded-lg font-semibold  transition-colors">
+            {t('faqPage.contactUs')}
             </a>
-            <a href="/services" className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-3 rounded-lg font-semibold transition-colors">
-              {t('faqPage.learnServices')}
+            <a href="/services" className="border-2 border-orange-600 text-orange-600 hover:bg-blue-800 hover:text-orange-500 px-8 py-4 rounded-lg font-semibold  transition-colors">
+            {t('faqPage.learnServices')}
             </a>
           </div>
         </div>
