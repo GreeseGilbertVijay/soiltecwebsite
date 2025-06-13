@@ -215,7 +215,7 @@ const Contact = () => {
             <a href="mailto:support@samatvaawareness.in" className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-4 rounded-lg font-semibold  transition-colors transform hover:scale-105">
               {t('contact.startConsultation')}
             </a>
-            <a href="tel:+919606914500" className="border-2 border-orange-600 text-orange-600 hover:bg-blue-800 hover:text-orange-500 px-8 py-4 rounded-lg font-semibold  transition-colors">
+            <a href="tel:+916382097967" className="border-2 border-orange-600 text-orange-600 hover:bg-blue-800 hover:text-orange-500 px-8 py-4 rounded-lg font-semibold  transition-colors">
               {t('contact.callNow')}
             </a>
           </div>

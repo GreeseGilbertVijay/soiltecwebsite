@@ -280,7 +280,7 @@ const About = () => {
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
-                  <a href="tel:+91916382097967" className="text-lg hover:text-orange-500 transition-colors">+91 916382 097967</a>
+                  <a href="tel:+91 63820 97967" className="text-lg hover:text-orange-500 transition-colors">+91 63820 97967</a>
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
