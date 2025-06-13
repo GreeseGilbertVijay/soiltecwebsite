@@ -242,7 +242,7 @@ const About = () => {
         {t('services.readyDesc')}
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <a href="/contact" className="w-full sm:w-auto border-2 border-orange-600 text-orange-600 hover:bg-blue-800 hover:text-orange-500 px-8 py-4 rounded-lg font-semibold transition-colors">
+          <a href="/Contact" className="w-full sm:w-auto border-2 border-orange-600 text-orange-600 hover:bg-blue-800 hover:text-orange-500 px-8 py-4 rounded-lg font-semibold transition-colors">
             {t('services.scheduleConsultation')}
           </a>
         </div>
