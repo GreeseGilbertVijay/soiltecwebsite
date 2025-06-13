@@ -130,10 +130,10 @@ const FAQ = () => {
             {t('faqPage.getInTouch')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/contact" className="border-2 border-orange-600 text-white bg-orange-500 hover:text-white px-8 py-4 rounded-lg font-semibold  transition-colors">
+            <Link to="/Contact" className="border-2 border-orange-600 text-white bg-orange-500 hover:text-white px-8 py-4 rounded-lg font-semibold  transition-colors">
             {t('faqPage.contactUs')}
             </Link>
-            <Link to="/services" className="border-2 border-orange-600 text-orange-600 hover:bg-blue-800 hover:text-orange-500 px-8 py-4 rounded-lg font-semibold  transition-colors">
+            <Link to="/Services" className="border-2 border-orange-600 text-orange-600 hover:bg-blue-800 hover:text-orange-500 px-8 py-4 rounded-lg font-semibold  transition-colors">
             {t('faqPage.learnServices')}
             </Link>
           </div>
