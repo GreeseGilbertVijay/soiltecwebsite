@@ -81,7 +81,7 @@ const FAQ = () => {
 
       {/* FAQ Section */}
       <section className="pt-16 pb-12 pl-2 pr-2 bg-slate-900">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-4">
             {Array.isArray(questions) && questions.map((faq: any, index: number) => (
               <div key={index} className="bg-slate-800 rounded-lg overflow-hidden">

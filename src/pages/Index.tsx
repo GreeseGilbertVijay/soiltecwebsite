@@ -77,6 +77,9 @@ const Index = () => {
           h5{
           font-size:24px;
           }
+           h6{
+          font-size:20px;
+          }
           p {
             font-size: 18px;
           }
@@ -90,8 +93,11 @@ const Index = () => {
           [lang]:not([lang="en"]) h3 {
             font-size: 28px;
           }
-            [lang]:not([lang="en"]) h5 {
+          [lang]:not([lang="en"]) h5 {
             font-size: 24px;
+          }
+          [lang]:not([lang="en"]) h6 {
+            font-size: 20px;
           }
           [lang]:not([lang="en"]) p {
             font-size: 18px;
@@ -120,6 +126,9 @@ const Index = () => {
           h5{
              font-size: 24px;
           }
+          h6{
+             font-size: 20px;
+          }
           p {
             font-size: 18px;
           }
@@ -133,8 +142,11 @@ const Index = () => {
           [lang]:not([lang="en"]) h3 {
             font-size: 24px;
           }
-            [lang]:not([lang="en"]) h5 {
+          [lang]:not([lang="en"]) h5 {
             font-size: 20px;
+          }
+          [lang]:not([lang="en"]) h6 {
+            font-size: 18px;
           }
           [lang]:not([lang="en"]) p {
             font-size: 18px;
@@ -157,7 +169,10 @@ const Index = () => {
           h4{
             font-size: 28px;
           }
-             h5{
+          h5{
+            font-size: 20px;
+          }
+          h6{
             font-size: 18px;
           }
           p {
@@ -175,6 +190,9 @@ const Index = () => {
             font-size: 20px;
           }
           [lang]:not([lang="en"]) h5 {
+            font-size: 16px;
+          }
+          [lang]:not([lang="en"]) h6 {
             font-size: 16px;
           }
           [lang]:not([lang="en"]) p {
@@ -201,8 +219,11 @@ const Index = () => {
           h5 {
             font-size: 20px;
           }
+          h6{
+          font-size: 16px;
+          }
           p {
-            font-size: 16px;
+            font-size: 14px;
          
           /* Non-English font sizes */
           [lang]:not([lang="en"]) h1 {
@@ -214,7 +235,10 @@ const Index = () => {
           [lang]:not([lang="en"]) h3 {
             font-size: 18px;
           }
-            [lang]:not([lang="en"]) h5 {
+          [lang]:not([lang="en"]) h5 {
+            font-size: 16px;
+          }
+          [lang]:not([lang="en"]) h6 {
             font-size: 16px;
           }
           [lang]:not([lang="en"]) p {
@@ -412,7 +436,7 @@ const Index = () => {
 
       {/* FAQ Section */}
       <section className="pt-16 pb-12 bg-slate-900">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-bold text-white mb-12 text-center animate-fade-in">{t('faq.title')}</h2>
           
           <div className="space-y-4">
@@ -429,7 +453,7 @@ const Index = () => {
                   }
                 }}
               >
-                <span className="font-semibold">{t('home.faq.q1')}</span>
+                <h6 className="font-semibold">{t('home.faq.q1')}</h6>
                 <svg
                   id="faq1-arrow"
                   className="w-5 h-5 transform transition-transform"
@@ -441,7 +465,7 @@ const Index = () => {
                 </svg>
               </button>
               <div id="faq1-content" className="hidden px-6 py-4 text-slate-300">
-                {t('home.faq.a1')}
+                <p>{t('home.faq.a1')}</p>
               </div>
             </div>
 
@@ -458,7 +482,7 @@ const Index = () => {
                   }
                 }}
               >
-                <span className="font-semibold">{t('home.faq.q2')}</span>
+                <h6 className="font-semibold">{t('home.faq.q2')}</h6>
                 <svg
                   id="faq2-arrow"
                   className="w-5 h-5 transform transition-transform"
@@ -470,7 +494,7 @@ const Index = () => {
                 </svg>
               </button>
               <div id="faq2-content" className="hidden px-6 py-4 text-slate-300">
-                {t('home.faq.a2')}
+                <p>{t('home.faq.a2')}</p>
               </div>
             </div>
 
@@ -487,7 +511,7 @@ const Index = () => {
                   }
                 }}
               >
-                <span className="font-semibold">{t('home.faq.q3')}</span>
+                <h6 className="font-semibold">{t('home.faq.q3')}</h6>
                 <svg
                   id="faq3-arrow"
                   className="w-5 h-5 transform transition-transform"
@@ -499,7 +523,7 @@ const Index = () => {
                 </svg>
               </button>
               <div id="faq3-content" className="hidden px-6 py-4 text-slate-300">
-                {t('home.faq.a3')}
+                <p>{t('home.faq.a3')}</p>
               </div>
             </div>
 
@@ -516,7 +540,7 @@ const Index = () => {
                   }
                 }}
               >
-                <span className="font-semibold">{t('home.faq.q4')}</span>
+                <h6 className="font-semibold">{t('home.faq.q4')}</h6>
                 <svg
                   id="faq4-arrow"
                   className="w-5 h-5 transform transition-transform"
@@ -528,7 +552,7 @@ const Index = () => {
                 </svg>
               </button>
               <div id="faq4-content" className="hidden px-6 py-4 text-slate-300">
-                {t('home.faq.a4')}
+                <p>{t('home.faq.a4')}</p>
               </div>
             </div>
 
@@ -545,7 +569,7 @@ const Index = () => {
                   }
                 }}
               >
-                <span className="font-semibold">{t('home.faq.q5')}</span>
+                <h6 className="font-semibold">{t('home.faq.q5')}</h6>
                 <svg
                   id="faq5-arrow"
                   className="w-5 h-5 transform transition-transform"
@@ -557,7 +581,7 @@ const Index = () => {
                 </svg>
               </button>
               <div id="faq5-content" className="hidden px-6 py-4 text-slate-300">
-                {t('home.faq.a5')}
+                <p>{t('home.faq.a5')}</p>
               </div>
             </div>
 
@@ -574,7 +598,7 @@ const Index = () => {
                   }
                 }}
               >
-                <span className="font-semibold">{t('home.faq.q6')}</span>
+                <h6 className="font-semibold">{t('home.faq.q6')}</h6>
                 <svg
                   id="faq6-arrow"
                   className="w-5 h-5 transform transition-transform"
@@ -586,7 +610,7 @@ const Index = () => {
                 </svg>
               </button>
               <div id="faq6-content" className="hidden px-6 py-4 text-slate-300">
-                {t('home.faq.a6')}
+                <p>{t('home.faq.a6')}</p>
               </div>
             </div>
 
@@ -603,7 +627,7 @@ const Index = () => {
                   }
                 }}
               >
-                <span className="font-semibold">{t('home.faq.q7')}</span>
+                <h6 className="font-semibold">{t('home.faq.q7')}</h6>
                 <svg
                   id="faq7-arrow"
                   className="w-5 h-5 transform transition-transform"
@@ -615,7 +639,7 @@ const Index = () => {
                 </svg>
               </button>
               <div id="faq7-content" className="hidden px-6 py-4 text-slate-300">
-                {t('home.faq.a7')}
+                <p>{t('home.faq.a7')}</p>
               </div>
             </div>
             

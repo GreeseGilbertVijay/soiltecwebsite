@@ -126,14 +126,16 @@ const About = () => {
               {t('about.leadership.description4')}
             </p>
           </div>
+        </div>
+      </section>
 
-          {/* Our Process Section */}
-          <div className="bg-gradient-to-r from-orange-50 to-yellow-50 rounded-3xl p-4 mb-16 animate-scale-in">
+      {/* Our Process Section */}
+        <div className="pt-16 pb-12 pl-2 pr-2 bg-gradient-to-r from-orange-50 to-yellow-50 rounded-3xl mb-16 animate-scale-in mx-auto max-w-6xl">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="flex justify-center animate-slide-in-right">
                 <img alt="Credit Counselling Session" className="w-full max-w-lg rounded-2xl shadow-xl" src="/lovable-uploads/9dd940b1-1ee3-42df-afda-f23fd6651851.png" />
               </div>
-              <div className="animate-fade-in">
+              <div className="animate-fade-in text-center lg:text-left">
                 <h3 className="font-bold text-gray-900 mb-6">
                   {t('about.process.title')}
                 </h3>
@@ -146,13 +148,11 @@ const About = () => {
                 </div>
               </div>
             </div>
-          </div>
         </div>
-      </section>
    
       {/* Why Choose Samatva Section */}
-      <section className="py-20 bg-slate-900">
-        <div className="mx-auto p-8">
+      <section className="pt-16 pb-12 bg-slate-900 w-full">
+        <div className="max-w-7xl p-4 mx-auto ">
           <div className="text-center mb-16 animate-fade-in">
             <h2 className="font-bold text-white mb-6">
               {t('about.whyChoose.title')} 
