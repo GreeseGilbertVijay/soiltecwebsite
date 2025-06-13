@@ -11,11 +11,11 @@ const Navbar = () => {
 
   const navItems = [
     { path: '/', label: t('nav.home') },
-    { path: '/about', label: t('nav.about') },
-    { path: '/credit-health', label: t('nav.creditHealth') },
-    { path: '/impact', label: t('nav.impact') },
-    { path: '/faq', label: t('nav.faq') },
-    { path: '/contact', label: t('nav.contact') },
+    { path: '/About', label: t('nav.about') },
+    { path: '/CreditHealth', label: t('nav.creditHealth') },
+    { path: '/Impact', label: t('nav.impact') },
+    { path: '/FAQ', label: t('nav.faq') },
+    { path: '/Contact', label: t('nav.contact') },
   ];
 
   const isActive = (path: string) => location.pathname === path;
