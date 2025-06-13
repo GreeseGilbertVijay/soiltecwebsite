@@ -116,7 +116,7 @@ const About = () => {
             <p className="text-gray-700 max-w-5xl mx-auto leading-relaxed">
               {t('about.leadership.description1')}
             </p>
-            <p className="text-orange-600 font-semibold mt-6">
+            <p className="text-orange-600 pl-2 pr-2 font-semibold mt-6">
               {t('about.leadership.description2')}
             </p>
             <p className="text-gray-700 mb-6">

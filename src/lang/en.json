@@ -198,7 +198,7 @@
       },
       {
         "question": "Are you calling from the bank?",
-        "answer": "We are a credit counseling company and not a bank, we help customers by hand holding to come out of credit score issues."
+        "answer": "We are a credit counselling company and not a bank, we help customers by hand holding to come out of credit score issues."
       },
       {
         "question": "Why should I give my consent to pull my CIBIL Report?",
@@ -226,11 +226,11 @@
     "serviceAreas": "Service Areas",
     "box1":"Credit Score Improvement",
     "box2":"Debt Settlement Support",
-    "box3":"Financial Counseling",
+    "box3":"Financial Counselling",
     "box4":"Loan Application Guidance",
     "nextSteps": "Next Steps",
     "step1":"Free Consultation",
-    "step1Desc":"Schedule your no-cost credit counseling session",
+    "step1Desc":"Schedule your no-cost credit counselling session",
     "step2":"Assessment",
     "step2Desc":"We'll evaluate your current financial situation",
     "step3":"Custom Plan",
@@ -250,12 +250,12 @@
     "callNow": "Call Now"
   },
   "services": {
-    "title": "Our Credit Counseling Services",
+    "title": "Our Credit counselling Services",
     "subtitle": "Professional, free, and personalized financial solutions",
     "freeConsultation": {
       "title": "Free Consultation",
       "noFees": "No Hidden Fees",
-      "noFeesDesc": "Unlike other counselling companies, we provide completely free credit counseling",
+      "noFeesDesc": "Unlike other counselling companies, we provide completely free credit counselling",
       "guidance": "Professional Guidance",
       "guidanceDesc": "Expert advice on improving your financial situation",
       "plans": "Personalized Plans",
@@ -284,7 +284,7 @@
     "processSteps": [
       {
         "title": "Free Consultation",
-        "description": "Schedule your no-cost credit counseling session"
+        "description": "Schedule your no-cost credit counselling session"
       },
       {
         "title": "Assessment",
@@ -309,7 +309,7 @@
   },
   "about": {
     "title": "About Samatva Awareness",
-    "subtitle": "Empowering financial futures through expert credit counseling",
+    "subtitle": "Empowering financial futures through expert credit counselling",
     "hero": {
       "title": "ABOUT US",
       "subtitle1": "Providing trusted, No-Cost Financial Counselling to Resolve Debt/Rebuild Credit, & enhance Financial Awareness within Regulatory Compliance.",
@@ -335,10 +335,10 @@
     "missionDesc": "To empower individuals with expert financial guidance and essential resources to build, strengthen, and sustain a resilient credit profile—laying the foundation for lasting financial well-being and opportunity.",
     "whyChoose": {
       "title": "Why Choose Samatva?",
-      "subtitle": "We offer unique advantages that set us apart from other credit counseling companies",
+      "subtitle": "We offer unique advantages that set us apart from other credit counselling companies",
       "advantages": [
         {
-          "title": "Free Credit Counseling",
+          "title": "Free Credit counselling",
           "description": "Samatva does not charge any fees from customers for its credit counselling service"
         },
         {
