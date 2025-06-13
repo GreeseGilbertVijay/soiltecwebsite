@@ -30,12 +30,12 @@ const App = () => (
           <BrowserRouter basename="/">
             <Routes>
               <Route path="/" element={<Index />} />
-              <Route path="/credit-health" element={<CreditHealth />} />
-              <Route path="/impact" element={<Impact />} />
-              <Route path="/services" element={<Services />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/faq" element={<FAQ />} />
-              <Route path="/contact" element={<Contact />} />
+      <Route path="/credit-health" element={<CreditHealth />} />
+           <Route path="/impact" element={<Impact />} />
+            <Route path="/services" element={<Services />} />
+             <Route path="/about" element={<About />} />
+          <Route path="/faq" element={<FAQ />} />
+           <Route path="/contact" element={<Contact />} />
               <Route path="/404" element={<NotFound />} />
               <Route path="*" element={<Navigate to="/404" replace />} />
             </Routes>
