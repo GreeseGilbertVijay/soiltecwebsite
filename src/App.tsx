@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import FontProvider from "@/components/FontProvider";
 import AnimatedBackground from "@/components/AnimatedBackground";
@@ -27,16 +27,17 @@ const App = () => (
           <Sonner />
           <AnimatedBackground />
           <WhatsAppButton />
-          <BrowserRouter>
+          <BrowserRouter basename="/">
             <Routes>
               <Route path="/" element={<Index />} />
-              <Route path="/CreditHealth" element={<CreditHealth />} />
-              <Route path="/Impact" element={<Impact />} />
-              <Route path="/Services" element={<Services />} />
-              <Route path="/About" element={<About />} />
-              <Route path="/FAQ" element={<FAQ />} />
-              <Route path="/Contact" element={<Contact />} />
-              <Route path="*" element={<NotFound />} />
+              <Route path="/credit-health" element={<CreditHealth />} />
+              <Route path="/impact" element={<Impact />} />
+              <Route path="/services" element={<Services />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/faq" element={<FAQ />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/404" element={<NotFound />} />
+              <Route path="*" element={<Navigate to="/404" replace />} />
             </Routes>
           </BrowserRouter>
         </TooltipProvider>
