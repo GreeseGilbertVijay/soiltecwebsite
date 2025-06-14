@@ -430,7 +430,7 @@ const Index = () => {
       </section>
 
       {/* ChatBot Section */}
-      <section className="pt-4 pb-12 3 pt-lg-5 bg-gradient-to-br from-blue-400 via-blue-800 to-blue-500">
+      <section className="pt-4 pb-16 pt-lg-5 bg-gradient-to-br from-blue-400 via-blue-800 to-blue-500">
         <iframe 
           id="chatbotIframe"
           src="https://shabd.tech/widget/chatpage?name=samatva&authKey=afd9a6b4-03fd-11f0-aabd-047c1692d8ad"

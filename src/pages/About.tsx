@@ -107,8 +107,8 @@ const About = () => {
       </section>
 
       {/* Leadership Section */}
-      <section className="py-8 bg-white">
-        <div className="mx-auto p-8">
+      <section className="py-4 bg-white">
+        <div className="max-w-6xl mx-auto p-4">
           <div className="text-center mb-16 animate-fade-in">
             <h2 className=" font-bold text-gray-900 mb-6">
               {t('about.leadership.title')}
@@ -150,22 +150,6 @@ const About = () => {
             </div>
         </div>
       
-       {/*Life Can Get Tough */}
-       <div className="pt-16 pb-12 pl-2 pr-2 bg-gradient-to-r from-orange-50 to-yellow-50 rounded-3xl mb-16 animate-scale-in mx-auto max-w-6xl">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="animate-fade-in text-center lg:text-left">
-                <h3 className="font-bold text-gray-900 mb-6">
-                  {t('about.life.title')}
-                </h3>
-                <div className="space-y-6 text-gray-700 leading-relaxed">
-                  <p className="animate-fade-in stagger-1">{t('about.life.step1')}</p>
-                </div>
-              </div>
-              <div className="flex justify-center animate-slide-in-right">
-                <img alt="Credit Counselling Session" className="w-full max-w-lg rounded-2xl shadow-xl" src="/lovable-uploads/our-life-get-tough-about-us-samatva.png" />
-              </div>
-            </div>
-        </div>
    
       {/* Why Choose Samatva Section */}
       <section className="pt-16 pb-12 bg-slate-900 w-full">

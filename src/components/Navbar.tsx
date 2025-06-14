@@ -38,7 +38,7 @@ const Navbar = () => {
               <img 
                 src="/lovable-uploads/samatvalogo.png" 
                 alt="Samatva Awareness" 
-                className="h-14 w-auto"
+                className="h-14 w-auto object-cover"
               />
             </Link>
           </div>
