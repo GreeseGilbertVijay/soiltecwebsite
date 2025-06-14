@@ -7,6 +7,13 @@ import { Link } from 'react-router-dom';
 const About = () => {
   const { t, currentLanguage } = useLanguage();
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
   // Get advantages with fallback to empty array
   const advantages = Array.isArray(t('about.whyChoose.advantages')) ? t('about.whyChoose.advantages') : [];
 
@@ -243,7 +250,7 @@ const About = () => {
         {t('services.readyDesc')}
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <Link to="/Contact" className="w-full sm:w-auto border-2 border-orange-600 text-orange-600 hover:bg-blue-800 hover:text-orange-500 px-8 py-4 rounded-lg font-semibold transition-colors">
+          <Link to="/Contact" onClick={scrollToTop} className="w-full sm:w-auto border-2 border-orange-600 text-orange-600 hover:bg-blue-800 hover:text-orange-500 px-8 py-4 rounded-lg font-semibold transition-colors">
             {t('services.scheduleConsultation')}
           </Link>
         </div>

@@ -100,7 +100,7 @@ const About = () => {
               </p>
             </div>
             <div className="lg:flex lg:justify-end animate-scale-in">
-              <img alt="Debt Counselling Session" className="w-full max-w-lg rounded-2xl shadow-2xl" src="/lovable-uploads/ab1e075d-5cb7-4bb7-8eb3-58065d670483.png" />
+              <img alt="Debt Counselling Session" className="w-full max-w-lg rounded-2xl shadow-2xl" src="/lovable-uploads/about-us-banner-image-samatva.png" />
             </div>
           </div>
         </div>
@@ -133,7 +133,7 @@ const About = () => {
         <div className="pt-16 pb-12 pl-2 pr-2 bg-gradient-to-r from-orange-50 to-yellow-50 rounded-3xl mb-16 animate-scale-in mx-auto max-w-6xl">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="flex justify-center animate-slide-in-right">
-                <img alt="Credit Counselling Session" className="w-full max-w-lg rounded-2xl shadow-xl" src="/lovable-uploads/9dd940b1-1ee3-42df-afda-f23fd6651851.png" />
+                <img alt="Credit Counselling Session" className="w-full max-w-lg rounded-2xl shadow-xl" src="/lovable-uploads/your-credit-profile-samatva-about-us.png" />
               </div>
               <div className="animate-fade-in text-center lg:text-left">
                 <h3 className="font-bold text-gray-900 mb-6">
@@ -146,6 +146,23 @@ const About = () => {
                   <p className="animate-fade-in stagger-4">{t('about.process.step4')}</p>
                   <p className="text-blue-600 font-semibold animate-fade-in stagger-5">{t('about.process.step5')}</p>
                 </div>
+              </div>
+            </div>
+        </div>
+      
+       {/*Life Can Get Tough */}
+       <div className="pt-16 pb-12 pl-2 pr-2 bg-gradient-to-r from-orange-50 to-yellow-50 rounded-3xl mb-16 animate-scale-in mx-auto max-w-6xl">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="animate-fade-in text-center lg:text-left">
+                <h3 className="font-bold text-gray-900 mb-6">
+                  {t('about.life.title')}
+                </h3>
+                <div className="space-y-6 text-gray-700 leading-relaxed">
+                  <p className="animate-fade-in stagger-1">{t('about.life.step1')}</p>
+                </div>
+              </div>
+              <div className="flex justify-center animate-slide-in-right">
+                <img alt="Credit Counselling Session" className="w-full max-w-lg rounded-2xl shadow-xl" src="/lovable-uploads/our-life-get-tough-about-us-samatva.png" />
               </div>
             </div>
         </div>
@@ -215,7 +232,7 @@ const About = () => {
               <CardContent className="p-8">
                 <div className="flex flex-col md:flex-row items-center md:items-start space-y-4 md:space-y-0 md:space-x-6">
                   <Avatar className="w-24 h-24 flex-shrink-0">
-                    <AvatarImage src="/lovable-uploads/ab813c16-4fd4-44c0-9aeb-9bb826c497fe.png" alt={t('about.management.thallam.name')} />
+                    <AvatarImage src="/lovable-uploads/thallam- sreekumar-samatva.png" alt={t('about.management.thallam.name')} />
                     <AvatarFallback className="bg-gradient-to-br from-gray-400 to-gray-600 text-white text-xl font-bold">
                       TS
                     </AvatarFallback>
@@ -241,7 +258,7 @@ const About = () => {
               <CardContent className="p-8">
                 <div className="flex flex-col md:flex-row items-center md:items-start space-y-4 md:space-y-0 md:space-x-6">
                   <Avatar className="w-24 h-24 flex-shrink-0">
-                    <AvatarImage src="/lovable-uploads/0ae1de65-54ad-4d58-a130-a5e80efa8ba7.png" alt={t('about.management.venkat.name')} />
+                    <AvatarImage src="/lovable-uploads/venkatramanan-tm-samatva.png" alt={t('about.management.venkat.name')} />
                     <AvatarFallback className="bg-gradient-to-br from-gray-400 to-gray-600 text-white text-xl font-bold">
                       VT
                     </AvatarFallback>

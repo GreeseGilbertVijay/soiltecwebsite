@@ -5,6 +5,13 @@ import { useLanguage } from '@/contexts/LanguageContext';
 const Footer = () => {
   const { t } = useLanguage();
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
   return (
     <footer className="bg-slate-900 text-white border-t border-slate-700">
       <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
@@ -12,11 +19,13 @@ const Footer = () => {
           {/* Company Info */}
           <div className="col-span-1 md:col-span-2 lg:col-span-1">
             <div className="flex items-center space-x-3 mb-6">
-              <img 
-                src="/lovable-uploads/c24581a1-d607-4b4e-a879-875a8504cb45.png" 
-                alt="Samatva Awareness" 
-                className="h-16 w-auto"
-              />
+              <Link to="/" onClick={scrollToTop}>
+                <img 
+                  src="/lovable-uploads/c24581a1-d607-4b4e-a879-875a8504cb45.png" 
+                  alt="Samatva Awareness" 
+                  className="h-16 w-auto"
+                />
+              </Link>
             </div>
             <p className="text-slate-300 mb-6 leading-relaxed">
               {t('footer.mission') || 'Our mission is to empower individuals with expert financial guidance and essential resources to build, strengthen, and sustain a resilient credit profile—laying the foundation for lasting financial well-being and opportunity.'}
@@ -28,11 +37,11 @@ const Footer = () => {
           <div className="col-span-1 md:col-span-1">
             <h4 className="text-2xl font-bold mb-4 text-orange-500">{t('footer.quickLinks') || 'Quick Links'}</h4>
             <ul className="space-y-2">
-              <li><Link to="/credit-health" className="text-slate-300 hover:text-orange-400 transition-colors">{t('nav.creditHealth') || 'Credit Health'}</Link></li>
-              <li><Link to="/impact" className="text-slate-300 hover:text-orange-400 transition-colors">{t('nav.impact') || 'Impact'}</Link></li>
-              <li><Link to="/services" className="text-slate-300 hover:text-orange-400 transition-colors">{t('nav.services') || 'Services'}</Link></li>
-              <li><Link to="/about" className="text-slate-300 hover:text-orange-400 transition-colors">{t('nav.about') || 'About'}</Link></li>
-              <li><Link to="/faq" className="text-slate-300 hover:text-orange-400 transition-colors">{t('nav.faq') || 'FAQ'}</Link></li>
+              <li><Link to="/credit-health" onClick={scrollToTop} className="text-slate-300 hover:text-orange-400 transition-colors">{t('nav.creditHealth') || 'Credit Health'}</Link></li>
+              <li><Link to="/impact" onClick={scrollToTop} className="text-slate-300 hover:text-orange-400 transition-colors">{t('nav.impact') || 'Impact'}</Link></li>
+              <li><Link to="/services" onClick={scrollToTop} className="text-slate-300 hover:text-orange-400 transition-colors">{t('nav.services') || 'Services'}</Link></li>
+              <li><Link to="/about" onClick={scrollToTop} className="text-slate-300 hover:text-orange-400 transition-colors">{t('nav.about') || 'About'}</Link></li>
+              <li><Link to="/faq" onClick={scrollToTop} className="text-slate-300 hover:text-orange-400 transition-colors">{t('nav.faq') || 'FAQ'}</Link></li>
             </ul>
           </div>
 

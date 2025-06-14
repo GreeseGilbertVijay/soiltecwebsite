@@ -9,6 +9,13 @@ const Navbar = () => {
   const location = useLocation();
   const { t, currentLanguage } = useLanguage();
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
   const navItems = [
     { path: '/', label: t('nav.home') },
     { path: '/about', label: t('nav.about') },
@@ -27,7 +34,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
-            <Link to="/" className="flex items-center">
+            <Link to="/" className="flex items-center" onClick={scrollToTop}>
               <img 
                 src="/lovable-uploads/samatvalogo.png" 
                 alt="Samatva Awareness" 
@@ -43,6 +50,7 @@ const Navbar = () => {
                 <Link
                   key={item.path}
                   to={item.path}
+                  onClick={scrollToTop}
                   style={{ fontSize }}
                   className={`px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
                     isActive(item.path)
@@ -85,7 +93,10 @@ const Navbar = () => {
                 <Link
                   key={item.path}
                   to={item.path}
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={() => {
+                    setIsMenuOpen(false);
+                    scrollToTop();
+                  }}
                   style={{ fontSize }}
                   className={`block px-4 py-3 rounded-lg font-medium transition-all ${
                     isActive(item.path)

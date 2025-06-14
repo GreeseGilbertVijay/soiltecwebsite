@@ -331,6 +331,10 @@
       "step4": "If this new loan is repaid on time within the agreed tenure, your credit history will begin to reflect positive repayment behaviour—leading to an improvement in your CIBIL score. A better score can make you eligible for future loans from top banks at more favourable interest rates.",
       "step5": "Please refer to the comparison \"IMPACT\" Page Link."
     },
+    "life":{
+      "title":"Life can get tough, and sometimes, paying back loans on time can be hard.",
+      "step1":"People sometimes lose their jobs or have some personal emergencies and unable to pay the loan EMI's on time. This will impact the credit score. A lower credit score makes it difficult to take a loan again in the future"
+    },
     "mission": "Our Mission",
     "missionDesc": "To empower individuals with expert financial guidance and essential resources to build, strengthen, and sustain a resilient credit profile—laying the foundation for lasting financial well-being and opportunity.",
     "whyChoose": {

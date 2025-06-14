@@ -8,6 +8,13 @@ import { useLanguage } from '@/contexts/LanguageContext';
 const Index = () => {
   const { t, currentLanguage } = useLanguage();
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
   useEffect(() => {
     const handleMessage = (event: MessageEvent) => {
       if (event.data?.type === "AUDIO_RECORDER_CLICKED") {
@@ -274,7 +281,7 @@ const Index = () => {
             {/* Right Content - Impact Card */}
             <div className="flex justify-center lg:justify-end animate-scale-in" style={{animationDelay: '0.8s'}}>
               <div className="bg-gradient-to-br from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 transition-all duration-500 rounded-3xl p-10 max-w-md cursor-pointer transform hover:scale-105 hover:rotate-1 shadow-2xl hover:shadow-orange-500/25">
-                <Link to="/Impact" className="block">
+                <Link to="/Impact" onClick={scrollToTop} className="block">
                   <div className="flex items-center gap-2 mb-4">
                     <div className="bg-white/20 p-1 rounded-xl animate-pulse-glow">
                       <TrendingUp className="text-white" size={20} />
@@ -327,11 +334,11 @@ const Index = () => {
           </div>
           
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center max-w-8xl mx-auto animate-fade-in" style={{animationDelay: '0.6s'}}>
-            <Link to="/Contact" className="w-full sm:w-auto bg-orange-500 hover:bg-orange-600 text-white rounded-full font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-orange-500/25 flex items-center justify-center gap-2 text-xs sm:text-lg px-4 sm:px-8 py-3 sm:py-4 min-w-[200px] sm:min-w-[280px]">
+            <Link to="/Contact" onClick={scrollToTop} className="w-full sm:w-auto bg-orange-500 hover:bg-orange-600 text-white rounded-full font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-orange-500/25 flex items-center justify-center gap-2 text-xs sm:text-lg px-4 sm:px-8 py-3 sm:py-4 min-w-[200px] sm:min-w-[280px]">
               {t('home.hero.cta')}
               <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
             </Link>
-            <Link to="/Services" className="w-full sm:w-auto border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white rounded-full font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-orange-500/25 flex items-center justify-center text-xs sm:text-lg px-4 sm:px-8 py-3 sm:py-4 min-w-[200px] sm:min-w-[280px]">
+            <Link to="/Services" onClick={scrollToTop} className="w-full sm:w-auto border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white rounded-full font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-orange-500/25 flex items-center justify-center text-xs sm:text-lg px-4 sm:px-8 py-3 sm:py-4 min-w-[200px] sm:min-w-[280px]">
               {t('home.hero.learnMore')}
               <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
             </Link>
@@ -413,7 +420,7 @@ const Index = () => {
           <iframe
             width="100%"
             height="500vh"
-            src="https://www.youtube.com/embed/T3alOcIJ5eg?controls=0"
+            src="https://www.youtube.com/embed/T3alOcIJ5eg?controls=0&rel=0&showinfo=0"
             title="Samatva Credit Solutions"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
@@ -656,7 +663,7 @@ const Index = () => {
         <p className="mb-10 text-orange-100 max-w-3xl mx-auto animate-fade-in" style={{animationDelay: '0.2s'}}>
           {t('home.cta.subtitle')}
         </p>
-        <Link to="/Contact" className="w-full sm:w-auto bg-white text-orange-600 hover:bg-orange-50 px-6 sm:px-10 py-3 sm:py-5 rounded-full font-bold transition-all transform hover:scale-105 inline-flex items-center justify-center gap-3 shadow-2xl animate-scale-in text-xs sm:text-lg" style={{animationDelay: '0.4s'}}>
+        <Link to="/Contact" onClick={scrollToTop} className="w-full sm:w-auto bg-white text-orange-600 hover:bg-orange-50 px-6 sm:px-10 py-3 sm:py-5 rounded-full font-bold transition-all transform hover:scale-105 inline-flex items-center justify-center gap-3 shadow-2xl animate-scale-in text-xs sm:text-lg" style={{animationDelay: '0.4s'}}>
           {t('home.cta.button')}
           <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6" />
         </Link>

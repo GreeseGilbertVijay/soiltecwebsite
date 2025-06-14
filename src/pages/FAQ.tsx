@@ -7,6 +7,14 @@ import { Link } from 'react-router-dom';
 const FAQ = () => {
   const { t, translations } = useLanguage();
   const questions = t('faqPage.questions');
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
   // Don't render content until translations are loaded
   if (!translations || Object.keys(translations).length === 0) {
     return (
@@ -130,11 +138,11 @@ const FAQ = () => {
             {t('faqPage.getInTouch')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/Contact" className="border-2 border-orange-600 text-white bg-orange-500 hover:text-white px-8 py-4 rounded-lg font-semibold  transition-colors">
-            {t('faqPage.contactUs')}
+            <Link to="/Contact" onClick={scrollToTop} className="border-2 border-orange-600 text-white bg-orange-500 hover:text-white px-8 py-4 rounded-lg font-semibold  transition-colors">
+              {t('faqPage.contactUs')}
             </Link>
-            <Link to="/Services" className="border-2 border-orange-600 text-orange-600 hover:bg-blue-800 hover:text-orange-500 px-8 py-4 rounded-lg font-semibold  transition-colors">
-            {t('faqPage.learnServices')}
+            <Link to="/Services" onClick={scrollToTop} className="border-2 border-orange-600 text-orange-600 hover:bg-blue-800 hover:text-orange-500 px-8 py-4 rounded-lg font-semibold  transition-colors">
+              {t('faqPage.learnServices')}
             </Link>
           </div>
         </div>
