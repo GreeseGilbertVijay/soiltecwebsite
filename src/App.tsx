@@ -5,7 +5,6 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import FontProvider from "@/components/FontProvider";
-import AnimatedBackground from "@/components/AnimatedBackground";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import Index from "./pages/Index";
 import CreditHealth from "./pages/CreditHealth";
@@ -25,7 +24,6 @@ const App = () => (
         <TooltipProvider>
           <Toaster />
           <Sonner />
-          <AnimatedBackground />
           <WhatsAppButton />
           <BrowserRouter basename="/">
             <Routes>
