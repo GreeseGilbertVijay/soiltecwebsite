@@ -78,7 +78,7 @@ const FAQ = () => {
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-slate-800 via-slate-800 to-blue-500 text-white py-20 overflow-hidden">
         <div className="w-[95%] mx-auto text-center">
-          <h1 className="font-bold mb-6">
+          <h1 className="font-bold mb-8 leading-tight animate-slide-in-right">
             {t('faqPage.title')}
           </h1>
           <p className="text-blue-100">

@@ -411,21 +411,53 @@ const Index = () => {
       </section>
 
       {/* Video Section */}
-      <section className="p-8 bg-slate-900 text-center">
+      <section className="p-8 pt-12 pb-12 bg-slate-900 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-bold text-white mb-12 animate-fade-in">
             {t('home.videoSection.title')}
           </h2>
-          <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-black animate-scale-in">
-          <iframe
-            width="100%"
-            height="500vh"
-            src="https://www.youtube.com/embed/T3alOcIJ5eg?controls=0&rel=0&showinfo=0"
-            title="Samatva Credit Solutions"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-          />
-
+          <div className="flex justify-center items-center">
+            <div className="max-w-64 relative rounded-3xl overflow-hidden shadow-2xl bg-black animate-scale-in">
+              <video
+                width="200"
+                height="400"
+                className="w-full"
+                controls={false}
+                playsInline
+                preload="metadata"
+                onClick={(e) => {
+                  const video = e.currentTarget;
+                  const playButton = video.nextElementSibling as HTMLButtonElement;
+                  if (video.paused) {
+                    video.play();
+                    playButton.style.display = 'none';
+                  } else {
+                    video.pause();
+                    playButton.style.display = 'block';
+                  }
+                }}
+              >
+                <source src="/lovable-uploads/samatva.mp4" type="video/mp4" />
+              </video>
+              <button 
+                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-orange-500 hover:bg-orange-600 text-white rounded-full p-4 transition-all duration-300 hover:scale-110 focus:outline-none"
+                onClick={(e) => {
+                  const video = e.currentTarget.previousElementSibling as HTMLVideoElement;
+                  if (video.paused) {
+                    video.play();
+                    e.currentTarget.style.display = 'none';
+                  }
+                }}
+              >
+                <svg 
+                  className="w-8 h-8" 
+                  fill="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
       </section>
