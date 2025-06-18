@@ -318,7 +318,7 @@ const Impact = () => {
                 {/* Low Credit Score Card */}
                 <div className="group relative">
                   <Card className="h-full bg-gradient-to-br from-red-50 via-red-100 to-red-200 border-red-300 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                    <CardContent className="p-2">
+                    <CardContent className="p-2 pt-6 pb-6">
                       <div className="text-center mb-4">
                         <div className="relative inline-block">
                           <img 
@@ -368,18 +368,7 @@ const Impact = () => {
                           </div>
                           <div className="text-lg font-bold text-red-600 number-field">{formatCurrency(lowInterest)}</div>
                         </div>
-                      </div>
-
-                      <div className="mt-6 p-3 bg-red-100 rounded-lg border border-red-200">
-                        <div className="flex items-center justify-center gap-2">
-                          <svg className="w-4 h-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                          </svg>
-                          <p className="text-xs text-red-700 font-medium text-center">
-                            {loanData.low.eligible}
-                          </p>
-                        </div>
-                      </div>
+                      </div>  
                     </CardContent>
                   </Card>
                 </div>
@@ -387,7 +376,7 @@ const Impact = () => {
                 {/* Moderate Credit Score Card */}
                 <div className="group relative">
                   <Card className="h-full bg-gradient-to-br from-orange-50 via-orange-100 to-orange-200 border-orange-300 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                    <CardContent className="p-2">
+                    <CardContent className="p-2 pt-6 pb-6">
                       <div className="text-center mb-4">
                         <div className="relative inline-block">
                           <img 
@@ -438,17 +427,6 @@ const Impact = () => {
                           <div className="text-lg font-bold text-orange-600 number-field">{formatCurrency(moderateInterest)}</div>
                         </div>
                       </div>
-
-                      <div className="mt-6 p-3 bg-orange-100 rounded-lg border border-orange-200">
-                        <div className="flex items-center justify-center gap-2">
-                          <svg className="w-4 h-4 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                          </svg>
-                          <p className="text-xs text-orange-700 font-medium text-center">
-                            {loanData.moderate.eligible}
-                          </p>
-                        </div>
-                      </div>
                     </CardContent>
                   </Card>
                 </div>
@@ -456,7 +434,7 @@ const Impact = () => {
                 {/* High Credit Score Card */}
                 <div className="group relative">
                   <Card className="h-full bg-gradient-to-br from-green-50 via-green-100 to-green-200 border-green-300 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                    <CardContent className="p-2">
+                    <CardContent className="p-2 pt-6 pb-6">
                       <div className="text-center mb-4">
                         <div className="relative inline-block">
                           <img 
@@ -505,17 +483,6 @@ const Impact = () => {
                             <span className="text-sm font-medium text-gray-600">Total Interest</span>
                           </div>
                           <div className="text-lg font-bold text-green-600 number-field">{formatCurrency(highInterest)}</div>
-                        </div>
-                      </div>
-
-                      <div className="mt-6 p-3 bg-green-100 rounded-lg border border-green-200">
-                        <div className="flex items-center justify-center gap-2">
-                          <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                          </svg>
-                          <p className="text-xs text-green-700 font-medium text-center">
-                            {loanData.high.eligible}
-                          </p>
                         </div>
                       </div>
                     </CardContent>
