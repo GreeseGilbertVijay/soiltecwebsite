@@ -364,6 +364,13 @@ const Impact = () => {
 
                         <div className="bg-white bg-opacity-70 rounded-lg p-3 shadow-sm">
                           <div className="mb-1">
+                            <span className="text-sm font-medium text-gray-600">Total Repayment</span>
+                          </div>
+                          <div className="text-lg font-bold text-gray-800 number-field">{formatCurrency(lowTotal)}</div>
+                        </div>
+
+                        <div className="bg-white bg-opacity-70 rounded-lg p-3 shadow-sm">
+                          <div className="mb-1">
                             <span className="text-sm font-medium text-gray-600">Total Interest</span>
                           </div>
                           <div className="text-lg font-bold text-red-600 number-field">{formatCurrency(lowInterest)}</div>
@@ -422,6 +429,13 @@ const Impact = () => {
 
                         <div className="bg-white bg-opacity-70 rounded-lg p-3 shadow-sm">
                           <div className="mb-1">
+                            <span className="text-sm font-medium text-gray-600">Total Repayment</span>
+                          </div>
+                          <div className="text-lg font-bold text-gray-800 number-field">{formatCurrency(moderateTotal)}</div>
+                        </div>
+
+                        <div className="bg-white bg-opacity-70 rounded-lg p-3 shadow-sm">
+                          <div className="mb-1">
                             <span className="text-sm font-medium text-gray-600">Total Interest</span>
                           </div>
                           <div className="text-lg font-bold text-orange-600 number-field">{formatCurrency(moderateInterest)}</div>
@@ -476,6 +490,13 @@ const Impact = () => {
                             <span className="text-sm font-medium text-gray-600">Monthly EMI</span>
                           </div>
                           <div className="text-lg font-bold text-gray-800 number-field">{formatCurrency(highEMI)}</div>
+                        </div>
+
+                        <div className="bg-white bg-opacity-70 rounded-lg p-3 shadow-sm">
+                          <div className="mb-1">
+                            <span className="text-sm font-medium text-gray-600">Total Repayment</span>
+                          </div>
+                          <div className="text-lg font-bold text-gray-800 number-field">{formatCurrency(highTotal)}</div>
                         </div>
 
                         <div className="bg-white bg-opacity-70 rounded-lg p-3 shadow-sm">
