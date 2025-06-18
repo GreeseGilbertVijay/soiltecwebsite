@@ -79,15 +79,37 @@ const Impact = () => {
     return { min: '12 mo', max: '84 mo' };
   };
 
+  const getLoanImage = () => {
+    switch (activeLoanType) {
+      case 'home':
+        return '/lovable-uploads/home-loan-image.png';
+      case 'auto':
+        return '/lovable-uploads/car-loan-image.png';
+      case 'personal':
+        return '/lovable-uploads/personal-loan-image.png';
+      default:
+        return '/lovable-uploads/home-loan-image.png';
+    }
+  };
+
   const tenureMinMax = getTenureMinMax();
 
   return (
     <div className="min-h-screen bg-gray-50 font-raleway">
         <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
         .font-raleway {
           font-family: 'Raleway', sans-serif;
+        }
+
+        .font-roboto {
+          font-family: 'Roboto', sans-serif;
+        }
+
+        .number-field {
+          font-family: 'Roboto', sans-serif;
         }
 
         @media (max-width: 1920px) {
@@ -126,7 +148,7 @@ const Impact = () => {
           [lang]:not([lang="en"]) h2 { font-size: 28px; }
           [lang]:not([lang="en"]) h3 { font-size: 24px; }
           [lang]:not([lang="en"]) h4 { font-size: 22px; }
-          [lang]:not([lang="en"]) h6 { font-size: 18px; }
+          [lang]:not([lang="en"]) h6 { font-size: 16px; }
           [lang]:not([lang="en"]) p { font-size: 16px; }
         }
 
@@ -193,7 +215,7 @@ const Impact = () => {
                 <Tabs value={activeLoanType} onValueChange={setActiveLoanType} className="w-full">
                   <TabsList className="grid grid-cols-3 h-14 bg-white border-2 border-blue-100">
                     <TabsTrigger value="home" className="flex items-center gap-1 font-semibold data-[state=active]:bg-blue-600 data-[state=active]:text-white">
-                      <Home size={20} />
+                      <Home size={16} />
                       <h6>Home Loan</h6>
                     </TabsTrigger>
                     <TabsTrigger value="auto" className="flex items-center gap-1 font-semibold data-[state=active]:bg-blue-600 data-[state=active]:text-white">
@@ -206,6 +228,18 @@ const Impact = () => {
                     </TabsTrigger>
                   </TabsList>
                 </Tabs>
+              </div>
+
+              {/* Loan Type Image */}
+              <div className="flex justify-center">
+                <div className="relative w-full max-w-xs">
+                  <img 
+                    src={getLoanImage()} 
+                    alt={`${activeLoanType.charAt(0).toUpperCase() + activeLoanType.slice(1)} Loan`}
+                    className="w-full h-auto rounded-lg object-contain bg-transparent"
+                    style={{ maxHeight: '120px' }}
+                  />
+                </div>
               </div>
 
               {/* Calculator Card */}
@@ -223,7 +257,7 @@ const Impact = () => {
                         <Label htmlFor="loanAmount" className="text-lg font-semibold text-gray-700">
                           Loan Amount
                         </Label>
-                        <span className="text-lg font-semibold text-blue-600">{formatCurrency(loanAmount)}</span>
+                        <span className="text-lg font-semibold text-blue-600 number-field">{formatCurrency(loanAmount)}</span>
                       </div>
                       <Slider
                         id="loanAmount"
@@ -244,7 +278,7 @@ const Impact = () => {
                         <Label htmlFor="loanTenure" className="text-lg font-semibold text-gray-700">
                           {getTenureLabel()}
                         </Label>
-                        <span className="text-lg font-semibold text-blue-600">
+                        <span className="text-lg font-semibold text-blue-600 number-field">
                           {activeLoanType === 'home' ? `${loanTenure} years` : `${loanTenure} months`}
                         </span>
                       </div>
@@ -276,44 +310,47 @@ const Impact = () => {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-2 mb-12">
                 <Card className="bg-gradient-to-br from-red-50 to-red-100 border-red-200 shadow-lg">
                   <CardContent className="p-3">
+                    <img className="w-full" src="/lovable-uploads/sad-face-loan.jpg" />
                     <div className="mt-4 text-base font-semibold text-gray-800">Low Credit Score</div>
-                    <div className="text-red-600">Principal: {formatCurrency(loanAmount)}</div>
+                    <div className="text-red-600 number-field">Principal: {formatCurrency(loanAmount)}</div>
                     <div className="text-gray-600 font-medium">Interest Rate</div>
-                    <div className="font-bold text-red-600 mb-2">{loanData.low.rate}%</div>
+                    <div className="font-bold text-red-600 mb-2 number-field">{loanData.low.rate}%</div>
                     <div className="text-gray-600 font-medium">Monthly EMI</div>
-                    <div className="font-bold text-black mb-2">{formatCurrency(lowEMI)}</div>
+                    <div className="font-bold text-black mb-2 number-field">{formatCurrency(lowEMI)}</div>
                     <div className="text-gray-600 font-medium">Total Repayment</div>
-                    <div className="font-bold text-black mb-2">{formatCurrency(lowTotal)}</div>
+                    <div className="font-bold text-black mb-2 number-field">{formatCurrency(lowTotal)}</div>
                     <div className="text-gray-600 font-medium">Total Interest Paid </div>
-                    <div className="font-bold text-black mb-2">{formatCurrency(lowInterest)}</div>
+                    <div className="font-bold text-black mb-2 number-field">{formatCurrency(lowInterest)}</div>
                   </CardContent>
                 </Card>
                 <Card className="bg-gradient-to-br from-orange-50 to-orange-100 border-orange-200 shadow-lg">
-                  <CardContent className="p-3">                    
+                  <CardContent className="p-3">          
+                    <img className="w-full" src="/lovable-uploads/thought-face-loan.jpg" />          
                     <div className="mt-4 text-base font-semibold text-gray-800">Moderate Credit Score</div>
-                    <div className="text-red-600">Principal: {formatCurrency(loanAmount)}</div>
+                    <div className="text-red-600 number-field">Principal: {formatCurrency(loanAmount)}</div>
                     <div className="text-gray-600 font-medium">Interest Rate</div>
-                    <div className="font-bold text-orange-600 mb-2">{loanData.moderate.rate}%</div>  
+                    <div className="font-bold text-orange-600 mb-2 number-field">{loanData.moderate.rate}%</div>  
                     <div className="text-gray-600 font-medium">Monthly EMI</div>   
-                    <div className="font-bold text-black mb-2">{formatCurrency(moderateEMI)}</div>  
+                    <div className="font-bold text-black mb-2 number-field">{formatCurrency(moderateEMI)}</div>  
                     <div className="text-gray-600 font-medium">Total Repayment</div> 
-                    <div className="font-bold text-black mb-2">{formatCurrency(moderateTotal)}</div>   
+                    <div className="font-bold text-black mb-2 number-field">{formatCurrency(moderateTotal)}</div>   
                     <div className="text-gray-600 font-medium">Total Interest Paid </div>    
-                    <div className="font-bold text-black mb-2">{formatCurrency(moderateInterest)}</div>   
+                    <div className="font-bold text-black mb-2 number-field">{formatCurrency(moderateInterest)}</div>   
                   </CardContent>
                 </Card>
                 <Card className="bg-gradient-to-br from-green-50 to-green-100 border-green-200 shadow-lg">
                   <CardContent className="p-3">
+                    <img className="w-full" src="/lovable-uploads/happy-face-loan.jpg" />
                     <div className="mt-4 text-base font-semibold text-gray-800">High Credit Score</div>
-                    <div className="text-red-600">Principal: {formatCurrency(loanAmount)}</div>
+                    <div className="text-red-600 number-field">Principal: {formatCurrency(loanAmount)}</div>
                     <div className="text-gray-600 font-medium">Interest Rate</div>         
-                    <div className="font-bold text-green-600 mb-2">{loanData.high.rate}%</div>  
+                    <div className="font-bold text-green-600 mb-2 number-field">{loanData.high.rate}%</div>  
                     <div className="text-gray-600 font-medium">Monthly EMI</div>  
-                    <div className="font-bold text-black mb-2">{formatCurrency(highEMI)}</div>  
+                    <div className="font-bold text-black mb-2 number-field">{formatCurrency(highEMI)}</div>  
                     <div className="text-gray-600 font-medium">Total Repayment</div>
-                    <div className="font-bold text-black mb-2">{formatCurrency(highTotal)}</div>
+                    <div className="font-bold text-black mb-2 number-field">{formatCurrency(highTotal)}</div>
                     <div className="text-gray-600 font-medium">Total Interest Paid </div>
-                    <div className="font-bold text-black mb-2">{formatCurrency(highInterest)}</div>
+                    <div className="font-bold text-black mb-2 number-field">{formatCurrency(highInterest)}</div>
                   </CardContent>
                 </Card>
               </div>
@@ -334,12 +371,12 @@ const Impact = () => {
                   <div className="grid grid-cols-1 gap-8">
                     <div className="text-center p-6 bg-white bg-opacity-20 rounded-xl">
                       <h4 className="font-semibold mb-4">Moderate vs Low Credit</h4>
-                      <div className="font-bold text-orange-200 mb-2">{formatCurrency(moderateSavings)}</div>
+                      <div className="font-bold text-orange-200 mb-2 number-field">{formatCurrency(moderateSavings)}</div>
                       <p className="text-blue-100">You can save this much by improving from low to moderate credit score</p>
                     </div>
                     <div className="text-center p-6 bg-white bg-opacity-20 rounded-xl">
                       <h4 className="font-semibold mb-4">High vs Low Credit</h4>
-                      <div className="font-bold text-green-200 mb-2">{formatCurrency(highSavings)}</div>
+                      <div className="font-bold text-green-200 mb-2 number-field">{formatCurrency(highSavings)}</div>
                       <p className="text-blue-100">You can save this much by improving from low to high credit score</p>
                     </div>
                   </div>
@@ -384,33 +421,33 @@ const Impact = () => {
                   </tr>
                   <tr className="border-b border-gray-200 bg-gray-50">
                     <td className="p-4 sm:p-6 font-semibold text-gray-900">Interest Rate</td>
-                    <td className="p-4 sm:p-6 text-center text-red-600 font-bold">{loanData.low.rate}%</td>
-                    <td className="p-4 sm:p-6 text-center text-orange-600 font-bold">13.5%</td>
-                    <td className="p-4 sm:p-6 text-center text-green-600 font-bold">{loanData.high.rate}%</td>
+                    <td className="p-4 sm:p-6 text-center text-red-600 font-bold number-field">{loanData.low.rate}%</td>
+                    <td className="p-4 sm:p-6 text-center text-orange-600 font-bold number-field">13.5%</td>
+                    <td className="p-4 sm:p-6 text-center text-green-600 font-bold number-field">{loanData.high.rate}%</td>
                   </tr>
                   <tr className="border-b border-gray-200">
                     <td className="p-4 sm:p-6 font-semibold text-gray-900">EMI (for 20 years)</td>
-                    <td className="p-4 sm:p-6 text-center text-gray-700 font-semibold">{formatCurrency(lowEMI)}</td>
-                    <td className="p-4 sm:p-6 text-center text-gray-700 font-semibold">{formatCurrency(moderateEMI)}</td>
-                    <td className="p-4 sm:p-6 text-center text-gray-700 font-semibold">{formatCurrency(highEMI)}</td>
+                    <td className="p-4 sm:p-6 text-center text-gray-700 font-semibold number-field">{formatCurrency(lowEMI)}</td>
+                    <td className="p-4 sm:p-6 text-center text-gray-700 font-semibold number-field">{formatCurrency(moderateEMI)}</td>
+                    <td className="p-4 sm:p-6 text-center text-gray-700 font-semibold number-field">{formatCurrency(highEMI)}</td>
                   </tr>
                   <tr className="border-b border-gray-200 bg-gray-50">
                     <td className="p-4 sm:p-6 font-semibold text-gray-900">Total Repayment</td>
-                    <td className="p-4 sm:p-6 text-center text-gray-700 font-semibold">{formatCurrency(lowTotal)}</td>
-                    <td className="p-4 sm:p-6 text-center text-gray-700 font-semibold">{formatCurrency(moderateTotal)}</td>
-                    <td className="p-4 sm:p-6 text-center text-gray-700 font-semibold">{formatCurrency(highTotal)}</td>
+                    <td className="p-4 sm:p-6 text-center text-gray-700 font-semibold number-field">{formatCurrency(lowTotal)}</td>
+                    <td className="p-4 sm:p-6 text-center text-gray-700 font-semibold number-field">{formatCurrency(moderateTotal)}</td>
+                    <td className="p-4 sm:p-6 text-center text-gray-700 font-semibold number-field">{formatCurrency(highTotal)}</td>
                   </tr>
                   <tr className="border-b border-gray-200">
                     <td className="p-4 sm:p-6 font-semibold text-gray-900">Total Interest Paid</td>
-                    <td className="p-4 sm:p-6 text-center text-gray-700 font-semibold">{formatCurrency(lowInterest)}</td>
-                    <td className="p-4 sm:p-6 text-center text-gray-700 font-semibold">{formatCurrency(moderateInterest)}</td>
-                    <td className="p-4 sm:p-6 text-center text-gray-700 font-semibold">{formatCurrency(highInterest)}</td>
+                    <td className="p-4 sm:p-6 text-center text-gray-700 font-semibold number-field">{formatCurrency(lowInterest)}</td>
+                    <td className="p-4 sm:p-6 text-center text-gray-700 font-semibold number-field">{formatCurrency(moderateInterest)}</td>
+                    <td className="p-4 sm:p-6 text-center text-gray-700 font-semibold number-field">{formatCurrency(highInterest)}</td>
                   </tr>
                   <tr className="border-b border-gray-200 bg-gray-50">
                     <td className="p-4 sm:p-6 font-semibold text-gray-900">Potential Savings vs HFC</td>
                     <td className="p-4 sm:p-6 text-center text-gray-500">—</td>
-                    <td className="p-4 sm:p-6 text-center text-orange-600 font-bold">{formatCurrency(moderateSavings)}</td>
-                    <td className="p-4 sm:p-6 text-center text-green-600 font-bold">{formatCurrency(highSavings)}</td>
+                    <td className="p-4 sm:p-6 text-center text-orange-600 font-bold number-field">{formatCurrency(moderateSavings)}</td>
+                    <td className="p-4 sm:p-6 text-center text-green-600 font-bold number-field">{formatCurrency(highSavings)}</td>
                   </tr>
                   <tr>
                     <td className="p-4 sm:p-6 font-semibold text-gray-900">Key Insight</td>
