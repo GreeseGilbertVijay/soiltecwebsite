@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { TrendingUp, ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import Calculator from '@/components/Calculator';
 
 const Index = () => {
   const { t, currentLanguage } = useLanguage();
@@ -650,6 +651,14 @@ const Index = () => {
             </div>
             
           </div>
+        </div>
+      </section>
+
+      {/* Calculator Section */}
+      <section className="pt-16 pb-12 bg-gradient-to-br from-slate-900 to-slate-800">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-bold text-white mb-12 text-center animate-fade-in">{t('calculator.title')}</h2>
+          <Calculator />
         </div>
       </section>
 
