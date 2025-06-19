@@ -120,14 +120,14 @@ const Impact = () => {
           h3 { font-size: 36px; }
           h4 { font-size: 28px; }
           h5 { font-size: 22px; }
-          h6 { font-size: 18px; }
+          h6 { font-size: 16px; }
           p { font-size: 18px; }
           [lang]:not([lang="en"]) h1 { font-size: 44px; }
           [lang]:not([lang="en"]) h2 { font-size: 36px; }
           [lang]:not([lang="en"]) h3 { font-size: 28px; }
           [lang]:not([lang="en"]) h4 { font-size: 24px; }
           [lang]:not([lang="en"]) h5 { font-size: 22px; }
-          [lang]:not([lang="en"]) h6 { font-size: 18px; }
+          [lang]:not([lang="en"]) h6 { font-size: 16px; }
           [lang]:not([lang="en"]) p { font-size: 18px; }
         }
 
