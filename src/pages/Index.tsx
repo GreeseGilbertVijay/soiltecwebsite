@@ -4,13 +4,12 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { TrendingUp, ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import Calculator from '@/components/Calculator';
 
 const Index = () => {
   const { t, currentLanguage } = useLanguage();
 
-  // Add state for Impact Card wave animation
-  const [impactWaveAnimating, setImpactWaveAnimating] = useState(false);
+  // Add state for tada animation
+  const [tada, setTada] = useState(false);
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -36,9 +35,9 @@ const Index = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setImpactWaveAnimating(true);
-      setTimeout(() => setImpactWaveAnimating(false), 3000);
-    }, 6000);
+      setTada(true);
+      setTimeout(() => setTada(false), 1000); // duration of tada animation
+    }, 5000);
     return () => clearInterval(interval);
   }, []);
 
@@ -79,10 +78,10 @@ const Index = () => {
         @media (max-width: 1920px) {
           .container {
             max-width: 1920px;
-            height: 50vh;
           }
           h1 {
             font-size: 56px;
+            line-height:52px;
           }
           h2 {
             font-size: 48px;
@@ -126,8 +125,6 @@ const Index = () => {
         @media (max-width: 1440px) {
           .container {
             max-width: 1440px;
-            height: 80vh;
-            padding:5%;
           }
           h1 {
             font-size: 64px;
@@ -143,7 +140,7 @@ const Index = () => {
             font-size: 24px;
           }
           h5{
-             font-size: 24px;
+             font-size: 22px;
           }
           h6{
              font-size: 20px;
@@ -291,24 +288,9 @@ const Index = () => {
             </div>
 
             {/* Right Content - Impact Card */}
-            <div className="flex justify-center lg:justify-end animate-scale-in" style={{animationDelay: '0.8s', position: 'relative'}}>
-              <div
-                className={`bg-gradient-to-br from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 transition-all duration-500 rounded-3xl p-6 max-w-sm cursor-pointer transform hover:scale-105 hover:rotate-1 shadow-2xl hover:shadow-orange-500/25 relative overflow-visible transition-transform duration-200 ${impactWaveAnimating ? 'scale-105' : 'scale-100'}`}
-              >
-                {/* Orange wave animation overlay, 20px larger than card */}
-                {impactWaveAnimating && (
-                  <div
-                    className="absolute z-20 rounded-xl animate-ping bg-orange-400 opacity-40"
-                    style={{
-                      top: '-10px',
-                      left: '-10px',
-                      right: '-10px',
-                      bottom: '-10px',
-                      filter: 'blur(4px)'
-                    }}
-                  />
-                )}
-                <Link to="/Impact" onClick={scrollToTop} className="block relative z-30">
+            <div className="flex justify-center lg:justify-end w-full">
+              <div className={`bg-gradient-to-br from-orange-500 to-orange-600 transition-all duration-500 rounded-3xl p-6 max-w-sm cursor-pointer transform shadow-2xl ${tada ? 'animate-tada' : ''}`}>
+                <Link to="/Impact" onClick={scrollToTop} className="block">
                   <div className="flex items-center gap-2 mb-4">
                     <div className="bg-white/20 p-1 rounded-xl animate-pulse-glow">
                       <TrendingUp className="text-white" size={20} />
@@ -679,7 +661,6 @@ const Index = () => {
           </div>
         </div>
       </section>
-
 
       {/* CTA Section */}
       <section className="pt-16 pb-12 bg-gradient-to-br from-blue-400 via-slate-900 to-blue-500">

@@ -238,8 +238,8 @@ const Impact = () => {
                     <h5>{activeLoanType.charAt(0).toUpperCase() + activeLoanType.slice(1)} Loan Calculator</h5>
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="p-8">
-                  <div className="grid grid-cols-1 gap-4 mb-4">
+                <CardContent className="p-4">
+                  <div className="grid grid-cols-1 gap-4 mb-0">
                     <div className="space-y-4">
                       <div className="flex justify-between items-center">
                         <Label htmlFor="loanAmount" className="text-base font-semibold text-gray-700">
