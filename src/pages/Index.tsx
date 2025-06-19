@@ -654,14 +654,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Calculator Section */}
-      <section className="pt-16 pb-12 bg-gradient-to-br from-slate-900 to-slate-800">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-bold text-white mb-12 text-center animate-fade-in">{t('calculator.title')}</h2>
-          <Calculator />
-        </div>
-      </section>
-
       {/* CTA Section */}
       <section className="pt-16 pb-12 bg-gradient-to-br from-blue-400 via-slate-900 to-blue-500">
       <div className="max-w-5xl mx-auto text-center px-4 sm:px-6 lg:px-8">

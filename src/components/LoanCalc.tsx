@@ -193,7 +193,7 @@ const Impact = () => {
       `}</style>    
 
       {/* Loan Calculator Section */}
-      <section className="p-2 pt-12 pb-12 bg-white relative">
+      <section className="p-2 pt-12 pb-2 bg-white relative">
         <div className='max-w-7xl mx-auto '>
         <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-purple-50 opacity-50"></div>
         <div className="container relative z-10">
