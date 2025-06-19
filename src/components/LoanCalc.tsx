@@ -115,14 +115,14 @@ const Impact = () => {
           .container {
             max-width: 1920px;
           }
-          h1 { font-size: 56px; }
-          h2 { font-size: 48px; }
-          h3 { font-size: 36px; }
-          h4 { font-size: 28px; }
+          h1 { font-size: 48px; }
+          h2 { font-size: 36px; }
+          h3 { font-size: 32px; }
+          h4 { font-size: 24px; }
           h5 { font-size: 22px; }
           h6 { font-size: 16px; }
           p { font-size: 18px; }
-          [lang]:not([lang="en"]) h1 { font-size: 44px; }
+          [lang]:not([lang="en"]) h1 { font-size: 48px; }
           [lang]:not([lang="en"]) h2 { font-size: 36px; }
           [lang]:not([lang="en"]) h3 { font-size: 28px; }
           [lang]:not([lang="en"]) h4 { font-size: 24px; }
@@ -135,20 +135,20 @@ const Impact = () => {
           .container {
             max-width: 1440px;
           }
-          h1 { font-size: 48px; line-height: 1em; }
-          h2 { font-size: 40px; }
+          h1 { font-size: 44px; line-height: 1em; }
+          h2 { font-size: 36px; }
           h3 { font-size: 32px; }
           h4 { font-size: 28px; }
           h5 { font-size: 20px; }
           h6 { font-size: 16px; }
           p { font-size: 18px; }
-          [lang]:not([lang="en"]) h1 { font-size: 36px; }
-          [lang]:not([lang="en"]) h2 { font-size: 28px; }
-          [lang]:not([lang="en"]) h3 { font-size: 24px; }
-          [lang]:not([lang="en"]) h4 { font-size: 22px; }
+          [lang]:not([lang="en"]) h1 { font-size: 44px; }
+          [lang]:not([lang="en"]) h2 { font-size: 36px; }
+          [lang]:not([lang="en"]) h3 { font-size: 32px; }
+          [lang]:not([lang="en"]) h4 { font-size: 28px; }
           [lang]:not([lang="en"]) h5 { font-size: 20px; }
           [lang]:not([lang="en"]) h6 { font-size: 16px; }
-          [lang]:not([lang="en"]) p { font-size: 16px; }
+          [lang]:not([lang="en"]) p { font-size: 18px; }
         }
 
         @media (max-width: 780px) {
@@ -156,14 +156,15 @@ const Impact = () => {
             max-width: 780px;
           }
           h1 { font-size: 36px; }
-          h2 { font-size: 28px; }
-          h3 { font-size: 24px; }
-          h4 { font-size: 28px; }
+          h2 { font-size: 24px; }
+          h3 { font-size: 22px; }
+          h4 { font-size: 20px; }
           h5 { font-size: 18px; }
           h6 { font-size: 16px; }
           p { font-size: 16px; }
           [lang]:not([lang="en"]) h1 { font-size: 36px; }
           [lang]:not([lang="en"]) h2 { font-size: 24px; }
+          [lang]:not([lang="en"]) h3 { font-size: 22px; }
           [lang]:not([lang="en"]) h3 { font-size: 20px; }
           [lang]:not([lang="en"]) h5 { font-size: 18px; }
           [lang]:not([lang="en"]) h6 { font-size: 16px; }
@@ -174,16 +175,16 @@ const Impact = () => {
           .container {
             max-width: 480px;
           }
-          h1 { font-size: 36px; }
-          h2 { font-size: 28px; }
-          h3 { font-size: 24px; }
+          h1 { font-size: 28px; }
+          h2 { font-size: 24px; }
+          h3 { font-size: 22px; }
           h4 { font-size: 20px; }
           h5 { font-size: 18px; }
           h6 { font-size: 16px; }
           p { font-size: 16px; }
-          [lang]:not([lang="en"]) h1 { font-size: 36px; }
-          [lang]:not([lang="en"]) h2 { font-size: 20px; }
-          [lang]:not([lang="en"]) h3 { font-size: 18px; }
+          [lang]:not([lang="en"]) h1 { font-size: 28px; }
+          [lang]:not([lang="en"]) h2 { font-size: 24px; }
+          [lang]:not([lang="en"]) h3 { font-size: 22px; }
           [lang]:not([lang="en"]) h4 { font-size: 20px; }
           [lang]:not([lang="en"]) h5 { font-size: 18px; }
           [lang]:not([lang="en"]) h6 { font-size: 16px; }
@@ -502,8 +503,8 @@ const Impact = () => {
         </div>
       </section>
 
-      <div className='py-2 pt-6 pb-6'>
-        <div className='max-w-7xl mx-auto p-2'>
+      <div className='py-2 pt-2 pb-2'>
+        <div className='max-w-6xl mx-auto p-2'>
         {/* Potential Savings Card */}
        <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-6 border border-blue-200 shadow-lg">
                 <div className="flex items-center justify-center gap-2 mb-4">

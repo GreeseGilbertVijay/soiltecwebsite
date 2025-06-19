@@ -91,13 +91,13 @@ const Impact = () => {
             margin: 0 auto;
             padding: 0 2rem;
           }
-          h1 { font-size: 56px; }
+          h1 { font-size: 52px; }
           h2 { font-size: 48px; }
           h3 { font-size: 36px; }
           h4 { font-size: 28px; }
            h6 { font-size: 20px; }
           p { font-size: 18px; }
-          [lang]:not([lang="en"]) h1 { font-size: 44px; }
+          [lang]:not([lang="en"]) h1 { font-size: 40px; }
           [lang]:not([lang="en"]) h2 { font-size: 36px; }
           [lang]:not([lang="en"]) h3 { font-size: 28px; }
           [lang]:not([lang="en"]) h4 { font-size: 24px; }
@@ -167,12 +167,12 @@ const Impact = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-slate-800 via-slate-800 to-blue-500 text-white py-20 overflow-hidden">
+      <section className="relative text-black pt-6 pb-0 overflow-hidden">
         <div className="container text-center">
-          <h1 className=" font-bold mb-6">
+          <h1 className=" font-bold mb-2">
             Interactive Loan Calculator / Comparison
           </h1>
-          <p className="text-blue-100">
+          <p className="text-black">
             Compare loan options across different credit scores and see potential savings in real-time
           </p>
         </div>
