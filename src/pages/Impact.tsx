@@ -170,11 +170,10 @@ const Impact = () => {
       <section className="relative bg-gradient-to-br from-slate-800 via-slate-800 to-blue-500 text-white py-20 overflow-hidden">
         <div className="container text-center">
           <h1 className=" font-bold mb-6">
-            Interactive Loan Comparison
+            Interactive Loan Calculator / Comparison
           </h1>
           <p className="text-blue-100">
-            Compare loan options across different credit scores and see potential savings in real-time. 
-            Adjust loan amount and tenure to visualize the impact on EMIs and total repayment.
+            Compare loan options across different credit scores and see potential savings in real-time
           </p>
         </div>
       </section>
