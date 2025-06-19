@@ -150,13 +150,13 @@ const Impact = () => {
             margin: 0 auto;
             padding: 0 1rem;
           }
-          h1 { font-size: 36px; }
+          h1 { font-size: 32px; }
           h2 { font-size: 28px; }
           h3 { font-size: 24px; }
           h4 { font-size: 20px; }
           h6 { font-size: 16px; }
           p { font-size: 16px; }
-          [lang]:not([lang="en"]) h1 { font-size: 36px; }
+          [lang]:not([lang="en"]) h1 { font-size: 32px; }
           [lang]:not([lang="en"]) h2 { font-size: 20px; }
           [lang]:not([lang="en"]) h3 { font-size: 18px; }
           [lang]:not([lang="en"]) h4 { font-size: 20px; }
