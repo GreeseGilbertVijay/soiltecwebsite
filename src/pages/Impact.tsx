@@ -167,19 +167,17 @@ const Impact = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative text-black pt-6 pb-0 overflow-hidden">
+      <section className="relative text-black overflow-hidden">
         <div className="container text-center">
-          <h1 className="font-bold mb-2">
+          <h2 className="font-bold">
             Interactive Loan Calculator / Comparison
-          </h1>
+          </h2>
           <p className="text-black">
             Compare loan options across different credit scores and see potential savings in real-time
           </p>
         </div>
       </section>
-
       <LoanCalc />
-
      {/* The Good News About Credit Scores */}
       <section className="py-4 bg-slate-900">
         <div className='max-w-6xl mx-auto p-4'>

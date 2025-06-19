@@ -193,7 +193,7 @@ const Impact = () => {
       `}</style>    
 
       {/* Loan Calculator Section */}
-      <section className="p-2 pt-12 pb-2 bg-white relative">
+      <section className="p-2 pt-6 pb-2 bg-white relative">
         <div className='max-w-7xl mx-auto '>
         <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-purple-50 opacity-50"></div>
         <div className="container relative z-10">
@@ -503,12 +503,45 @@ const Impact = () => {
         </div>
       </section>
 
-      <div className='py-4 pt-2 pb-2'>
-        <div className='max-w-6xl mx-auto p-2'>
-        {/* Potential Savings Card */}
-       <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-6 border border-blue-200 shadow-lg">
+      <div className='py-4 pt-2 pb-2 relative'>
+        {/* Blinking and Waves Styles */}
+        <style>{`
+          @keyframes pulse-blink {
+            0% { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.3); }
+            70% { box-shadow: 0 0 0 50px rgba(99, 102, 241, 0); }
+           
+          }
+          .blinking-container {
+            animation: pulse-blink 2s infinite;
+            position: relative;
+            z-index: 1;
+          }
+          .wave-container {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 60px;
+            z-index: 0;
+            pointer-events: none;
+            overflow: hidden;
+          }
+          .wave-svg {
+            width: 100%;
+            height: 100%;
+            display: block;
+          }
+          .potential-savings-section {
+            position: relative;
+            z-index: 2;
+          }
+        `}</style>
+        <div className='max-w-6xl mx-auto p-2 potential-savings-section'>
+        {/* Potential Savings Card with blinking effect */}
+       <div className="blinking-container bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-6 border border-blue-200 shadow-lg">
                 <div className="flex items-center justify-center gap-2 mb-4">
-                  <h4 className="text-lg font-bold text-gray-900">💰 Potential Savings</h4>
+                  <h4 className="text-lg font-bold text-gray-900">₹ Potential Savings</h4>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow duration-200">
@@ -528,6 +561,24 @@ const Impact = () => {
                     <p className="text-xs text-gray-500 mt-1">Maximum potential savings</p>
                   </div>
                 </div>
+        </div>
+        {/* Animated SVG Waves at the bottom of the section */}
+        <div className="wave-container">
+          <svg className="wave-svg" viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="waveGradient" x1="0" y1="0" x2="1440" y2="0" gradientUnits="userSpaceOnUse">
+                <stop stopColor="#6366f1" stopOpacity="0.2" />
+                <stop offset="1" stopColor="#a78bfa" stopOpacity="0.2" />
+              </linearGradient>
+              <animateTransform attributeName="gradientTransform" type="translate" from="0,0" to="100,0" dur="6s" repeatCount="indefinite" />
+            </defs>
+            <path fill="url(#waveGradient)">
+              <animate attributeName="d" dur="6s" repeatCount="indefinite"
+                values="M0,30 Q360,60 720,30 T1440,30 V60 H0 Z;
+                        M0,40 Q360,10 720,40 T1440,40 V60 H0 Z;
+                        M0,30 Q360,60 720,30 T1440,30 V60 H0 Z"/>
+            </path>
+          </svg>
         </div>
         <Card className="mt-8 bg-gradient-to-r from-blue-50 to-purple-50 border-blue-200">
             <CardContent className="p-6">

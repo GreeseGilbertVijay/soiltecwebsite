@@ -9,6 +9,9 @@ import Calculator from '@/components/Calculator';
 const Index = () => {
   const { t, currentLanguage } = useLanguage();
 
+  // Add state for Impact Card wave animation
+  const [impactWaveAnimating, setImpactWaveAnimating] = useState(false);
+
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -29,6 +32,14 @@ const Index = () => {
 
     window.addEventListener("message", handleMessage);
     return () => window.removeEventListener("message", handleMessage);
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setImpactWaveAnimating(true);
+      setTimeout(() => setImpactWaveAnimating(false), 3000);
+    }, 6000);
+    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -129,7 +140,7 @@ const Index = () => {
             font-size: 28px;
           }
           h4{
-            font-size: 40px;
+            font-size: 24px;
           }
           h5{
              font-size: 24px;
@@ -280,14 +291,29 @@ const Index = () => {
             </div>
 
             {/* Right Content - Impact Card */}
-            <div className="flex justify-center lg:justify-end animate-scale-in" style={{animationDelay: '0.8s'}}>
-              <div className="bg-gradient-to-br from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 transition-all duration-500 rounded-3xl p-10 max-w-md cursor-pointer transform hover:scale-105 hover:rotate-1 shadow-2xl hover:shadow-orange-500/25">
-                <Link to="/Impact" onClick={scrollToTop} className="block">
+            <div className="flex justify-center lg:justify-end animate-scale-in" style={{animationDelay: '0.8s', position: 'relative'}}>
+              <div
+                className={`bg-gradient-to-br from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 transition-all duration-500 rounded-3xl p-6 max-w-sm cursor-pointer transform hover:scale-105 hover:rotate-1 shadow-2xl hover:shadow-orange-500/25 relative overflow-visible transition-transform duration-200 ${impactWaveAnimating ? 'scale-105' : 'scale-100'}`}
+              >
+                {/* Orange wave animation overlay, 20px larger than card */}
+                {impactWaveAnimating && (
+                  <div
+                    className="absolute z-20 rounded-xl animate-ping bg-orange-400 opacity-40"
+                    style={{
+                      top: '-10px',
+                      left: '-10px',
+                      right: '-10px',
+                      bottom: '-10px',
+                      filter: 'blur(4px)'
+                    }}
+                  />
+                )}
+                <Link to="/Impact" onClick={scrollToTop} className="block relative z-30">
                   <div className="flex items-center gap-2 mb-4">
                     <div className="bg-white/20 p-1 rounded-xl animate-pulse-glow">
                       <TrendingUp className="text-white" size={20} />
                     </div>
-                    <h3 className="font-bold text-white pl-4">{t('home.hero.impact.title')}</h3>
+                    <h4 className="font-bold text-white pl-4">{t('home.hero.impact.title')}</h4>
                   </div>
                   <p className="text-white/95 leading-relaxed">
                     {t('home.hero.impact.description')}
@@ -653,6 +679,7 @@ const Index = () => {
           </div>
         </div>
       </section>
+
 
       {/* CTA Section */}
       <section className="pt-16 pb-12 bg-gradient-to-br from-blue-400 via-slate-900 to-blue-500">
