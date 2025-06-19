@@ -147,19 +147,19 @@ const Impact = () => {
         @media (max-width: 480px) {
           .container {
             max-width: 480px;
-            margin: 0 auto;
-            padding: 0 1rem;
           }
-          h1 { font-size: 32px; }
-          h2 { font-size: 28px; }
-          h3 { font-size: 24px; }
+          h1 { font-size: 26px; }
+          h2 { font-size: 24px; }
+          h3 { font-size: 22px; }
           h4 { font-size: 20px; }
+          h5 { font-size: 18px; }
           h6 { font-size: 16px; }
           p { font-size: 16px; }
-          [lang]:not([lang="en"]) h1 { font-size: 32px; }
-          [lang]:not([lang="en"]) h2 { font-size: 20px; }
-          [lang]:not([lang="en"]) h3 { font-size: 18px; }
+          [lang]:not([lang="en"]) h1 { font-size: 26px; }
+          [lang]:not([lang="en"]) h2 { font-size: 24px; }
+          [lang]:not([lang="en"]) h3 { font-size: 22px; }
           [lang]:not([lang="en"]) h4 { font-size: 20px; }
+          [lang]:not([lang="en"]) h5 { font-size: 18px; }
           [lang]:not([lang="en"]) h6 { font-size: 16px; }
           [lang]:not([lang="en"]) p { font-size: 14px; }
         }
@@ -169,7 +169,7 @@ const Impact = () => {
       {/* Hero Section */}
       <section className="relative text-black pt-6 pb-0 overflow-hidden">
         <div className="container text-center">
-          <h1 className=" font-bold mb-2">
+          <h1 className="font-bold mb-2">
             Interactive Loan Calculator / Comparison
           </h1>
           <p className="text-black">

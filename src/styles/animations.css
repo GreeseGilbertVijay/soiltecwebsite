@@ -1,4 +1,3 @@
-
 /* Enhanced custom animations for the dynamic background */
 
 /* Gradient shifting animations */
@@ -817,3 +816,86 @@
 .stagger-3 { animation-delay: 0.3s; }
 .stagger-4 { animation-delay: 0.4s; }
 .stagger-5 { animation-delay: 0.5s; }
+
+@keyframes blink-5s {
+  0%, 97%, 100% { opacity: 1; }
+  98%, 99% { opacity: 0; }
+}
+
+.blink-5s {
+  animation: blink-5s 5s linear infinite;
+}
+
+@keyframes ping-fast {
+  75%, 100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+.animate-ping-fast {
+  animation: ping-fast 1s cubic-bezier(0, 0, 0.2, 1);
+}
+
+@keyframes ping-impact {
+  75%, 100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+.animate-ping-impact {
+  animation: ping-impact 1.2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes glow-impact {
+  0%, 100% { box-shadow: 0 0 16px 4px #facc15, 0 0 32px 8px #f59e42; }
+  50% { box-shadow: 0 0 32px 12px #facc15, 0 0 48px 16px #f59e42; }
+}
+.animate-glow-impact {
+  animation: glow-impact 2.5s ease-in-out infinite alternate;
+}
+
+.impact-animated-border {
+  position: relative;
+  background: transparent;
+}
+.impact-animated-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: 0.75rem; /* match rounded-lg */
+  border: 2px solid transparent;
+  background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet, red);
+  background-size: 200% 100%;
+  background-clip: border-box;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: impact-border-move 2.5s linear infinite;
+}
+.impact-animated-border-inner {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  background: inherit;
+  border-radius: 0.75rem;
+  padding: 0 0.25em;
+}
+@keyframes impact-border-move {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes impact-star-blink {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.7); }
+}
+.impact-star-blink {
+  animation: impact-star-blink 1.2s cubic-bezier(0, 0, 0.2, 1);
+}

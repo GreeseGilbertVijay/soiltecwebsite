@@ -1,13 +1,23 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
+import { FaStar } from 'react-icons/fa';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
   const { t, currentLanguage } = useLanguage();
+  const [isStarAnimating, setIsStarAnimating] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsStarAnimating(true);
+      setTimeout(() => setIsStarAnimating(false), 2000);
+    }, 6000);
+    return () => clearInterval(interval);
+  }, []);
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -46,21 +56,45 @@ const Navbar = () => {
           {/* Desktop Navigation - Centered */}
           <div className="hidden lg:flex lg:items-center lg:justify-center lg:flex-1">
             <div className="flex items-baseline space-x-1">
-              {navItems.map((item) => (
-                <Link
-                  key={item.path}
-                  to={item.path}
-                  onClick={scrollToTop}
-                  style={{ fontSize }}
-                  className={`px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
-                    isActive(item.path)
-                      ? 'bg-orange-500 text-white shadow-lg'
-                      : 'text-slate-300 hover:bg-slate-800 hover:text-orange-400'
-                  }`}
-                >
-                  {item.label}
-                </Link>
-              ))}
+              {navItems.map((item) => {
+                const isImpact = item.path === '/impact';
+                return (
+                  <Link
+                    key={item.path}
+                    to={item.path}
+                    onClick={scrollToTop}
+                    style={{ fontSize, position: 'relative', display: 'inline-block' }}
+                    className={`px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
+                      isActive(item.path)
+                        ? isImpact
+                          ? 'text-white scale-105 border-2 border-transparent bg-slate-900 relative z-10'
+                          : 'bg-orange-500 text-white shadow-lg'
+                        : isImpact
+                          ? 'text-yellow-400 hover:bg-yellow-900/30 hover:text-yellow-300 border-2 border-transparent bg-slate-900 relative z-10'
+                          : 'text-slate-300 hover:bg-slate-800 hover:text-orange-400'
+                    } ${isImpact ? 'impact-animated-border' : ''}`}
+                  >
+                    <span className={isImpact ? 'impact-animated-border-inner' : ''}>
+                      {item.label}
+                      {isImpact && (
+                        <span
+                          className="absolute -top-3 -right-3 flex items-center justify-center"
+                          style={{ pointerEvents: 'none' }}
+                        >
+                          <FaStar
+                            className={`text-yellow-400 drop-shadow-lg transition-transform duration-300 ${isStarAnimating ? 'impact-star-blink' : ''}`}
+                            style={{ fontSize: '1.3em', zIndex: 10 }}
+                          />
+                          <span
+                            className="absolute inset-0 rounded-full bg-yellow-400 opacity-50 animate-ping-impact"
+                            style={{ zIndex: 1 }}
+                          />
+                        </span>
+                      )}
+                    </span>
+                  </Link>
+                );
+              })}
             </div>
           </div>
 
