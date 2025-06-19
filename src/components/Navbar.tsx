@@ -123,24 +123,44 @@ const Navbar = () => {
                 <LanguageSwitcher />
               </div>
               
-              {navItems.map((item) => (
-                <Link
-                  key={item.path}
-                  to={item.path}
-                  onClick={() => {
-                    setIsMenuOpen(false);
-                    scrollToTop();
-                  }}
-                  style={{ fontSize }}
-                  className={`block px-4 py-3 rounded-lg font-medium transition-all ${
-                    isActive(item.path)
-                      ? 'bg-orange-500 text-white'
-                      : 'text-slate-300 hover:bg-slate-700 hover:text-orange-400'
-                  }`}
-                >
-                  {item.label}
-                </Link>
-              ))}
+              {navItems.map((item) => {
+                const isImpact = item.path === '/impact';
+                return (
+                  <Link
+                    key={item.path}
+                    to={item.path}
+                    onClick={() => {
+                      setIsMenuOpen(false);
+                      scrollToTop();
+                    }}
+                    style={{ fontSize, position: isImpact ? 'relative' : undefined, display: isImpact ? 'inline-block' : undefined }}
+                    className={`block px-4 py-3 rounded-lg font-medium transition-all ${
+                      isActive(item.path)
+                        ? 'bg-orange-500 text-white'
+                        : 'text-slate-300 hover:bg-slate-700 hover:text-orange-400'
+                    } ${isImpact ? 'impact-animated-border' : ''}`}
+                  >
+                    <span className={isImpact ? 'impact-animated-border-inner' : ''}>
+                      {item.label}
+                      {isImpact && (
+                        <span
+                          className="absolute -top-3 -right-3 flex items-center justify-center"
+                          style={{ pointerEvents: 'none' }}
+                        >
+                          <FaStar
+                            className={`text-yellow-400 drop-shadow-lg transition-transform duration-300 ${isStarAnimating ? 'impact-star-blink' : ''}`}
+                            style={{ fontSize: '1.3em', zIndex: 10 }}
+                          />
+                          <span
+                            className="absolute inset-0 rounded-full bg-yellow-400 opacity-50 animate-ping-impact"
+                            style={{ zIndex: 1 }}
+                          />
+                        </span>
+                      )}
+                    </span>
+                  </Link>
+                );
+              })}
             </div>
           </div>
         )}
