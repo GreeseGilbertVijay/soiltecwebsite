@@ -1,5 +1,6 @@
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import Form from '@/components/Form';
 import { Mail, Phone, Clock, CheckCircle } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -95,7 +96,7 @@ const Contact = () => {
           </p>
         </div>
       </section>
-
+    
       {/* Contact Information */}
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -201,6 +202,9 @@ const Contact = () => {
           </div>
         </div>
       </section>
+
+      {/* Contact Form Componet File */}
+      <Form/>
 
       {/* Google Maps Section */}
       <section className="w-full h-[300px]">

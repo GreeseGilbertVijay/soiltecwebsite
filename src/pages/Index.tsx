@@ -287,8 +287,27 @@ const Index = () => {
               </p>
             </div>
 
-            {/* Right Content - Impact Card */}
-            <div className="flex justify-center lg:justify-end w-full">
+            {/* Right Content - Images and Impact Card */}
+            <div className="flex flex-col gap-8 items-center">
+              {/* Images Row */}
+              <div className="flex flex-row gap-4 w-full justify-center">
+                <a href="https://timesofindia.indiatimes.com/city/nagpur/man-has-low-cibil-score-girls-kin-cancel-marriage/articleshow/118033335.cms" target="_blank" rel="noopener noreferrer">
+                  <img 
+                    alt="Debt Counselling Session" 
+                    className="max-w-[160px] rounded-2xl shadow-2xl hover:scale-50 transition-transform duration-300" 
+                    src="/lovable-uploads/marriage.jpg" 
+                  />
+                </a>
+                <a href="https://www.thehindu.com/news/national/tamil-nadu/man-denied-job-by-sbi-over-poor-credit-history-madras-high-court-upholds-banks-decision/article69735016.ece" target="_blank" rel="noopener noreferrer">
+                  <img 
+                    alt="Debt Counselling Session" 
+                    className="max-w-[160px] rounded-2xl shadow-2xl hover:scale-50 transition-transform duration-300" 
+                    src="/lovable-uploads/job.jpg" 
+                  />
+                </a>
+              </div>
+
+              {/* Impact Card */}
               <div className={`bg-gradient-to-br from-orange-500 to-orange-600 transition-all duration-500 rounded-3xl p-6 max-w-sm cursor-pointer transform shadow-2xl ${tada ? 'animate-tada' : ''}`}>
                 <Link to="/Impact" onClick={scrollToTop} className="block">
                   <div className="flex items-center gap-2 mb-4">
