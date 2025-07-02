@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
 
-interface LoanSliderProps {
+interface LoanSlider1Props {
   imageList: string[];
   imageTexts: string[];
   interval?: number; // in ms, default 3000
   className?: string;
 }
 
-const LoanSlider = ({ imageList, imageTexts, interval = 3000, className = '' }: LoanSliderProps) => {
+const LoanSlider1 = ({ imageList, imageTexts, interval = 3000, className = '' }: LoanSlider1Props) => {
   const [currentImage, setCurrentImage] = useState(0);
   const [animate, setAnimate] = useState(false);
 
@@ -24,17 +24,17 @@ const LoanSlider = ({ imageList, imageTexts, interval = 3000, className = '' }: 
   }, [imageList.length, interval]);
 
   return (
-    <div className={`flex flex-row items-center justify-start ${className}`}>
+    <div className={`flex items-center ${className}`}>
       <img
         key={currentImage}
         src={imageList[currentImage]}
         alt={imageTexts[currentImage]}
-        className={`w-16 h-16 object-contain mx-auto transition-all duration-700 ease-in-out ${animate ? 'slide-in-bottom' : ''}`}
-        style={{ minWidth: '48px', minHeight: '48px' }}
+        className={`object-contain transition-all duration-700 ease-in-out ${animate ? 'slide-in-bottom' : ''}`}
+        style={{ width: '60px', height: '60px', minWidth: '60px', minHeight: '60px' }}
       />
-      <span className={`text-base font-semibold ml-4 ${animate ? 'slide-in-bottom' : ''}`}>{imageTexts[currentImage]}</span>
+      <span className={`font-semibold ml-2 ${animate ? 'slide-in-bottom' : ''}`}>{imageTexts[currentImage]}</span>
     </div>
   );
 };
 
-export default LoanSlider; 
+export default LoanSlider1; 

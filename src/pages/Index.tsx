@@ -4,7 +4,8 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { TrendingUp, ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import LoanSlider from '@/components/LoanSlider';
+import LoanSlider1 from '@/components/LoanSlider1';
+import LoanSlider2 from '@/components/LoanSlider2';
 
 
 const imageList = [
@@ -306,7 +307,7 @@ const Index = () => {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden container bg-gradient-to-br from-blue-900 via-slate-800 to-slate-900">
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center">
             {/* Left Content */}
             <div className="text-left animate-fade-in">
               <h1 className="font-bold mb-2">
@@ -321,14 +322,14 @@ const Index = () => {
             </div>
 
             {/* Right Content - Images and Impact Card */}
-            <div className="flex flex-col gap-8 items-start">
-              <h3 className='text-xl font-bold'>{t('home.hero.second-heading.title')}</h3>
+            <div className="flex flex-col mb-6 gap-8 items-start">
+              <h3 className='text-2xl font-bold'>{t('home.hero.second-heading.title')}</h3>
               {/* Images Row */}
               <div className="flex flex-col gap-4">
                 {/* first Slider */}
-              <LoanSlider imageList={imageList} imageTexts={imageTexts} />
-           {/* second Slider */}
-               <LoanSlider imageList={imageList2} imageTexts={imageTexts2} />
+                <LoanSlider1 imageList={imageList} imageTexts={imageTexts} className="rounded-xl p-2" />
+                {/* second Slider */}
+                <LoanSlider2 imageList={imageList2} imageTexts={imageTexts2} className="rounded-xl p-2" />
               </div>
 
               {/* Impact Card */}
