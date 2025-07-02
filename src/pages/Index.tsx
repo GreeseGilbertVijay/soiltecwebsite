@@ -11,6 +11,19 @@ const Index = () => {
   // Add state for tada animation
   const [tada, setTada] = useState(false);
 
+  // Add state for text slider
+  const [currentTextIndex, setCurrentTextIndex] = useState(0);
+  const sliderTexts = [
+    'Purpose of Loan',
+    'Interest Rate',
+    'Loan Tenure',
+    'Processing Fees',
+    'Credit Score',
+    'Regulated Entity',
+    'Credibility of Lender',
+    'Repayment Flexibility'
+  ];
+
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -40,6 +53,14 @@ const Index = () => {
     }, 5000);
     return () => clearInterval(interval);
   }, []);
+
+  // Text slider effect
+  useEffect(() => {
+    const textInterval = setInterval(() => {
+      setCurrentTextIndex((prevIndex) => (prevIndex + 1) % sliderTexts.length);
+    }, 3000); // Change text every 3 seconds for better readability
+    return () => clearInterval(textInterval);
+  }, [sliderTexts.length]);
 
   return (
     <div className="min-h-screen relative font-raleway" lang={currentLanguage}>
@@ -72,6 +93,64 @@ const Index = () => {
         @keyframes blink {
           from, to { opacity: 1; }
           50% { opacity: 0; }
+        }
+
+        /* Text slider animations */
+        .text-slider-container {
+          height: 60px;
+          overflow: hidden;
+          position: relative;
+        }
+
+        .text-slider {
+          transition: transform 0.8s ease-in-out;
+        }
+
+        .text-slide-up {
+          animation: slideUp 0.8s ease-in-out;
+        }
+
+        @keyframes slideUp {
+          0% {
+            transform: translateY(100%);
+            opacity: 0;
+          }
+          100% {
+            transform: translateY(0);
+            opacity: 1;
+          }
+        }
+
+        .text-slide-out {
+          animation: slideOut 0.8s ease-in-out;
+        }
+
+        @keyframes slideOut {
+          0% {
+            transform: translateY(0);
+            opacity: 1;
+          }
+          100% {
+            transform: translateY(-100%);
+            opacity: 0;
+          }
+        }
+
+        /* Enhanced slider with smooth transitions */
+        .text-slider h3 {
+          display: block;
+          animation: slideInFromBottom 0.8s ease-in-out;
+        }
+
+        @keyframes slideInFromBottom {
+          0% {
+            transform: translateY(100%);
+            opacity: 0;
+          }
+          100% {
+            transform: translateY(0);
+            opacity: 1;
+          }
         }
 
         /* Responsive breakpoints */
@@ -289,24 +368,23 @@ const Index = () => {
 
             {/* Right Content - Images and Impact Card */}
             <div className="flex flex-col gap-8 items-center">
-              {/* Images Row */}
-              <div className="flex flex-row gap-4 w-full justify-center">
-                <a href="https://timesofindia.indiatimes.com/city/nagpur/man-has-low-cibil-score-girls-kin-cancel-marriage/articleshow/118033335.cms" target="_blank" rel="noopener noreferrer">
-                  <img 
-                    alt="Debt Counselling Session" 
-                    className="max-w-[160px] rounded-2xl shadow-2xl hover:scale-50 transition-transform duration-300" 
-                    src="/lovable-uploads/marriage.jpg" 
-                  />
-                </a>
-                <a href="https://www.thehindu.com/news/national/tamil-nadu/man-denied-job-by-sbi-over-poor-credit-history-madras-high-court-upholds-banks-decision/article69735016.ece" target="_blank" rel="noopener noreferrer">
-                  <img 
-                    alt="Debt Counselling Session" 
-                    className="max-w-[160px] rounded-2xl shadow-2xl hover:scale-50 transition-transform duration-300" 
-                    src="/lovable-uploads/job.jpg" 
-                  />
-                </a>
-              </div>
-
+               {/*Second Header */}
+               <div className="flex flex-col gap-4 items-start max-w-sm w-full mx-auto">
+                <h2 className="text-white font-bold text-2xl text-left">Don't Miss These 7 Crucial Checks Before taking a Loan</h2>
+                <div className="text-slider-container w-full">
+                  <div className="text-slider">
+                    <h3 
+                      key={currentTextIndex}
+                      className="text-orange-500 font-bold text-left text-xl"
+                      style={{
+                        animation: 'slideInFromBottom 0.8s ease-in-out'
+                      }}
+                    >
+                      {sliderTexts[currentTextIndex]}
+                    </h3>
+                  </div>
+                </div>
+               </div>
               {/* Impact Card */}
               <div className={`bg-gradient-to-br from-orange-500 to-orange-600 transition-all duration-500 rounded-3xl p-6 max-w-sm cursor-pointer transform shadow-2xl ${tada ? 'animate-tada' : ''}`}>
                 <Link to="/Impact" onClick={scrollToTop} className="block">
