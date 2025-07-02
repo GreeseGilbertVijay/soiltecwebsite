@@ -21,16 +21,15 @@
       "learnMore": "Learn More About Our Services",
       "second-heading":{
           "title":"Don't Miss These 8 Crucial Checks Before taking a Loan",
-           "checks1":"Purpose of the loan",
-           "checks2":"Processing Fees",
-           "checks3":"Interest Rate",
-           "checks4":"Loan Tenure",
+           "checks1":"Regulated Entity",
+           "checks2":"Credibility of Lender",
+           "checks3":"Credit Score",
+           "checks4":"Purpose of loan",
 
-           "checks5":"Credibility of Lender",
-           "checks6":"Repayment Flexibility",
-           "checks7":"Types of Loan",
-           "checks8":"Credit Score"
-
+           "checks5":"Interest Rate",
+           "checks6":"Loan Tenure",
+           "checks7":"Processing Fees",
+           "checks8":"Repayment Flexibility"
       },
       "impact": {
         "title": "Impact",

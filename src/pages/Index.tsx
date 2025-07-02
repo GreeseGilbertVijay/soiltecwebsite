@@ -9,20 +9,17 @@ import LoanSlider2 from '@/components/LoanSlider2';
 
 
 const imageList = [
-  '/lovable-uploads/purpose.png',
-  '/lovable-uploads/fee.png',
+  '/lovable-uploads/entity.png',
+  '/lovable-uploads/score.png',
   '/lovable-uploads/interest.png',
-  '/lovable-uploads/tenure.png',
+  '/lovable-uploads/fee.png',
 ];
-
-
 // Second slider images and texts
 const imageList2 = [
   '/lovable-uploads/lender.png',
-  '/lovable-uploads/repayment.png',
   '/lovable-uploads/loan.png',
-  '/lovable-uploads/score.png',
-
+  '/lovable-uploads/tenure.png',
+  '/lovable-uploads/repayment.png',
 ];
 
 const Index = () => {
@@ -64,14 +61,14 @@ const Index = () => {
   // Use translations for slider texts
   const imageTexts = [
     t('home.hero.second-heading.checks1'),
-    t('home.hero.second-heading.checks2'),
     t('home.hero.second-heading.checks3'),
-    t('home.hero.second-heading.checks4'),
+    t('home.hero.second-heading.checks5'),
+    t('home.hero.second-heading.checks7'),
   ];
   const imageTexts2 = [
-    t('home.hero.second-heading.checks5'),
+    t('home.hero.second-heading.checks2'),
+    t('home.hero.second-heading.checks4'),
     t('home.hero.second-heading.checks6'),
-    t('home.hero.second-heading.checks7'),
     t('home.hero.second-heading.checks8'),
   ];
 

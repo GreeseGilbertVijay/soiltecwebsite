@@ -7,7 +7,7 @@ interface LoanSlider1Props {
   className?: string;
 }
 
-const LoanSlider1 = ({ imageList, imageTexts, interval = 3000, className = '' }: LoanSlider1Props) => {
+const LoanSlider1 = ({ imageList, imageTexts, interval = 4000, className = '' }: LoanSlider1Props) => {
   const [currentImage, setCurrentImage] = useState(0);
   const [animate, setAnimate] = useState(false);
 
