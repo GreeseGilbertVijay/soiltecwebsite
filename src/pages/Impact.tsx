@@ -4,6 +4,7 @@ import LoanCalc from '@/components/LoanCalc';
 import { TrendingUp, Clock, Target, CheckCircle} from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
+import LoanSlider from '@/components/LoanSlider';
 
 const imageList = [
   '/lovable-uploads/purpose.png',
@@ -37,11 +38,6 @@ const Impact = () => {
   const [loanAmount, setLoanAmount] = useState(5000000);
   const [loanTenure, setLoanTenure] = useState(20);
   const [activeLoanType, setActiveLoanType] = useState('home');
-  const [currentImage, setCurrentImage] = useState(0);
-  const [animate, setAnimate] = useState(false);
-  // Second slider state
-  const [currentImage2, setCurrentImage2] = useState(0);
-  const [animate2, setAnimate2] = useState(false);
 
   // Update defaults when loan type changes
   useEffect(() => {
@@ -53,31 +49,6 @@ const Impact = () => {
       setLoanTenure(60);
     }
   }, [activeLoanType]);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setAnimate(false);
-      setTimeout(() => {
-        setCurrentImage((prev) => (prev + 1) % imageList.length);
-        setAnimate(true);
-      }, 100); // short delay to reset animation
-    }, 3000);
-    setAnimate(true);
-    return () => clearInterval(interval);
-  }, []);
-
-  // Second slider effect
-  useEffect(() => {
-    const interval2 = setInterval(() => {
-      setAnimate2(false);
-      setTimeout(() => {
-        setCurrentImage2((prev) => (prev + 1) % imageList2.length);
-        setAnimate2(true);
-      }, 100);
-    }, 3000);
-    setAnimate2(true);
-    return () => clearInterval(interval2);
-  }, []);
 
   const calculateEMI = (principal: number, rate: number, tenure: number) => {
     const monthlyRate = rate / (12 * 100);
@@ -242,18 +213,7 @@ const Impact = () => {
       <section className="relative text-black overflow-hidden">
         <div className="container flex flex-col md:flex-row items-center justify-center text-center md:text-left gap-6 md:gap-12">
           {/* Left Slider */}
-          <div className="flex-shrink-0 flex items-center justify-center w-full md:w-auto md:justify-start">
-            <img
-              key={currentImage}
-              src={imageList[currentImage]}
-              alt="Loan Visual"
-              className={`w-16 h-16 object-contain mx-auto md:mx-0 transition-all duration-700 ease-in-out ${animate ? 'slide-in-top' : ''}`}
-              style={{ minWidth: '48px', minHeight: '48px' }}
-            />
-            <div className="w-full text-center mt-2">
-              <span className="text-base font-semibold text-gray-700">{imageTexts[currentImage]}</span>
-            </div>
-          </div>
+          <LoanSlider imageList={imageList} imageTexts={imageTexts} className="flex-shrink-0 flex items-center justify-center w-full md:w-auto md:justify-start" />
           {/* Centered Heading and description */}
           <div className="flex-1 flex flex-col items-center justify-center text-center">
             <h2 className="font-bold">
@@ -264,18 +224,7 @@ const Impact = () => {
             </p>
           </div>
           {/* Right Slider */}
-          <div className="flex-shrink-0 flex items-center justify-center w-full md:w-auto md:justify-end">
-            <img
-              key={currentImage2}
-              src={imageList2[currentImage2]}
-              alt="Loan Visual 2"
-              className={`w-16 h-16 object-contain mx-auto md:mx-0 transition-all duration-700 ease-in-out ${animate2 ? 'slide-in-top' : ''}`}
-              style={{ minWidth: '48px', minHeight: '48px' }}
-            />
-            <div className="w-full text-center mt-2">
-              <span className="text-base font-semibold text-gray-700">{imageTexts2[currentImage2]}</span>
-            </div>
-          </div>
+          <LoanSlider imageList={imageList2} imageTexts={imageTexts2} className="flex-shrink-0 flex items-center justify-center w-full md:w-auto md:justify-end" />
         </div>
       </section>
       <LoanCalc />

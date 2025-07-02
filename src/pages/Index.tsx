@@ -4,25 +4,31 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { TrendingUp, ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import LoanSlider from '@/components/LoanSlider';
+
+
+const imageList = [
+  '/lovable-uploads/purpose.png',
+  '/lovable-uploads/fee.png',
+  '/lovable-uploads/interest.png',
+  '/lovable-uploads/tenure.png',
+];
+
+
+// Second slider images and texts
+const imageList2 = [
+  '/lovable-uploads/lender.png',
+  '/lovable-uploads/repayment.png',
+  '/lovable-uploads/loan.png',
+  '/lovable-uploads/score.png',
+
+];
 
 const Index = () => {
   const { t, currentLanguage } = useLanguage();
 
   // Add state for tada animation
   const [tada, setTada] = useState(false);
-
-  // Add state for text slider
-  const [currentTextIndex, setCurrentTextIndex] = useState(0);
-  const sliderTexts = [
-    'Purpose of Loan',
-    'Interest Rate',
-    'Loan Tenure',
-    'Processing Fees',
-    'Credit Score',
-    'Regulated Entity',
-    'Credibility of Lender',
-    'Repayment Flexibility'
-  ];
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -54,13 +60,19 @@ const Index = () => {
     return () => clearInterval(interval);
   }, []);
 
-  // Text slider effect
-  useEffect(() => {
-    const textInterval = setInterval(() => {
-      setCurrentTextIndex((prevIndex) => (prevIndex + 1) % sliderTexts.length);
-    }, 3000); // Change text every 3 seconds for better readability
-    return () => clearInterval(textInterval);
-  }, [sliderTexts.length]);
+  // Use translations for slider texts
+  const imageTexts = [
+    t('home.hero.second-heading.checks1'),
+    t('home.hero.second-heading.checks2'),
+    t('home.hero.second-heading.checks3'),
+    t('home.hero.second-heading.checks4'),
+  ];
+  const imageTexts2 = [
+    t('home.hero.second-heading.checks5'),
+    t('home.hero.second-heading.checks6'),
+    t('home.hero.second-heading.checks7'),
+    t('home.hero.second-heading.checks8'),
+  ];
 
   return (
     <div className="min-h-screen relative font-raleway" lang={currentLanguage}>
@@ -93,64 +105,6 @@ const Index = () => {
         @keyframes blink {
           from, to { opacity: 1; }
           50% { opacity: 0; }
-        }
-
-        /* Text slider animations */
-        .text-slider-container {
-          height: 60px;
-          overflow: hidden;
-          position: relative;
-        }
-
-        .text-slider {
-          transition: transform 0.8s ease-in-out;
-        }
-
-        .text-slide-up {
-          animation: slideUp 0.8s ease-in-out;
-        }
-
-        @keyframes slideUp {
-          0% {
-            transform: translateY(100%);
-            opacity: 0;
-          }
-          100% {
-            transform: translateY(0);
-            opacity: 1;
-          }
-        }
-
-        .text-slide-out {
-          animation: slideOut 0.8s ease-in-out;
-        }
-
-        @keyframes slideOut {
-          0% {
-            transform: translateY(0);
-            opacity: 1;
-          }
-          100% {
-            transform: translateY(-100%);
-            opacity: 0;
-          }
-        }
-
-        /* Enhanced slider with smooth transitions */
-        .text-slider h3 {
-          display: block;
-          animation: slideInFromBottom 0.8s ease-in-out;
-        }
-
-        @keyframes slideInFromBottom {
-          0% {
-            transform: translateY(100%);
-            opacity: 0;
-          }
-          100% {
-            transform: translateY(0);
-            opacity: 1;
-          }
         }
 
         /* Responsive breakpoints */
@@ -367,24 +321,16 @@ const Index = () => {
             </div>
 
             {/* Right Content - Images and Impact Card */}
-            <div className="flex flex-col gap-8 items-center">
-               {/*Second Header */}
-               <div className="flex flex-col gap-4 items-start max-w-sm w-full mx-auto">
-                <h2 className="text-white font-bold text-2xl text-left">Don't Miss These 7 Crucial Checks Before taking a Loan</h2>
-                <div className="text-slider-container w-full">
-                  <div className="text-slider">
-                    <h3 
-                      key={currentTextIndex}
-                      className="text-orange-500 font-bold text-left text-xl"
-                      style={{
-                        animation: 'slideInFromBottom 0.8s ease-in-out'
-                      }}
-                    >
-                      {sliderTexts[currentTextIndex]}
-                    </h3>
-                  </div>
-                </div>
-               </div>
+            <div className="flex flex-col gap-8 items-start">
+              <h3 className='text-xl font-bold'>{t('home.hero.second-heading.title')}</h3>
+              {/* Images Row */}
+              <div className="flex flex-col gap-4">
+                {/* first Slider */}
+              <LoanSlider imageList={imageList} imageTexts={imageTexts} />
+           {/* second Slider */}
+               <LoanSlider imageList={imageList2} imageTexts={imageTexts2} />
+              </div>
+
               {/* Impact Card */}
               <div className={`bg-gradient-to-br from-orange-500 to-orange-600 transition-all duration-500 rounded-3xl p-6 max-w-sm cursor-pointer transform shadow-2xl ${tada ? 'animate-tada' : ''}`}>
                 <Link to="/Impact" onClick={scrollToTop} className="block">

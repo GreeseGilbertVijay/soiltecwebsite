@@ -922,3 +922,19 @@
 .animate-tada {
   animation: tada 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
+
+/* Slide in from top to bottom */
+@keyframes slide-in-bottom {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-in-bottom {
+  animation: slide-in-bottom 0.7s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
