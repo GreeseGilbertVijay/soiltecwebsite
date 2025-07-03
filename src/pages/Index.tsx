@@ -237,7 +237,7 @@ const Index = () => {
              font-size: 20px;
           }
           p {
-            font-size: 18px;
+            font-size: 16px;
           }
           /* Non-English font sizes */
           [lang]:not([lang="en"]) h1 {
@@ -486,7 +486,7 @@ const Index = () => {
 
               {/* Impact Card */}
               <div
-                className={`impact-card bg-gradient-to-br from-orange-500 to-orange-600 transition-all duration-500 rounded-3xl p-6 max-w-3xs cursor-pointer transform shadow-2xl relative mx-auto ${tada ? 'animate-tada' : ''}`}
+                className={`impact-card bg-gradient-to-br from-orange-500 to-orange-600 transition-all duration-500 rounded-3xl p-6 max-w-[320px] cursor-pointer transform shadow-2xl relative mx-auto ${tada ? 'animate-tada' : ''}`}
                 onMouseEnter={handleImpactHover}
                 style={{overflow: 'visible'}}
               >
@@ -503,7 +503,7 @@ const Index = () => {
                     <div className="bg-white/20 p-1 rounded-xl animate-pulse-glow">
                       <TrendingUp className="text-white" size={20} />
                     </div>
-                    <h4 className="font-bold text-white pl-4">{t('home.hero.impact.title')}</h4>
+                    <h5 className="font-bold text-white pl-4">{t('home.hero.impact.title')}</h5>
                   </div>
                   <p className="text-white/95 leading-relaxed">
                     {t('home.hero.impact.description')}
