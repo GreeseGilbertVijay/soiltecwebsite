@@ -61,8 +61,7 @@ const Footer = () => {
                 <p> <a href="mailto:support@samatvaawareness.in" className="hover:text-orange-400 transition-colors">support@samatvaawareness.in</a></p>
               </div>
               <div className="text-sm">
-                <p className="font-medium text-white mb-2">CIN:</p>
-                <p>U70200TN2024PTC167249</p>
+                <p className="font-medium text-white mb-2">CIN: U70200TN2024PTC167249</p>
               </div>
               <div className="text-sm leading-relaxed">
                 <p className="font-medium text-white mb-2">{t('footer.address') || 'Address'}:</p>
