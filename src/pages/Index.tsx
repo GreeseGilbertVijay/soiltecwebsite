@@ -10,15 +10,15 @@ import LoanSlider2 from '@/components/LoanSlider2';
 
 const imageList = [
   '/lovable-uploads/entity.png',
+  '/lovable-uploads/lender.png',
   '/lovable-uploads/score.png',
-  '/lovable-uploads/interest.png',
-  '/lovable-uploads/fee.png',
+  '/lovable-uploads/loan.png',
 ];
 // Second slider images and texts
 const imageList2 = [
-  '/lovable-uploads/lender.png',
-  '/lovable-uploads/loan.png',
+  '/lovable-uploads/interest.png',
   '/lovable-uploads/tenure.png',
+  '/lovable-uploads/fee.png',
   '/lovable-uploads/repayment.png',
 ];
 
@@ -27,6 +27,14 @@ const Index = () => {
 
   // Add state for tada animation
   const [tada, setTada] = useState(false);
+
+  // Animation states for image fade-in
+  const [row1Visible, setRow1Visible] = useState(0); // how many images in row 1 are visible
+  const [row2Visible, setRow2Visible] = useState(0); // how many images in row 2 are visible
+  const [animating, setAnimating] = useState(true); // controls if animation is running
+
+  const totalRow1 = imageList.length;
+  const totalRow2 = imageList2.length;
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -51,24 +59,47 @@ const Index = () => {
   }, []);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setTada(true);
-      setTimeout(() => setTada(false), 1000); // duration of tada animation
-    }, 5000);
-    return () => clearInterval(interval);
-  }, []);
+    let timeout: NodeJS.Timeout;
+    let interval: NodeJS.Timeout;
+    if (animating) {
+      // Animate row 1
+      if (row1Visible < totalRow1) {
+        timeout = setTimeout(() => setRow1Visible(row1Visible + 1), 300);
+      } else if (row2Visible < totalRow2) {
+        // Animate row 2 after row 1
+        timeout = setTimeout(() => setRow2Visible(row2Visible + 1), 300);
+      } else {
+        // Both rows done, wait 5s, then reset
+        timeout = setTimeout(() => {
+          setRow1Visible(0);
+          setRow2Visible(0);
+        }, 5000);
+      }
+    }
+    return () => clearTimeout(timeout);
+  }, [row1Visible, row2Visible, animating]);
+
+  // Restart animation after reset
+  useEffect(() => {
+    if (row1Visible === 0 && row2Visible === 0 && animating) {
+      // Start animating again after reset
+      setTimeout(() => {
+        setRow1Visible(1);
+      }, 300);
+    }
+  }, [row1Visible, row2Visible, animating]);
 
   // Use translations for slider texts
   const imageTexts = [
     t('home.hero.second-heading.checks1'),
+    t('home.hero.second-heading.checks2'),
     t('home.hero.second-heading.checks3'),
-    t('home.hero.second-heading.checks5'),
-    t('home.hero.second-heading.checks7'),
+    t('home.hero.second-heading.checks4'),
   ];
   const imageTexts2 = [
-    t('home.hero.second-heading.checks2'),
-    t('home.hero.second-heading.checks4'),
+    t('home.hero.second-heading.checks5'),
     t('home.hero.second-heading.checks6'),
+    t('home.hero.second-heading.checks7'),
     t('home.hero.second-heading.checks8'),
   ];
 
@@ -297,6 +328,16 @@ const Index = () => {
             padding-right: 1rem;
           }
         }
+
+        .fade-in {
+          opacity: 0;
+          animation: fadeIn 0.7s forwards;
+        }
+        @keyframes fadeIn {
+          to {
+            opacity: 1;
+          }
+        }
       `}</style>
       
       <Navbar />
@@ -319,18 +360,55 @@ const Index = () => {
             </div>
 
             {/* Right Content - Images and Impact Card */}
-            <div className="flex flex-col mb-6 gap-8 items-start">
-              <h3 className='text-2xl font-bold'>{t('home.hero.second-heading.title')}</h3>
+            <div className="flex flex-col mb-6 gap-8 items-center">
               {/* Images Row */}
-              <div className="flex flex-col gap-4">
-                {/* first Slider */}
-                <LoanSlider1 imageList={imageList} imageTexts={imageTexts} className="rounded-xl p-2" />
-                {/* second Slider */}
-                <LoanSlider2 imageList={imageList2} imageTexts={imageTexts2} className="rounded-xl p-2" />
+              <div className="flex flex-col gap-2 w-full">
+                <h3 className='text-2xl font-bold text-center'>{t('home.hero.second-heading.title')}</h3>
+                
+                {/* first row of images */}
+                <div className="flex flex-row w-full gap-2 justify-between items-center">
+                  {imageList.map((img, idx) => (
+                    <div
+                      key={img}
+                      className="flex flex-col items-center justify-center flex-1 min-w-0 h-32"
+                      style={{ minWidth: 0 }}
+                    >
+                      <img
+                        src={img}
+                        alt={imageTexts[idx]}
+                        className={`rounded-xl p-2 w-16 h-16 object-contain bg-white/10 ${row1Visible > idx ? 'animate-fade-in' : ''}`}
+                      />
+                      <span className="mt-2 flex items-center justify-center text-center text-sm text-white font-medium w-full h-10 overflow-hidden">
+                        {row1Visible > idx ? imageTexts[idx] : ''}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+
+                 {/* first row of images */}
+                <div className="flex flex-row w-full gap-2 justify-between items-center">
+                  {imageList2.map((img, idx) => (
+                    <div
+                      key={img}
+                      className="flex flex-col items-center justify-center flex-1 min-w-0 h-32"
+                      style={{ minWidth: 0 }}
+                    >
+                      <img
+                        src={img}
+                        alt={imageTexts2[idx]}
+                        className={`rounded-xl p-2 w-16 h-16 object-contain bg-white/10 ${row2Visible > idx ? 'animate-fade-in' : ''}`}
+                      />
+                      <span className="mt-2 flex items-center justify-center text-center text-sm text-white font-medium w-full h-10 overflow-hidden">
+                        {row2Visible > idx ? imageTexts2[idx] : ''}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+               
               </div>
 
               {/* Impact Card */}
-              <div className={`bg-gradient-to-br from-orange-500 to-orange-600 transition-all duration-500 rounded-3xl p-6 max-w-sm cursor-pointer transform shadow-2xl ${tada ? 'animate-tada' : ''}`}>
+              <div className={`bg-gradient-to-br from-orange-500 to-orange-600 transition-all duration-500 rounded-3xl p-6 max-w-sm cursor-pointer transform shadow-2xl ${tada ? 'animate-tada' : ''} mx-auto`}>
                 <Link to="/Impact" onClick={scrollToTop} className="block">
                   <div className="flex items-center gap-2 mb-4">
                     <div className="bg-white/20 p-1 rounded-xl animate-pulse-glow">
