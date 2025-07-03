@@ -4,10 +4,6 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { TrendingUp, ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import LoanSlider1 from '@/components/LoanSlider1';
-import LoanSlider2 from '@/components/LoanSlider2';
-
-
 const imageList = [
   '/lovable-uploads/entity.png',
   '/lovable-uploads/lender.png',
@@ -364,6 +360,7 @@ const Index = () => {
               {/* Images Row */}
               <div className="flex flex-col gap-2 w-full">
                 <h3 className='text-2xl font-bold text-center'>{t('home.hero.second-heading.title')}</h3>
+                <h3 className='text-2xl font-bold text-center'>{t('home.hero.second-heading.title1')}</h3>
                 
                 {/* first row of images */}
                 <div className="flex flex-row w-full gap-2 justify-between items-center">
