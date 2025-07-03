@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { TrendingUp, ArrowRight } from 'lucide-react';
+import { TrendingUp, ArrowRight, PlayCircle } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 const imageList = [
   '/lovable-uploads/entity.png',
@@ -23,6 +23,10 @@ const Index = () => {
 
   // Add state for tada animation
   const [tada, setTada] = useState(false);
+  // Add state for wave animation
+  const [wave, setWave] = useState(false);
+  const waveTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const tadaTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   // Animation states for image fade-in
   const [row1Visible, setRow1Visible] = useState(0); // how many images in row 1 are visible
@@ -98,6 +102,35 @@ const Index = () => {
     t('home.hero.second-heading.checks7'),
     t('home.hero.second-heading.checks8'),
   ];
+
+  // Periodically trigger wave and tada animations
+  useEffect(() => {
+    const triggerWaveAndTada = () => {
+      setWave(true);
+      setTada(true);
+      // Remove wave after animation duration
+      waveTimeoutRef.current = setTimeout(() => setWave(false), 1200);
+      // Remove tada after animation duration
+      tadaTimeoutRef.current = setTimeout(() => setTada(false), 1000);
+    };
+    triggerWaveAndTada();
+    const interval = setInterval(triggerWaveAndTada, 4000);
+    return () => {
+      clearInterval(interval);
+      if (waveTimeoutRef.current) clearTimeout(waveTimeoutRef.current);
+      if (tadaTimeoutRef.current) clearTimeout(tadaTimeoutRef.current);
+    };
+  }, []);
+
+  // Trigger tada on hover
+  const handleImpactHover = () => {
+    setTada(true);
+    if (tadaTimeoutRef.current) clearTimeout(tadaTimeoutRef.current);
+    tadaTimeoutRef.current = setTimeout(() => setTada(false), 1000);
+  };
+
+  // Video play state for custom thumbnail
+  const [videoPlaying, setVideoPlaying] = useState(false);
 
   return (
     <div className="min-h-screen relative font-raleway" lang={currentLanguage}>
@@ -334,6 +367,53 @@ const Index = () => {
             opacity: 1;
           }
         }
+        /* Tada animation */
+        @keyframes tada {
+          0% { transform: scale3d(1, 1, 1); }
+          10%, 20% { transform: scale3d(0.9, 0.9, 0.9) rotate(-3deg); }
+          30%, 50%, 70%, 90% { transform: scale3d(1.1, 1.1, 1.1) rotate(3deg); }
+          40%, 60%, 80% { transform: scale3d(1.1, 1.1, 1.1) rotate(-3deg); }
+          100% { transform: scale3d(1, 1, 1); }
+        }
+        .animate-tada {
+          animation: tada 1s;
+        }
+        /* Impact Card hover scale */
+        .impact-card {
+          transition: transform 0.3s cubic-bezier(0.4,0,0.2,1), box-shadow 0.3s;
+        }
+        .impact-card:hover {
+          transform: scale(1.07);
+          box-shadow: 0 8px 32px 0 rgba(255,140,0,0.25);
+        }
+        /* Orange wave animation */
+        .impact-wave {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          width: 120%;
+          height: 120%;
+          pointer-events: none;
+          z-index: 1;
+        }
+        .impact-wave-animate {
+          animation: impactWaveSpread 1.2s cubic-bezier(0.4,0,0.2,1);
+        }
+        @keyframes impactWaveSpread {
+          0% {
+            opacity: 0.5;
+            transform: translate(-50%, -50%) scale(0.7);
+          }
+          60% {
+            opacity: 0.25;
+            transform: translate(-50%, -50%) scale(1.1);
+          }
+          100% {
+            opacity: 0;
+            transform: translate(-50%, -50%) scale(1.5);
+          }
+        }
       `}</style>
       
       <Navbar />
@@ -405,8 +485,20 @@ const Index = () => {
               </div>
 
               {/* Impact Card */}
-              <div className={`bg-gradient-to-br from-orange-500 to-orange-600 transition-all duration-500 rounded-3xl p-6 max-w-sm cursor-pointer transform shadow-2xl ${tada ? 'animate-tada' : ''} mx-auto`}>
-                <Link to="/Impact" onClick={scrollToTop} className="block">
+              <div
+                className={`impact-card bg-gradient-to-br from-orange-500 to-orange-600 transition-all duration-500 rounded-3xl p-6 max-w-xs cursor-pointer transform shadow-2xl relative mx-auto ${tada ? 'animate-tada' : ''}`}
+                onMouseEnter={handleImpactHover}
+                style={{overflow: 'visible'}}
+              >
+                {/* Orange wave effect */}
+                {wave && (
+                  <span className="impact-wave impact-wave-animate" style={{
+                    background: 'radial-gradient(circle, rgba(255,140,0,0.25) 0%, rgba(255,140,0,0.10) 60%, transparent 100%)',
+                    borderRadius: '50%',
+                    display: 'block',
+                  }} />
+                )}
+                <Link to="/Impact" onClick={scrollToTop} className="block relative z-10">
                   <div className="flex items-center gap-2 mb-4">
                     <div className="bg-white/20 p-1 rounded-xl animate-pulse-glow">
                       <TrendingUp className="text-white" size={20} />
@@ -541,15 +633,38 @@ const Index = () => {
           <h2 className="font-bold text-white mb-12 animate-fade-in">
             {t('home.videoSection.title')}
           </h2>
-          <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-black animate-scale-in">
-          <iframe
-            width="100%"
-            height="500"
-            src="https://www.youtube.com/embed/LryCtez2-yk?controls=0&rel=0&showinfo=0&modestbranding=1"
-            title="Samatva Credit Solutions"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-          />
+          <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-black animate-scale-in" style={{minHeight: 300}}>
+            {!videoPlaying ? (
+              <button
+                className="group w-full h-full block focus:outline-none"
+                style={{ position: 'relative', width: '100%', minHeight: 300 }}
+                onClick={() => setVideoPlaying(true)}
+                aria-label="Play video"
+              >
+                <img
+                  src="/lovable-uploads/thumbnail.png"
+                  alt="Samatva Credit Solutions Video Thumbnail"
+                  className="w-full h-[300px] sm:h-[500px] object-cover object-center block"
+                  style={{ display: 'block' }}
+                />
+                <span
+                  className="absolute inset-0 flex items-center justify-center"
+                  style={{ pointerEvents: 'none' }}
+                >
+                  <PlayCircle size={80} className="text-white/90 group-hover:text-orange-500 transition-colors drop-shadow-lg" />
+                </span>
+              </button>
+            ) : (
+              <iframe
+                width="100%"
+                height="500"
+                src="https://www.youtube.com/embed/LryCtez2-yk?autoplay=1&controls=0&rel=0&showinfo=0&modestbranding=1"
+                title="Samatva Credit Solutions"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                style={{ display: 'block', width: '100%', height: 500 }}
+              />
+            )}
           </div>
         </div>
       </section>

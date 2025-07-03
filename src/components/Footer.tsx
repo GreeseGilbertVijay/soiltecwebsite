@@ -14,6 +14,12 @@ const Footer = () => {
 
   return (
     <footer className="bg-slate-900 text-white border-t border-slate-700">
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+        .font-roboto {
+          font-family: 'Roboto', sans-serif;
+        }
+      `}</style>
       <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Company Info */}
@@ -46,7 +52,7 @@ const Footer = () => {
           </div>
 
           {/* Contact Info */}
-          <div className="col-span-1 md:col-span-1">
+          <div className="col-span-1 md:col-span-1 font-roboto">
             <h4 className="text-2xl font-bold mb-4 text-orange-500">{t('footer.contactInfo') || 'Contact Info'}</h4>
             <div className="space-y-3 text-slate-300">
               <div className="text-sm leading-relaxed">

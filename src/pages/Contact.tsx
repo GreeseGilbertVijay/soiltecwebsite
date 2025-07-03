@@ -99,8 +99,14 @@ const Contact = () => {
     
       {/* Contact Information */}
       <section className="py-16 bg-white">
+        <style>{`
+          @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+          .roboto-contact-info p {
+            font-family: 'Roboto', sans-serif !important;
+          }
+        `}</style>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 roboto-contact-info">
             
             {/* Contact Details */}
             <div>
@@ -113,7 +119,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h5 className=" font-semibold text-gray-900">{t('contact.email')}</h5>
-                    <p className="text-gray-600">support@samatvaawareness.in</p>
+                    <p className="text-gray-600"><a href="mailto:support@samatvaawareness.in" className="hover:underline">support@samatvaawareness.in</a></p>
                     <p className=" text-gray-500">{t('contact.emailDesc')}</p>
                   </div>
                 </div>
@@ -124,7 +130,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h5 className=" font-semibold text-gray-900">{t('contact.call')}</h5>
-                    <p className="text-gray-600">+91 63820 97967</p>
+                    <p className="text-gray-600"><a href="tel:+916382097967" className="hover:underline">+91 63820 97967</a></p>
                     <p className=" text-gray-500">{t('contact.callDesc')}</p>
                   </div>
                 </div>
