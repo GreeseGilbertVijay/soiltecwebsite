@@ -438,7 +438,7 @@ const Index = () => {
             {/* Right Content - Images and Impact Card */}
             <div className="flex flex-col mb-6 gap-8 items-center">
               {/* Images Row */}
-              <div className="flex flex-col gap-2 w-full">
+              <div className="flex flex-col gap-0 w-full">
                 <h3 className='text-2xl font-bold text-center'>{t('home.hero.second-heading.title')}</h3>
                 <h3 className='text-2xl font-bold text-center'>{t('home.hero.second-heading.title1')}</h3>
                 
@@ -486,7 +486,7 @@ const Index = () => {
 
               {/* Impact Card */}
               <div
-                className={`impact-card bg-gradient-to-br from-orange-500 to-orange-600 transition-all duration-500 rounded-3xl p-6 max-w-xs cursor-pointer transform shadow-2xl relative mx-auto ${tada ? 'animate-tada' : ''}`}
+                className={`impact-card bg-gradient-to-br from-orange-500 to-orange-600 transition-all duration-500 rounded-3xl p-6 max-w-3xs cursor-pointer transform shadow-2xl relative mx-auto ${tada ? 'animate-tada' : ''}`}
                 onMouseEnter={handleImpactHover}
                 style={{overflow: 'visible'}}
               >
