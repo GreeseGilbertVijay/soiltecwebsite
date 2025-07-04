@@ -30,12 +30,9 @@ const Index = () => {
   const tadaTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   // Animation states for image fade-in
-  const [row1Visible, setRow1Visible] = useState(0); // how many images in row 1 are visible
-  const [row2Visible, setRow2Visible] = useState(0); // how many images in row 2 are visible
-  const [animating, setAnimating] = useState(true); // controls if animation is running
-
-  const totalRow1 = imageList.length;
-  const totalRow2 = imageList2.length;
+  const [showRows, setShowRows] = useState(false);
+  const totalCells = imageList.length + imageList2.length;
+  const [visibleCells, setVisibleCells] = useState(0);
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -59,36 +56,14 @@ const Index = () => {
     return () => window.removeEventListener("message", handleMessage);
   }, []);
 
+  // Animation effect:
   useEffect(() => {
-    let timeout: NodeJS.Timeout;
-    let interval: NodeJS.Timeout;
-    if (animating) {
-      // Animate row 1
-      if (row1Visible < totalRow1) {
-        timeout = setTimeout(() => setRow1Visible(row1Visible + 1), 300);
-      } else if (row2Visible < totalRow2) {
-        // Animate row 2 after row 1
-        timeout = setTimeout(() => setRow2Visible(row2Visible + 1), 300);
-      } else {
-        // Both rows done, wait 5s, then reset
-        timeout = setTimeout(() => {
-          setRow1Visible(0);
-          setRow2Visible(0);
-        }, 5000);
-      }
+    let timeout;
+    if (showRows && visibleCells < totalCells) {
+      timeout = setTimeout(() => setVisibleCells(visibleCells + 1), 300);
     }
     return () => clearTimeout(timeout);
-  }, [row1Visible, row2Visible, animating]);
-
-  // Restart animation after reset
-  useEffect(() => {
-    if (row1Visible === 0 && row2Visible === 0 && animating) {
-      // Start animating again after reset
-      setTimeout(() => {
-        setRow1Visible(1);
-      }, 300);
-    }
-  }, [row1Visible, row2Visible, animating]);
+  }, [showRows, visibleCells, totalCells]);
 
   // Use translations for slider texts
   const imageTexts = [
@@ -133,6 +108,29 @@ const Index = () => {
   // Video play state for custom thumbnail
   const [videoPlaying, setVideoPlaying] = useState(false);
 
+  useEffect(() => {
+    let hideTimeout: NodeJS.Timeout;
+    let showTimeout: NodeJS.Timeout;
+
+    if (!showRows) {
+      // Show rows after 2 seconds
+      showTimeout = setTimeout(() => {
+        setShowRows(true);
+        setVisibleCells(0);
+      }, 2000);
+    } else if (visibleCells === totalCells) {
+      // Animation finished, hide after 2 seconds
+      hideTimeout = setTimeout(() => {
+        setShowRows(false);
+      }, 2000);
+    }
+
+    return () => {
+      if (hideTimeout) clearTimeout(hideTimeout);
+      if (showTimeout) clearTimeout(showTimeout);
+    };
+  }, [showRows, visibleCells, totalCells]);
+
   return (
     <div className="min-h-screen relative font-raleway" lang={currentLanguage}>
       <style>{`
@@ -145,6 +143,9 @@ const Index = () => {
 
         .font-roboto {
           font-family: 'Roboto', sans-serif;
+        }
+        .ml-1 {
+            color: #fff;
         }
 
         #chatbotIframe {
@@ -441,51 +442,40 @@ const Index = () => {
               {/* Images Row */}
               <div className="flex flex-col gap-0 w-full">
               <AnimatedText
-
                  text={[t('home.hero.second-heading.title'), t('home.hero.second-heading.title1')]}
                      className="text-lg font-bold text-center"
                      repeatDelay={10000}
                    />                
-                {/* first row of images */}
-                <div className="grid grid-cols-2 md:grid-cols-4 w-full gap-2">
-                  {imageList.map((img, idx) => (
-                    <div
-                      key={img}
-                      className="flex flex-col items-center justify-center flex-1 min-w-0 h-32"
-                      style={{minWidth: 0 }}
-                    >
-                      <img
-                        src={img}
-                        alt={imageTexts[idx]}
-                        className={`rounded-xl p-2 w-16 h-16 object-contain bg-white/10 ${row1Visible > idx ? 'animate-fade-in' : ''}`}
-                      />
-                      <span className="mt-2 flex items-center justify-center text-center text-sm text-white font-medium w-full h-10 overflow-hidden">
-                        {row1Visible > idx ? imageTexts[idx] : ''}
-                      </span>
-                    </div>
-                  ))}
+                <div className={`transition-opacity duration-700 ${showRows ? 'opacity-100' : 'opacity-0'}`}>
+                  <div className="grid grid-cols-2 md:grid-cols-4 w-full gap-2">
+                    {imageList.map((img, idx) => (
+                      <div key={img} className="flex flex-col items-center justify-center flex-1 min-w-0 h-32" style={{minWidth: 0}}>
+                        <img
+                          src={img}
+                          alt={imageTexts[idx]}
+                          className={`rounded-xl p-2 w-16 h-16 object-contain bg-white/10 transition-all duration-500 ${visibleCells > idx ? 'opacity-100 animate-fade-in' : 'opacity-0'}`}
+                        />
+                        <span className={`mt-2 flex items-center justify-center text-center text-sm text-white font-medium w-full h-10 overflow-hidden transition-all duration-500 ${visibleCells > idx ? 'opacity-100' : 'opacity-0'}`}>
+                          {visibleCells > idx ? imageTexts[idx] : ''}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="grid grid-cols-2 md:grid-cols-4 w-full gap-2">
+                    {imageList2.map((img, idx) => (
+                      <div key={img} className="flex flex-col items-center justify-center flex-1 min-w-0 h-32" style={{minWidth: 0}}>
+                        <img
+                          src={img}
+                          alt={imageTexts2[idx]}
+                          className={`rounded-xl p-2 w-16 h-16 object-contain bg-white/10 transition-all duration-500 ${visibleCells > (idx + imageList.length) ? 'opacity-100 animate-fade-in' : 'opacity-0'}`}
+                        />
+                        <span className={`mt-2 flex items-center justify-center text-center text-sm text-white font-medium w-full h-10 overflow-hidden transition-all duration-500 ${visibleCells > (idx + imageList.length) ? 'opacity-100' : 'opacity-0'}`}>
+                          {visibleCells > (idx + imageList.length) ? imageTexts2[idx] : ''}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-
-                 {/* first row of images */}
-                <div className="grid grid-cols-2 md:grid-cols-4 w-full gap-2">
-                  {imageList2.map((img, idx) => (
-                    <div
-                      key={img}
-                      className="flex flex-col items-center justify-center flex-1 min-w-0 h-32"
-                      style={{ minWidth: 0 }}
-                    >
-                      <img
-                        src={img}
-                        alt={imageTexts2[idx]}
-                        className={`rounded-xl p-2 w-16 h-16 object-contain bg-white/10 ${row2Visible > idx ? 'animate-fade-in' : ''}`}
-                      />
-                      <span className="mt-2 flex items-center justify-center text-center text-sm text-white font-medium w-full h-10 overflow-hidden">
-                        {row2Visible > idx ? imageTexts2[idx] : ''}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-               
               </div>
 
               {/* Impact Card */}
@@ -956,27 +946,44 @@ export const AnimatedText = ({
   const textArray = Array.isArray(text) ? text : [text];
   const ref = useRef(null);
   const isInView = useInView(ref, { amount: 0.5, once });
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
-    let timeout: NodeJS.Timeout;
-    const show = () => {
-      controls.start("visible");
-      if (repeatDelay) {
-        timeout = setTimeout(async () => {
-          await controls.start("hidden");
-          controls.start("visible");
-        }, repeatDelay);
-      }
+    let isMounted = true;
+    let isVisible = true;
+
+    const show = async () => {
+      await controls.start("visible");
+      isVisible = true;
+    };
+    const hide = async () => {
+      await controls.start("hidden");
+      isVisible = false;
+    };
+
+    const loop = async () => {
+      if (!isMounted) return;
+      await show();
+      if (!isMounted) return;
+      timeoutRef.current = setTimeout(async () => {
+        await hide();
+        if (!isMounted) return;
+        // Immediately start next loop
+        loop();
+      }, 3000); // 2 seconds visible
     };
 
     if (isInView) {
-      show();
+      loop();
     } else {
       controls.start("hidden");
     }
 
-    return () => clearTimeout(timeout);
-  }, [isInView]);
+    return () => {
+      isMounted = false;
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    };
+  }, [isInView, controls]);
 
   return (
     <Wrapper className={className}>
