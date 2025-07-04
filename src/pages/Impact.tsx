@@ -23,9 +23,9 @@ const imageTexts = [
 
 // Second slider images and texts
 const imageList2 = [
-  '/lovable-uploads/interest.png',
+  '/lovable-uploads/lender.png',
+  '/lovable-uploads/loan.png',
   '/lovable-uploads/tenure.png',
-  '/lovable-uploads/fee.png',
   '/lovable-uploads/repayment.png',
 ];
 const imageTexts2 = [

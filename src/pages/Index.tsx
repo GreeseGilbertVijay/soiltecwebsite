@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { TrendingUp, ArrowRight, PlayCircle } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { motion, useInView, useAnimation, Variant } from "framer-motion";
 const imageList = [
   '/lovable-uploads/entity.png',
   '/lovable-uploads/lender.png',
@@ -424,7 +425,7 @@ const Index = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center">
             {/* Left Content */}
             <div className="text-left animate-fade-in">
-              <h1 className="font-bold mb-2">
+              <h1 className="font-bold mt-4 mb-2">
                 {t('home.hero.title1')}
               </h1>
               <h1 className="text-orange-500 font-bold mb-8">
@@ -439,16 +440,19 @@ const Index = () => {
             <div className="flex flex-col mb-6 gap-8 items-center">
               {/* Images Row */}
               <div className="flex flex-col gap-0 w-full">
-                <h3 className='text-2xl font-bold text-center'>{t('home.hero.second-heading.title')}</h3>
-                <h3 className='text-2xl font-bold text-center'>{t('home.hero.second-heading.title1')}</h3>
-                
+              <AnimatedText
+
+                 text={[t('home.hero.second-heading.title'), t('home.hero.second-heading.title1')]}
+                     className="text-lg font-bold text-center"
+                     repeatDelay={10000}
+                   />                
                 {/* first row of images */}
-                <div className="flex flex-row w-full gap-2 justify-between items-center">
+                <div className="grid grid-cols-2 md:grid-cols-4 w-full gap-2">
                   {imageList.map((img, idx) => (
                     <div
                       key={img}
                       className="flex flex-col items-center justify-center flex-1 min-w-0 h-32"
-                      style={{ minWidth: 0 }}
+                      style={{minWidth: 0 }}
                     >
                       <img
                         src={img}
@@ -463,7 +467,7 @@ const Index = () => {
                 </div>
 
                  {/* first row of images */}
-                <div className="flex flex-row w-full gap-2 justify-between items-center">
+                <div className="grid grid-cols-2 md:grid-cols-4 w-full gap-2">
                   {imageList2.map((img, idx) => (
                     <div
                       key={img}
@@ -911,6 +915,102 @@ const Index = () => {
 
       <Footer />
     </div>
+  );
+};
+
+type AnimatedTextProps = {
+  text: string | string[];
+  el?: keyof JSX.IntrinsicElements;
+  className?: string;
+  once?: boolean;
+  repeatDelay?: number;
+  animation?: {
+    hidden: Variant;
+    visible: Variant;
+  };
+};
+
+const defaultAnimations = {
+  hidden: {
+    opacity: 0,
+    y: 20,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.1,
+    },
+  },
+};
+
+export const AnimatedText = ({
+  text,
+  el: Wrapper = "p",
+  className,
+  once,
+  repeatDelay,
+  animation = defaultAnimations,
+}: AnimatedTextProps) => {
+  const controls = useAnimation();
+  const textArray = Array.isArray(text) ? text : [text];
+  const ref = useRef(null);
+  const isInView = useInView(ref, { amount: 0.5, once });
+
+  useEffect(() => {
+    let timeout: NodeJS.Timeout;
+    const show = () => {
+      controls.start("visible");
+      if (repeatDelay) {
+        timeout = setTimeout(async () => {
+          await controls.start("hidden");
+          controls.start("visible");
+        }, repeatDelay);
+      }
+    };
+
+    if (isInView) {
+      show();
+    } else {
+      controls.start("hidden");
+    }
+
+    return () => clearTimeout(timeout);
+  }, [isInView]);
+
+  return (
+    <Wrapper className={className}>
+      <span className="sr-only">{textArray.join(" ")}</span>
+      <motion.span
+        ref={ref}
+        initial="hidden"
+        animate={controls}
+        variants={{
+          visible: { transition: { staggerChildren: 0.1 } },
+          hidden: {},
+        }}
+        aria-hidden
+      >
+        {textArray.map((line, lineIndex) => (
+          <span className="block" key={`${line}-${lineIndex}`}>
+            {line.split(" ").map((word, wordIndex) => (
+              <span className="inline-block" key={`${word}-${wordIndex}`}>
+                {word.split("").map((char, charIndex) => (
+                  <motion.span
+                    key={`${char}-${charIndex}`}
+                    className="inline-block"
+                    variants={animation}
+                  >
+                    {char}
+                  </motion.span>
+                ))}
+                <span className="inline-block">&nbsp;</span>
+              </span>
+            ))}
+          </span>
+        ))}
+      </motion.span>
+    </Wrapper>
   );
 };
 
