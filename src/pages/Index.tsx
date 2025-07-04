@@ -60,7 +60,7 @@ const Index = () => {
   useEffect(() => {
     let timeout;
     if (showRows && visibleCells < totalCells) {
-      timeout = setTimeout(() => setVisibleCells(visibleCells + 1), 300);
+      timeout = setTimeout(() => setVisibleCells(visibleCells + 1), 600);
     }
     return () => clearTimeout(timeout);
   }, [showRows, visibleCells, totalCells]);
