@@ -117,7 +117,7 @@ const Index = () => {
       showTimeout = setTimeout(() => {
         setShowRows(true);
         setVisibleCells(0);
-      }, 4000);
+      }, 2000);
     } else if (visibleCells === totalCells) {
       // Animation finished, hide after 2 seconds
       hideTimeout = setTimeout(() => {
