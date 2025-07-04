@@ -441,11 +441,10 @@ const Index = () => {
             <div className="flex flex-col mb-6 gap-8 items-center">
               {/* Images Row */}
               <div className="flex flex-col gap-0 w-full">
-              <AnimatedText
-                 text={[t('home.hero.second-heading.title'), t('home.hero.second-heading.title1')]}
-                     className="text-lg font-bold text-center"
-                     repeatDelay={10000}
-                   />                
+                <div className={`text-lg font-bold text-center transition-opacity duration-700 ${showRows ? 'opacity-100' : 'opacity-0'}`}>
+                  <h3 className='text-lg'>{t('home.hero.second-heading.title')}</h3>
+                  <h3 className='text-lg'>{t('home.hero.second-heading.title1')}</h3>
+                </div>
                 <div className={`transition-opacity duration-700 ${showRows ? 'opacity-100' : 'opacity-0'}`}>
                   <div className="grid grid-cols-2 md:grid-cols-4 w-full gap-2">
                     {imageList.map((img, idx) => (
@@ -905,119 +904,6 @@ const Index = () => {
 
       <Footer />
     </div>
-  );
-};
-
-type AnimatedTextProps = {
-  text: string | string[];
-  el?: keyof JSX.IntrinsicElements;
-  className?: string;
-  once?: boolean;
-  repeatDelay?: number;
-  animation?: {
-    hidden: Variant;
-    visible: Variant;
-  };
-};
-
-const defaultAnimations = {
-  hidden: {
-    opacity: 0,
-    y: 20,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.1,
-    },
-  },
-};
-
-export const AnimatedText = ({
-  text,
-  el: Wrapper = "p",
-  className,
-  once,
-  repeatDelay,
-  animation = defaultAnimations,
-}: AnimatedTextProps) => {
-  const controls = useAnimation();
-  const textArray = Array.isArray(text) ? text : [text];
-  const ref = useRef(null);
-  const isInView = useInView(ref, { amount: 0.5, once });
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
-
-  useEffect(() => {
-    let isMounted = true;
-    let isVisible = true;
-
-    const show = async () => {
-      await controls.start("visible");
-      isVisible = true;
-    };
-    const hide = async () => {
-      await controls.start("hidden");
-      isVisible = false;
-    };
-
-    const loop = async () => {
-      if (!isMounted) return;
-      await show();
-      if (!isMounted) return;
-      timeoutRef.current = setTimeout(async () => {
-        await hide();
-        if (!isMounted) return;
-        // Immediately start next loop
-        loop();
-      }, 3000); // 2 seconds visible
-    };
-
-    if (isInView) {
-      loop();
-    } else {
-      controls.start("hidden");
-    }
-
-    return () => {
-      isMounted = false;
-      if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    };
-  }, [isInView, controls]);
-
-  return (
-    <Wrapper className={className}>
-      <span className="sr-only">{textArray.join(" ")}</span>
-      <motion.span
-        ref={ref}
-        initial="hidden"
-        animate={controls}
-        variants={{
-          visible: { transition: { staggerChildren: 0.1 } },
-          hidden: {},
-        }}
-        aria-hidden
-      >
-        {textArray.map((line, lineIndex) => (
-          <span className="block" key={`${line}-${lineIndex}`}>
-            {line.split(" ").map((word, wordIndex) => (
-              <span className="inline-block" key={`${word}-${wordIndex}`}>
-                {word.split("").map((char, charIndex) => (
-                  <motion.span
-                    key={`${char}-${charIndex}`}
-                    className="inline-block"
-                    variants={animation}
-                  >
-                    {char}
-                  </motion.span>
-                ))}
-                <span className="inline-block">&nbsp;</span>
-              </span>
-            ))}
-          </span>
-        ))}
-      </motion.span>
-    </Wrapper>
   );
 };
 
