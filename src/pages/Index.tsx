@@ -117,12 +117,12 @@ const Index = () => {
       showTimeout = setTimeout(() => {
         setShowRows(true);
         setVisibleCells(0);
-      }, 2000);
+      }, 4000);
     } else if (visibleCells === totalCells) {
       // Animation finished, hide after 2 seconds
       hideTimeout = setTimeout(() => {
         setShowRows(false);
-      }, 2000);
+      }, 4000);
     }
 
     return () => {
