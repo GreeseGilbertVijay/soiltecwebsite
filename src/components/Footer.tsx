@@ -27,9 +27,9 @@ const Footer = () => {
             <div className="flex items-center space-x-3 mb-6">
               <Link to="/" onClick={scrollToTop}>
                 <img 
-                  src="/lovable-uploads/samatvafooterlogo.png" 
+                  src="/lovable-uploads/samatvalogosvg.png" 
                   alt="Samatva Awareness" 
-                  className="h-16 w-auto"
+                  className="h-24 w-auto"
                 />
               </Link>
             </div>

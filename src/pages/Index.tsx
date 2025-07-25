@@ -202,7 +202,7 @@ const Index = () => {
             font-size: 36px;
           }
           [lang]:not([lang="en"]) h3 {
-            font-size: 28px;
+            font-size: 26px;
           }
           [lang]:not([lang="en"]) h5 {
             font-size: 24px;
@@ -227,7 +227,7 @@ const Index = () => {
             font-size: 48px;
           }
           h3 {
-            font-size: 28px;
+            font-size: 26px;
           }
           h4{
             font-size: 24px;
@@ -249,7 +249,7 @@ const Index = () => {
             font-size: 28px;
           }
           [lang]:not([lang="en"]) h3 {
-            font-size: 24px;
+            font-size: 22px;
           }
           [lang]:not([lang="en"]) h5 {
             font-size: 20px;
@@ -258,7 +258,7 @@ const Index = () => {
             font-size: 18px;
           }
           [lang]:not([lang="en"]) p {
-            font-size: 18px;
+            font-size: 16px;
           }
         }
 
@@ -273,7 +273,7 @@ const Index = () => {
             font-size: 28px;
           }
           h3 {
-            font-size: 24px;
+            font-size: 20px;
           }
           h4{
             font-size: 28px;
@@ -296,7 +296,7 @@ const Index = () => {
             font-size: 24px;
           }
           [lang]:not([lang="en"]) h3 {
-            font-size: 20px;
+            font-size: 18px;
           }
           [lang]:not([lang="en"]) h5 {
             font-size: 16px;
@@ -332,7 +332,7 @@ const Index = () => {
           font-size: 16px;
           }
           p {
-            font-size: 14px;
+            font-size: 12px;
          
           /* Non-English font sizes */
           [lang]:not([lang="en"]) h1 {
@@ -351,7 +351,7 @@ const Index = () => {
             font-size: 16px;
           }
           [lang]:not([lang="en"]) p {
-            font-size: 14px;
+            font-size: 12px;
           }
           .container {
             max-width: 100%;
@@ -442,8 +442,8 @@ const Index = () => {
               {/* Images Row */}
               <div className="flex flex-col gap-0 w-full">
                 <div className={`text-lg font-bold text-center transition-opacity duration-700 ${showRows ? 'opacity-100' : 'opacity-0'}`}>
-                  <h3 className='text-lg'>{t('home.hero.second-heading.title')}</h3>
-                  <h3 className='text-lg'>{t('home.hero.second-heading.title1')}</h3>
+                  <h3 className='text-base'>{t('home.hero.second-heading.title')}</h3>
+                  <h3 className='text-base'>{t('home.hero.second-heading.title1')}</h3>
                 </div>
                 <div className={`transition-opacity duration-700 ${showRows ? 'opacity-100' : 'opacity-0'}`}>
                   <div className="grid grid-cols-2 md:grid-cols-4 w-full gap-2">
@@ -454,7 +454,7 @@ const Index = () => {
                           alt={imageTexts[idx]}
                           className={`rounded-xl p-2 w-16 h-16 object-contain bg-white/10 transition-all duration-500 ${visibleCells > idx ? 'opacity-100 animate-fade-in' : 'opacity-0'}`}
                         />
-                        <span className={`mt-2 flex items-center justify-center text-center text-sm text-white font-medium w-full h-10 overflow-hidden transition-all duration-500 ${visibleCells > idx ? 'opacity-100' : 'opacity-0'}`}>
+                        <span className={`mt-2 flex items-center justify-center text-center text-xs text-white font-medium w-full h-10 overflow-hidden transition-all duration-500 ${visibleCells > idx ? 'opacity-100' : 'opacity-0'}`}>
                           {visibleCells > idx ? imageTexts[idx] : ''}
                         </span>
                       </div>
@@ -468,7 +468,7 @@ const Index = () => {
                           alt={imageTexts2[idx]}
                           className={`rounded-xl p-2 w-16 h-16 object-contain bg-white/10 transition-all duration-500 ${visibleCells > (idx + imageList.length) ? 'opacity-100 animate-fade-in' : 'opacity-0'}`}
                         />
-                        <span className={`mt-2 flex items-center justify-center text-center text-sm text-white font-medium w-full h-10 overflow-hidden transition-all duration-500 ${visibleCells > (idx + imageList.length) ? 'opacity-100' : 'opacity-0'}`}>
+                        <span className={`mt-2 flex items-center justify-center text-center text-xs text-white font-medium w-full h-10 overflow-hidden transition-all  duration-500 ${visibleCells > (idx + imageList.length) ? 'opacity-100' : 'opacity-0'}`}>
                           {visibleCells > (idx + imageList.length) ? imageTexts2[idx] : ''}
                         </span>
                       </div>
@@ -479,7 +479,7 @@ const Index = () => {
 
               {/* Impact Card */}
               <div
-                className={`impact-card bg-gradient-to-br from-orange-500 to-orange-600 transition-all duration-500 rounded-3xl p-6 max-w-[320px] cursor-pointer transform shadow-2xl relative mx-auto ${tada ? 'animate-tada' : ''}`}
+                className={`impact-card bg-gradient-to-br from-orange-500 to-orange-600 transition-all duration-500 rounded-3xl p-6 max-w-[400px] cursor-pointer transform shadow-2xl relative mx-auto ${tada ? 'animate-tada' : ''}`}
                 onMouseEnter={handleImpactHover}
                 style={{overflow: 'visible'}}
               >
