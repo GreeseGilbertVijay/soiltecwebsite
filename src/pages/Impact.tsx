@@ -1,11 +1,9 @@
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import LoanCalc from '@/components/LoanCalc';
 import { TrendingUp, Clock, Target, CheckCircle} from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-import LoanSlider1 from '@/components/LoanSlider1';
-import LoanSlider2 from '@/components/LoanSlider2';
+
 
 const imageList = [
   '/lovable-uploads/entity.png',
@@ -214,7 +212,6 @@ const Impact = () => {
       <section className="relative text-black overflow-hidden">
         <div className="container flex flex-col md:flex-row items-center justify-center text-center md:text-left gap-6 md:gap-12">
           {/* Left Slider */}
-          <LoanSlider1 imageList={imageList} imageTexts={imageTexts} className="flex-shrink-0 flex items-center justify-center w-full md:w-auto md:justify-start" />
           {/* Centered Heading and description */}
           <div className="flex-1 flex flex-col items-center justify-center text-center">
             <h2 className="font-bold">
@@ -225,10 +222,8 @@ const Impact = () => {
             </p>
           </div>
           {/* Right Slider */}
-          <LoanSlider2 imageList={imageList2} imageTexts={imageTexts2} className="flex-shrink-0 flex items-center justify-center w-full md:w-auto md:justify-end" />
         </div>
       </section>
-      <LoanCalc />
      {/* The Good News About Credit Scores */}
       <section className="py-4 bg-slate-900">
         <div className='max-w-6xl mx-auto p-4'>

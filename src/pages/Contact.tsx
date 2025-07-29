@@ -1,6 +1,5 @@
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import Form from '@/components/Form';
 import { Mail, Phone, Clock, CheckCircle } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -208,9 +207,6 @@ const Contact = () => {
           </div>
         </div>
       </section>
-
-      {/* Contact Form Componet File */}
-      <Form/>
 
       {/* Google Maps Section */}
       <section className="w-full h-[300px]">
