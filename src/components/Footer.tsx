@@ -64,7 +64,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-8 pt-8 border-t border-slate-700">
+        <div className="mt-8 pt-8 border-t border-slate-200">
           <div className="flex flex-col items-center space-y-4">
             <p className="text-black text-sm text-center">
               {t('footer.copyright') || '© 2025  Soiltec Piling & Foundation. All rights reserved.'}
