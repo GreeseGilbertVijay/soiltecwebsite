@@ -1,10 +1,10 @@
-import { useLanguage } from '@/contexts/LanguageContext';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import ImageSlider from '../components/ImageSlider';
 import { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
+import { useLanguage } from '@/contexts/LanguageContext';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
+import ImageSlider from '@/components/ImageSlider';
 
 const Index = () => {
   const { currentLanguage } = useLanguage();
@@ -31,77 +31,102 @@ const Index = () => {
       <ImageSlider />
 
       {/* Hero Section */}
-      <section className="relative h-[85vh] bg-cover bg-center bg-no-repeat flex items-center justify-center px-4"
-        style={{ backgroundImage: `url('/assets/hero-foundation.jpg')` }}>
-        <div className="bg-black bg-opacity-70 p-6 md:p-10 rounded-2xl text-center max-w-3xl w-full">
-          <h1 className="text-3xl md:text-5xl font-extrabold text-white mb-4 leading-tight">
-            Soiltec Piling and Foundation
+      <section
+        className="relative py-20 bg-white bg-cover bg-center flex items-center justify-center text-center px-6"
+      >
+        <div className="bg-black/80 backdrop-blur-md p-10 rounded-3xl shadow-lg max-w-3xl w-full">
+          <h1 className="text-2xl md:text-4xl font-extrabold text-white mb-4">
+            Foundation for the Future
           </h1>
-          <p className="text-md md:text-xl text-gray-200 mb-6">
-            Geotechnical and Foundation Engineering Experts in Dubai
+          <p className="text-lg md:text-xl text-white mb-6">
+            Dubai’s trusted experts in piling, foundation, and soil engineering solutions.
           </p>
           <Link
             to="/contact"
-            className="inline-block bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-3 px-8 rounded-full transition duration-300"
+            className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 px-8 rounded-full shadow-md transition-all"
           >
-            Get a Quote
+            Get a Free Quote
           </Link>
         </div>
       </section>
 
       {/* Who We Are */}
-      <section className="py-16 px-4 md:px-20 bg-gray-100">
-        <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Who We Are</h2>
-          <p className="text-base md:text-lg text-gray-700 leading-relaxed">
-            Soiltec is a trusted name in geotechnical engineering, offering specialized solutions in piling, shoring, soil investigation, and deep foundations. Based in Dubai, we serve clients across the UAE with excellence, safety, and reliability.
+      <section className="py-12 bg-gray-200 px-6">
+        <div className="max-w-6xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Who We Are</h2>
+          <p className="text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto">
+            Soiltec is a pioneering piling and foundation company in Dubai, delivering robust engineering
+            solutions that support commercial, residential, and infrastructure projects across the UAE. Our expertise lies in piling, shoring, soil improvement, and foundation consulting — ensuring your structures start strong and stay strong.
           </p>
         </div>
       </section>
 
-      {/* Services */}
-      <section className="py-16 px-4 md:px-20 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-10">Our Services</h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Service Card */}
+      {/* Services Section */}
+      <section className="py-20 bg-white px-6">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">Our Core Services</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                icon: '/assets/icon-piling.svg',
-                title: 'Piling Services',
-                desc: 'End-bearing and friction piles for all soil conditions using modern equipment.',
+                icon: '/images/piling-icon.png',
+                title: 'Piling Works',
+                desc: 'High-performance bored, CFA, and driven piles tailored to your soil conditions.',
               },
               {
-                icon: '/assets/icon-foundation.svg',
+                icon: '/images/foundation-icon.png',
                 title: 'Foundation Design',
-                desc: 'Tailored foundation solutions to ensure structural integrity and long-term stability.',
+                desc: 'Engineered foundation systems for lasting structural integrity and safety.',
               },
               {
-                icon: '/assets/icon-shoring.svg',
-                title: 'Shoring & Retaining',
-                desc: 'Safe excavation support and retaining systems for deep foundation works.',
+                icon: '/images/shoring-icon.png',
+                title: 'Shoring Systems',
+                desc: 'Secant and contiguous pile walls to protect excavations and surrounding structures.',
+              },
+              {
+                icon: '/images/soil-icon.png',
+                title: 'Soil Stabilization',
+                desc: 'Ground improvement techniques including vibro compaction and grouting.',
+              },
+              {
+                icon: '/images/geotechnical-icon.png',
+                title: 'Geotechnical Investigation',
+                desc: 'Comprehensive soil testing and analysis for project-specific engineering reports.',
+              },
+              {
+                icon: '/images/engineering-icon.png',
+                title: 'Engineering Consulting',
+                desc: 'Professional geotechnical consulting from concept to construction.',
               },
             ].map((service, index) => (
-              <div key={index} className="bg-gray-50 p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300 text-center">
-                <img src={service.icon} alt={service.title} className="mx-auto mb-4 w-16 h-16 object-contain" />
-                <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-                <p className="text-gray-600 text-sm">{service.desc}</p>
+              <div
+                key={index}
+                className="bg-gray-100 p-8 rounded-2xl text-center shadow-md hover:shadow-xl transition duration-300"
+              >
+                <img
+                  src={service.icon}
+                  alt={service.title}
+                  className="w-16 h-16 mx-auto mb-4"
+                />
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">{service.title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{service.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-16 px-4 md:px-20 bg-yellow-500 text-white text-center">
+      {/* CTA Section */}
+      <section className="py-20 px-6 bg-gray-100 text-white text-center">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to start your next project?</h2>
-          <p className="text-base md:text-lg mb-6">
-            Contact Soiltec today for expert advice and a competitive quote.
+          <h2 className="text-3xl text-black md:text-4xl font-bold mb-4">
+            Build Your Project on Solid Ground
+          </h2>
+          <p className="text-lg text-black mb-6">
+            Speak with our geotechnical experts to get a customized foundation plan and quote.
           </p>
           <Link
             to="/contact"
-            className="inline-block bg-white text-yellow-600 font-bold py-3 px-8 rounded-full hover:bg-gray-200 transition duration-300"
+            className="bg-white text-yellow-600 font-semibold py-3 px-8 rounded-full hover:bg-gray-200 transition"
           >
             Contact Us
           </Link>

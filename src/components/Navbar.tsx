@@ -29,17 +29,15 @@ const Navbar = () => {
   const fontSize = currentLanguage === 'en' ? '16px' : '14px';
 
   return (
-    <nav className="sticky top-0 z-50 border-b border-slate-300 bg-white bg-opacity-80 backdrop-blur bg-gradient-to-r from-[#fff] to-[#fff] shadow-md transition-all duration-300">
-      <div className="h-2 w-full" />
-
-      <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-0">
+    <nav className="sticky z-50 border-b border-slate-300 bg-white bg-opacity-80 backdrop-blur bg-gradient-to-r from-[#fff] to-[#fff] shadow-md transition-all duration-300">
+      <div className="max-w-7xl mx-auto">
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0 flex items-center">
             <Link to="/" className="flex items-center" onClick={scrollToTop}>
               <img
                 src="/images/soiltec.png"
                 alt="Samatva Awareness"
-                className="h-10 w-auto object-cover"
+                className="h-8 w-auto object-cover"
               />
             </Link>
           </div>

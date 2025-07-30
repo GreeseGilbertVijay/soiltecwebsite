@@ -1,13 +1,6 @@
-
-import React from 'react';
 import { ChevronDown, Languages } from 'lucide-react';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
-import { useLanguage, languages, type Language } from '@/contexts/LanguageContext';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger} from '@/components/ui/dropdown-menu';
+import { useLanguage, languages } from '@/contexts/LanguageContext';
 
 const LanguageSwitcher = () => {
   const { currentLanguage, changeLanguage } = useLanguage();
