@@ -2,75 +2,61 @@
   "nav": {
     "home": "Home",
     "about": "About Us",
-    "services": "Services",
-    "creditHealth": "Credit Health",
-    "impact": "Impact",
-    "faq": "FAQs",
+    "activities": "Activities",
+    "projects": "Projects",
+    "gallery": "Gallery",
+    "clients": "Clients",
+    "equipments": "Equipments",
+    "policies": "Policies",
     "contact": "Contact Us"
+  },
+    "footer": {
+      "menu":"Menu",
+      "description":"Soiltec Piling & Foundation was established in Dubai in 2006 to provide a geotechnical contracting services for different underground projects.",
+      "about": "About Us",
+      "activities": "Activities",
+      "projects": "Projects",
+      "gallery": "Gallery",
+      "clients": "Clients",
+      "equipments": "Equipments",
+      "policies": "Policies",
+      "contact": "Contact Us",
+      "contactInfo":"Contact Information",
+      "phone": "Phone",
+      "email": "Email",
+      "address": "Address",
+      "copyright": "© 2024 Soiltec Piling & Foundation. All rights reserved."
   },
  "home": {
   "hero": {
-    "title1": "Foundation First",
-    "title2": "Build with Confidence",
-    "subtitle": "Dubai’s Trusted Piling and Foundation Experts",
-    "cta": "Get a Free Consultation",
-    "learnMore": "Explore Our Services",
-    "second-heading": {
-      "title": "Key Considerations for Safe Construction",
-      "title1": "Before You Break Ground",
-      "checks1": "Certified Geotechnical Experts",
-      "checks2": "Ground Investigation",
-      "checks3": "Structural Load Analysis",
-      "checks4": "Type of Piling Required",
-      "checks5": "Soil Stability",
-      "checks6": "Water Table Conditions",
-      "checks7": "Construction Timeline",
-      "checks8": "Regulatory Approvals"
+    "title": "Foundation For The Future",
+    "description": "Dubai’s trusted experts in piling, foundation, and soil engineering solutions.",
+    "button": "Get a Free Quote"
     },
-    "impact": {
-      "title": "Our Impact",
-      "description": "Reinforcing Dubai's skyline with safe, sustainable, and reliable foundations"
-    }
-  },
-  "concept": {
-    "title1": "Geotechnical Excellence",
-    "title2": "Reliable Ground Solutions",
-    "subtitle": "Powered by Engineering Precision and Innovation"
-  },
-  "trustBuilders": {
-    "title": "Trusted By UAE's Top Builders",
-    "timeline": "On-Time Execution",
-    "timelineDesc": "100+ successful piling projects completed on schedule",
-    "freeService": "Transparent Process",
-    "freeServiceDesc": "Detailed reporting, clear pricing, and zero surprises",
-    "rbiNBFC": "DM Approved",
-    "rbiRegistered": "Dubai Municipality Certified",
-    "rbiRegisteredDesc": "Licensed and compliant with UAE construction codes"
-  },
-  "videoSection": {
-    "title": "See Us in Action"
-  },
-  "cta": {
-    "title": "Build on Solid Ground",
-    "subtitle": "Partner with Soiltec for expert piling and foundation solutions",
-    "button": "Request a Site Visit"
-  },
-  "faq": {
-    "q1": "What piling methods do you use?",
-    "a1": "We offer bored piles, driven piles, micro piling, and diaphragm walls depending on the site conditions and structural requirements.",
-    "q2": "Do you provide soil investigation services?",
-    "a2": "Yes, we conduct thorough geotechnical investigations including borehole drilling, SPT testing, and soil analysis.",
-    "q3": "Are your services certified?",
-    "a3": "Absolutely. Soiltec is Dubai Municipality-approved and operates in full compliance with local and international safety standards.",
-    "q4": "Can you work with existing contractors?",
-    "a4": "Yes, we collaborate with civil contractors, architects, and consultants to ensure seamless integration with ongoing construction.",
-    "q5": "What type of projects do you handle?",
-    "a5": "We specialize in foundations for residential towers, commercial complexes, infrastructure, and industrial facilities.",
-    "q6": "How do I request a quote or consultation?",
-    "a6": "Simply click 'Request a Site Visit' or contact us directly. Our engineers will visit your site for assessment and provide a detailed proposal.",
-    "q7": "Do you handle shoring and excavation support?",
-    "a7": "Yes, we offer a complete range of excavation support systems including contiguous pile walls and secant pile shoring."
-  }
-}
+    "container1": {
+      "title": "Who We Are",
+      "description": "Soiltec is a pioneering piling and foundation company in Dubai, delivering robust engineering solutions that support commercial, residential, and infrastructure projects across the UAE. Our expertise lies in piling, shoring, soil improvement, and foundation consulting — ensuring your structures start strong and stay strong."
+    },
+    "container2": {
+      "title": "Our Core Services",
+      "heading1": "Piling Works",
+      "description1":"High-performance bored, CFA, and driven piles tailored to your soil conditions.",
+      "heading2":"Foundation Design",
+      "description2": "Engineered foundation systems for lasting structural integrity and safety.",
+      "heading3": "Shoring Systems",
+      "description3": "Secant and contiguous pile walls to protect excavations and surrounding structures.",
+      "heading4": "Soil Stabilization",
+      "description4": "Ground improvement techniques including vibro compaction and grouting.",
+      "heading5":"Geotechnical Investigation",
+      "description5": "Comprehensive soil testing and analysis for project-specific engineering reports.",
+      "heading6": "Engineering Consulting",
+      "description6": "Professional geotechnical consulting from concept to construction."
 
+    },
+    "container3": {
+      "title": "Build Your Project on Solid Ground",
+      "description": "Speak with our geotechnical experts to get a customized foundation plan and quote.",
+      "button": "Contact Us"
+    }
+  }
 }

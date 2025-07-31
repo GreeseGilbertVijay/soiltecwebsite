@@ -27,20 +27,22 @@ const Footer = () => {
               </Link>
             </div>
             <p className="text-black mb-6 leading-relaxed">
-              {t('footer.mission') || 'Our mission is to empower individuals with expert financial guidance and essential resources to build, strengthen, and sustain a resilient credit profile—laying the foundation for lasting financial well-being and opportunity.'}
+              {t('footer.description')}
             </p>
-            
           </div>
 
           {/* Quick Links */}
           <div className="col-span-1 md:col-span-1">
-            <h4 className="text-2xl font-bold  mb-4 text-orange-500">{t('footer.quickLinks') || 'Quick Links'}</h4>
+            <h4 className="text-2xl font-bold  mb-4 text-orange-500">{t('footer.menu')}</h4>
             <ul className="space-y-2">
-              <li><Link to="/credit-health" onClick={scrollToTop} className="text-black hover:text-orange-400 transition-colors">{t('nav.creditHealth') || 'Credit Health'}</Link></li>
-              <li><Link to="/impact" onClick={scrollToTop} className="text-black hover:text-orange-400 transition-colors">{t('nav.impact') || 'Impact'}</Link></li>
-              <li><Link to="/services" onClick={scrollToTop} className="text-black hover:text-orange-400 transition-colors">{t('nav.services') || 'Services'}</Link></li>
-              <li><Link to="/about" onClick={scrollToTop} className="text-black hover:text-orange-400 transition-colors">{t('nav.about') || 'About'}</Link></li>
-              <li><Link to="/faq" onClick={scrollToTop} className="text-black hover:text-orange-400 transition-colors">{t('nav.faq') || 'FAQ'}</Link></li>
+              <li><Link to="/about" onClick={scrollToTop} className="text-black hover:text-orange-400 transition-colors">{t('footer.about') || 'About Us'}</Link></li>
+              <li><Link to="/activities" onClick={scrollToTop} className="text-black hover:text-orange-400 transition-colors">{t('footer.activities') || 'Activities'}</Link></li>
+              <li><Link to="/projects" onClick={scrollToTop} className="text-black hover:text-orange-400 transition-colors">{t('footer.projects') || 'Projects'}</Link></li>
+              <li><Link to="/gallery" onClick={scrollToTop} className="text-black hover:text-orange-400 transition-colors">{t('footer.gallery') || 'Gallery'}</Link></li>
+              <li><Link to="/clients" onClick={scrollToTop} className="text-black hover:text-orange-400 transition-colors">{t('footer.clients') || 'Clients'}</Link></li>
+              <li><Link to="/equipments" onClick={scrollToTop} className="text-black hover:text-orange-400 transition-colors">{t('footer.equipments') || 'Equipments'}</Link></li>
+              <li><Link to="/policies" onClick={scrollToTop} className="text-black hover:text-orange-400 transition-colors">{t('footer.policies') || 'Policies'}</Link></li>
+              <li><Link to="/contact" onClick={scrollToTop} className="text-black hover:text-orange-400 transition-colors">{t('footer.contact') || 'Contact'}</Link></li>
             </ul>
           </div>
 
@@ -50,16 +52,14 @@ const Footer = () => {
             <div className="space-y-3 text-slate-300">
               <div className="text-sm leading-relaxed">
                 <p className="font-medium text-black mb-2">{t('footer.phone') || 'Phone Numbers'}:</p>
-                <p><a href="tel:+916382097967" className="text-black hover:text-orange-400 transition-colors">+91 63820 97967</a></p>
-                <p> <a href="mailto:support@samatvaawareness.in" className="text-black hover:text-orange-400 transition-colors">support@samatvaawareness.in</a></p>
-              </div>
-              <div className="text-sm">
-                <p className="font-medium text-black mb-2">CIN: U70200TN2024PTC167249</p>
+                <p><a href="tel:+971 4 2696440" className="text-black hover:text-orange-400 transition-colors">+971 4 2696440</a></p>
+                <p className="font-medium text-black mb-2">{t('footer.email')}:</p>
+                <p> <a href="mailto:soiltec@eim.ae" className="text-black hover:text-orange-400 transition-colors">soiltec@eim.ae</a></p>
               </div>
               <div className="text-sm leading-relaxed">
                 <p className="font-medium text-black mb-2">{t('footer.address') || 'Address'}:</p>
-                <p className='text-black'>No.25, Shanthi Apartments, Flat No 3, 1st Floor, Vyasar Street, T.Nagar, Chennai - 600017</p>
-              </div>
+                <p className='text-black'>Soiltec Piling & Foundation LLC, Hor Alanz East, P.O. Box: 92776, Dubai - U.A.E.</p>
+              </div> 
             </div>
           </div>
         </div>

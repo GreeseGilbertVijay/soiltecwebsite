@@ -7,14 +7,14 @@ import Footer from '@/components/Footer';
 import ImageSlider from '@/components/ImageSlider';
 
 const Index = () => {
-  const { currentLanguage } = useLanguage();
+  const { t } = useLanguage();
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   return (
-    <div className="min-h-screen font-raleway" lang={currentLanguage}>
+    <div className="min-h-screen font-raleway">
       <Helmet>
         <title>Soiltec Piling and Foundation | Geotechnical Engineering in Dubai</title>
         <meta
@@ -36,16 +36,15 @@ const Index = () => {
       >
         <div className="bg-black/80 backdrop-blur-md p-10 rounded-3xl shadow-lg max-w-3xl w-full">
           <h1 className="text-2xl md:text-4xl font-extrabold text-white mb-4">
-            Foundation for the Future
+            {t('home.hero.title')}
           </h1>
           <p className="text-lg md:text-xl text-white mb-6">
-            Dubai’s trusted experts in piling, foundation, and soil engineering solutions.
+            {t('home.hero.description')}
           </p>
           <Link
             to="/contact"
-            className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 px-8 rounded-full shadow-md transition-all"
-          >
-            Get a Free Quote
+            className="bg-yellow-400 hover:bg-yellow-600 text-white font-bold py-3 px-8 rounded-full shadow-md transition-all">
+            {t('home.hero.button')}
           </Link>
         </div>
       </section>
@@ -53,10 +52,9 @@ const Index = () => {
       {/* Who We Are */}
       <section className="py-12 bg-gray-200 px-6">
         <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Who We Are</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">{t('home.container1.title')}</h2>
           <p className="text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto">
-            Soiltec is a pioneering piling and foundation company in Dubai, delivering robust engineering
-            solutions that support commercial, residential, and infrastructure projects across the UAE. Our expertise lies in piling, shoring, soil improvement, and foundation consulting — ensuring your structures start strong and stay strong.
+           {t('home.container1.description')}
           </p>
         </div>
       </section>
@@ -64,38 +62,38 @@ const Index = () => {
       {/* Services Section */}
       <section className="py-20 bg-white px-6">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">Our Core Services</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">{t('home.container2.title')}</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
                 icon: '/images/piling-icon.png',
-                title: 'Piling Works',
-                desc: 'High-performance bored, CFA, and driven piles tailored to your soil conditions.',
+                title: t('home.container2.heading1'),
+                desc: t('home.container2.description1'),
               },
               {
                 icon: '/images/foundation-icon.png',
-                title: 'Foundation Design',
-                desc: 'Engineered foundation systems for lasting structural integrity and safety.',
+                title: t('home.container2.heading2'),
+                desc: t('home.container2.description2'),
               },
               {
                 icon: '/images/shoring-icon.png',
-                title: 'Shoring Systems',
-                desc: 'Secant and contiguous pile walls to protect excavations and surrounding structures.',
+                title: t('home.container2.heading3'),
+                desc: t('home.container2.description3'),
               },
               {
                 icon: '/images/soil-icon.png',
-                title: 'Soil Stabilization',
-                desc: 'Ground improvement techniques including vibro compaction and grouting.',
+                title: t('home.container2.heading4'),
+                desc: t('home.container2.description4'),
               },
               {
                 icon: '/images/geotechnical-icon.png',
-                title: 'Geotechnical Investigation',
-                desc: 'Comprehensive soil testing and analysis for project-specific engineering reports.',
+                title: t('home.container2.heading5'),
+                desc: t('home.container2.description5'),
               },
               {
                 icon: '/images/engineering-icon.png',
-                title: 'Engineering Consulting',
-                desc: 'Professional geotechnical consulting from concept to construction.',
+                title: t('home.container2.heading6'),
+                desc: t('home.container2.description6'),
               },
             ].map((service, index) => (
               <div
@@ -119,16 +117,16 @@ const Index = () => {
       <section className="py-20 px-6 bg-gray-100 text-white text-center">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl text-black md:text-4xl font-bold mb-4">
-            Build Your Project on Solid Ground
+           {t('home.container3.title')}
           </h2>
           <p className="text-lg text-black mb-6">
-            Speak with our geotechnical experts to get a customized foundation plan and quote.
+            {t('home.container3.description')}
           </p>
           <Link
             to="/contact"
-            className="bg-white text-yellow-600 font-semibold py-3 px-8 rounded-full hover:bg-gray-200 transition"
+            className="bg-yellow-400 hover:bg-yellow-600 text-white font-bold py-3 px-8 rounded-full shadow-md transition-all"
           >
-            Contact Us
+           {t('home.container3.button')}
           </Link>
         </div>
       </section>

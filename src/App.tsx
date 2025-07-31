@@ -7,11 +7,11 @@ import { LanguageProvider } from "@/contexts/LanguageContext";
 import FontProvider from "@/components/FontProvider";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import Index from "./pages/Index";
-import CreditHealth from "./pages/CreditHealth";
-import Impact from "./pages/Impact";
+import CreditHealth from "./pages/Activities";
+import Impact from "./pages/Projects";
 import Services from "./pages/Services";
 import About from "./pages/About";
-import FAQ from "./pages/FAQ";
+import FAQ from "./pages/Gallery";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
