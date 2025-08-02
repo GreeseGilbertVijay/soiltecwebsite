@@ -26,7 +26,7 @@ const ImageSlider = () => {
   }, []);
 
   return (
-    <div className="relative w-full h-screen overflow-hidden">
+    <div className="relative w-full h-[60vh] sm:h-[80vh] md:h-screen overflow-hidden">
       {images.map((img, index) => (
         <div
           key={index}
@@ -40,13 +40,13 @@ const ImageSlider = () => {
       {/* Navigation Buttons */}
       <button
         onClick={prevSlide}
-        className="absolute top-1/2 left-4 transform -translate-y-1/2 text-black text-2xl p-2 bg-yellow-400 hover:bg-yellow-500 rounded-full z-10"
+        className="absolute top-1/2 left-2 sm:left-4 transform -translate-y-1/2 text-black text-xl sm:text-2xl p-2 sm:p-3 bg-yellow-400 hover:bg-yellow-500 rounded-full z-10"
       >
         ❮
       </button>
       <button
         onClick={nextSlide}
-        className="absolute top-1/2 right-4 transform -translate-y-1/2 text-black text-2xl p-2 bg-yellow-400 hover:bg-yellow-500 rounded-full z-10"
+        className="absolute top-1/2 right-2 sm:right-4 transform -translate-y-1/2 text-black text-xl sm:text-2xl p-2 sm:p-3 bg-yellow-400 hover:bg-yellow-500 rounded-full z-10"
       >
         ❯
       </button>
@@ -57,7 +57,7 @@ const ImageSlider = () => {
           <span
             key={index}
             onClick={() => setCurrent(index)}
-            className={`w-3 h-3 rounded-full cursor-pointer ${
+            className={`w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full cursor-pointer transition-colors ${
               current === index ? 'bg-yellow-400' : 'bg-yellow-200'
             }`}
           />

@@ -3,7 +3,7 @@ import { Menu, X } from 'lucide-react'
 import { Link, useLocation } from 'react-router-dom'
 import { useLanguage } from '@/contexts/LanguageContext'
 import LanguageSwitcher from '@/components/LanguageSwitcher'
-import ThemeToggle from '@/components/ThemeToggle' // <-- Make sure this exists
+import ThemeToggle from '@/components/ThemeToggle' // Ensure this exists
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -63,7 +63,7 @@ const Navbar = () => {
                   to={item.path}
                   onClick={scrollToTop}
                   style={{ fontSize }}
-                  className={`px-2 py-2 rounded-lg font-samll transition-all duration-200 ${
+                  className={`px-2 py-2 rounded-lg font-small transition-all duration-200 ${
                     isActive(item.path)
                       ? 'bg-yellow-500 text-white shadow'
                       : 'text-slate-600 dark:text-slate-300 hover:text-yellow-500'
@@ -75,14 +75,17 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* Right Side (Language + Theme + Menu) */}
+          {/* Right Side Controls */}
           <div className="flex items-center space-x-4">
-            <LanguageSwitcher />
-            <ThemeToggle theme={theme} setTheme={setTheme} />
+            <div className="hidden lg:flex items-center space-x-4">
+              <LanguageSwitcher />
+              <ThemeToggle theme={theme} setTheme={setTheme} />
+            </div>
             <div className="lg:hidden">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="inline-flex items-center justify-center p-2 rounded-md text-slate-600 dark:text-white hover:text-yellow-500">
+                className="inline-flex items-center justify-center p-2 rounded-md text-slate-600 dark:text-white hover:text-yellow-500"
+              >
                 {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
               </button>
             </div>
@@ -92,29 +95,35 @@ const Navbar = () => {
         {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="lg:hidden px-4">
-            <div className="pt-2 pb-3 border-t border-slate-300 dark:border-slate-700 bg-white dark:bg-gray-900 bg-opacity-90 backdrop-blur rounded-b-lg">
-              <div className="flex justify-between items-center mb-2 border-b border-slate-200 dark:border-slate-700 pb-2">
+            <div className="pt-3 pb-4 border-t border-slate-300 dark:border-slate-700 bg-white dark:bg-gray-900 bg-opacity-95 backdrop-blur-md rounded-b-lg shadow-md">
+              
+              {/* Top section: Language + Theme */}
+              <div className="flex justify-between items-center px-2 mb-3">
                 <LanguageSwitcher />
                 <ThemeToggle theme={theme} setTheme={setTheme} />
               </div>
-              {navItems.map((item) => (
-                <Link
-                  key={item.path}
-                  to={item.path}
-                  onClick={() => {
-                    setIsMenuOpen(false)
-                    scrollToTop()
-                  }}
-                  style={{ fontSize }}
-                  className={`block px-4 py-3 rounded-lg font-medium transition-all ${
-                    isActive(item.path)
-                      ? 'bg-yellow-500 text-white'
-                      : 'text-slate-600 dark:text-slate-300 hover:text-yellow-500'
-                  }`}
-                >
-                  {item.label}
-                </Link>
-              ))}
+
+              {/* Navigation links */}
+              <div className="space-y-1">
+                {navItems.map((item) => (
+                  <Link
+                    key={item.path}
+                    to={item.path}
+                    onClick={() => {
+                      setIsMenuOpen(false)
+                      scrollToTop()
+                    }}
+                    style={{ fontSize }}
+                    className={`block px-4 py-3 rounded-lg font-medium transition-all duration-200 ${
+                      isActive(item.path)
+                        ? 'bg-yellow-500 text-white'
+                        : 'text-slate-700 dark:text-slate-300 hover:text-yellow-500'
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
         )}
