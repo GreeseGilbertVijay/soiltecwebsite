@@ -92,8 +92,7 @@ const Footer = () => {
         {/* Bottom Note */}
         <div className="mt-10 pt-6 border-t border-yellow-600 text-center text-sm">
           <p>
-            {t('footer.copyright') 
-              || '© 2025 Soiltec Piling & Foundation. All rights reserved.'}
+            {t('footer.copyright')}
           </p>
         </div>
       </div>

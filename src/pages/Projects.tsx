@@ -13,7 +13,7 @@ const Projects: React.FC = () => {
   return (
     <div className="bg-gray-50 dark:bg-gray-950 text-gray-800 dark:text-gray-100 min-h-screen transition-colors duration-300 font-raleway">
       <Helmet>
-        <title>Project | Soiltec Piling and Foundation Dubai</title>
+        <title>Projects | Soiltec Piling and Foundation Dubai</title>
         <meta
           name="description"
           content="Learn about Soiltec Piling and Foundation, Dubai's trusted experts in geotechnical engineering, piling, and foundation solutions. Explore our mission, experience, and commitment to innovation and quality."

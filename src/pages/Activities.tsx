@@ -38,7 +38,7 @@ const Activities: React.FC = () => {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="py-12 bg-gray-200 dark:bg-gray-800 transition-colors">
+      <section className="py-12 p-4 bg-gray-200 dark:bg-gray-800 transition-colors">
         <div className="max-w-7xl mx-auto text-center md:text-left">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
             {t('activities.title')}
