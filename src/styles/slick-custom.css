@@ -1,0 +1,23 @@
+/* Light mode arrow styling */
+.slick-prev:before,
+.slick-next:before {
+  color: #1f2937; /* Tailwind's gray-800 */
+  font-size: 28px;
+}
+
+/* Dark mode arrow styling */
+.dark .slick-prev:before,
+.dark .slick-next:before {
+  color: #f9fafb; /* Tailwind's gray-50 */
+}
+
+/* Optional: Hover effect */
+.slick-prev:hover:before,
+.slick-next:hover:before {
+  color: #000;
+}
+
+.dark .slick-prev:hover:before,
+.dark .slick-next:hover:before {
+  color: #fff;
+}

@@ -41,7 +41,7 @@ const WhatsAppButton = () => {
       {showScrollTop && (
         <button
           onClick={scrollToTop}
-          className=" w-[40px] h-[40px] p-2 rounded-[50%] shadow-lg bg-orange-500 hover:bg-orange-600 transition-all duration-300 transform hover:scale-110 border-2 border-white flex items-center justify-center"
+          className=" w-[40px] h-[40px] p-2 rounded-[20%] shadow-lg bg-yellow-500 hover:bg-yellow-600 transition-all duration-300 transform hover:scale-110 border-2 border-white flex items-center justify-center"
           aria-label="Scroll to top"
         >
           <ArrowUp className="text-white text-8xl" />

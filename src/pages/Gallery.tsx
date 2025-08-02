@@ -1,149 +1,63 @@
+// src/pages/Gallery.tsx
 import React from 'react';
+import { Helmet } from 'react-helmet';
+import { useLanguage } from '@/contexts/LanguageContext';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { useLanguage } from '@/contexts/LanguageContext';
-import { Link } from 'react-router-dom';
 
-const FAQ = () => {
-  const { t, translations } = useLanguage();
-  const questions = t('faqPage.questions');
+const Gallery: React.FC = () => {
+  const { t } = useLanguage();
 
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  };
-
-  // Don't render content until translations are loaded
-  if (!translations || Object.keys(translations).length === 0) {
-    return (
-      <div className="min-h-screen bg-white">
-        <Navbar />
-        <div className="flex items-center justify-center min-h-[60vh]">
-          <div className="text-lg text-gray-600">Loading...</div>
-        </div>
-        <Footer />
-      </div>
-    );
-  }
+  const imageSources = [
+    '/activities/bored.webp',
+    '/activities/micro.webp',
+    '/activities/diaphragm.webp',
+    '/activities/contiguous.webp',
+    '/activities/soil.webp',
+    '/activities/bracing.webp',
+    '/activities/soldier.webp',
+    '/activities/improve.webp',
+    '/activities/ground.webp',
+    '/activities/secant.webp',
+  ];
 
   return (
-    <div className="min-h-screen bg-gray-50 font-raleway">
-       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&display=swap');
+    <div className="bg-gray-50 dark:bg-gray-950 text-gray-800 dark:text-gray-100 min-h-screen transition-colors duration-300 font-raleway">
+      <Helmet>
+        <title>Gallery | Soiltec Piling and Foundation Dubai</title>
+        <meta
+          name="description"
+          content="Explore the gallery of Soiltec Piling and Foundation, showcasing our work across Dubai in geotechnical engineering, piling, and foundation solutions."
+        />
+        <meta
+          name="keywords"
+          content="Soiltec, piling company Dubai, foundation solutions UAE, geotechnical engineering, construction piling, Soiltec Dubai, deep foundation, bored piles, micro piling Dubai"
+        />
+        <meta name="robots" content="index, follow" />
+      </Helmet>
 
-        .font-raleway {
-          font-family: 'Raleway', sans-serif;
-        }
-
-        @media (max-width: 1920px) {
-          h1 { font-size: 56px; }
-          h2 { font-size: 48px; }
-          p { font-size: 18px; }
-          [lang]:not([lang="en"]) h1 { font-size: 44px; }
-          [lang]:not([lang="en"]) h2 { font-size: 36px; }
-          [lang]:not([lang="en"]) p { font-size: 18px; }
-        }
-
-        @media (max-width: 1440px) {
-          h1 { font-size: 48px; line-height: 1em; }
-          h2 { font-size: 40px; }
-          p { font-size: 18px; }
-          [lang]:not([lang="en"]) h1 { font-size: 36px; }
-          [lang]:not([lang="en"]) h2 { font-size: 28px; }
-          [lang]:not([lang="en"]) p { font-size: 16px; }
-        }
-
-        @media (max-width: 780px) {
-          h1 { font-size: 36px; }
-          h2 { font-size: 28px; }
-          p { font-size: 16px; }
-          [lang]:not([lang="en"]) h1 { font-size: 36px; }
-          [lang]:not([lang="en"]) h2 { font-size: 24px; }
-          [lang]:not([lang="en"]) p { font-size: 16px; }
-        }
-
-        @media (max-width: 480px) {
-          h1 { font-size: 24px; }
-          h2 { font-size: 22px; }
-          p { font-size: 16px; }
-          [lang]:not([lang="en"]) h1 { font-size: 24px; }
-          [lang]:not([lang="en"]) h2 { font-size: 20px; }
-          [lang]:not([lang="en"]) p { font-size: 14px; }
-        }
-      `}</style>
       <Navbar />
-      
+
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-slate-800 via-slate-800 to-blue-500 text-white py-20 overflow-hidden">
-        <div className="w-[95%] mx-auto text-center">
-          <h1 className="font-bold mb-8 leading-tight animate-slide-in-right">
-            {t('faqPage.title')}
-          </h1>
-          <p className="text-blue-100">
-            {t('faqPage.subtitle')}
-          </p>
-        </div>
+      <section className="py-12 bg-gray-200 dark:bg-gray-800 px-6">
+        <h1 className="text-4xl font-bold text-center text-gray-800 dark:text-white">
+          {t('gallery.title')}
+        </h1>
       </section>
 
-      {/* FAQ Section */}
-      <section className="pt-16 pb-12 pl-2 pr-2 bg-slate-900">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-4">
-            {Array.isArray(questions) && questions.map((faq: any, index: number) => (
-              <div key={index} className="bg-slate-800 rounded-lg overflow-hidden">
-                <button
-                  className="w-full px-6 py-4 text-left flex justify-between items-center text-white hover:bg-slate-700 transition-colors"
-                  onClick={() => {
-                    const content = document.getElementById(`faq-${index}-content`);
-                    const arrow = document.getElementById(`faq-${index}-arrow`);
-                    if (content && arrow) {
-                      content.classList.toggle('hidden');
-                      arrow.classList.toggle('rotate-180');
-                    }
-                  }}
-                >
-                  <span className="font-semibold">
-                    <span className="text-blue-400 mr-2">Q{index + 1}.</span>
-                    {faq.question}
-                  </span>
-                  <svg
-                    id={`faq-${index}-arrow`}
-                    className="w-5 h-5 transform transition-transform"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </button>
-                <div id={`faq-${index}-content`} className="hidden px-6 py-4 text-slate-300">
-                  <span className="text-blue-400 mr-2">A{index + 1}.</span>
-                  {faq.answer}
-                </div>
-              </div>
+      {/* Masonry Gallery Section */}
+      <section className="py-12 bg-white dark:bg-gray-900 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
+            {imageSources.map((src, index) => (
+              <img
+                key={index}
+                src={src}
+                alt={`Gallery image ${index + 1}`}
+                className="w-full rounded-lg shadow-md break-inside-avoid hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+              />
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Contact CTA */}
-      <section className="pt-16 pb-12 bg-gradient-to-br from-blue-400 via-slate-900 to-blue-500">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="font-bold text-white mb-4">
-            {t('faqPage.stillHaveQuestions')}
-          </h2>
-          <p className="text-white mb-8">
-            {t('faqPage.getInTouch')}
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/Contact" onClick={scrollToTop} className="border-2 border-orange-600 text-white bg-orange-500 hover:text-white px-8 py-4 rounded-lg font-semibold  transition-colors">
-              {t('faqPage.contactUs')}
-            </Link>
-            <Link to="/Services" onClick={scrollToTop} className="border-2 border-orange-600 text-orange-600 hover:bg-blue-800 hover:text-orange-500 px-8 py-4 rounded-lg font-semibold  transition-colors">
-              {t('faqPage.learnServices')}
-            </Link>
           </div>
         </div>
       </section>
@@ -153,4 +67,4 @@ const FAQ = () => {
   );
 };
 
-export default FAQ;
+export default Gallery;

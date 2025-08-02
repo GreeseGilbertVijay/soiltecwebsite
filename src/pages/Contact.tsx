@@ -1,249 +1,112 @@
+import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { Mail, Phone, Clock, CheckCircle } from 'lucide-react';
+import { Mail, Phone, MapPin } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { Helmet } from 'react-helmet';
 
-const Contact = () => {
+const Contact: React.FC = () => {
   const { t } = useLanguage();
 
   return (
-    <div className="min-h-screen bg-gray-50 font-raleway">
-       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&display=swap');
+    <>
+      <Helmet>
+        <title>Contact | Soiltec Piling and Foundation Dubai</title>
+        <meta
+          name="description"
+          content="Learn about Soiltec Piling and Foundation, Dubai's trusted experts in geotechnical engineering, piling, and foundation solutions. Explore our mission, experience, and commitment to innovation and quality."
+        />
+        <meta
+          name="keywords"
+          content="Soiltec, piling company Dubai, foundation solutions UAE, geotechnical engineering, construction piling, Soiltec Dubai, deep foundation, bored piles, micro piling Dubai"
+        />
+        <meta name="robots" content="index, follow" />
+      </Helmet>
 
-        .font-raleway {
-          font-family: 'Raleway', sans-serif;
-        }
-
-        @media (max-width: 1920px) {
-          h1 { font-size: 56px; }
-          h2 { font-size: 48px; }
-          h3 { font-size: 36px; }
-          h4 { font-size: 28px; }
-          h5 { font-size: 24px; }
-          h6 { font-size: 20px; }
-          p { font-size: 18px; }
-          [lang]:not([lang="en"]) h1 { font-size: 44px; }
-          [lang]:not([lang="en"]) h2 { font-size: 36px; }
-          [lang]:not([lang="en"]) h3 { font-size: 28px; }
-          [lang]:not([lang="en"]) h3 { font-size: 24px; }
-          [lang]:not([lang="en"]) h5 { font-size: 22px; }
-          [lang]:not([lang="en"]) h6 { font-size: 20px; }
-          [lang]:not([lang="en"]) p { font-size: 18px; }
-        }
-
-        @media (max-width: 1440px) {
-          h1 { font-size: 48px; line-height: 1em; }
-          h2 { font-size: 40px; }
-          h3 { font-size: 32px; }
-          h4 { font-size: 22px; }
-          h5 { font-size: 20px; }
-          h6 { font-size: 16px; }
-          p { font-size: 16px; }
-          [lang]:not([lang="en"]) h1 { font-size: 36px; }
-          [lang]:not([lang="en"]) h2 { font-size: 28px; }
-          [lang]:not([lang="en"]) h3 { font-size: 24px; }
-          [lang]:not([lang="en"]) h4 { font-size: 22px; }
-          [lang]:not([lang="en"]) h5 { font-size: 20px; }
-          [lang]:not([lang="en"]) h6 { font-size: 18px; }
-          [lang]:not([lang="en"]) p { font-size: 16px; }
-        }
-
-        @media (max-width: 780px) {
-          h1 { font-size: 32px; }
-          h2 { font-size: 28px; }
-          h3 { font-size: 28px; }
-          h4 { font-size: 22px; }
-          h5 { font-size: 18px; }
-          h6 { font-size: 16px; }
-          p { font-size: 16px; }
-          [lang]:not([lang="en"]) h1 { font-size: 32px; }
-          [lang]:not([lang="en"]) h2 { font-size: 24px; }
-          [lang]:not([lang="en"]) h3 { font-size: 20px; }
-          [lang]:not([lang="en"]) h5 { font-size: 16px; }
-          [lang]:not([lang="en"]) h6 { font-size: 16px; }
-          [lang]:not([lang="en"]) p { font-size: 16px; }
-        }
-
-        @media (max-width: 480px) {
-          h1 { font-size: 36px; }
-          h2 { font-size: 28px; }
-          h3 { font-size: 24px; }
-          h4 { font-size: 20px; }
-          h5 { font-size: 20px; }
-          h6 { font-size: 16px; }
-          p { font-size: 16px; }
-          [lang]:not([lang="en"]) h1 { font-size: 36px; }
-          [lang]:not([lang="en"]) h2 { font-size: 20px; }
-          [lang]:not([lang="en"]) h3 { font-size: 18px; }
-          [lang]:not([lang="en"]) h4 { font-size: 20px; }
-          [lang]:not([lang="en"]) h5 { font-size: 16px; }
-          [lang]:not([lang="en"]) h6 { font-size: 16px; }
-          [lang]:not([lang="en"]) p { font-size: 14px; }
-        }
-      `}</style>
       <Navbar />
-      
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-slate-800 via-slate-800 to-blue-500 text-white py-20 overflow-hidden">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h1 className="font-bold mb-8 leading-tight animate-slide-in-right">
-            {t('contact.title')}
-          </h1>
-          <p className="text-blue-100">
-            {t('contact.subtitle')}
-          </p>
-        </div>
-      </section>
-    
-      {/* Contact Information */}
-      <section className="py-16 bg-white">
-        <style>{`
-          @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
-          .roboto-contact-info p {
-            font-family: 'Roboto', sans-serif !important;
-          }
-        `}</style>
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 roboto-contact-info">
-            
-            {/* Contact Details */}
-            <div>
-              <h3 className=" font-bold text-gray-900 mb-8">{t('contact.contactInfo')}</h3>
-              
-              <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <div className="bg-blue-600 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
-                    <Mail className="text-white" size={24} />
-                  </div>
-                  <div>
-                    <h5 className=" font-semibold text-gray-900">{t('contact.email')}</h5>
-                    <p className="text-gray-600"><a href="mailto:support@samatvaawareness.in" className="hover:underline">support@samatvaawareness.in</a></p>
-                    <p className=" text-gray-500">{t('contact.emailDesc')}</p>
-                  </div>
-                </div>
 
-                <div className="flex items-start space-x-4">
-                  <div className="bg-green-600 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
-                    <Phone className="text-white" size={24} />
-                  </div>
-                  <div>
-                    <h5 className=" font-semibold text-gray-900">{t('contact.call')}</h5>
-                    <p className="text-gray-600"><a href="tel:+916382097967" className="hover:underline">+91 63820 97967</a></p>
-                    <p className=" text-gray-500">{t('contact.callDesc')}</p>
-                  </div>
-                </div>
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-100 px-4 py-10 transition-colors duration-300">
+        <div className="max-w-6xl mx-auto">
+          <h1 className="text-4xl font-bold mb-10 text-center">{t('contact.title')}</h1>
 
-                <div className="flex items-start space-x-4">
-                  <div className="bg-purple-600 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
-                    <Clock className="text-white" size={24} />
-                  </div>
-                  <div>
-                    <h5 className=" font-semibold text-gray-900">{t('contact.hours')}</h5>
-                    <p className="text-gray-600">Monday - Friday: 9:00 AM - 6:00 PM</p>
-                    <p className="text-gray-600">Saturday: 10:00 AM - 4:00 PM</p>
-                    <p className="text-gray-600">Sunday: Closed</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Service Areas */}
-              <div className="mt-12">
-                <h3 className="font-bold text-gray-900 mb-6">{t('contact.serviceAreas')}</h3>
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="bg-blue-200 p-4 rounded-lg">
-                    <h6 className="font-semibold text-gray-900">{t('contact.box1')}</h6>
-                  </div>
-                  <div className="bg-green-200 p-4 rounded-lg">
-                    <h6 className="font-semibold text-gray-900">{t('contact.box2')}</h6>
-                  </div>
-                  <div className="bg-purple-200 p-4 rounded-lg">
-                    <h6 className="font-semibold text-gray-900">{t('contact.box3')}</h6>
-                  </div>
-                  <div className="bg-orange-200 p-4 rounded-lg">
-                    <h6 className="font-semibold text-gray-900">{t('contact.box4')}</h6>
-                  </div>
-                </div>
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Dubai Office */}
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-md transition-colors">
+              <h2 className="text-2xl font-semibold mb-4">{t('contact.box1title')}</h2>
+              <div className="space-y-1">
+                <p className="flex gap-2 items-start text-gray-600 dark:text-gray-300">
+                  <MapPin className="w-5 h-5 text-gray-500 mt-1" />
+                  Hor Alanz East, P.O. Box: 92776
+                </p>
+                <p className="text-gray-600 dark:text-gray-300">Dubai - U.A.E.</p>
+                <p className="flex items-center gap-2 text-gray-700 dark:text-gray-200">
+                  <Phone className="w-5 h-5 text-green-600" /> +971 4 2696440
+                </p>
+                <p className="flex items-center gap-2 text-gray-700 dark:text-gray-200">
+                  <Phone className="w-5 h-5 text-green-600" /> +971 4 2696442
+                </p>
+                <p className="flex items-center gap-2 text-gray-700 dark:text-gray-200">
+                  <Mail className="w-5 h-5 text-blue-600" />
+                  <a href="mailto:soiltec@eim.ae" className="hover:underline text-blue-700 dark:text-blue-400">
+                    soiltec@eim.ae
+                  </a>
+                </p>
               </div>
             </div>
 
-            {/* Next Steps */}
-            <div>
-              <h3 className=" font-bold text-gray-900 mb-8">{t('contact.nextSteps')}</h3>
-              
-              <div className="space-y-6">
-                {[
-                  { step: 1, title: t('contact.step1'), description: t('contact.step1Desc'), color: "bg-blue-600" },
-                  { step: 2, title: t('contact.step2'), description: t('contact.step2Desc'), color: "bg-green-600" },
-                  { step: 3, title: t('contact.step3'), description: t('contact.step3Desc'), color: "bg-purple-600" },
-                  { step: 4, title: t('contact.step4'), description: t('contact.step4Desc'), color: "bg-orange-600" },
-                  { step: 5, title: t('contact.step5'), description: t('contact.step5Desc'), color: "bg-red-600" }
-                ].map((item, index) => (
-                  <div key={index} className="flex items-start space-x-4">
-                    <div className={`${item.color} text-white w-10 h-10 rounded-full flex items-center justify-center font-bold flex-shrink-0`}>
-                      {item.step}
-                    </div>
-                    <div>
-                      <h5 className="font-semibold text-gray-900">{item.title}</h5>
-                      <p className="text-gray-600">{item.description}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              {/* Trust Indicators */}
-              <div className="mt-12 bg-gray-50 p-6 rounded-lg">
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">{t('contact.whyQuest')}</h3>
-                <div className="space-y-3">
-                  {[t('contact.whyAns1'), t('contact.whyAns2'), t('contact.whyAns3'), t('contact.whyAns4')].map((item, index) => (
-                    <div key={index} className="flex items-center space-x-3">
-                      <CheckCircle className="text-green-600" size={20} />
-                      <span className="text-gray-700">{item}</span>
-                    </div>
-                  ))}
-                </div>
+            {/* Abu Dhabi Office */}
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-md transition-colors">
+              <h2 className="text-2xl font-semibold mb-4">{t('contact.box2title')}</h2>
+              <div className="space-y-1">
+                <p className="flex gap-2 items-start text-gray-600 dark:text-gray-300">
+                  <MapPin className="w-5 h-5 text-gray-500 mt-1" />
+                  Zaied City, P.O. Box: 114691
+                </p>
+                <p className="text-gray-600 dark:text-gray-300">Abu Dhabi - U.A.E.</p>
+                <p className="flex items-center gap-2 text-gray-700 dark:text-gray-200">
+                  <Phone className="w-5 h-5 text-green-600" /> +971 2 8827121
+                </p>
+                <p className="flex items-center gap-2 text-gray-700 dark:text-gray-200">
+                  <Phone className="w-5 h-5 text-green-600" /> +971 2 8827131
+                </p>
               </div>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* Google Maps Section */}
-      <section className="w-full h-[300px]">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.987187456456!2d80.2342!3d13.0475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52689a3a3a3a3a%3A0x3a3a3a3a3a3a3a3a!2sVyasar%20St%2C%20T.%20Nagar%2C%20Chennai%2C%20Tamil%20Nadu%20600017!5e0!3m2!1sen!2sin!4v1647881234567!5m2!1sen!2sin"
-          width="100%"
-          height="300"
-          style={{ border: 0 }}
-          allowFullScreen
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          title="Samatva Awareness Location - T. Nagar, Chennai"
-        ></iframe>
-      </section>
+          {/* Google Map */}
+          <div className="my-12 rounded-2xl overflow-hidden shadow-md">
+            <iframe
+              title="Soiltec Location"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3609.403491330679!2d55.28693417526568!3d25.24119567765894!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5c3ae2a166e9%3A0x8363b44a875083fc!2sSoiltec%20Piling%20and%20Foundation%20LLC!5e0!3m2!1sen!2sae!4v1694443002526!5m2!1sen!2sae"
+              width="100%"
+              height="400"
+              loading="lazy"
+              className="w-full h-[400px] border-0"
+              allowFullScreen
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
 
-      {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-blue-800 to-blue-900 text-white">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="font-bold mb-4">
-            {t('contact.takeFirstStep')}
-          </h2>
-          <p className="mb-8 text-blue-100">
-          {t('contact.takeFirstStepDesc')}
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="mailto:support@samatvaawareness.in" className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-4 rounded-lg font-semibold  transition-colors transform hover:scale-105">
-              {t('contact.startConsultation')}
-            </a>
-            <a href="tel:+916382097967" className="border-2 border-orange-600 text-orange-600 hover:bg-blue-800 hover:text-orange-500 px-8 py-4 rounded-lg font-semibold  transition-colors">
-              {t('contact.callNow')}
-            </a>
+          {/* Key Contacts */}
+          <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-md transition-colors">
+            <h2 className="text-2xl font-semibold mb-4">{t('contact.box3title')}</h2>
+            <ul className="space-y-2 list-disc list-inside pl-2 text-gray-700 dark:text-gray-200">
+              <li>
+                <strong>{t('contact.box3director1')}</strong> – {t('contact.box3role1')}
+              </li>
+              <li>
+                <strong>{t('contact.box3director2')}</strong> – {t('contact.box3role2')}
+              </li>
+              <li>
+                <strong>{t('contact.box3director3')}</strong> – {t('contact.box3role3')}
+              </li>
+            </ul>
           </div>
         </div>
-      </section>
+      </div>
 
       <Footer />
-    </div>
+    </>
   );
 };
 
